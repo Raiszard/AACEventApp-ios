@@ -1,0 +1,580 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9BD4A4411FFC485700C20D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4401FFC485700C20D4F /* AppDelegate.swift */; };
+		9BD4A4431FFC485700C20D4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4421FFC485700C20D4F /* ViewController.swift */; };
+		9BD4A4461FFC485700C20D4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD4A4441FFC485700C20D4F /* Main.storyboard */; };
+		9BD4A4491FFC485700C20D4F /* AAC_Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4471FFC485700C20D4F /* AAC_Events.xcdatamodeld */; };
+		9BD4A44B1FFC485700C20D4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD4A44A1FFC485700C20D4F /* Assets.xcassets */; };
+		9BD4A44E1FFC485700C20D4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */; };
+		9BD4A4591FFC485700C20D4F /* AAC_EventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4581FFC485700C20D4F /* AAC_EventsTests.swift */; };
+		9BD4A4641FFC485700C20D4F /* AAC_EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4631FFC485700C20D4F /* AAC_EventsUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		9BD4A4551FFC485700C20D4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BD4A4351FFC485700C20D4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BD4A43C1FFC485700C20D4F;
+			remoteInfo = "AAC Events";
+		};
+		9BD4A4601FFC485700C20D4F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BD4A4351FFC485700C20D4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9BD4A43C1FFC485700C20D4F;
+			remoteInfo = "AAC Events";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		9BD4A43D1FFC485700C20D4F /* AAC Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AAC Events.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD4A4401FFC485700C20D4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		9BD4A4421FFC485700C20D4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		9BD4A4451FFC485700C20D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BD4A4481FFC485700C20D4F /* AAC_Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AAC_Events.xcdatamodel; sourceTree = "<group>"; };
+		9BD4A44A1FFC485700C20D4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		9BD4A44D1FFC485700C20D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		9BD4A44F1FFC485700C20D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD4A4541FFC485700C20D4F /* AAC EventsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AAC EventsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD4A4581FFC485700C20D4F /* AAC_EventsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAC_EventsTests.swift; sourceTree = "<group>"; };
+		9BD4A45A1FFC485700C20D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BD4A45F1FFC485700C20D4F /* AAC EventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AAC EventsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9BD4A4631FFC485700C20D4F /* AAC_EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAC_EventsUITests.swift; sourceTree = "<group>"; };
+		9BD4A4651FFC485700C20D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9BD4A43A1FFC485700C20D4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD4A4511FFC485700C20D4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD4A45C1FFC485700C20D4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9BD4A4341FFC485700C20D4F = {
+			isa = PBXGroup;
+			children = (
+				9BD4A43F1FFC485700C20D4F /* AAC Events */,
+				9BD4A4571FFC485700C20D4F /* AAC EventsTests */,
+				9BD4A4621FFC485700C20D4F /* AAC EventsUITests */,
+				9BD4A43E1FFC485700C20D4F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9BD4A43E1FFC485700C20D4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9BD4A43D1FFC485700C20D4F /* AAC Events.app */,
+				9BD4A4541FFC485700C20D4F /* AAC EventsTests.xctest */,
+				9BD4A45F1FFC485700C20D4F /* AAC EventsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9BD4A43F1FFC485700C20D4F /* AAC Events */ = {
+			isa = PBXGroup;
+			children = (
+				9BD4A4401FFC485700C20D4F /* AppDelegate.swift */,
+				9BD4A4421FFC485700C20D4F /* ViewController.swift */,
+				9BD4A4441FFC485700C20D4F /* Main.storyboard */,
+				9BD4A44A1FFC485700C20D4F /* Assets.xcassets */,
+				9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */,
+				9BD4A44F1FFC485700C20D4F /* Info.plist */,
+				9BD4A4471FFC485700C20D4F /* AAC_Events.xcdatamodeld */,
+			);
+			path = "AAC Events";
+			sourceTree = "<group>";
+		};
+		9BD4A4571FFC485700C20D4F /* AAC EventsTests */ = {
+			isa = PBXGroup;
+			children = (
+				9BD4A4581FFC485700C20D4F /* AAC_EventsTests.swift */,
+				9BD4A45A1FFC485700C20D4F /* Info.plist */,
+			);
+			path = "AAC EventsTests";
+			sourceTree = "<group>";
+		};
+		9BD4A4621FFC485700C20D4F /* AAC EventsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				9BD4A4631FFC485700C20D4F /* AAC_EventsUITests.swift */,
+				9BD4A4651FFC485700C20D4F /* Info.plist */,
+			);
+			path = "AAC EventsUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9BD4A43C1FFC485700C20D4F /* AAC Events */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BD4A4681FFC485700C20D4F /* Build configuration list for PBXNativeTarget "AAC Events" */;
+			buildPhases = (
+				9BD4A4391FFC485700C20D4F /* Sources */,
+				9BD4A43A1FFC485700C20D4F /* Frameworks */,
+				9BD4A43B1FFC485700C20D4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "AAC Events";
+			productName = "AAC Events";
+			productReference = 9BD4A43D1FFC485700C20D4F /* AAC Events.app */;
+			productType = "com.apple.product-type.application";
+		};
+		9BD4A4531FFC485700C20D4F /* AAC EventsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BD4A46B1FFC485700C20D4F /* Build configuration list for PBXNativeTarget "AAC EventsTests" */;
+			buildPhases = (
+				9BD4A4501FFC485700C20D4F /* Sources */,
+				9BD4A4511FFC485700C20D4F /* Frameworks */,
+				9BD4A4521FFC485700C20D4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BD4A4561FFC485700C20D4F /* PBXTargetDependency */,
+			);
+			name = "AAC EventsTests";
+			productName = "AAC EventsTests";
+			productReference = 9BD4A4541FFC485700C20D4F /* AAC EventsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		9BD4A45E1FFC485700C20D4F /* AAC EventsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9BD4A46E1FFC485700C20D4F /* Build configuration list for PBXNativeTarget "AAC EventsUITests" */;
+			buildPhases = (
+				9BD4A45B1FFC485700C20D4F /* Sources */,
+				9BD4A45C1FFC485700C20D4F /* Frameworks */,
+				9BD4A45D1FFC485700C20D4F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9BD4A4611FFC485700C20D4F /* PBXTargetDependency */,
+			);
+			name = "AAC EventsUITests";
+			productName = "AAC EventsUITests";
+			productReference = 9BD4A45F1FFC485700C20D4F /* AAC EventsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9BD4A4351FFC485700C20D4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Afghan American Conference";
+				TargetAttributes = {
+					9BD4A43C1FFC485700C20D4F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					9BD4A4531FFC485700C20D4F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9BD4A43C1FFC485700C20D4F;
+					};
+					9BD4A45E1FFC485700C20D4F = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 9BD4A43C1FFC485700C20D4F;
+					};
+				};
+			};
+			buildConfigurationList = 9BD4A4381FFC485700C20D4F /* Build configuration list for PBXProject "AAC Events" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 9BD4A4341FFC485700C20D4F;
+			productRefGroup = 9BD4A43E1FFC485700C20D4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9BD4A43C1FFC485700C20D4F /* AAC Events */,
+				9BD4A4531FFC485700C20D4F /* AAC EventsTests */,
+				9BD4A45E1FFC485700C20D4F /* AAC EventsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9BD4A43B1FFC485700C20D4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD4A44E1FFC485700C20D4F /* LaunchScreen.storyboard in Resources */,
+				9BD4A44B1FFC485700C20D4F /* Assets.xcassets in Resources */,
+				9BD4A4461FFC485700C20D4F /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD4A4521FFC485700C20D4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD4A45D1FFC485700C20D4F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9BD4A4391FFC485700C20D4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD4A4431FFC485700C20D4F /* ViewController.swift in Sources */,
+				9BD4A4411FFC485700C20D4F /* AppDelegate.swift in Sources */,
+				9BD4A4491FFC485700C20D4F /* AAC_Events.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD4A4501FFC485700C20D4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD4A4591FFC485700C20D4F /* AAC_EventsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9BD4A45B1FFC485700C20D4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9BD4A4641FFC485700C20D4F /* AAC_EventsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		9BD4A4561FFC485700C20D4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BD4A43C1FFC485700C20D4F /* AAC Events */;
+			targetProxy = 9BD4A4551FFC485700C20D4F /* PBXContainerItemProxy */;
+		};
+		9BD4A4611FFC485700C20D4F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9BD4A43C1FFC485700C20D4F /* AAC Events */;
+			targetProxy = 9BD4A4601FFC485700C20D4F /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		9BD4A4441FFC485700C20D4F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BD4A4451FFC485700C20D4F /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9BD4A44D1FFC485700C20D4F /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9BD4A4661FFC485700C20D4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		9BD4A4671FFC485700C20D4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		9BD4A4691FFC485700C20D4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "AAC Events/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AAC.AAC-Events";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9BD4A46A1FFC485700C20D4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "AAC Events/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AAC.AAC-Events";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		9BD4A46C1FFC485700C20D4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "AAC EventsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AAC.AAC-EventsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AAC Events.app/AAC Events";
+			};
+			name = Debug;
+		};
+		9BD4A46D1FFC485700C20D4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "AAC EventsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AAC.AAC-EventsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AAC Events.app/AAC Events";
+			};
+			name = Release;
+		};
+		9BD4A46F1FFC485700C20D4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "AAC EventsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AAC.AAC-EventsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AAC Events";
+			};
+			name = Debug;
+		};
+		9BD4A4701FFC485700C20D4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6AUN9FGGRZ;
+				INFOPLIST_FILE = "AAC EventsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "AAC.AAC-EventsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "AAC Events";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9BD4A4381FFC485700C20D4F /* Build configuration list for PBXProject "AAC Events" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD4A4661FFC485700C20D4F /* Debug */,
+				9BD4A4671FFC485700C20D4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BD4A4681FFC485700C20D4F /* Build configuration list for PBXNativeTarget "AAC Events" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD4A4691FFC485700C20D4F /* Debug */,
+				9BD4A46A1FFC485700C20D4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BD4A46B1FFC485700C20D4F /* Build configuration list for PBXNativeTarget "AAC EventsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD4A46C1FFC485700C20D4F /* Debug */,
+				9BD4A46D1FFC485700C20D4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9BD4A46E1FFC485700C20D4F /* Build configuration list for PBXNativeTarget "AAC EventsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9BD4A46F1FFC485700C20D4F /* Debug */,
+				9BD4A4701FFC485700C20D4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		9BD4A4471FFC485700C20D4F /* AAC_Events.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				9BD4A4481FFC485700C20D4F /* AAC_Events.xcdatamodel */,
+			);
+			currentVersion = 9BD4A4481FFC485700C20D4F /* AAC_Events.xcdatamodel */;
+			path = AAC_Events.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 9BD4A4351FFC485700C20D4F /* Project object */;
+}
