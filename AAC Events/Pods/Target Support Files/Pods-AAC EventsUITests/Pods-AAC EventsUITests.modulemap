@@ -1,0 +1,6 @@
+framework module Pods_AAC_EventsUITests {
+  umbrella header "Pods-AAC EventsUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
