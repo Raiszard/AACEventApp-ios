@@ -12,7 +12,7 @@
 		8AB6EB29DCA451E8FB717EBC /* Pods_AAC_EventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73703A89AB3B6CA9F12E142A /* Pods_AAC_EventsUITests.framework */; };
 		9BD4A4411FFC485700C20D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4401FFC485700C20D4F /* AppDelegate.swift */; };
 		9BD4A4431FFC485700C20D4F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4421FFC485700C20D4F /* ViewController.swift */; };
-		9BD4A4461FFC485700C20D4F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD4A4441FFC485700C20D4F /* Main.storyboard */; };
+		9BD4A4461FFC485700C20D4F /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD4A4441FFC485700C20D4F /* Login.storyboard */; };
 		9BD4A4491FFC485700C20D4F /* AAC_Events.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4471FFC485700C20D4F /* AAC_Events.xcdatamodeld */; };
 		9BD4A44B1FFC485700C20D4F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9BD4A44A1FFC485700C20D4F /* Assets.xcassets */; };
 		9BD4A44E1FFC485700C20D4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */; };
@@ -47,7 +47,7 @@
 		9BD4A43D1FFC485700C20D4F /* AAC Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AAC Events.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD4A4401FFC485700C20D4F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9BD4A4421FFC485700C20D4F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		9BD4A4451FFC485700C20D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		9BD4A4451FFC485700C20D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Login.storyboard; sourceTree = "<group>"; };
 		9BD4A4481FFC485700C20D4F /* AAC_Events.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AAC_Events.xcdatamodel; sourceTree = "<group>"; };
 		9BD4A44A1FFC485700C20D4F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9BD4A44D1FFC485700C20D4F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,7 +131,7 @@
 			children = (
 				9BD4A4401FFC485700C20D4F /* AppDelegate.swift */,
 				9BD4A4421FFC485700C20D4F /* ViewController.swift */,
-				9BD4A4441FFC485700C20D4F /* Main.storyboard */,
+				9BD4A4441FFC485700C20D4F /* Login.storyboard */,
 				9BD4A44A1FFC485700C20D4F /* Assets.xcassets */,
 				9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */,
 				9BD4A44F1FFC485700C20D4F /* Info.plist */,
@@ -286,7 +286,7 @@
 			files = (
 				9BD4A44E1FFC485700C20D4F /* LaunchScreen.storyboard in Resources */,
 				9BD4A44B1FFC485700C20D4F /* Assets.xcassets in Resources */,
-				9BD4A4461FFC485700C20D4F /* Main.storyboard in Resources */,
+				9BD4A4461FFC485700C20D4F /* Login.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -499,12 +499,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		9BD4A4441FFC485700C20D4F /* Main.storyboard */ = {
+		9BD4A4441FFC485700C20D4F /* Login.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				9BD4A4451FFC485700C20D4F /* Base */,
 			);
-			name = Main.storyboard;
+			name = Login.storyboard;
 			sourceTree = "<group>";
 		};
 		9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */ = {

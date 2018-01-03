@@ -10,6 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var logoImageView: UIImageView!
+    
+    @IBOutlet weak var facebookButton: UIButton!
+    @IBOutlet weak var skipButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -19,7 +24,14 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    @IBAction func facebookTapped(_ sender: Any) {
+        
+    }
+    
+    @IBAction func skipTapped(_ sender: Any) {
+        
+        
+    }
+    
 }
 
