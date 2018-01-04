@@ -6,6 +6,7 @@ target 'AAC Events' do
   use_frameworks!
 
 pod 'SDWebImage', '~> 4.0'
+pod 'InteractiveSideMenu'
 
   # Pods for AAC Events
 

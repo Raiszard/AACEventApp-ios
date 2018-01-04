@@ -24,13 +24,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func presentMainStoryBoard() {
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateInitialViewController() else { return }
+        present(vc, animated: true, completion: nil)
+
+    }
     @IBAction func facebookTapped(_ sender: Any) {
         
     }
     
     @IBAction func skipTapped(_ sender: Any) {
         
-        
+        presentMainStoryBoard()
     }
     
 }
