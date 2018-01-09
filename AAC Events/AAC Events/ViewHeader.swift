@@ -15,14 +15,11 @@ class ViewHeader: UIView {
     @IBOutlet weak var headerLabel: UILabel!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subTitleLabel: UILabel!
-    
-//    var title: String!
-//    var subtile: String?
-//    var imageURL: String?
-//    var image: UIImage?
-    
+
+    //determines if the titles should be centered
+    //true: center alignment, false: left
     var isProfile: Bool!
-    
+
     func createHeader(title: String, subtitle: String?, imageURL: String?, image: UIImage?, isProfile: Bool!) -> UIView {
         
         if subtitle != nil && !subtitle!.isEmpty {

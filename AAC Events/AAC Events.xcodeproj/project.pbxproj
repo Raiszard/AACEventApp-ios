@@ -25,6 +25,7 @@
 		9BD4A44E1FFC485700C20D4F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */; };
 		9BD4A4591FFC485700C20D4F /* AAC_EventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4581FFC485700C20D4F /* AAC_EventsTests.swift */; };
 		9BD4A4641FFC485700C20D4F /* AAC_EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4631FFC485700C20D4F /* AAC_EventsUITests.swift */; };
+		9BF38A572004462B0078FC59 /* CohortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF38A562004462B0078FC59 /* CohortsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +73,7 @@
 		9BD4A45F1FFC485700C20D4F /* AAC EventsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "AAC EventsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9BD4A4631FFC485700C20D4F /* AAC_EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAC_EventsUITests.swift; sourceTree = "<group>"; };
 		9BD4A4651FFC485700C20D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9BF38A562004462B0078FC59 /* CohortsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CohortsViewController.swift; sourceTree = "<group>"; };
 		C4D2BBC311FDAA57CD82B4BA /* Pods-AAC Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events.release.xcconfig"; sourceTree = "<group>"; };
 		E04F978DC78777E57C91B4E9 /* Pods-AAC EventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED42D10E5350A7ED22D9D288 /* Pods_AAC_EventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AAC_EventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 				9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */,
 				9B3C747B20004C0C0004A82A /* ViewHeader.swift */,
 				9B3C747D20004C2B0004A82A /* ViewHeader.xib */,
+				9BF38A562004462B0078FC59 /* CohortsViewController.swift */,
 				9BD4A44F1FFC485700C20D4F /* Info.plist */,
 				9BD4A4471FFC485700C20D4F /* AAC_Events.xcdatamodeld */,
 			);
@@ -494,6 +497,7 @@
 				9B3C74751FFDA9BD0004A82A /* TabBarViewController.swift in Sources */,
 				9BD4A4491FFC485700C20D4F /* AAC_Events.xcdatamodeld in Sources */,
 				9B3C747C20004C0C0004A82A /* ViewHeader.swift in Sources */,
+				9BF38A572004462B0078FC59 /* CohortsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
