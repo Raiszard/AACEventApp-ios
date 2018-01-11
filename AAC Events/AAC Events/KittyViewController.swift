@@ -37,7 +37,7 @@ class KittyViewController: UIViewController, SideMenuItemContent {
         let testImage = UIImage(named: "tempLogo")
         let header: ViewHeader = .fromNib()
 
-        let hView = header.createHeader(title: "Agenda", subtitle:nil, imageURL: nil, image: nil, isProfile: false)
+        let hView = header.createHeader(title: "About", subtitle:nil, imageURL: nil, image: nil, isProfile: false)
 
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)

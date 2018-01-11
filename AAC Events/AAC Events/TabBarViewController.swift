@@ -24,23 +24,35 @@ import InteractiveSideMenu
  */
 class TabBarViewController: UITabBarController, SideMenuItemContent {
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        let appearance = UITabBarItem.appearance()
+        let attributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont(name: "Avenir", size: 18)!, NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.lightGray]
+        appearance.setTitleTextAttributes(attributes, for: .normal)
+        
+        let selectedAttributes: [NSAttributedStringKey: Any] = [NSAttributedStringKey(rawValue: NSAttributedStringKey.font.rawValue):UIFont(name: "Avenir", size: 18)!, NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.black]
+        appearance.setTitleTextAttributes(selectedAttributes, for: .selected)
+
+
+    }
 }
 
 /*
  The first controller of tab bar.
  */
-class FirstViewController: UIViewController {
-
-    /*
-     Show menu on click if connected tab bar controller adopts proper protocol.
-     */
-    @IBAction func openMenu(_ sender: UIButton) {
-
-        if let menuItemViewController = self.tabBarController as? SideMenuItemContent {
-            menuItemViewController.showSideMenu()
-        }
-    }
-}
+//class FirstViewController: UIViewController {
+//
+//    /*
+//     Show menu on click if connected tab bar controller adopts proper protocol.
+//     */
+//    @IBAction func openMenu(_ sender: UIButton) {
+//
+//        if let menuItemViewController = self.tabBarController as? SideMenuItemContent {
+//            menuItemViewController.showSideMenu()
+//        }
+//    }
+//}
 
 /*
  The second controller of tab bar.

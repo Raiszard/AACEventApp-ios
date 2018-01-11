@@ -139,7 +139,7 @@
             </objects>
             <point key="canvasLocation" x="983" y="139"/>
         </scene>
-        <!--Playful cat-->
+        <!--My Schedule-->
         <scene sceneID="ma3-Q7-r5Q">
             <objects>
                 <viewController id="MXc-SW-tl5" customClass="SecondViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
@@ -156,7 +156,7 @@
                             </imageView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4R-sn-aDK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
-                                <color key="backgroundColor" red="0.27659601897689767" green="0.27531419289247383" blue="0.27266927657285167" alpha="0.3859592013888889" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
@@ -187,16 +187,18 @@
                             <constraint firstItem="ERA-XQ-g0N" firstAttribute="top" secondItem="mKv-5e-xGD" secondAttribute="top" constant="20" id="yio-oN-NEJ"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Playful cat" image="ic_tabbar_playful" id="lIw-Pi-PM9"/>
+                    <tabBarItem key="tabBarItem" title="My Schedule" id="lIw-Pi-PM9">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="-50" vertical="-12"/>
+                    </tabBarItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55C-pW-EdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2868" y="-315.29235382308849"/>
         </scene>
-        <!--Serious cat-->
+        <!--Agenda-->
         <scene sceneID="4CY-F8-Hla">
             <objects>
-                <viewController id="iRc-1w-4bY" customClass="FirstViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="iRc-1w-4bY" customClass="AgendaViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="keO-eE-tO7"/>
                         <viewControllerLayoutGuide type="bottom" id="CUQ-1S-wJj"/>
@@ -205,12 +207,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="serious cat" translatesAutoresizingMaskIntoConstraints="NO" id="YaS-Hu-v7i">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
                             <view contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="toC-UG-sI2">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
-                                <color key="backgroundColor" red="0.27659601897689767" green="0.27531419289247383" blue="0.27266927657285167" alpha="0.55054873511904767" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" notEnabled="YES"/>
                                 </accessibility>
@@ -223,29 +222,59 @@
                                 </constraints>
                                 <state key="normal" image="Menu"/>
                                 <connections>
-                                    <action selector="openMenu:" destination="iRc-1w-4bY" eventType="touchUpInside" id="o5c-XP-Qcd"/>
+                                    <action selector="openMenu:" destination="iRc-1w-4bY" eventType="touchUpInside" id="Qea-Az-hWr"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kFd-vJ-GbD">
+                                <rect key="frame" x="20" y="75" width="374" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="3wp-vw-CUY"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Friday"/>
+                                    <segment title="Saturday"/>
+                                    <segment title="Sunday"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="dayChanged:" destination="iRc-1w-4bY" eventType="valueChanged" id="FjP-Zi-EpN"/>
+                                </connections>
+                            </segmentedControl>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XkK-Bc-smG">
+                                <rect key="frame" x="157" y="106" width="100" height="2"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.023573720190000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="Uo4-CF-Aqe"/>
+                                    <constraint firstAttribute="height" constant="2" id="s88-Vx-UYC"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="toC-UG-sI2" firstAttribute="bottom" secondItem="I55-bD-oRY" secondAttribute="bottom" constant="3" id="5nJ-1g-1eb"/>
-                            <constraint firstItem="YaS-Hu-v7i" firstAttribute="top" secondItem="j8y-r6-qLd" secondAttribute="top" id="7oR-ES-nep"/>
-                            <constraint firstItem="YaS-Hu-v7i" firstAttribute="leading" secondItem="j8y-r6-qLd" secondAttribute="leading" id="CXm-j9-YtU"/>
-                            <constraint firstAttribute="trailing" secondItem="YaS-Hu-v7i" secondAttribute="trailing" id="EvG-Dg-g4R"/>
+                            <constraint firstItem="XkK-Bc-smG" firstAttribute="top" secondItem="kFd-vJ-GbD" secondAttribute="bottom" constant="3" id="FOV-CU-iW0"/>
+                            <constraint firstItem="XkK-Bc-smG" firstAttribute="centerX" secondItem="j8y-r6-qLd" secondAttribute="centerX" id="UnA-gj-VNi"/>
+                            <constraint firstItem="kFd-vJ-GbD" firstAttribute="top" secondItem="toC-UG-sI2" secondAttribute="bottom" constant="8" id="bO6-0z-1gm"/>
+                            <constraint firstItem="kFd-vJ-GbD" firstAttribute="leading" secondItem="j8y-r6-qLd" secondAttribute="leadingMargin" id="eKy-sB-98t"/>
                             <constraint firstItem="I55-bD-oRY" firstAttribute="leading" secondItem="j8y-r6-qLd" secondAttribute="leading" constant="6" id="haG-Lj-wf2"/>
+                            <constraint firstItem="kFd-vJ-GbD" firstAttribute="trailing" secondItem="j8y-r6-qLd" secondAttribute="trailingMargin" id="heU-W6-dKr"/>
                             <constraint firstItem="toC-UG-sI2" firstAttribute="leading" secondItem="j8y-r6-qLd" secondAttribute="leading" id="lvG-AB-XcK"/>
                             <constraint firstItem="toC-UG-sI2" firstAttribute="top" secondItem="j8y-r6-qLd" secondAttribute="top" id="po0-1I-K7D"/>
                             <constraint firstItem="I55-bD-oRY" firstAttribute="top" secondItem="j8y-r6-qLd" secondAttribute="top" constant="20" id="u7S-mk-jT8"/>
-                            <constraint firstAttribute="bottom" secondItem="YaS-Hu-v7i" secondAttribute="bottom" id="ue3-0f-oZM"/>
                             <constraint firstAttribute="trailing" secondItem="toC-UG-sI2" secondAttribute="trailing" id="wUc-KZ-QBN"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Serious cat" image="ic_tabbar_serious" id="3ke-p4-0Fq"/>
+                    <tabBarItem key="tabBarItem" title="Agenda" id="3ke-p4-0Fq">
+                        <offsetWrapper key="titlePositionAdjustment" horizontal="50" vertical="-12"/>
+                    </tabBarItem>
+                    <connections>
+                        <outlet property="daysSegmentedControl" destination="kFd-vJ-GbD" id="p3j-d2-uun"/>
+                        <outlet property="selectedBarCenterOffsetConstraint" destination="UnA-gj-VNi" id="diC-YV-ahS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uQF-IY-EKh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2868" y="-992.65367316341838"/>
+            <point key="canvasLocation" x="2866.666666666667" y="-992.93478260869574"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="d9m-RV-JGY">
@@ -254,7 +283,9 @@
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cbj-Yb-TBj">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="tintColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="iRc-1w-4bY" kind="relationship" relationship="viewControllers" id="U19-Z1-DnQ"/>
@@ -474,7 +505,7 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="358" id="nKc-kR-xKz"/>
                                 </constraints>
-                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
@@ -516,10 +547,7 @@
     </scenes>
     <resources>
         <image name="Menu" width="24" height="17"/>
-        <image name="ic_tabbar_playful" width="20" height="20"/>
-        <image name="ic_tabbar_serious" width="20" height="20"/>
         <image name="kitty" width="1620" height="1080"/>
         <image name="playful cat" width="500" height="375"/>
-        <image name="serious cat" width="1020" height="452"/>
     </resources>
 </document>
