@@ -25,7 +25,7 @@ import InteractiveSideMenu
 class NavigationMenuViewController: MenuViewController {
 
     let kCellReuseIdentifier = "MenuCell"
-    let menuItems = ["About", "Agenda", "Cohorts", "SponsorDetails"]
+    let menuItems = ["About", "Agenda", "Cohorts", "SponsorDetails", "Sponsor"]
 
     @IBOutlet weak var tableView: UITableView!
 
