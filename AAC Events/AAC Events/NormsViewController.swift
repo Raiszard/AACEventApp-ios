@@ -1,5 +1,5 @@
 //
-//  SponsorViewController.swift
+//  NormsViewController.swift
 //  AAC Events
 //
 //  Created by Omar M. Noorzay on 1/10/18.
@@ -10,12 +10,11 @@ import UIKit
 import InteractiveSideMenu
 import SDWebImage
 
-class SponsorViewController: UIViewController, SideMenuItemContent {
+class NormsViewController: UIViewController, SideMenuItemContent {
 
-    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerContainer: UIView!
     
-    var sponsorLevel: [String] = ["Diamond", "Platinum", "Gold", "Silver", "Lapis" ]
+    @IBOutlet weak var textView: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,7 +31,7 @@ class SponsorViewController: UIViewController, SideMenuItemContent {
         let testImage = UIImage(named: "tempLogo")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Sponsors", subtitle:nil, imageURL: nil, image: nil, isProfile: false)
+        let hView = header.createHeader(title: "Norms", subtitle:nil, imageURL: nil, image: nil, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -43,6 +42,7 @@ class SponsorViewController: UIViewController, SideMenuItemContent {
         headerContainer.addConstraint(NSLayoutConstraint(item: headerContainer, attribute: .trailing, relatedBy: .equal, toItem: hView, attribute: .trailing, multiplier: 1.0, constant: 0))
         
     }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -60,28 +60,4 @@ class SponsorViewController: UIViewController, SideMenuItemContent {
     }
     */
 
-}
-
-extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return sponsorLevel.count
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2 //SIAR TO UPDATE CODE: we need to make this conditional based on the number of items for each sponsor level in the json data
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sponsorLevel[section]
-    }
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "sponsorCell", for: indexPath)
-        
-        
-        //cell.textLabel?.text = String(indexPath.row)
-        
-        return cell
-    }
 }

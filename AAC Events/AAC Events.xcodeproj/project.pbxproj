@@ -30,6 +30,7 @@
 		9BD4A4591FFC485700C20D4F /* AAC_EventsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4581FFC485700C20D4F /* AAC_EventsTests.swift */; };
 		9BD4A4641FFC485700C20D4F /* AAC_EventsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4631FFC485700C20D4F /* AAC_EventsUITests.swift */; };
 		9BDC06C620072EE300F825E4 /* SponsorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC06C520072EE300F825E4 /* SponsorViewController.swift */; };
+		9BDC06C8200825D500F825E4 /* NormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC06C7200825D400F825E4 /* NormsViewController.swift */; };
 		9BF38A572004462B0078FC59 /* CohortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF38A562004462B0078FC59 /* CohortsViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +84,7 @@
 		9BD4A4631FFC485700C20D4F /* AAC_EventsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AAC_EventsUITests.swift; sourceTree = "<group>"; };
 		9BD4A4651FFC485700C20D4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BDC06C520072EE300F825E4 /* SponsorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorViewController.swift; sourceTree = "<group>"; };
+		9BDC06C7200825D400F825E4 /* NormsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormsViewController.swift; sourceTree = "<group>"; };
 		9BF38A562004462B0078FC59 /* CohortsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CohortsViewController.swift; sourceTree = "<group>"; };
 		C4D2BBC311FDAA57CD82B4BA /* Pods-AAC Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events.release.xcconfig"; sourceTree = "<group>"; };
 		E04F978DC78777E57C91B4E9 /* Pods-AAC EventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 				9B3D870F2006CEF000599D92 /* SessionTableViewCell.swift */,
 				9B3D87102006CEF000599D92 /* SessionTableViewCell.xib */,
 				9B3D87132006E70B00599D92 /* AgendaViewController.swift */,
+				9BDC06C7200825D400F825E4 /* NormsViewController.swift */,
 				9BD4A44F1FFC485700C20D4F /* Info.plist */,
 				9BD4A4471FFC485700C20D4F /* AAC_Events.xcdatamodeld */,
 			);
@@ -507,6 +510,7 @@
 			files = (
 				9BD4A4431FFC485700C20D4F /* ViewController.swift in Sources */,
 				9B3C746F1FFDA5370004A82A /* HostViewController.swift in Sources */,
+				9BDC06C8200825D500F825E4 /* NormsViewController.swift in Sources */,
 				9B3C746E1FFDA5370004A82A /* NavigationMenuViewController.swift in Sources */,
 				9B3C74761FFDA9BD0004A82A /* KittyViewController.swift in Sources */,
 				9BD4A4411FFC485700C20D4F /* AppDelegate.swift in Sources */,
