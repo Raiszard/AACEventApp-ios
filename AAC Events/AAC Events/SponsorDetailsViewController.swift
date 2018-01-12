@@ -8,7 +8,6 @@
 
 import UIKit
 import InteractiveSideMenu
-import SDWebImage
 
 class SponsorDetailsViewController: UIViewController, SideMenuItemContent {
 
