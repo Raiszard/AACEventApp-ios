@@ -30,9 +30,6 @@ class AgendaViewController: UIViewController {
         let attributes: [NSAttributedStringKey: Any] = [ NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.black]
         UISegmentedControl.appearance().setTitleTextAttributes(attributes, for: .normal)
         
-//        tableView.register(SessionTableViewCell.self, forCellReuseIdentifier: "sessionCell")
-//        self.tableView.registerNib(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "customCell")// CustomTableViewCell.self, forCellReuseIdentifier: "customCell")
-
         let cellnib = UINib(nibName: "SessionTableViewCell", bundle: nil)
         tableView.register(cellnib, forCellReuseIdentifier: "sessionCell")
         //go through the session arrays and create an array of items with a visable tag
@@ -61,7 +58,7 @@ class AgendaViewController: UIViewController {
         item2.subItems = ["3", "4"]
         item2.isExpandable = true
         item2.isVisable = true
-        item2.isExpanded = true
+        item2.isExpanded = false
         allAgendaItems.append(item2)
 
         let item3 = AgendaItem()
@@ -77,8 +74,8 @@ class AgendaViewController: UIViewController {
         allAgendaItems.append(item3)
 
         let item4 = AgendaItem()
-        item4.timeString = "5 - 7"
-        item4.amOrPm = "pm"
+        item4.timeString = ""
+        item4.amOrPm = ""
         item4.sessionName = "Session 4 name will go here"
         item4.sessionDescription = "this is another description"
         item4.id = "4"
@@ -88,8 +85,22 @@ class AgendaViewController: UIViewController {
         item4.isExpanded = false
         allAgendaItems.append(item4)
         
+        let item5 = AgendaItem()
+        item5.timeString = "7-8"
+        item5.amOrPm = "pm"
+        item5.sessionName = "Session 5 name will go here"
+        item5.sessionDescription = "this is another description"
+        item5.id = "5"
+        item5.subItems = []
+        item5.isExpandable = false
+        item5.isVisable = true
+        item5.isExpanded = false
+        allAgendaItems.append(item5)
+        
         visableAgendaItems.append(item1)
         visableAgendaItems.append(item2)
+        visableAgendaItems.append(item5)
+
 
         
     }
@@ -168,34 +179,97 @@ extension AgendaViewController: UITableViewDelegate, UITableViewDataSource {
             } else  {
                 imageToUse = "rightArrow"
             }
-            imageToUse = "ic_tabbar_playful"
         } else {
-//            imageToUse = "circlePlus"
-            imageToUse = "ic_tabbar_serious"
-
+            imageToUse = "circlePlus"
         }
         cell.disclosureButton.setImage(UIImage(named: imageToUse), for: .normal)
-
+        cell.disclosureButton.transform = CGAffineTransform(rotationAngle: 0)
+        cell.disclosureButton.tintColor = .black
+        cell.selectionStyle = .none
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         let currentItem = visableAgendaItems[indexPath.row]
-        
+        let currentCell = tableView.cellForRow(at: indexPath) as! SessionTableViewCell
         if currentItem.isExpandable {
             if currentItem.isExpanded {
                 var numberOfItemsToRemove = currentItem.subItems.count
+                var indexsToDelete:[IndexPath] = []
+
+                for i in 1...numberOfItemsToRemove {
+                    indexsToDelete.append(IndexPath(row: indexPath.row + i, section: 0))
+                }
                 while numberOfItemsToRemove > 0 {
                     visableAgendaItems.remove(at: indexPath.row + 1)
                     numberOfItemsToRemove -= 1
                 }
+                tableView.beginUpdates()
+                tableView.deleteRows(at: indexsToDelete, with: UITableViewRowAnimation.automatic)
+                
+                tableView.endUpdates()
+                //tableView.reloadData()
                 currentItem.isExpanded = false
+                UIView.animate(withDuration: 0.5, animations: {
+                    //TODO: image needs to be reset too? on scroll while expanded image gets stuck
+                    currentCell.disclosureButton.transform = CGAffineTransform(rotationAngle: 0)
+                    
+                }, completion: { (_) in
+                })
                 
             } else {
-                //TODO: add items to visable array
+                
+                //find agenda items to insert
+                var itemsToInsert:[AgendaItem] = []
+                for id: String in currentItem.subItems {
+                    for agendaItem: AgendaItem in allAgendaItems {
+                        if id == agendaItem.id {
+                            itemsToInsert.append(agendaItem)
+                        }
+                    }
+                }
+                if itemsToInsert.count > 0 {
+                    visableAgendaItems.insert(contentsOf: itemsToInsert, at: indexPath.row + 1)
+                    var indexsToInsert:[IndexPath] = []
+                    for index in indexPath.row + 1...indexPath.row + itemsToInsert.count {
+                        indexsToInsert.append(IndexPath(row: index, section: 0))
+                    }
+                    tableView.beginUpdates()
+                    tableView.insertRows(at: indexsToInsert, with: .automatic)
+
+                    tableView.endUpdates()
+//                    tableView.reloadData()
+                    
+                    UIView.animate(withDuration: 0.5, animations: {
+                        currentCell.disclosureButton.transform = CGAffineTransform(rotationAngle: .pi/2)
+
+                    }, completion: { (_) in
+                    })
+
+
+                    currentItem.isExpanded = true
+
+                } else {
+                    print("couldn't find any items with IDS:")
+                    print(currentItem.subItems)
+                    
+                }
             }
         }
+    }
+    
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
+        let cell  = tableView.cellForRow(at: indexPath)
+        cell!.contentView.backgroundColor = .clear
+    }
+    
+    func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
+        let cell  = tableView.cellForRow(at: indexPath)
+        cell!.contentView.backgroundColor = .clear
     }
 }
 

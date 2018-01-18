@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol SessionCellDelegate {
+    func didPressDisclosureButton(_sender: UIButton)
+    //TODO: hook up delegate
+}
 class SessionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var timeLabel: UILabel!
