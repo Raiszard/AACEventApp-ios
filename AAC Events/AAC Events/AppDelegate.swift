@@ -13,10 +13,53 @@ import CoreData
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    
+    var enrolledSessionIDs: [String] = []
 
+    func isEnrolledIn(sessionID: String) -> Bool {
+        
+        for id in enrolledSessionIDs {
+            if sessionID == id {
+                return true
+            }
+        }
+        
+        return false
+    }
+    func enrollInSession(sessionID: String) {
+        enrolledSessionIDs.append(sessionID)
+        UserDefaults.standard.set(enrolledSessionIDs, forKey: "enrolledSessions")
+    }
+    
+    func removeSession(sessionID:String) {
+        
+        var removingIndex: Int?
+        
+        for i in 0...enrolledSessionIDs.count - 1 {
+            let currentID = enrolledSessionIDs[i]
+            if currentID == sessionID {
+                removingIndex = i
+            }
+        }
+        guard removingIndex != nil else {
+            print("couldn't find enrolled session with ID: \(sessionID)")
+            return
+        }
+        enrolledSessionIDs.remove(at: removingIndex!)
+        UserDefaults.standard.set(enrolledSessionIDs, forKey: "enrolledSessions")
+
+    }
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        guard let sessions = UserDefaults.standard.array(forKey: "enrolledSessions") as? [String] else {
+            print("no enrolled sessions to retrieve")
+            return true
+        }
+        
+        enrolledSessionIDs = sessions
+        
         return true
     }
 

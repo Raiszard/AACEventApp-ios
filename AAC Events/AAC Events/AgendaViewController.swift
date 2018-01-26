@@ -147,60 +147,17 @@ class AgendaViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    func cellSelected(currentCell: SessionTableViewCell, indexPath: IndexPath) {
+        
+        guard let currentItem = currentCell.agendaItem else { return }
 
-}
-
-extension AgendaViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.visableAgendaItems.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath) as? SessionTableViewCell else {
-            return UITableViewCell()
-        }
-        
-        let currentItem = visableAgendaItems[indexPath.row]
-        
-        cell.timeLabel.text = currentItem.timeString
-        cell.amPMLabel.text = currentItem.amOrPm
-        cell.sessionNameLabel.text = currentItem.sessionName
-        cell.sessionDescriptionLabel.text = currentItem.sessionDescription
-        
-        var imageToUse = ""
-        if currentItem.isExpandable {
-            if currentItem.isExpanded {
-                imageToUse = "downArrow"
-            } else  {
-                imageToUse = "rightArrow"
-            }
-        } else {
-            imageToUse = "circlePlus"
-        }
-        cell.disclosureButton.setImage(UIImage(named: imageToUse), for: .normal)
-        cell.disclosureButton.transform = CGAffineTransform(rotationAngle: 0)
-        cell.disclosureButton.tintColor = .black
-        cell.selectionStyle = .none
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 60
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        let currentItem = visableAgendaItems[indexPath.row]
-        let currentCell = tableView.cellForRow(at: indexPath) as! SessionTableViewCell
+        //if cell is expandable expand/collapse it or if arrow button was tapped
         if currentItem.isExpandable {
             if currentItem.isExpanded {
                 var numberOfItemsToRemove = currentItem.subItems.count
                 var indexsToDelete:[IndexPath] = []
-
+                
                 for i in 1...numberOfItemsToRemove {
                     indexsToDelete.append(IndexPath(row: indexPath.row + i, section: 0))
                 }
@@ -240,26 +197,63 @@ extension AgendaViewController: UITableViewDelegate, UITableViewDataSource {
                     }
                     tableView.beginUpdates()
                     tableView.insertRows(at: indexsToInsert, with: .automatic)
-
+                    
                     tableView.endUpdates()
-//                    tableView.reloadData()
+                    //                    tableView.reloadData()
                     
                     UIView.animate(withDuration: 0.5, animations: {
                         currentCell.disclosureButton.transform = CGAffineTransform(rotationAngle: .pi/2)
-
+                        
                     }, completion: { (_) in
                     })
-
-
+                    
+                    
                     currentItem.isExpanded = true
-
+                    
                 } else {
                     print("couldn't find any items with IDS:")
                     print(currentItem.subItems)
                     
                 }
             }
+        } else {
+            //else push session details
+            print("need to push session details")
         }
+    }
+
+}
+
+extension AgendaViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.visableAgendaItems.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath) as? SessionTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        let currentItem = visableAgendaItems[indexPath.row]
+        
+        cell.agendaItem = currentItem
+        cell.delegate = self
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let cell = tableView.cellForRow(at: indexPath) as! SessionTableViewCell
+        self.cellSelected(currentCell: cell, indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
@@ -270,6 +264,37 @@ extension AgendaViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, didUnhighlightRowAt indexPath: IndexPath) {
         let cell  = tableView.cellForRow(at: indexPath)
         cell!.contentView.backgroundColor = .clear
+    }
+}
+
+extension AgendaViewController: SessionCellDelegate {
+    func didPressDisclosureButton(cell: SessionTableViewCell) {
+        
+        guard let cellsItem = cell.agendaItem else {
+            print("wtf?")
+            return
+        }
+        guard let indexPath = self.tableView.indexPath(for: cell) else {
+            print("couldn't find cell")
+            return
+        }
+        
+        if cellsItem.isExpandable {
+            self.cellSelected(currentCell: cell, indexPath: indexPath)
+            return
+        }
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let isEnrolled = appDelegate.isEnrolledIn(sessionID: cellsItem.id)
+        
+        if isEnrolled {
+            appDelegate.removeSession(sessionID: cellsItem.id)
+        } else {
+            appDelegate.enrollInSession(sessionID: cellsItem.id)
+        }
+        
+        self.tableView.reloadRows(at: [indexPath], with: .automatic)
+        
     }
 }
 

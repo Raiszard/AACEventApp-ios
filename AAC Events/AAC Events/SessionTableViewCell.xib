@@ -39,17 +39,21 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="248" verticalHuggingPriority="251" horizontalCompressionResistancePriority="736" text="Registration and Orientation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.69999999999999996" translatesAutoresizingMaskIntoConstraints="NO" id="qAB-zW-fWw">
-                        <rect key="frame" x="54.5" y="9" width="220.5" height="21"/>
+                        <rect key="frame" x="54.5" y="9" width="198.5" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="contactAdd" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ygO-ZQ-BZ4">
-                        <rect key="frame" x="282" y="18" width="22" height="22"/>
+                        <rect key="frame" x="260" y="7" width="44" height="44"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="22" id="X7T-pU-2q4"/>
-                            <constraint firstAttribute="height" constant="22" id="eQj-c7-4aL"/>
+                            <constraint firstAttribute="width" constant="44" id="X7T-pU-2q4"/>
+                            <constraint firstAttribute="height" constant="44" id="eQj-c7-4aL"/>
                         </constraints>
+                        <inset key="imageEdgeInsets" minX="11" minY="11" maxX="11" maxY="11"/>
+                        <connections>
+                            <action selector="disclosureButtonTapped:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="j7w-pU-Gj9"/>
+                        </connections>
                     </button>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uZM-LE-vQx">
                         <rect key="frame" x="0.0" y="58.5" width="320" height="1"/>
@@ -59,7 +63,7 @@
                         </constraints>
                     </view>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ackerman Grand Ballroom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.80000000000000004" translatesAutoresizingMaskIntoConstraints="NO" id="Jtm-a2-Sah">
-                        <rect key="frame" x="54.5" y="30" width="220.5" height="14.5"/>
+                        <rect key="frame" x="54.5" y="30" width="198.5" height="14.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="calibratedWhite"/>
                         <nil key="highlightedColor"/>
