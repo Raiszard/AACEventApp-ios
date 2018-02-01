@@ -111,6 +111,11 @@ class AgendaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.tableView.reloadData()
+    }
+    
     
     @IBAction func dayChanged(_ sender: UISegmentedControl) {
         
@@ -219,6 +224,12 @@ class AgendaViewController: UIViewController {
         } else {
             //else push session details
             print("need to push session details")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            guard let vc = storyboard.instantiateViewController(withIdentifier: "SessionDetails") as? SessionDetailsViewController else { return }
+            
+            vc.agendaItem = currentCell.agendaItem
+            present(vc, animated: true, completion: nil)
+
         }
     }
 
