@@ -142,7 +142,7 @@
         <!--My Schedule-->
         <scene sceneID="ma3-Q7-r5Q">
             <objects>
-                <viewController id="MXc-SW-tl5" customClass="SecondViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="MXc-SW-tl5" customClass="MyScheduleViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="8Tr-i3-2u6"/>
                         <viewControllerLayoutGuide type="bottom" id="pwe-Vf-fKs"/>
@@ -151,9 +151,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="playful cat" translatesAutoresizingMaskIntoConstraints="NO" id="Bnb-ow-Hxx">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                            </imageView>
                             <view opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g4R-sn-aDK">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="67"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -169,20 +166,76 @@
                                 </constraints>
                                 <state key="normal" image="Menu"/>
                                 <connections>
-                                    <action selector="openMenu:" destination="MXc-SW-tl5" eventType="touchUpInside" id="Wyz-4e-IBT"/>
+                                    <action selector="openMenu:" destination="MXc-SW-tl5" eventType="touchUpInside" id="zQC-bF-zB3"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="br1-gU-Bv2">
+                                <rect key="frame" x="0.0" y="67" width="414" height="172"/>
+                                <color key="backgroundColor" red="0.21076198060000001" green="1" blue="0.75646647590000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="GaM-h4-fQC"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubd-EB-hqf">
+                                <rect key="frame" x="157" y="275" width="100" height="2"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.023573720190000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="100" id="5Wl-B3-UVd"/>
+                                    <constraint firstAttribute="height" constant="2" id="PRp-PX-Kns"/>
+                                </constraints>
+                            </view>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="v64-2P-ElC">
+                                <rect key="frame" x="20" y="244" width="374" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="28" id="h9f-ag-1EZ"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Friday"/>
+                                    <segment title="Saturday"/>
+                                    <segment title="Sunday"/>
+                                </segments>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="dayChanged:" destination="MXc-SW-tl5" eventType="valueChanged" id="niP-Hz-Nqi"/>
+                                </connections>
+                            </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="45w-fv-kYV">
+                                <rect key="frame" x="0.0" y="285" width="414" height="402"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="sessionCell" id="nzU-Rz-TLE" customClass="SessionTableViewCell" customModule="AAC_Events" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="nzU-Rz-TLE" id="Zhj-8v-UkK">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="MXc-SW-tl5" id="YiX-c4-drH"/>
+                                    <outlet property="delegate" destination="MXc-SW-tl5" id="Q5R-Ty-njn"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="45w-fv-kYV" firstAttribute="leading" secondItem="mKv-5e-xGD" secondAttribute="leading" id="2aw-Vu-25T"/>
+                            <constraint firstItem="br1-gU-Bv2" firstAttribute="top" secondItem="g4R-sn-aDK" secondAttribute="bottom" id="3lT-NZ-Lbi"/>
+                            <constraint firstItem="ubd-EB-hqf" firstAttribute="centerX" secondItem="mKv-5e-xGD" secondAttribute="centerX" id="Aff-tY-xTK"/>
                             <constraint firstItem="g4R-sn-aDK" firstAttribute="bottom" secondItem="ERA-XQ-g0N" secondAttribute="bottom" constant="3" id="EaF-G6-evU"/>
-                            <constraint firstItem="Bnb-ow-Hxx" firstAttribute="top" secondItem="mKv-5e-xGD" secondAttribute="top" id="Tby-NP-ybX"/>
+                            <constraint firstAttribute="trailing" secondItem="45w-fv-kYV" secondAttribute="trailing" id="Oeh-9i-VTG"/>
+                            <constraint firstItem="v64-2P-ElC" firstAttribute="leading" secondItem="mKv-5e-xGD" secondAttribute="leadingMargin" id="Pvh-df-j3u"/>
+                            <constraint firstItem="v64-2P-ElC" firstAttribute="top" secondItem="br1-gU-Bv2" secondAttribute="bottom" constant="5" id="TUX-ua-TzE"/>
+                            <constraint firstItem="br1-gU-Bv2" firstAttribute="leading" secondItem="mKv-5e-xGD" secondAttribute="leading" id="XnC-sC-ms4"/>
                             <constraint firstItem="ERA-XQ-g0N" firstAttribute="leading" secondItem="mKv-5e-xGD" secondAttribute="leading" constant="6" id="ZVL-kv-kNf"/>
+                            <constraint firstAttribute="trailing" secondItem="br1-gU-Bv2" secondAttribute="trailing" id="aYK-WM-cUn"/>
                             <constraint firstAttribute="trailing" secondItem="g4R-sn-aDK" secondAttribute="trailing" id="cD2-hF-Hlh"/>
-                            <constraint firstAttribute="trailing" secondItem="Bnb-ow-Hxx" secondAttribute="trailing" id="dmN-Fb-ZHD"/>
+                            <constraint firstItem="ubd-EB-hqf" firstAttribute="top" secondItem="v64-2P-ElC" secondAttribute="bottom" constant="3" id="dxG-yt-e75"/>
+                            <constraint firstItem="45w-fv-kYV" firstAttribute="top" secondItem="ubd-EB-hqf" secondAttribute="bottom" constant="8" id="ePO-yB-eNj"/>
+                            <constraint firstItem="v64-2P-ElC" firstAttribute="trailing" secondItem="mKv-5e-xGD" secondAttribute="trailingMargin" id="fC3-wB-dq6"/>
                             <constraint firstItem="g4R-sn-aDK" firstAttribute="top" secondItem="mKv-5e-xGD" secondAttribute="top" id="l6N-OA-JNm"/>
-                            <constraint firstAttribute="bottom" secondItem="Bnb-ow-Hxx" secondAttribute="bottom" id="loX-cs-71k"/>
-                            <constraint firstItem="Bnb-ow-Hxx" firstAttribute="leading" secondItem="mKv-5e-xGD" secondAttribute="leading" id="sEV-X9-tvK"/>
+                            <constraint firstItem="pwe-Vf-fKs" firstAttribute="top" secondItem="45w-fv-kYV" secondAttribute="bottom" id="nUg-Wj-JSA"/>
                             <constraint firstItem="g4R-sn-aDK" firstAttribute="leading" secondItem="mKv-5e-xGD" secondAttribute="leading" id="ujt-ff-Gxd"/>
                             <constraint firstItem="ERA-XQ-g0N" firstAttribute="top" secondItem="mKv-5e-xGD" secondAttribute="top" constant="20" id="yio-oN-NEJ"/>
                         </constraints>
@@ -190,6 +243,12 @@
                     <tabBarItem key="tabBarItem" title="My Schedule" id="lIw-Pi-PM9">
                         <offsetWrapper key="titlePositionAdjustment" horizontal="-50" vertical="-12"/>
                     </tabBarItem>
+                    <connections>
+                        <outlet property="daysSegmentedControl" destination="v64-2P-ElC" id="HET-fr-aZJ"/>
+                        <outlet property="headerContainer" destination="g4R-sn-aDK" id="mHs-Md-DuF"/>
+                        <outlet property="selectedBarCenterConstraint" destination="Aff-tY-xTK" id="2fi-me-kuy"/>
+                        <outlet property="tableView" destination="45w-fv-kYV" id="ek9-Zg-Da0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="55C-pW-EdE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

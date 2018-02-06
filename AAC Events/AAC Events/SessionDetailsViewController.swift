@@ -62,6 +62,7 @@ class SessionDetailsViewController: UIViewController {
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
         label.sizeToFit()
+        label.frame.size.height = label.frame.height + 20 //more padding for description
         tableView.tableHeaderView = label
         
         locationLabel.text = "Room 123"
@@ -164,7 +165,7 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
+        //TODO: use global person data source with ID to populate this data
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         
         cell.textLabel?.text = "Person \(indexPath.row)"
