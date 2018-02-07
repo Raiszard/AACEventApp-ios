@@ -71,6 +71,7 @@ class AgendaViewController: UIViewController {
         item3.isExpandable = false
         item3.isVisable = false
         item3.isExpanded = false
+        item3.isSubItem = true
         allAgendaItems.append(item3)
 
         let item4 = AgendaItem()
@@ -83,6 +84,7 @@ class AgendaViewController: UIViewController {
         item4.isExpandable = false
         item4.isVisable = false
         item4.isExpanded = false
+        item4.isSubItem = true
         allAgendaItems.append(item4)
         
         let item5 = AgendaItem()
@@ -322,5 +324,7 @@ class AgendaItem: NSObject {
     var isExpandable = false
     
     var isExpanded = false
+    
+    var isSubItem = false
 
 }
