@@ -14,6 +14,9 @@
 		9B346A76202930DF004263CF /* MyScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B346A75202930DF004263CF /* MyScheduleViewController.swift */; };
 		9B346A78202A8BBF004263CF /* SpeakersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B346A77202A8BBE004263CF /* SpeakersViewController.swift */; };
 		9B346A7A202A979E004263CF /* PersonDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B346A79202A979E004263CF /* PersonDetailsViewController.swift */; };
+		9B346A7C202BE660004263CF /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B346A7B202BE660004263CF /* API.swift */; };
+		9B346A7E202BE869004263CF /* AttendeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B346A7D202BE869004263CF /* AttendeesViewController.swift */; };
+		9B346A80202BEE3C004263CF /* AttendeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B346A7F202BEE3C004263CF /* AttendeeTableViewCell.swift */; };
 		9B3C746B1FFDA5180004A82A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C746A1FFDA5180004A82A /* Main.storyboard */; };
 		9B3C746E1FFDA5370004A82A /* NavigationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C746C1FFDA5370004A82A /* NavigationMenuViewController.swift */; };
 		9B3C746F1FFDA5370004A82A /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C746D1FFDA5370004A82A /* HostViewController.swift */; };
@@ -69,6 +72,9 @@
 		9B346A75202930DF004263CF /* MyScheduleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyScheduleViewController.swift; sourceTree = "<group>"; };
 		9B346A77202A8BBE004263CF /* SpeakersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakersViewController.swift; sourceTree = "<group>"; };
 		9B346A79202A979E004263CF /* PersonDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonDetailsViewController.swift; sourceTree = "<group>"; };
+		9B346A7B202BE660004263CF /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		9B346A7D202BE869004263CF /* AttendeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesViewController.swift; sourceTree = "<group>"; };
+		9B346A7F202BEE3C004263CF /* AttendeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeeTableViewCell.swift; sourceTree = "<group>"; };
 		9B3C746A1FFDA5180004A82A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9B3C746C1FFDA5370004A82A /* NavigationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewController.swift; sourceTree = "<group>"; };
 		9B3C746D1FFDA5370004A82A /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
@@ -194,7 +200,10 @@
 				9BDC06C7200825D400F825E4 /* NormsViewController.swift */,
 				9B346A77202A8BBE004263CF /* SpeakersViewController.swift */,
 				9B346A79202A979E004263CF /* PersonDetailsViewController.swift */,
+				9B346A7D202BE869004263CF /* AttendeesViewController.swift */,
+				9B346A7F202BEE3C004263CF /* AttendeeTableViewCell.swift */,
 				9BDC06CF200839BE00F825E4 /* Models */,
+				9B346A7B202BE660004263CF /* API.swift */,
 				9BD4A44F1FFC485700C20D4F /* Info.plist */,
 				9BD4A4471FFC485700C20D4F /* AAC_Events.xcdatamodeld */,
 			);
@@ -538,9 +547,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B346A7C202BE660004263CF /* API.swift in Sources */,
 				9BDC06D5200839F500F825E4 /* Session.swift in Sources */,
 				9BD4A4431FFC485700C20D4F /* ViewController.swift in Sources */,
+				9B346A80202BEE3C004263CF /* AttendeeTableViewCell.swift in Sources */,
 				9B3C746F1FFDA5370004A82A /* HostViewController.swift in Sources */,
+				9B346A7E202BE869004263CF /* AttendeesViewController.swift in Sources */,
 				9BDC06C8200825D500F825E4 /* NormsViewController.swift in Sources */,
 				9B032940201ACF9900B94A74 /* SessionDetailsViewController.swift in Sources */,
 				9B3C746E1FFDA5370004A82A /* NavigationMenuViewController.swift in Sources */,

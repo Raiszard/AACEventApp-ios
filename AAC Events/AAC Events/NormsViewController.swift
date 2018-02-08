@@ -20,6 +20,8 @@ class NormsViewController: UIViewController, SideMenuItemContent {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        setupHeader()
     }
     
     @IBAction func openMenu(_ sender: UIButton) {
