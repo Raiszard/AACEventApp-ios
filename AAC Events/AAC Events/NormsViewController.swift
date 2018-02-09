@@ -16,14 +16,30 @@ class NormsViewController: UIViewController, SideMenuItemContent {
     
     @IBOutlet weak var textView: UITextView!
     
+    var activityIndicator: UIActivityIndicatorView!
+    var api: API!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         
+        activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .whiteLarge)
+        activityIndicator.color = .black
+        
+        activityIndicator.center = view.center
+        
+        api = API()
+        
         setupHeader()
+        
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        getNorms()
+
+    }
     @IBAction func openMenu(_ sender: UIButton) {
         showSideMenu()
     }
@@ -45,6 +61,26 @@ class NormsViewController: UIViewController, SideMenuItemContent {
         
     }
 
+    func getNorms() {
+        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+
+        api.retrieveNorms { (attrString) in
+            guard let check = attrString else {
+                print("error downloading norms")
+                //TODO: show alert
+                return
+            }
+            
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+                self.textView.attributedText = check
+            }
+        }
+        
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
