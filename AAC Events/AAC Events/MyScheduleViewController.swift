@@ -22,6 +22,7 @@ class MyScheduleViewController: UIViewController {
     @IBOutlet weak var selectedBarCenterConstraint: NSLayoutConstraint!
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
         daysSegmentedControl.backgroundColor = .clear
         daysSegmentedControl.tintColor = .clear
@@ -95,7 +96,8 @@ class MyScheduleViewController: UIViewController {
         item5.isExpanded = false
         allAgendaItems.append(item5)
         
-        
+        setupHeader()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -129,11 +131,11 @@ class MyScheduleViewController: UIViewController {
     }
     func setupHeader() {
         
-        //        let testImage = UIImage(named: "tempLogo")
+        let headerImage = UIImage(named: "myscheduleHeader")
         let header: ViewHeader = .fromNib()
         
         //TODO: get dates of event from somewhere
-        let hView = header.createHeader(title: "My Schedule", subtitle:"March 23-25", imageURL: nil, image: nil, isProfile: false)
+        let hView = header.createHeader(title: "My Schedule", subtitle:"March 23-25", imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
