@@ -19,6 +19,7 @@ class SponsorViewController: UIViewController, SideMenuItemContent {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupHeader()
 
         // Do any additional setup after loading the view.
     }
@@ -29,10 +30,10 @@ class SponsorViewController: UIViewController, SideMenuItemContent {
     
     func setupHeader() {
         
-        let testImage = UIImage(named: "tempLogo")
+        let headerImage = UIImage(named: "sponsorHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Sponsors", subtitle:nil, imageURL: nil, image: nil, isProfile: false)
+        let hView = header.createHeader(title: "Sponsors", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)

@@ -38,9 +38,9 @@ class AgendaViewController: UIViewController {
         //test data
         let item1 = AgendaItem()
         item1.timeString = "1-3"
-        item1.amOrPm = "pm"
-        item1.sessionName = "Session name will go here"
-        item1.sessionDescription = "this is the description"
+        item1.amOrPm = "PM"
+        item1.sessionName = "Registration & Icewarmers"
+        item1.sessionDescription = "Ackerman Grand Ballroom"
         item1.id = "1"
         item1.subItems = []
         item1.isExpandable = false
@@ -51,8 +51,8 @@ class AgendaViewController: UIViewController {
         
         let item2 = AgendaItem()
         item2.timeString = "3-4"
-        item2.amOrPm = "pm"
-        item2.sessionName = "Roundtable Discussions"
+        item2.amOrPm = "PM"
+        item2.sessionName = "Professional Panels"
         item2.sessionDescription = "Various"
         item2.id = "2"
         item2.subItems = ["3", "4"]
@@ -64,8 +64,8 @@ class AgendaViewController: UIViewController {
         let item3 = AgendaItem()
         item3.timeString = ""
         item3.amOrPm = ""
-        item3.sessionName = "Session 3 name will go here"
-        item3.sessionDescription = "this is description as well"
+        item3.sessionName = "Arts & Media"
+        item3.sessionDescription = "Room 123"
         item3.id = "3"
         item3.subItems = []
         item3.isExpandable = false
@@ -77,8 +77,8 @@ class AgendaViewController: UIViewController {
         let item4 = AgendaItem()
         item4.timeString = ""
         item4.amOrPm = ""
-        item4.sessionName = "Session 4 name will go here"
-        item4.sessionDescription = "this is another description"
+        item4.sessionName = "Finance & Consulting"
+        item4.sessionDescription = "Room 201"
         item4.id = "4"
         item4.subItems = []
         item4.isExpandable = false
@@ -89,9 +89,9 @@ class AgendaViewController: UIViewController {
         
         let item5 = AgendaItem()
         item5.timeString = "7-8"
-        item5.amOrPm = "pm"
-        item5.sessionName = "Session 5 name will go here"
-        item5.sessionDescription = "this is another description"
+        item5.amOrPm = "PM"
+        item5.sessionName = "Gender Dynamics: Misogny and Double Standards"
+        item5.sessionDescription = "Room 301"
         item5.id = "5"
         item5.subItems = []
         item5.isExpandable = false

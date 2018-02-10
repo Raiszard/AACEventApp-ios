@@ -18,7 +18,7 @@ class CohortsViewController: UIViewController, SideMenuItemContent {
     }
     @IBOutlet weak var tableView: UITableView!
     
-    var cohortTitles: [String] = ["Cohort 1", "Cohort 2", "Cohort 3", "Cohort 4", "Cohort 5", "Cohort 6", "Cohort 7", "Cohort 8", "Cohort 9", "Cohort 10", "Cohort 11", "Cohort 12", "Cohort 13", "Cohort 14", "Cohort 15", "Cohort 16","Cohort 17", "Cohort 18", "Cohort 19", "Cohort 20"]
+    var cohortTitles: [String] = ["Cohort 0", "Cohort 2", "Cohort 3", "Cohort 4", "Cohort 5", "Cohort 6", "Cohort 7", "Cohort 8", "Cohort 9", "Cohort 10", "Cohort 11", "Cohort 12", "Cohort 13", "Cohort 14", "Cohort 15", "Cohort 16","Cohort 17", "Cohort 18", "Cohort 19", "Cohort 20"]
     
     var evaulationLink = "www.goggle.com"
     
@@ -38,10 +38,10 @@ class CohortsViewController: UIViewController, SideMenuItemContent {
 
     func setupHeader() {
         
-        let testImage = UIImage(named: "tempLogo")
+        let headerImage = UIImage(named: "cohortHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Cohorts", subtitle:nil, imageURL: nil, image: nil, isProfile: false)
+        let hView = header.createHeader(title: "Cohorts", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
