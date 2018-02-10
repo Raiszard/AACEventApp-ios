@@ -32,22 +32,22 @@
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvZ-xm-wy3">
-                    <rect key="frame" x="16" y="52" width="343" height="21"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XvZ-xm-wy3">
+                    <rect key="frame" x="16" y="50" width="343" height="43"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="21" id="5O1-F0-xk0"/>
+                        <constraint firstAttribute="height" constant="43" id="5O1-F0-xk0"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="28"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="34"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZT-OJ-gp3">
-                    <rect key="frame" x="16" y="86" width="343" height="21"/>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7ZT-OJ-gp3">
+                    <rect key="frame" x="16" y="96" width="343" height="21"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="21" id="Qa6-gW-NOC"/>
                     </constraints>
-                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="24"/>
-                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="14"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="0.91000000000000003" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
             </subviews>
@@ -55,13 +55,13 @@
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pUn-sv-hx8" secondAttribute="bottom" id="3LR-Ly-WBV"/>
                 <constraint firstItem="XvZ-xm-wy3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="9df-QG-yAo"/>
-                <constraint firstItem="XvZ-xm-wy3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="52" id="BKe-cy-Jjx"/>
+                <constraint firstItem="XvZ-xm-wy3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="BKe-cy-Jjx"/>
                 <constraint firstItem="7ZT-OJ-gp3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Ik6-uN-dDY"/>
                 <constraint firstItem="pUn-sv-hx8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="JNE-qG-p6X"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pUn-sv-hx8" secondAttribute="trailing" id="Uwg-8W-Nfv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XvZ-xm-wy3" secondAttribute="trailing" constant="16" id="Wl3-Ng-UsL"/>
                 <constraint firstItem="pUn-sv-hx8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="c0b-em-hZT"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7ZT-OJ-gp3" secondAttribute="bottom" constant="65" id="iao-9V-VgD"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7ZT-OJ-gp3" secondAttribute="bottom" constant="55" id="iao-9V-VgD"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7ZT-OJ-gp3" secondAttribute="trailing" constant="16" id="yrw-M2-Y6r"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

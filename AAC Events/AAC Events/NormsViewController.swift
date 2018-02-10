@@ -46,10 +46,10 @@ class NormsViewController: UIViewController, SideMenuItemContent {
     
     func setupHeader() {
         
-        let testImage = UIImage(named: "tempLogo")
+        let headerImage = UIImage(named: "normsHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Norms", subtitle:nil, imageURL: nil, image: nil, isProfile: false)
+        let hView = header.createHeader(title: "Norms", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)

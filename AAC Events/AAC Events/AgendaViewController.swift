@@ -11,6 +11,7 @@ import InteractiveSideMenu
 
 class AgendaViewController: UIViewController {
 
+    @IBOutlet weak var headerContainer: UIView!
     @IBOutlet weak var daysSegmentedControl: UISegmentedControl!
     @IBOutlet weak var selectedBarCenterOffsetConstraint: NSLayoutConstraint!
     
@@ -21,6 +22,7 @@ class AgendaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setupHeader()
 
         // Do any additional setup after loading the view.
         
@@ -37,8 +39,8 @@ class AgendaViewController: UIViewController {
         
         //test data
         let item1 = AgendaItem()
-        item1.timeString = "1-3"
-        item1.amOrPm = "PM"
+        item1.timeString = "1:30 PM"
+        item1.amOrPm = "3:30 PM"
         item1.sessionName = "Registration & Icewarmers"
         item1.sessionDescription = "Ackerman Grand Ballroom"
         item1.id = "1"
@@ -50,8 +52,8 @@ class AgendaViewController: UIViewController {
         allAgendaItems.append(item1)
         
         let item2 = AgendaItem()
-        item2.timeString = "3-4"
-        item2.amOrPm = "PM"
+        item2.timeString = "1:00 PM"
+        item2.amOrPm = "2:00 PM"
         item2.sessionName = "Professional Panels"
         item2.sessionDescription = "Various"
         item2.id = "2"
@@ -77,7 +79,7 @@ class AgendaViewController: UIViewController {
         let item4 = AgendaItem()
         item4.timeString = ""
         item4.amOrPm = ""
-        item4.sessionName = "Finance & Consulting"
+        item4.sessionName = "Community Organizing in the Afghan-American Diaspora: Cultural Events, Sports, and Activism"
         item4.sessionDescription = "Room 201"
         item4.id = "4"
         item4.subItems = []
@@ -88,8 +90,8 @@ class AgendaViewController: UIViewController {
         allAgendaItems.append(item4)
         
         let item5 = AgendaItem()
-        item5.timeString = "7-8"
-        item5.amOrPm = "PM"
+        item5.timeString = "4:30 PM"
+        item5.amOrPm = "5:40 PM"
         item5.sessionName = "Gender Dynamics: Misogny and Double Standards"
         item5.sessionDescription = "Room 301"
         item5.id = "5"
@@ -116,6 +118,23 @@ class AgendaViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
+    }
+    
+    func setupHeader() {
+        
+        let headerImage = UIImage(named: "agendaHeader")
+        let header: ViewHeader = .fromNib()
+        
+        let hView = header.createHeader(title: "Agenda", subtitle:"March 23 - 25", imageURL: nil, image: headerImage, isProfile: false)
+        
+        hView.translatesAutoresizingMaskIntoConstraints = false
+        headerContainer.addSubview(hView)
+        
+        headerContainer.addConstraint(NSLayoutConstraint(item: hView, attribute: .top, relatedBy: .equal, toItem: headerContainer, attribute: .top, multiplier: 1.0, constant: 0))
+        headerContainer.addConstraint(NSLayoutConstraint(item: hView, attribute: .leading, relatedBy: .equal, toItem: headerContainer, attribute: .leading, multiplier: 1.0, constant: 0))
+        headerContainer.addConstraint(NSLayoutConstraint(item: headerContainer, attribute: .bottom, relatedBy: .equal, toItem: hView, attribute: .bottom, multiplier: 1.0, constant: 0))
+        headerContainer.addConstraint(NSLayoutConstraint(item: headerContainer, attribute: .trailing, relatedBy: .equal, toItem: hView, attribute: .trailing, multiplier: 1.0, constant: 0))
+        
     }
     
     
