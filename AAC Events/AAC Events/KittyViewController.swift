@@ -34,10 +34,10 @@ class KittyViewController: UIViewController, SideMenuItemContent {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let testImage = UIImage(named: "aboutHeader")
+        let testImage = UIImage(named: "aboutHeader2")
         let header: ViewHeader = .fromNib()
 
-        let hView = header.createHeader(title: "About", subtitle:nil, imageURL: nil, image: testImage, isProfile: false)
+        let hView = header.createHeader(title: "About (Delete)", subtitle:nil, imageURL: nil, image: testImage, isProfile: false)
 
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
