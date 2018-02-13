@@ -18,7 +18,11 @@ class CohortsViewController: UIViewController, SideMenuItemContent {
     }
     @IBOutlet weak var tableView: UITableView!
     
-    var cohortTitles: [String] = ["Cohort 0", "Cohort 2", "Cohort 3", "Cohort 4", "Cohort 5", "Cohort 6", "Cohort 7", "Cohort 8", "Cohort 9", "Cohort 10", "Cohort 11", "Cohort 12", "Cohort 13", "Cohort 14", "Cohort 15", "Cohort 16","Cohort 17", "Cohort 18", "Cohort 19", "Cohort 20"]
+    var api: API!
+
+    var cohorts: [Cohort] = []
+    
+//    var cohortTitles: [String] = ["Cohort 0", "Cohort 2", "Cohort 3", "Cohort 4", "Cohort 5", "Cohort 6", "Cohort 7", "Cohort 8", "Cohort 9", "Cohort 10", "Cohort 11", "Cohort 12", "Cohort 13", "Cohort 14", "Cohort 15", "Cohort 16","Cohort 17", "Cohort 18", "Cohort 19", "Cohort 20"]
     
     var evaulationLink = "www.goggle.com"
     
@@ -27,6 +31,10 @@ class CohortsViewController: UIViewController, SideMenuItemContent {
 
         // Do any additional setup after loading the view.
         setupHeader()
+        
+        api = API()
+        
+        getCohorts()
         
     }
 
@@ -67,30 +75,90 @@ class CohortsViewController: UIViewController, SideMenuItemContent {
         }
     }
     
+    func getCohorts() {
+        api.retrieveCohorts { (apiCohorts, evalLink) in
+            if apiCohorts != nil {
+                self.cohorts = apiCohorts!
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+            if evalLink != nil {
+                self.evaulationLink = evalLink!
+            }
+        }
+    }
+    
 }
 extension CohortsViewController: UITableViewDelegate, UITableViewDataSource {
     
     //TODO: use cohorts data model instead of hard coding
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return cohortTitles.count
+        return cohorts.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return cohorts[section].peopleArray.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return cohortTitles[section]
+        return cohorts[section].title
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+//        let screenWidth = tableView.frame.width
+//        let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 50))
+//        let line = UIView(frame: CGRect(x: 20, y: 49, width: screenWidth - 40, height: 1))
+//        line.backgroundColor = .gray
+
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir", size: 20)
+        let title = cohorts[section].title
+        label.text = title
+        label.backgroundColor = .white
+        return label
+        
+//        view.addSubview(line)
+//        view.addSubview(label)
+//
+//        return view
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cohortCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "cohortCell", for: indexPath) as? CohortTableViewCell else {
+            return UITableViewCell()
+        }
         
 //        let cohortItem = cohorts[indexPath.section][indexPath.row]
 //        cell.imageView?.sd_setImage(with: cohortItem.imageURL, completed: nil)
 //        cell.textLabel?.text = cohortItem.name
+        
+        let cohort = cohorts[indexPath.section]
+        let person = cohort.peopleArray[indexPath.row]
+        
 
-        cell.textLabel?.text = "Person " + String(indexPath.row) + " name in cohort #: " + String(indexPath.section + 1)
+//        cell.textLabel?.text = "Person " + String(indexPath.row) + " name in cohort #: " + String(indexPath.section + 1)
+        
+        cell.label?.text = person.name
+        
+        cell.profileImage?.contentMode = .scaleAspectFill
+        
+        cell.profileImage?.layer.cornerRadius = 44/2
+        
+        if let url = URL(string: person.imageURL){
+            cell.profileImage?.sd_setImage(with: url, completed: { (image, error, _, returnURL) in
+                if error == nil {
+                    cell.profileImage?.image = image
+                    cell.profileImage?.clipsToBounds = true
+//                    cell.profileImage?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/4
+                    cell.setNeedsLayout()
+                    
+                }
+            })
+
+        }
+        
         
         return cell
     }

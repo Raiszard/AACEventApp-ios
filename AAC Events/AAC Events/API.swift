@@ -13,6 +13,8 @@ typealias JsonDict = Dictionary<String, AnyObject>
 
 let attendeesURL = "https://dl.dropboxusercontent.com/s/5sblpkzw1jztj7e/Attendees.json?dl=0"
 let normsURL = "https://dl.dropboxusercontent.com/s/uq60dx5orq43gm3/Norms.json?dl=0"
+let cohortsURL = "https://dl.dropboxusercontent.com/s/327zw02plurg73o/Cohorts.json?dl=0"
+
 class API: NSObject {
 
     
@@ -91,6 +93,42 @@ class API: NSObject {
             } else {
                 print(error!.localizedDescription)
                 callback(nil)
+            }
+        }
+    }
+    
+    func retrieveCohorts (callback: @escaping (([Cohort]?, String?) -> ())) {
+        
+        retrieveData(url: cohortsURL) { (jsonResponse, error) in
+            if error == nil {
+                //parse json
+                print(jsonResponse!)
+                guard let dict = jsonResponse as? JsonDict else {
+                    print("couldn't create dictionary")
+                    callback(nil, nil)
+                    return
+                }
+                let evalLink = dict["evaluationLink"] as? String
+                
+                guard let cohortsDict = dict["cohorts"] as? [JsonDict] else {
+                    print("not a cohort array")
+                    callback(nil, nil)
+                    return
+                }
+                var cohortsArray: [Cohort] = []
+                
+                for cohortDict in cohortsDict {
+                    if let currentCohort = Cohort.init(cohortDict: cohortDict) {
+                        cohortsArray.append(currentCohort)
+                    }
+                    
+                }
+                
+                callback(cohortsArray, evalLink)
+                
+            } else {
+                print(error!.localizedDescription)
+                callback(nil, nil)
             }
         }
     }
