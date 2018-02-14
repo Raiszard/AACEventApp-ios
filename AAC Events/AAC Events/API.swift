@@ -14,6 +14,7 @@ typealias JsonDict = Dictionary<String, AnyObject>
 let attendeesURL = "https://dl.dropboxusercontent.com/s/5sblpkzw1jztj7e/Attendees.json?dl=0"
 let normsURL = "https://dl.dropboxusercontent.com/s/uq60dx5orq43gm3/Norms.json?dl=0"
 let cohortsURL = "https://dl.dropboxusercontent.com/s/327zw02plurg73o/Cohorts.json?dl=0"
+let peopleURL = "https://dl.dropboxusercontent.com/s/pfn13llarhsmsn6/PeopleList.json?dl=0"
 
 class API: NSObject {
 
@@ -196,6 +197,37 @@ class API: NSObject {
                 }
                 
                 callback(runningAttrString)
+                
+            } else {
+                print(error!.localizedDescription)
+                callback(nil)
+            }
+        }
+    }
+    
+    func retrievePeople(callback: @escaping (([PeopleList]?) -> ())) {
+        
+        retrieveData(url: peopleURL) { (jsonResponse, error) in
+            if error == nil {
+                //parse json
+                print(jsonResponse!)
+                guard let dict = jsonResponse as? [JsonDict] else {
+                    print("couldn't create dictionary")
+                    callback(nil)
+                    return
+                }
+                
+                var returningPeopleList: [PeopleList] = []
+                
+                for currentDict in dict {
+                    if let list = PeopleList.init(dict: currentDict) {
+                        returningPeopleList.append(list)
+                    }
+                    
+                }
+                
+                callback(returningPeopleList)
+                
                 
             } else {
                 print(error!.localizedDescription)

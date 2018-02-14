@@ -13,9 +13,25 @@ class SpeakersViewController: UIViewController, SideMenuItemContent {
     @IBOutlet weak var headerContainer: UIView!
     @IBOutlet weak var tableView: UITableView!
     
+    var peopleLists: [PeopleList]!
+    
+    var currentSegment = 0
+    
+    var api: API!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        api = API()
+        
+        api.retrievePeople { (peeps) in
+            if peeps != nil {
+                self.peopleLists = peeps!
+                DispatchQueue.main.async {
+                    self.tableView.reloadData()
+                }
+            }
+        }
         setupHeader()
         // Do any additional setup after loading the view.
     }
@@ -41,8 +57,17 @@ class SpeakersViewController: UIViewController, SideMenuItemContent {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func segmentChanged(_ sender: Any) {
+    
+    @IBAction func segmentChanged(_ sender: UISegmentedControl) {
+        
+        self.currentSegment = sender.selectedSegmentIndex
+        self.tableView.reloadData()
     }
+    
+//    @IBAction func segmentChanged(_ sender: Any) {
+//
+//        self.tableView.reloadData()
+//    }
     @IBAction func openMenu(_ sender: UIButton) {
         
         showSideMenu()
@@ -72,7 +97,14 @@ extension SpeakersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 4
+        if peopleLists != nil {
+            let peoplelist = peopleLists[currentSegment]
+            if peoplelist != nil {
+                return peoplelist.peopleArray.count
+            }
+        }
+        
+        return 0
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -81,11 +113,28 @@ extension SpeakersViewController: UITableViewDataSource, UITableViewDelegate {
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "personCell") else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "personCell") as? PersonTableViewCell else {
             return UITableViewCell()
         }
+        let peopleList = peopleLists[currentSegment]
+        let person = peopleList.peopleArray[indexPath.row]
         
-        cell.textLabel?.text = "Person: \(indexPath.row)"
+        cell.nameLabel.text = person.name
+        
+        cell.personImageView.layer.cornerRadius = 44/2
+
+        if let url = URL(string: person.imageURL){
+            cell.personImageView?.sd_setImage(with: url, completed: { (image, error, _, returnURL) in
+                if error == nil {
+                    cell.personImageView?.image = image
+                    cell.personImageView?.clipsToBounds = true
+                    //                    cell.profileImage?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/4
+                    cell.setNeedsLayout()
+                    
+                }
+            })
+        }
+
         
         return cell
     }
@@ -95,7 +144,14 @@ extension SpeakersViewController: UITableViewDataSource, UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetails") as? PersonDetailsViewController else { return }
         
-        vc.name = "Person: \(indexPath.row)"
+        let person = self.peopleLists[currentSegment].peopleArray[indexPath.row]
+        
+        vc.name = person.name
+        vc.personDescription = person.personDescription
+        vc.personTitle = person.title
+        vc.sessionIDs = person.sessionIDs
+        vc.imageURL = person.imageURL
+        
         present(vc, animated: true, completion: nil)
 
         

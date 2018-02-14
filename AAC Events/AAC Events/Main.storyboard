@@ -190,33 +190,49 @@
                                         </segments>
                                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <action selector="segmentChanged:" destination="Fcx-u5-ZLR" eventType="valueChanged" id="EkU-tL-110"/>
+                                            <action selector="segmentChanged:" destination="Fcx-u5-ZLR" eventType="valueChanged" id="tOk-n1-nCe"/>
                                         </connections>
                                     </segmentedControl>
-                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8H1-7r-TRC">
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="60" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="8H1-7r-TRC">
                                         <rect key="frame" x="0.0" y="285" width="414" height="402"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <prototypes>
-                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" textLabel="caq-Up-rHm" imageView="Ibz-kU-stB" style="IBUITableViewCellStyleDefault" id="LKq-ie-XLH">
-                                                <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="personCell" id="LKq-ie-XLH" customClass="PersonTableViewCell" customModule="AAC_Events" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="414" height="60"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LKq-ie-XLH" id="z79-MH-olB">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="60"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
-                                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="caq-Up-rHm">
-                                                            <rect key="frame" x="50" y="0.0" width="349" height="44"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lD1-GE-KGd">
+                                                            <rect key="frame" x="15" y="9" width="42" height="42"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="42" id="L8h-Ki-MNk"/>
+                                                                <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="42" id="OoB-dt-jvY"/>
+                                                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="42" id="cv3-Gl-eb5"/>
+                                                                <constraint firstAttribute="height" constant="42" id="u1U-QO-EFQ"/>
+                                                            </constraints>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mYP-Vc-URe">
+                                                            <rect key="frame" x="65" y="8" width="334" height="44"/>
+                                                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" image="ic_tabbar_serious" id="Ibz-kU-stB">
-                                                            <rect key="frame" x="15" y="12" width="20" height="20"/>
-                                                            <autoresizingMask key="autoresizingMask"/>
-                                                        </imageView>
                                                     </subviews>
+                                                    <constraints>
+                                                        <constraint firstItem="mYP-Vc-URe" firstAttribute="leading" secondItem="lD1-GE-KGd" secondAttribute="trailing" constant="8" id="4MN-aW-bB6"/>
+                                                        <constraint firstAttribute="bottom" secondItem="mYP-Vc-URe" secondAttribute="bottom" constant="8" id="FuN-QV-aNr"/>
+                                                        <constraint firstAttribute="trailing" secondItem="mYP-Vc-URe" secondAttribute="trailing" constant="15" id="I0r-KO-gPW"/>
+                                                        <constraint firstItem="lD1-GE-KGd" firstAttribute="centerY" secondItem="z79-MH-olB" secondAttribute="centerY" id="n6P-pQ-H87"/>
+                                                        <constraint firstItem="mYP-Vc-URe" firstAttribute="top" secondItem="z79-MH-olB" secondAttribute="top" constant="8" id="n9m-x4-NWO"/>
+                                                        <constraint firstItem="lD1-GE-KGd" firstAttribute="leading" secondItem="z79-MH-olB" secondAttribute="leading" constant="15" id="nlC-F5-loW"/>
+                                                    </constraints>
                                                 </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="nameLabel" destination="mYP-Vc-URe" id="ylq-JZ-peV"/>
+                                                    <outlet property="personImageView" destination="lD1-GE-KGd" id="nHL-SJ-k44"/>
+                                                </connections>
                                             </tableViewCell>
                                         </prototypes>
                                         <connections>
@@ -259,7 +275,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="275-VO-XP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1761" y="867"/>
+            <point key="canvasLocation" x="1760.8695652173915" y="866.57608695652186"/>
         </scene>
         <!--Person Details View Controller-->
         <scene sceneID="T4c-fN-g87">
@@ -316,7 +332,7 @@
                                 </constraints>
                             </view>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-ah-9Tu">
-                                <rect key="frame" x="147" y="180" width="120" height="120"/>
+                                <rect key="frame" x="147" y="186" width="120" height="120"/>
                                 <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="120" id="Egg-Xr-D6F"/>
@@ -324,7 +340,7 @@
                                 </constraints>
                             </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="bxe-Uc-3Db">
-                                <rect key="frame" x="0.0" y="308" width="414" height="428"/>
+                                <rect key="frame" x="0.0" y="314" width="414" height="422"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <connections>
                                     <outlet property="dataSource" destination="fvE-mq-Fwo" id="Rr1-PX-M7T"/>
@@ -344,7 +360,7 @@
                             <constraint firstAttribute="trailing" secondItem="bxe-Uc-3Db" secondAttribute="trailing" id="WrQ-l9-c5J"/>
                             <constraint firstItem="bxe-Uc-3Db" firstAttribute="top" secondItem="Fqn-ah-9Tu" secondAttribute="bottom" constant="8" id="Wuq-Ok-gWL"/>
                             <constraint firstItem="vPT-fx-5zL" firstAttribute="leading" secondItem="bFa-RF-zUb" secondAttribute="leading" id="mzO-BU-NB1"/>
-                            <constraint firstItem="Fqn-ah-9Tu" firstAttribute="top" secondItem="vPT-fx-5zL" secondAttribute="bottom" constant="-60" id="s0P-pE-9aK"/>
+                            <constraint firstItem="Fqn-ah-9Tu" firstAttribute="top" secondItem="vPT-fx-5zL" secondAttribute="bottom" constant="-54" id="s0P-pE-9aK"/>
                             <constraint firstAttribute="trailing" secondItem="vPT-fx-5zL" secondAttribute="trailing" id="znc-hh-yvo"/>
                         </constraints>
                     </view>
@@ -1838,7 +1854,7 @@
 YnBsaXN0MDDUAQIDBAUGPT5YJHZlcnNpb25YJG9iamVjdHNZJGFyY2hpdmVyVCR0b3ASAAGGoK4HCBMU
 GR4fIyQrLjE3OlUkbnVsbNUJCgsMDQ4PEBESVk5TU2l6ZVYkY2xhc3NcTlNJbWFnZUZsYWdzVk5TUmVw
 c1dOU0NvbG9ygAKADRIgwAAAgAOAC1h7MjQsIDE3fdIVChYYWk5TLm9iamVjdHOhF4AEgArSFQoaHaIb
-HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPEQlKTU0AKgAABmgBAQEBenp6
+HIAFgAaACRAA0iAKISJfEBROU1RJRkZSZXByZXNlbnRhdGlvboAHgAhPEQliTU0AKgAABmgBAQEBenp6
 ev39/f3/////////////////////////////////////////////////////////////////////////
 ///////////////////////9/f39enp6egEBAQEmJiYm+fn5+f//////////////////////////////
 ////////////////////////////////////////////////////////////////////////////+fn5
@@ -1866,29 +1882,28 @@ Ozs7Ozs6Ojo6ExMTEwAAAAAUFBQUz8/Pz///////////////////////////////////////////////
 +f//////////////////////////////////////////////////////////////////////////////
 ////////////////////////////+fn5+SYmJiYBAQEBenp6ev39/f3/////////////////////////
 ///////////////////////////////////////////////////////////////////////9/f39enp6
-egEBAQEADgEAAAMAAAABABgAAAEBAAMAAAABABEAAAECAAMAAAAEAAAHFgEDAAMAAAABAAEAAAEGAAMA
-AAABAAIAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMAAAABABEAAAEXAAQA
-AAABAAAGYAEcAAMAAAABAAEAAAFSAAMAAAABAAEAAAFTAAMAAAAEAAAHHodzAAcAAAIkAAAHJgAAAAAA
-CAAIAAgACAABAAEAAQABAAACJGFwcGwEAAAAbW50clJHQiBYWVogB+EABwAHAA0AFgAgYWNzcEFQUEwA
-AAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1hcHBsyhqVgiV/EE04mRPV0eoVggAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwAAABlY3BydAAAAWQAAAAjd3RwdAAAAYgA
-AAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQAAAAUclRSQwAAAdgAAAAgY2hhZAAAAfgA
-AAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAAAAALRGlzcGxheSBQMwAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
-AAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJbmMuLCAyMDE3AABYWVogAAAAAAAA81EA
-AQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAAAEq/AACxNwAACrlYWVogAAAAAAAAKDgA
-ABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AAAApbc2YzMgAAAAAAAQxCAAAF3v//8yYA
-AAeTAAD9kP//+6L///2jAAAD3AAAwG7SJSYnKFokY2xhc3NuYW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJ
-bWFnZVJlcKMnKSpaTlNJbWFnZVJlcFhOU09iamVjdNIlJiwtV05TQXJyYXmiLCrSJSYvMF5OU011dGFi
-bGVBcnJheaMvLCrTMjMKNDU2V05TV2hpdGVcTlNDb2xvclNwYWNlRDAgMAAQA4AM0iUmODlXTlNDb2xv
-cqI4KtIlJjs8V05TSW1hZ2WiOypfEA9OU0tleWVkQXJjaGl2ZXLRP0BUcm9vdIABAAgAEQAaACMALQAy
-ADcARgBMAFcAXgBlAHIAeQCBAIMAhQCKAIwAjgCXAJwApwCpAKsArQCyALUAtwC5ALsAvQDCANkA2wDd
-CisKMAo7CkQKVwpbCmYKbwp0CnwKfwqECpMKlwqeCqYKswq4CroKvArBCskKzArRCtkK3AruCvEK9gAA
-AAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAr4A
+egEBAQEAEAEAAAMAAAABABgAAAEBAAMAAAABABEAAAECAAMAAAAEAAAHLgEDAAMAAAABAAEAAAEGAAMA
+AAABAAIAAAEKAAMAAAABAAEAAAERAAQAAAABAAAACAESAAMAAAABAAEAAAEVAAMAAAABAAQAAAEWAAMA
+AAABABEAAAEXAAQAAAABAAAGYAEcAAMAAAABAAEAAAEoAAMAAAABAAIAAAFSAAMAAAABAAEAAAFTAAMA
+AAAEAAAHNodzAAcAAAIkAAAHPgAAAAAACAAIAAgACAABAAEAAQABAAACJGFwcGwEAAAAbW50clJHQiBY
+WVogB+EABwAHAA0AFgAgYWNzcEFQUEwAAAAAQVBQTAAAAAAAAAAAAAAAAAAAAAAAAPbWAAEAAAAA0y1h
+cHBsyhqVgiV/EE04mRPV0eoVggAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAKZGVzYwAAAPwA
+AABlY3BydAAAAWQAAAAjd3RwdAAAAYgAAAAUclhZWgAAAZwAAAAUZ1hZWgAAAbAAAAAUYlhZWgAAAcQA
+AAAUclRSQwAAAdgAAAAgY2hhZAAAAfgAAAAsYlRSQwAAAdgAAAAgZ1RSQwAAAdgAAAAgZGVzYwAAAAAA
+AAALRGlzcGxheSBQMwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAB0ZXh0AAAAAENvcHlyaWdodCBBcHBsZSBJ
+bmMuLCAyMDE3AABYWVogAAAAAAAA81EAAQAAAAEWzFhZWiAAAAAAAACD3wAAPb////+7WFlaIAAAAAAA
+AEq/AACxNwAACrlYWVogAAAAAAAAKDgAABELAADIuXBhcmEAAAAAAAMAAAACZmYAAPKnAAANWQAAE9AA
+AApbc2YzMgAAAAAAAQxCAAAF3v//8yYAAAeTAAD9kP//+6L///2jAAAD3AAAwG7SJSYnKFokY2xhc3Nu
+YW1lWCRjbGFzc2VzXxAQTlNCaXRtYXBJbWFnZVJlcKMnKSpaTlNJbWFnZVJlcFhOU09iamVjdNIlJiwt
+V05TQXJyYXmiLCrSJSYvMF5OU011dGFibGVBcnJheaMvLCrTMjMKNDU2V05TV2hpdGVcTlNDb2xvclNw
+YWNlRDAgMAAQA4AM0iUmODlXTlNDb2xvcqI4KtIlJjs8V05TSW1hZ2WiOypfEA9OU0tleWVkQXJjaGl2
+ZXLRP0BUcm9vdIABAAgAEQAaACMALQAyADcARgBMAFcAXgBlAHIAeQCBAIMAhQCKAIwAjgCXAJwApwCp
+AKsArQCyALUAtwC5ALsAvQDCANkA2wDdCkMKSApTClwKbwpzCn4KhwqMCpQKlwqcCqsKrwq2Cr4KywrQ
+CtIK1ArZCuEK5ArpCvEK9AsGCwkLDgAAAAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAsQA
 </mutableData>
         </image>
         <image name="circlePlus" width="80" height="80"/>
-        <image name="ic_tabbar_serious" width="20" height="20"/>
         <image name="kitty" width="1620" height="1080"/>
         <image name="leftArrow" width="80" height="80"/>
         <image name="playful cat" width="500" height="375"/>

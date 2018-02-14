@@ -16,10 +16,11 @@ class PersonDetailsViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     
-    var sessionIDs:[Int] = []
+    var sessionIDs: [String] = []
     var personTitle: String! = "Title of the person"
     var name: String! = "Name goes here"
     var personDescription: String! = ""
+    var imageURL: String! = ""
     
     var testAgendaItem: AgendaItem!
 
@@ -29,7 +30,16 @@ class PersonDetailsViewController: UIViewController {
         
         let cellnib = UINib(nibName: "SessionTableViewCell", bundle: nil)
         tableView.register(cellnib, forCellReuseIdentifier: "sessionCell")
-
+        
+        if self.imageURL != nil {
+            let url = URL(string: imageURL)
+            self.personImageView.sd_setImage(with: url, completed: { (image, error, _, _) in
+                if error == nil {
+                    self.personImageView.image = image
+                }
+            })
+        }
+        
         setupHeader()
         
         //test agenda item
@@ -47,7 +57,7 @@ class PersonDetailsViewController: UIViewController {
         
         
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width - 20, height: 9999999))
-        label.text = "Person Description Goes Here Person Description Goes Here Person Description Goes Here Person Description Goes Here Person Description Goes Here Person Description Goes Here Person Description Goes Here Person Description Goes Here Person Description Goes Here "
+        label.text = self.personDescription
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .center
@@ -59,6 +69,9 @@ class PersonDetailsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        personImageView.layer.cornerRadius = 120/2
+        personImageView.clipsToBounds = true
+
         tableView.reloadData()
     }
     
