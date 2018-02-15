@@ -38,7 +38,7 @@ class CommitteeViewController: UIViewController, SideMenuItemContent {
         let headerImage = UIImage(named: "donateHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "The Committee", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "Planning Team - 2018", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -106,14 +106,21 @@ extension CommitteeViewController: UITableViewDataSource, UITableViewDelegate {
     return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+
+   /* func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
+        let destination = storyboard.instantiateViewController(withIdentifier: "CommitteeMember") as! CommitteeMemberViewController
+        navigationController?.pushViewController(destination, animated: true)
         
-        //let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        //guard let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetails") as? //PersonDetailsViewController else { return }
         
-       // vc.name = "Person: \(indexPath.row)"
-       // present(vc, animated: true, completion: nil)
-       
+     /*
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "CommitteeMember") as? CommitteeMemberViewController else { return }
         
-    }
+        vc.name = "Zachia Nazarzai"
+        present(vc, animated: true, completion: nil)
+       */
+        
+    }*/
 }
