@@ -23,6 +23,7 @@
 		9B346A7E202BE869004263CF /* AttendeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B346A7D202BE869004263CF /* AttendeesViewController.swift */; };
 		9B346A80202BEE3C004263CF /* AttendeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B346A7F202BEE3C004263CF /* AttendeeTableViewCell.swift */; };
 		9B354D7D2034F10C005E2A04 /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B354D7C2034F10C005E2A04 /* PersonTableViewCell.swift */; };
+		9B354D7F204241AA005E2A04 /* Sponsors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B354D7E204241AA005E2A04 /* Sponsors.swift */; };
 		9B3C746B1FFDA5180004A82A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B3C746A1FFDA5180004A82A /* Main.storyboard */; };
 		9B3C746E1FFDA5370004A82A /* NavigationMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C746C1FFDA5370004A82A /* NavigationMenuViewController.swift */; };
 		9B3C746F1FFDA5370004A82A /* HostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3C746D1FFDA5370004A82A /* HostViewController.swift */; };
@@ -89,6 +90,7 @@
 		9B346A7D202BE869004263CF /* AttendeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeesViewController.swift; sourceTree = "<group>"; };
 		9B346A7F202BEE3C004263CF /* AttendeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttendeeTableViewCell.swift; sourceTree = "<group>"; };
 		9B354D7C2034F10C005E2A04 /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		9B354D7E204241AA005E2A04 /* Sponsors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sponsors.swift; sourceTree = "<group>"; };
 		9B3C746A1FFDA5180004A82A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		9B3C746C1FFDA5370004A82A /* NavigationMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationMenuViewController.swift; sourceTree = "<group>"; };
 		9B3C746D1FFDA5370004A82A /* HostViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HostViewController.swift; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 			children = (
 				9BDC06D1200839F400F825E4 /* ConcurrentSession.swift */,
 				9BDC06D0200839F400F825E4 /* PeopleList.swift */,
+				9B354D7E204241AA005E2A04 /* Sponsors.swift */,
 				9BDC06D2200839F500F825E4 /* Session.swift */,
 				9BB0C92A2031304300B4C87E /* Cohort.swift */,
 			);
@@ -574,6 +577,7 @@
 				9B346A7C202BE660004263CF /* API.swift in Sources */,
 				9B354D7D2034F10C005E2A04 /* PersonTableViewCell.swift in Sources */,
 				9BDC06D5200839F500F825E4 /* Session.swift in Sources */,
+				9B354D7F204241AA005E2A04 /* Sponsors.swift in Sources */,
 				9BD4A4431FFC485700C20D4F /* ViewController.swift in Sources */,
 				9B346A80202BEE3C004263CF /* AttendeeTableViewCell.swift in Sources */,
 				737CEB0120342B2000A8F7A9 /* CommitteeViewController.swift in Sources */,

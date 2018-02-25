@@ -14,13 +14,30 @@ class SponsorViewController: UIViewController, SideMenuItemContent {
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var headerContainer: UIView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    var sponsorLevel: [String] = ["Diamond", "Platinum", "Gold", "Silver", "Lapis" ]
+    var allSponsors: AllSponsors!
+    var api: API!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHeader()
 
+        api = API()
+        
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+        
+        api.retrieveSponsors { (newSponsors) in
+            DispatchQueue.main.async {
+                self.activityIndicator.stopAnimating()
+                self.activityIndicator.isHidden = true
+                self.allSponsors = newSponsors
+                self.tableView.reloadData()
+            }
+        }
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -67,19 +84,33 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return sponsorLevel.count
+        if allSponsors == nil { return 0 }
+        return allSponsors.allLevelSponsors.count
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2 //SIAR TO UPDATE CODE: we need to make this conditional based on the number of items for each sponsor level in the json data
+        return allSponsors.allLevelSponsors[section].sponsors.count
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return sponsorLevel[section]
+        return allSponsors.allLevelSponsors[section].level
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sponsorCell", for: indexPath)
         
+        let sponsor = allSponsors.allLevelSponsors[indexPath.section].sponsors[indexPath.row]
+        
+        cell.textLabel?.text = sponsor.name
+        if let sponsorLogo = URL(string: sponsor.logoImageURL) {
+            cell.imageView?.sd_setImage(with: sponsorLogo, completed: { (image, error, cacheType, url) in
+                if error == nil {
+                    cell.imageView?.image = image
+                    cell.clipsToBounds = true
+                    cell.setNeedsLayout()
+
+                }
+            })
+        }
         
         //cell.textLabel?.text = String(indexPath.row)
         
