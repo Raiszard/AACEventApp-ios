@@ -10,6 +10,7 @@
 		27B24E57E4795EB895398D71 /* Pods_AAC_EventsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED42D10E5350A7ED22D9D288 /* Pods_AAC_EventsTests.framework */; };
 		733D885320312ECB008F1255 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D885220312ECB008F1255 /* AboutViewController.swift */; };
 		733D885520316D16008F1255 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D885420316D16008F1255 /* DonateViewController.swift */; };
+		7352BFFA2045525500301FB0 /* InitiativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352BFF92045525500301FB0 /* InitiativesViewController.swift */; };
 		735CF56020358D6F0032D670 /* CommitteeMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735CF55F20358D6F0032D670 /* CommitteeMemberViewController.swift */; };
 		737CEAFF203421C400A8F7A9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CEAFE203421C400A8F7A9 /* FAQViewController.swift */; };
 		737CEB0120342B2000A8F7A9 /* CommitteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CEB0020342B2000A8F7A9 /* CommitteeViewController.swift */; };
@@ -76,6 +77,7 @@
 		4E4DC0CA551E8CAF173BB0F6 /* Pods-AAC Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events.debug.xcconfig"; sourceTree = "<group>"; };
 		733D885220312ECB008F1255 /* AboutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutViewController.swift; sourceTree = "<group>"; };
 		733D885420316D16008F1255 /* DonateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DonateViewController.swift; sourceTree = "<group>"; };
+		7352BFF92045525500301FB0 /* InitiativesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiativesViewController.swift; sourceTree = "<group>"; };
 		735CF55F20358D6F0032D670 /* CommitteeMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitteeMemberViewController.swift; sourceTree = "<group>"; };
 		73703A89AB3B6CA9F12E142A /* Pods_AAC_EventsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AAC_EventsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		737CEAFE203421C400A8F7A9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +201,7 @@
 				9BD4A4421FFC485700C20D4F /* ViewController.swift */,
 				9BD4A4441FFC485700C20D4F /* Login.storyboard */,
 				9B3C746A1FFDA5180004A82A /* Main.storyboard */,
+				7352BFF92045525500301FB0 /* InitiativesViewController.swift */,
 				735CF55F20358D6F0032D670 /* CommitteeMemberViewController.swift */,
 				737CEB0020342B2000A8F7A9 /* CommitteeViewController.swift */,
 				737CEAFE203421C400A8F7A9 /* FAQViewController.swift */,
@@ -590,6 +593,7 @@
 				9B3C746E1FFDA5370004A82A /* NavigationMenuViewController.swift in Sources */,
 				9B3C74761FFDA9BD0004A82A /* KittyViewController.swift in Sources */,
 				9BD4A4411FFC485700C20D4F /* AppDelegate.swift in Sources */,
+				7352BFFA2045525500301FB0 /* InitiativesViewController.swift in Sources */,
 				9BB0C92B2031304300B4C87E /* Cohort.swift in Sources */,
 				9B346A78202A8BBF004263CF /* SpeakersViewController.swift in Sources */,
 				9B3C74751FFDA9BD0004A82A /* TabBarViewController.swift in Sources */,
