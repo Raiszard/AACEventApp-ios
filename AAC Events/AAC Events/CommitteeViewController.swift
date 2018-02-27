@@ -17,15 +17,33 @@ class CommitteeViewController: UIViewController, SideMenuItemContent {
         showSideMenu()
 
     }
-    @IBOutlet weak var committeeTextView: UITextView!
     
     @IBOutlet weak var tableView: UITableView!
+    
+    let orgNameArray: [String] = ["aperson1 name", "apersone 2's name"]
+    let orgTitleArray: [String] = ["aperson1 title", "apersone 2's title"]
+    let orgDescriptionArray: [String] = ["aperson1 is cool", "apersone 2's description goes here"]
+    
+    let subNameArray: [String] = ["person1 name", "persone 2's name"]
+    let subTitleArray: [String] = ["person1 title", "persone 2's title"]
+    let subDescriptionArray: [String] = ["person1 is cool", "persone 2's description goes here"]
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupHeader()
 
-        // Do any additional setup after loading the view.
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
+        
+        
+        //TODO: create name array
+        //TODO: create name subtitle array
+        //TODO: person description
+        
+
+
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,59 +86,127 @@ extension CommitteeViewController: UITableViewDataSource, UITableViewDelegate {
     
     
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
+        return 3
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (section == 0){
-            return 13
-        }
-        else {
-            return 5
-        }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 50.0
         
+        switch section {
+        case 0:
+            return 1
+        case 1:
+            return orgNameArray.count//13
+        default:
+            return subNameArray.count
+        }
     }
-    
+
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String?{
         if (section == 0){
+            return ""
+        }
+        else if section == 1 {
             return "Organizing Committee"
         }
-        else {
-            return "Subcommittee"
-        }
+        return "Subcommittee"
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-    guard let cell = tableView.dequeueReusableCell(withIdentifier: "committeeCell") else {
-        return UITableViewCell()
+        if indexPath.section == 0 {
+            guard let cell = tableView.dequeueReusableCell(withIdentifier: "descriptionCell") as? CommitteeDescriptionCell else {
+                return UITableViewCell()
+            }
+            
+            cell.committeeDescription.text = "The Afghan-American Conference started as an idea implemented by a group of students and working professionals volunteering remotely from across the United States. Our team is comprised of individuals with deep passion for our community, a commitment to service, and diverse personal and professional experiences that seek to advance AAC’s vision of building a supportive, empowered, and engaged Afghan-American community."
+            
+            return cell
         }
-
-       // cell.textLabel?.text = "Person:"
         
-    return cell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "committeeCell") as? CommitteePersonCell else {
+            return UITableViewCell()
+        }
+        
+        var name: String = ""
+        var title: String = ""
+        
+        if indexPath.section == 1 {
+            name = orgNameArray[indexPath.row]
+            title = orgTitleArray[indexPath.row]
+        } else if indexPath.section == 2 {
+            name = subNameArray[indexPath.row]
+            title = subTitleArray[indexPath.row]
+        }
+        
+        cell.titleLabel.text = title
+        cell.nameLabel.text = name
+        
+        return cell
     }
+    
     
 
 
-   /* func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        if indexPath.section == 0 { return }
+        
         let storyboard = UIStoryboard(name: "Main", bundle: Bundle.main)
         let destination = storyboard.instantiateViewController(withIdentifier: "CommitteeMember") as! CommitteeMemberViewController
-        navigationController?.pushViewController(destination, animated: true)
         
+        var name: String = ""
+        var title: String = ""
+        var descp: String = ""
         
-     /*
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        guard let vc = storyboard.instantiateViewController(withIdentifier: "CommitteeMember") as? CommitteeMemberViewController else { return }
+        if indexPath.section == 1 {
+            name = orgNameArray[indexPath.row]
+            title = orgTitleArray[indexPath.row]
+            descp = orgDescriptionArray[indexPath.row]
+        } else if indexPath.section == 2 {
+            name = subNameArray[indexPath.row]
+            title = subTitleArray[indexPath.row]
+            descp = subDescriptionArray[indexPath.row]
+        }
         
-        vc.name = "Zachia Nazarzai"
-        present(vc, animated: true, completion: nil)
-       */
+        destination.name = name
+        destination.personTitle = title
+        destination.personDescription = descp
         
-    }*/
+        present(destination, animated: true, completion: nil)
+ 
+    }
+}
+
+class CommitteeDescriptionCell: UITableViewCell {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    @IBOutlet weak var committeeDescription: UILabel!
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+}
+
+class CommitteePersonCell: UITableViewCell {
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
+    
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
 }

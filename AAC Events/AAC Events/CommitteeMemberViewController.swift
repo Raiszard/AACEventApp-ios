@@ -10,17 +10,47 @@ import UIKit
 
 class CommitteeMemberViewController: UIViewController {
 
+    @IBOutlet weak var headerContainer: UIView!
+    
+    @IBOutlet weak var commiteePersonTextView: UITextView!
+    var name: String! = ""
+    var personTitle: String! = ""
+    var personDescription: String! = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        commiteePersonTextView.text = personDescription
+        
+        setupHeader()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    @IBAction func backPushed(_ sender: Any) {
+        dismiss(animated: true, completion: nil )
+    }
     
+    func setupHeader() {
+        
+        let headerImage = UIImage(named: "sponsorHeader")
+        let header: ViewHeader = .fromNib()
+        
+        let hView = header.createHeader(title: name, subtitle:personTitle, imageURL: nil, image: headerImage, isProfile: true)
+        
+        hView.translatesAutoresizingMaskIntoConstraints = false
+        headerContainer.addSubview(hView)
+        
+        headerContainer.addConstraint(NSLayoutConstraint(item: hView, attribute: .top, relatedBy: .equal, toItem: headerContainer, attribute: .top, multiplier: 1.0, constant: 0))
+        headerContainer.addConstraint(NSLayoutConstraint(item: hView, attribute: .leading, relatedBy: .equal, toItem: headerContainer, attribute: .leading, multiplier: 1.0, constant: 0))
+        headerContainer.addConstraint(NSLayoutConstraint(item: headerContainer, attribute: .bottom, relatedBy: .equal, toItem: hView, attribute: .bottom, multiplier: 1.0, constant: 0))
+        headerContainer.addConstraint(NSLayoutConstraint(item: headerContainer, attribute: .trailing, relatedBy: .equal, toItem: hView, attribute: .trailing, multiplier: 1.0, constant: 0))
+        
+    }
 
     /*
     // MARK: - Navigation
