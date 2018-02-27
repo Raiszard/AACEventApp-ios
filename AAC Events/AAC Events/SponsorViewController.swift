@@ -116,4 +116,20 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let sponsor = allSponsors.allLevelSponsors[indexPath.section].sponsors[indexPath.row]
+        let level = allSponsors.allLevelSponsors[indexPath.section].level
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "SponsorDetails") as? SponsorDetailsViewController else { return }
+        vc.sponsorLevel = level
+        vc.sponsor = sponsor
+        
+        present(vc, animated: true, completion: nil)
+
+        
+        
+
+    }
 }

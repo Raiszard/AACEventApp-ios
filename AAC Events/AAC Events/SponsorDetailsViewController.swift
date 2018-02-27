@@ -9,7 +9,7 @@
 import UIKit
 import InteractiveSideMenu
 
-class SponsorDetailsViewController: UIViewController, SideMenuItemContent {
+class SponsorDetailsViewController: UIViewController {
 
     @IBOutlet weak var sponsorDetailsTextView: UITextView!
     @IBOutlet weak var headerContainer: UIView!
@@ -17,9 +17,12 @@ class SponsorDetailsViewController: UIViewController, SideMenuItemContent {
     @IBOutlet weak var sponsorLevelLabel: UILabel!
     @IBOutlet weak var lineViewHeightConstraint: NSLayoutConstraint!
     
-    @IBAction func openMenu(_ sender: UIButton) {
-        showSideMenu()
-    }
+    var sponsor: Sponsor!
+    var sponsorLevel: String!
+    
+//    @IBAction func openMenu(_ sender: UIButton) {
+//        showSideMenu()
+//    }
 
     
     override func viewDidLoad() {
@@ -27,6 +30,12 @@ class SponsorDetailsViewController: UIViewController, SideMenuItemContent {
 
         // Do any additional setup after loading the view.
         setupHeader()
+        
+        if sponsor != nil {
+            sponsorDetailsTextView.text = sponsor.sponsorDescription
+            sponsorNameLabel.text = sponsor.name
+            sponsorLevelLabel.text = sponsorLevel
+        }
     }
     
     func setupHeader() {
@@ -34,7 +43,7 @@ class SponsorDetailsViewController: UIViewController, SideMenuItemContent {
         let testImage = UIImage(named: "tempLogo")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "", subtitle:nil, imageURL: nil, image: testImage, isProfile: false)
+        let hView = header.createHeader(title: "", subtitle:nil, imageURL: sponsor.headerImageURL, image: nil, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -48,6 +57,7 @@ class SponsorDetailsViewController: UIViewController, SideMenuItemContent {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         lineViewHeightConstraint.constant = 0.5
+        view.backgroundColor = .white
     }
 
     override func didReceiveMemoryWarning() {
@@ -55,8 +65,11 @@ class SponsorDetailsViewController: UIViewController, SideMenuItemContent {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func backPushed(_ sender: Any) {
+        dismiss(animated: true, completion: nil)
 
-    /*
+    }
+/*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

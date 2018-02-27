@@ -912,20 +912,6 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PSo-vQ-LMS">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="64"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oi3-St-sXH">
-                                        <rect key="frame" x="8" y="10" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="9ci-d6-Um1"/>
-                                            <constraint firstAttribute="width" constant="44" id="IhJ-me-Nvm"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="44" id="Lhu-tl-jFa"/>
-                                            <constraint firstAttribute="height" constant="44" id="hEm-Vx-nSS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
-                                        <state key="normal" image="Menu"/>
-                                        <connections>
-                                            <action selector="openMenu:" destination="fwl-TQ-ktZ" eventType="touchUpInside" id="oOt-dx-Qc4"/>
-                                        </connections>
-                                    </button>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="E9h-o9-741">
                                         <rect key="frame" x="187" y="14" width="40" height="40"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -934,13 +920,27 @@
                                             <constraint firstAttribute="width" constant="40" id="ltr-Qp-Yi4"/>
                                         </constraints>
                                     </view>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oeD-i0-EgK">
+                                        <rect key="frame" x="8" y="8" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="2Ub-dG-BD1"/>
+                                            <constraint firstAttribute="width" constant="44" id="7NZ-xn-kn9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                                        <inset key="imageEdgeInsets" minX="10" minY="20" maxX="10" maxY="0.0"/>
+                                        <state key="normal" image="leftArrow"/>
+                                        <connections>
+                                            <action selector="backPushed:" destination="fwl-TQ-ktZ" eventType="touchUpInside" id="Pqa-4V-VBM"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstItem="E9h-o9-741" firstAttribute="centerX" secondItem="PSo-vQ-LMS" secondAttribute="centerX" id="6eT-YJ-CE3"/>
                                     <constraint firstItem="E9h-o9-741" firstAttribute="centerY" secondItem="PSo-vQ-LMS" secondAttribute="centerY" constant="2" id="9ae-tc-BQs"/>
-                                    <constraint firstItem="oi3-St-sXH" firstAttribute="leading" secondItem="PSo-vQ-LMS" secondAttribute="leading" constant="8" id="ePG-xb-Qw9"/>
-                                    <constraint firstItem="oi3-St-sXH" firstAttribute="top" secondItem="PSo-vQ-LMS" secondAttribute="top" constant="10" id="qTc-eH-vdD"/>
+                                    <constraint firstItem="oeD-i0-EgK" firstAttribute="top" secondItem="PSo-vQ-LMS" secondAttribute="top" constant="8" id="hEl-Zt-UQv"/>
+                                    <constraint firstItem="oeD-i0-EgK" firstAttribute="leading" secondItem="PSo-vQ-LMS" secondAttribute="leading" constant="8" id="nG1-Rh-hsz"/>
                                     <constraint firstAttribute="height" constant="64" id="zWx-Ab-ecf"/>
                                 </constraints>
                             </view>
