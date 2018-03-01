@@ -57,7 +57,7 @@ class SessionDetailsViewController: UIViewController {
         
         //description
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 9999999))
-        label.text = agendaItem.sessionDescription//"Description goes hereDescription goes here Description goes here Description goes here Description goes hereDescription goes here Description goes here Description goes here Description goes here Description goes here Description goes here Description goes here\n"
+        label.text = agendaItem.agengdaDescription//"Description goes hereDescription goes here Description goes here Description goes here Description goes hereDescription goes here Description goes here Description goes here Description goes here Description goes here Description goes here Description goes here\n"
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
@@ -67,8 +67,8 @@ class SessionDetailsViewController: UIViewController {
         
         locationLabel.text = "Room 123"
         dayDateLabel.text = "Friday Feburary 20"
-        if agendaItem.timeString != nil && agendaItem.amOrPm != nil {
-            timeLabel.text = agendaItem.timeString! + " " + agendaItem.amOrPm!
+        if agendaItem.startTime != nil && agendaItem.endTime != nil {
+            timeLabel.text = agendaItem.startTime! + " " + agendaItem.endTime!
         } else { timeLabel.text = "??????" }
     }
     func setupHeader() {

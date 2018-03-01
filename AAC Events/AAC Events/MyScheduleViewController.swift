@@ -36,10 +36,10 @@ class MyScheduleViewController: UIViewController {
         
         //test data
         let item1 = AgendaItem()
-        item1.timeString = "1-3"
-        item1.amOrPm = "pm"
+        item1.startTime = "1-3"
+        item1.endTime = "pm"
         item1.sessionName = "Session name will go here"
-        item1.sessionDescription = "this is the description"
+        item1.agengdaDescription = "this is the description"
         item1.id = "1"
         item1.subItems = []
         item1.isExpandable = false
@@ -49,10 +49,10 @@ class MyScheduleViewController: UIViewController {
         allAgendaItems.append(item1)
         
         let item2 = AgendaItem()
-        item2.timeString = "3-4"
-        item2.amOrPm = "pm"
+        item2.startTime = "3-4"
+        item2.endTime = "pm"
         item2.sessionName = "Roundtable Discussions"
-        item2.sessionDescription = "Various"
+        item2.agengdaDescription = "Various"
         item2.id = "2"
         item2.subItems = ["3", "4"]
         item2.isExpandable = true
@@ -61,10 +61,10 @@ class MyScheduleViewController: UIViewController {
         allAgendaItems.append(item2)
         
         let item3 = AgendaItem()
-        item3.timeString = "3-4"
-        item3.amOrPm = "pm"
+        item3.startTime = "3-4"
+        item3.endTime = "pm"
         item3.sessionName = "Session 3 name will go here"
-        item3.sessionDescription = "this is description as well"
+        item3.agengdaDescription = "this is description as well"
         item3.id = "3"
         item3.subItems = []
         item3.isExpandable = false
@@ -73,10 +73,10 @@ class MyScheduleViewController: UIViewController {
         allAgendaItems.append(item3)
         
         let item4 = AgendaItem()
-        item4.timeString = "3-4"
-        item4.amOrPm = "pm"
+        item4.startTime = "3-4"
+        item4.endTime = "pm"
         item4.sessionName = "Session 4 name will go here"
-        item4.sessionDescription = "this is another description"
+        item4.agengdaDescription = "this is another description"
         item4.id = "4"
         item4.subItems = []
         item4.isExpandable = false
@@ -85,10 +85,10 @@ class MyScheduleViewController: UIViewController {
         allAgendaItems.append(item4)
         
         let item5 = AgendaItem()
-        item5.timeString = "7-8"
-        item5.amOrPm = "pm"
+        item5.startTime = "7-8"
+        item5.endTime = "pm"
         item5.sessionName = "Session 5 name will go here"
-        item5.sessionDescription = "this is another description"
+        item5.agengdaDescription = "this is another description"
         item5.id = "5"
         item5.subItems = []
         item5.isExpandable = false

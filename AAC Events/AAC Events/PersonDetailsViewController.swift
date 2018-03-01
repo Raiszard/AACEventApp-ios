@@ -44,10 +44,10 @@ class PersonDetailsViewController: UIViewController {
         
         //test agenda item
         let item1 = AgendaItem()
-        item1.timeString = "1-3"
-        item1.amOrPm = "pm"
+        item1.startTime = "1-3"
+        item1.endTime = "pm"
         item1.sessionName = "Session name will go here"
-        item1.sessionDescription = "this is the description"
+        item1.location = "this is the description"
         item1.id = "1"
         item1.subItems = []
         item1.isExpandable = false

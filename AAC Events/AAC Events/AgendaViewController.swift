@@ -39,10 +39,10 @@ class AgendaViewController: UIViewController {
         
         //test data
         let item1 = AgendaItem()
-        item1.timeString = "1:30 PM"
-        item1.amOrPm = "3:30 PM"
+        item1.startTime = "1:30 PM"
+        item1.endTime = "3:30 PM"
         item1.sessionName = "Registration & Icewarmers"
-        item1.sessionDescription = "Ackerman Grand Ballroom"
+        item1.location = "Ackerman Grand Ballroom"
         item1.id = "1"
         item1.subItems = []
         item1.isExpandable = false
@@ -52,10 +52,10 @@ class AgendaViewController: UIViewController {
         allAgendaItems.append(item1)
         
         let item2 = AgendaItem()
-        item2.timeString = "1:00 PM"
-        item2.amOrPm = "2:00 PM"
+        item2.startTime = "1:00 PM"
+        item2.endTime = "2:00 PM"
         item2.sessionName = "Professional Panels"
-        item2.sessionDescription = "Various"
+        item2.location = "Various"
         item2.id = "2"
         item2.subItems = ["3", "4"]
         item2.isExpandable = true
@@ -64,10 +64,10 @@ class AgendaViewController: UIViewController {
         allAgendaItems.append(item2)
 
         let item3 = AgendaItem()
-        item3.timeString = ""
-        item3.amOrPm = ""
+        item3.startTime = ""
+        item3.endTime = ""
         item3.sessionName = "Arts & Media"
-        item3.sessionDescription = "Room 123"
+        item3.location = "Room 123"
         item3.id = "3"
         item3.subItems = []
         item3.isExpandable = false
@@ -77,10 +77,10 @@ class AgendaViewController: UIViewController {
         allAgendaItems.append(item3)
 
         let item4 = AgendaItem()
-        item4.timeString = ""
-        item4.amOrPm = ""
+        item4.startTime = ""
+        item4.endTime = ""
         item4.sessionName = "Community Organizing in the Afghan-American Diaspora: Cultural Events, Sports, and Activism"
-        item4.sessionDescription = "Room 201"
+        item4.location = "Room 201"
         item4.id = "4"
         item4.subItems = []
         item4.isExpandable = false
@@ -90,10 +90,10 @@ class AgendaViewController: UIViewController {
         allAgendaItems.append(item4)
         
         let item5 = AgendaItem()
-        item5.timeString = "4:30 PM"
-        item5.amOrPm = "5:40 PM"
+        item5.startTime = "4:30 PM"
+        item5.endTime = "5:40 PM"
         item5.sessionName = "Gender Dynamics: Misogny and Double Standards"
-        item5.sessionDescription = "Room 301"
+        item5.location = "Room 301"
         item5.id = "5"
         item5.subItems = []
         item5.isExpandable = false
@@ -332,12 +332,13 @@ extension AgendaViewController: SessionCellDelegate {
 
 class AgendaItem: NSObject {
     
-    var timeString: String?
-    var amOrPm: String?
+    var startTime: String?
+    var endTime: String?
     var sessionName: String!
-    var sessionDescription: String!
+    var location: String!
     var id: String!
     var subItems:[String]!
+    var agengdaDescription: String!
     
     var isVisable = false
     var isExpandable = false

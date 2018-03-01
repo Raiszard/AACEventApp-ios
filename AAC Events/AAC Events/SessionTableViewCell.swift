@@ -42,10 +42,10 @@ class SessionTableViewCell: UITableViewCell {
     
     func setupCell() {
 
-        timeLabel.text = agendaItem.timeString
-        amPMLabel.text = agendaItem.amOrPm
+        timeLabel.text = agendaItem.startTime
+        amPMLabel.text = agendaItem.endTime
         sessionNameLabel.text = agendaItem.sessionName
-        sessionDescriptionLabel.text = agendaItem.sessionDescription
+        sessionDescriptionLabel.text = agendaItem.location
         
         var imageToUse = ""
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
