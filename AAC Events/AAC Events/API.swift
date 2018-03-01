@@ -13,7 +13,7 @@ typealias JsonDict = Dictionary<String, AnyObject>
 
 let attendeesURL = "https://dl.dropboxusercontent.com/s/5sblpkzw1jztj7e/Attendees.json?dl=0"
 let normsURL = "https://dl.dropboxusercontent.com/s/uq60dx5orq43gm3/Norms.json?dl=0"
-let cohortsURL = "https://dl.dropboxusercontent.com/s/327zw02plurg73o/Cohorts.json?dl=0"
+let cohortsURL = "https://dl.dropboxusercontent.com/s/jels9f7ia0u5bw4/CohortsData.json?dl=0"
 let peopleURL = "https://dl.dropboxusercontent.com/s/pfn13llarhsmsn6/PeopleList.json?dl=0"
 let sponsorsURL = "https://dl.dropboxusercontent.com/s/qphuavrxjxt547a/Sponsor.json?dl=0"
 class API: NSObject {
