@@ -60,7 +60,8 @@ class PersonDetailsViewController: UIViewController {
         label.text = self.personDescription
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
-        label.textAlignment = .center
+        label.textAlignment = .left
+        label.font = UIFont(name: "Avenir-Book", size: 15)
         label.sizeToFit()
         label.frame.size.height = label.frame.height + 20 //more padding for description
         tableView.tableHeaderView = label
@@ -77,10 +78,10 @@ class PersonDetailsViewController: UIViewController {
     
     func setupHeader() {
         
-        let testImage = UIImage(named: "tempLogo")
+        let headerImage = UIImage(named: "profileHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: name, subtitle:personTitle, imageURL: nil, image: nil, isProfile: true)
+        let hView = header.createHeader(title: name, subtitle:personTitle, imageURL: nil, image: headerImage, isProfile: true)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -137,6 +138,8 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
             return "???"
         }
     }
+    
+    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath) as? SessionTableViewCell else {

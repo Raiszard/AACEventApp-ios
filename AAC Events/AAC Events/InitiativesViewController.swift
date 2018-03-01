@@ -1,47 +1,39 @@
 //
-//  CommitteeMemberViewController.swift
+//  InitiativesViewController.swift
 //  AAC Events
 //
-//  Created by Omar M. Noorzay on 2/15/18.
+//  Created by Omar M. Noorzay on 2/27/18.
 //  Copyright © 2018 Afghan American Conference. All rights reserved.
 //
 
 import UIKit
+import InteractiveSideMenu
 
 
-class CommitteeMemberViewController: UIViewController {
+class InitiativesViewController: UIViewController, SideMenuItemContent {
 
+    @IBOutlet weak var tableView: UITableView!
+    @IBAction func openMenu(_ sender: Any) {
+        showSideMenu()
+
+    }
     @IBOutlet weak var headerContainer: UIView!
-    
-    @IBOutlet weak var commiteePersonTextView: UITextView!
-    var name: String! = ""
-    var personTitle: String! = ""
-    var personDescription: String! = ""
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        commiteePersonTextView.text = personDescription
-        
-        setupHeader()
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    @IBAction func backPushed(_ sender: Any) {
-        dismiss(animated: true, completion: nil )
-    }
-    
     func setupHeader() {
         
-        let headerImage = UIImage(named: "committeeHeader2")
+        let headerImage = UIImage(named: "donateHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: name, subtitle:personTitle, imageURL: nil, image: headerImage, isProfile: true)
+        let hView = header.createHeader(title: "Initiatives", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -52,6 +44,7 @@ class CommitteeMemberViewController: UIViewController {
         headerContainer.addConstraint(NSLayoutConstraint(item: headerContainer, attribute: .trailing, relatedBy: .equal, toItem: hView, attribute: .trailing, multiplier: 1.0, constant: 0))
         
     }
+    
 
     /*
     // MARK: - Navigation
@@ -63,4 +56,27 @@ class CommitteeMemberViewController: UIViewController {
     }
     */
 
+}
+
+
+extension InitiativesViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if (section == 0){
+            return 2
+        }
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+
+        
+        return UITableViewCell()
+    }
 }
