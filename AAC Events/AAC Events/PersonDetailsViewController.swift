@@ -51,7 +51,6 @@ class PersonDetailsViewController: UIViewController {
         item1.id = "1"
         item1.subItems = []
         item1.isExpandable = false
-        item1.isVisable = true
         item1.isExpanded = false
         testAgendaItem = item1
         

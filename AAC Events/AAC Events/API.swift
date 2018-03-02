@@ -16,6 +16,8 @@ let normsURL = "https://dl.dropboxusercontent.com/s/uq60dx5orq43gm3/Norms.json?d
 let cohortsURL = "https://dl.dropboxusercontent.com/s/jels9f7ia0u5bw4/CohortsData.json?dl=0"
 let peopleURL = "https://dl.dropboxusercontent.com/s/pfn13llarhsmsn6/PeopleList.json?dl=0"
 let sponsorsURL = "https://dl.dropboxusercontent.com/s/qphuavrxjxt547a/Sponsor.json?dl=0"
+let agendaURL = "https://dl.dropboxusercontent.com/s/psl0hf76vi36w6q/Agenda.json?dl=0"
+
 class API: NSObject {
 
     
@@ -256,7 +258,35 @@ class API: NSObject {
                 callback(nil)
             }
         }
-    }}
+    }
+    
+    func retrieveAgenda() {
+        
+        retrieveData(url: agendaURL) { (jsonResponse, error) in
+            if error == nil {
+                //parse json
+                print(jsonResponse!)
+                guard let dict = jsonResponse as? JsonDict else {
+                    print("couldn't create dictionary")
+                    return
+                }
+                
+                //TODO: add this to somewhere global
+                let agenda = AllSessions(dict: dict)
+
+                
+            } else {
+                print(error!.localizedDescription)
+            }
+        }
+
+        
+    }
+
+}
+
+
+
 
 
 

@@ -43,7 +43,6 @@ class MyScheduleViewController: UIViewController {
         item1.id = "1"
         item1.subItems = []
         item1.isExpandable = false
-        item1.isVisable = true
         item1.isExpanded = false
         
         allAgendaItems.append(item1)
@@ -56,7 +55,6 @@ class MyScheduleViewController: UIViewController {
         item2.id = "2"
         item2.subItems = ["3", "4"]
         item2.isExpandable = true
-        item2.isVisable = true
         item2.isExpanded = false
         allAgendaItems.append(item2)
         
@@ -68,7 +66,6 @@ class MyScheduleViewController: UIViewController {
         item3.id = "3"
         item3.subItems = []
         item3.isExpandable = false
-        item3.isVisable = false
         item3.isExpanded = false
         allAgendaItems.append(item3)
         
@@ -80,7 +77,6 @@ class MyScheduleViewController: UIViewController {
         item4.id = "4"
         item4.subItems = []
         item4.isExpandable = false
-        item4.isVisable = false
         item4.isExpanded = false
         allAgendaItems.append(item4)
         
@@ -92,7 +88,6 @@ class MyScheduleViewController: UIViewController {
         item5.id = "5"
         item5.subItems = []
         item5.isExpandable = false
-        item5.isVisable = true
         item5.isExpanded = false
         allAgendaItems.append(item5)
         
