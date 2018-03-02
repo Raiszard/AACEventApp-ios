@@ -37,7 +37,7 @@ class FAQViewController: UIViewController, SideMenuItemContent {
     
     func setupHeader() {
         
-        let headerImage = UIImage(named: "donateHeader")
+        let headerImage = UIImage(named: "FAQHeader")
         let header: ViewHeader = .fromNib()
         
         let hView = header.createHeader(title: "FAQ", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)

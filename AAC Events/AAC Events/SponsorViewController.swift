@@ -117,7 +117,7 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+   /* func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let sponsor = allSponsors.allLevelSponsors[indexPath.section].sponsors[indexPath.row]
         let level = allSponsors.allLevelSponsors[indexPath.section].level
         
@@ -131,5 +131,5 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
         
         
 
-    }
+    }*/
 }
