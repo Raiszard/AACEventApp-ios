@@ -176,10 +176,9 @@
                                         </constraints>
                                     </view>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" springLoaded="YES" translatesAutoresizingMaskIntoConstraints="NO" id="F0f-rW-QVc">
-                                        <rect key="frame" x="20" y="241" width="374" height="29"/>
+                                        <rect key="frame" x="8" y="241" width="398" height="29"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="28" id="kB2-24-ioe"/>
-                                            <constraint firstAttribute="width" constant="374" id="r7d-06-k5c"/>
                                         </constraints>
                                         <segments>
                                             <segment title="Keynote"/>
@@ -245,6 +244,7 @@
                                     <constraint firstItem="id9-Co-Ijl" firstAttribute="top" secondItem="QMj-yb-Sn7" secondAttribute="top" constant="17" id="0WW-Wp-CvF"/>
                                     <constraint firstItem="8H1-7r-TRC" firstAttribute="top" secondItem="F0f-rW-QVc" secondAttribute="bottom" constant="13" id="8rB-OT-ctj"/>
                                     <constraint firstAttribute="trailing" secondItem="8H1-7r-TRC" secondAttribute="trailing" id="8vn-Jy-xaw"/>
+                                    <constraint firstItem="F0f-rW-QVc" firstAttribute="leading" secondItem="QMj-yb-Sn7" secondAttribute="leadingMargin" id="B15-jT-Got"/>
                                     <constraint firstAttribute="trailing" secondItem="rrd-IX-pRi" secondAttribute="trailing" id="IuF-G4-cqt"/>
                                     <constraint firstItem="id9-Co-Ijl" firstAttribute="leading" secondItem="QMj-yb-Sn7" secondAttribute="leading" constant="6" id="T0h-Uu-IJc"/>
                                     <constraint firstItem="8H1-7r-TRC" firstAttribute="leading" secondItem="QMj-yb-Sn7" secondAttribute="leading" id="T78-Bp-VyM"/>
@@ -252,7 +252,8 @@
                                     <constraint firstItem="Lzz-hy-Ff2" firstAttribute="top" secondItem="QMj-yb-Sn7" secondAttribute="top" id="X6V-KM-a2g"/>
                                     <constraint firstAttribute="bottom" secondItem="8H1-7r-TRC" secondAttribute="bottom" constant="49" id="fMZ-l0-YeK"/>
                                     <constraint firstItem="Lzz-hy-Ff2" firstAttribute="leading" secondItem="QMj-yb-Sn7" secondAttribute="leading" id="hqp-1W-Kal"/>
-                                    <constraint firstItem="F0f-rW-QVc" firstAttribute="centerX" secondItem="QMj-yb-Sn7" secondAttribute="centerX" id="i7a-MK-MuB"/>
+                                    <constraint firstItem="F0f-rW-QVc" firstAttribute="trailing" secondItem="QMj-yb-Sn7" secondAttribute="trailingMargin" id="i7a-MK-MuB"/>
+                                    <constraint firstItem="F0f-rW-QVc" firstAttribute="centerX" secondItem="QMj-yb-Sn7" secondAttribute="centerX" id="leS-SB-4vh"/>
                                     <constraint firstItem="rrd-IX-pRi" firstAttribute="top" secondItem="id9-Co-Ijl" secondAttribute="bottom" id="nVc-UO-Q3M"/>
                                     <constraint firstItem="rrd-IX-pRi" firstAttribute="leading" secondItem="QMj-yb-Sn7" secondAttribute="leading" id="s9g-ZO-X05"/>
                                     <constraint firstItem="F0f-rW-QVc" firstAttribute="centerX" secondItem="QMj-yb-Sn7" secondAttribute="centerX" id="vaK-PB-1my"/>
@@ -824,7 +825,7 @@
                                     <constraint firstAttribute="height" constant="172" id="tsg-N1-brd"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qdu-cO-AfY">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Qdu-cO-AfY">
                                 <rect key="frame" x="20" y="244" width="374" height="484"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
