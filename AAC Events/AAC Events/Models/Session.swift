@@ -15,11 +15,40 @@ class AllSessions: NSObject {
     var allSaturdaySessions: [Session]!
     var allSundaySessions: [Session]!
     
+    
     init?(dict: JsonDict) {
+        super.init()
         
-        //TODO: fill out above variables,
-            //sub items in the session will have to be set after each session in concurrentSessions is parsed
+        if let dates = dict["dateRange"] as? String {
+            self.dateRange = dates
+        } else { return nil }
+        
+        if let days = dict["sessionDays"] as? [JsonDict] {
+            for day in days {
+                if let dayString = day["dayString"] as? String {
+                    switch dayString {
+                    case "Friday":
+                        allFridaySessions = parseWholeDay(day: day)
+                        print("friday")
+                        break
+                    case "Saturday":
+                        allSaturdaySessions = parseWholeDay(day: day)
+                        print("saturday")
+                        break
+                    case "Sunday":
+                        allSundaySessions = parseWholeDay(day: day)
+                        print("sunday")
+                        break
+                    default:
+                        print("incorrect day string in session json")
+
+                    }
+                    
+                } else { return nil }
+            }
+        } else { return nil}
     }
+
 
     func findSessionForID(searchID:String) -> Session? {
         
@@ -39,6 +68,36 @@ class AllSessions: NSObject {
             }
         }
         return nil
+    }
+    
+    func parseWholeDay(day: JsonDict) -> [Session] {
+        var sessionsArray:[Session] = []
+        
+        if let daySessions = day["sessions"] as? [JsonDict] {
+            for concurentSessionDict in daySessions {
+                if let concSessions = concurentSessionDict["concurrentSessions"] as? [JsonDict] {
+                    let firstItem = Session.init(dict: concSessions[0])
+                    if concSessions.count > 1 {
+                        var concurrentSessions:[Session] = []
+                        //have subitems so need to create items and add the ids to first item
+                        var subItemIDS:[String] = []
+                        for i in 1...(concSessions.count-1) { //start at second item
+                            if let subSession = Session.init(dict: concSessions[i]) {
+                                subItemIDS.append(subSession.id)
+                                concurrentSessions.append(subSession)
+                            }
+                        }
+                        firstItem?.subIDs = subItemIDS
+                        concurrentSessions.insert(firstItem!, at: 0)
+                        sessionsArray.append(contentsOf: concurrentSessions)
+                        
+                    } else {
+                        sessionsArray.append(firstItem!)
+                    }
+                }
+            }
+        }
+        return sessionsArray
     }
 }
 

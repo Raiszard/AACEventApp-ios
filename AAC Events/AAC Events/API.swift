@@ -271,9 +271,10 @@ class API: NSObject {
                     return
                 }
                 
-                //TODO: add this to somewhere global
                 let agenda = AllSessions(dict: dict)
-
+                let dele = UIApplication.shared.delegate as! AppDelegate
+                dele.allSessions = agenda
+                NotificationCenter.default.post(name: .agendaDownloadComplete, object: nil)
                 
             } else {
                 print(error!.localizedDescription)
@@ -286,7 +287,10 @@ class API: NSObject {
 }
 
 
-
+extension Notification.Name {
+    static let agendaDownloadComplete = Notification.Name(
+        rawValue: "agendaDownloadComplete")
+}
 
 
 

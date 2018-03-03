@@ -37,6 +37,8 @@ class AgendaViewController: UIViewController {
         //go through the session arrays and create an array of items with a visable tag
         
         
+        //TODO: use appD.allSessions to populate data
+        
         //test data
         let item1 = AgendaItem()
         item1.startTime = "1:30 PM"
