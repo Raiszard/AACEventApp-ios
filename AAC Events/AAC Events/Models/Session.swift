@@ -50,24 +50,24 @@ class AllSessions: NSObject {
     }
 
 
-    func findSessionForID(searchID:String) -> Session? {
+    func findSessionForID(searchID:String) -> (Session?, Int?) {
         
         for session in  allFridaySessions {
             if session.id == searchID {
-                return session
+                return (session, 0)
             }
         }
         for session in  allSaturdaySessions {
             if session.id == searchID {
-                return session
+                return (session, 1)
             }
         }
         for session in  allSaturdaySessions {
             if session.id == searchID {
-                return session
+                return (session, 2)
             }
         }
-        return nil
+        return (nil, nil)
     }
     
     func parseWholeDay(day: JsonDict) -> [Session] {
@@ -77,6 +77,7 @@ class AllSessions: NSObject {
             for concurentSessionDict in daySessions {
                 if let concSessions = concurentSessionDict["concurrentSessions"] as? [JsonDict] {
                     let firstItem = Session.init(dict: concSessions[0])
+                    firstItem?.isSubItem = false
                     if concSessions.count > 1 {
                         var concurrentSessions:[Session] = []
                         //have subitems so need to create items and add the ids to first item
@@ -84,6 +85,7 @@ class AllSessions: NSObject {
                         for i in 1...(concSessions.count-1) { //start at second item
                             if let subSession = Session.init(dict: concSessions[i]) {
                                 subItemIDS.append(subSession.id)
+                                subSession.isSubItem = true
                                 concurrentSessions.append(subSession)
                             }
                         }
@@ -111,7 +113,16 @@ class Session: NSObject {
     var id: String!
     var evaluationURL: String?
     
+    //data not from json
+    var isExpandable: Bool {
+        if subIDs != nil && subIDs!.count > 0 {
+            return true
+        }
+        return false
+    }
+    var isExpanded = false
     var subIDs: [String]?
+    var isSubItem = false
     
     init?(dict: JsonDict) {
         

@@ -67,7 +67,6 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" verticalHuggingPriority="251" text="12:30 PM" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Upp-Dl-ViK">
                         <rect key="frame" x="15" y="28" width="43" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="21" id="VAk-eV-do2"/>
                             <constraint firstAttribute="width" constant="43" id="llm-Ex-Ob8"/>
                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="21" id="n4a-w0-4Ui"/>
                         </constraints>
@@ -80,7 +79,6 @@
                     <constraint firstAttribute="trailing" secondItem="ygO-ZQ-BZ4" secondAttribute="trailing" constant="16" id="38C-YA-DY3"/>
                     <constraint firstItem="Upp-Dl-ViK" firstAttribute="centerX" secondItem="a8f-fg-Dkr" secondAttribute="centerX" constant="4.5" id="4gu-b7-2xK"/>
                     <constraint firstItem="Jtm-a2-Sah" firstAttribute="top" secondItem="qAB-zW-fWw" secondAttribute="bottom" id="6Ns-BT-cL2"/>
-                    <constraint firstItem="uZM-LE-vQx" firstAttribute="top" secondItem="Upp-Dl-ViK" secondAttribute="bottom" constant="9.5" id="6pt-SZ-bGu"/>
                     <constraint firstItem="a8f-fg-Dkr" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="7Sp-nI-pa1"/>
                     <constraint firstAttribute="trailing" secondItem="uZM-LE-vQx" secondAttribute="trailing" id="883-Xl-4M2"/>
                     <constraint firstItem="qAB-zW-fWw" firstAttribute="leading" secondItem="a8f-fg-Dkr" secondAttribute="trailing" constant="17.5" id="Duz-qG-Eu3"/>

@@ -17,11 +17,15 @@ class AgendaViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
-    var allAgendaItems: [AgendaItem] = []
-    var visableAgendaItems: [AgendaItem] = []
+    var allAgendaItems: [[Session]] = [[],[],[]] // fri, sat, sun
+    var visableAgendaItems: [[Session]] = [[],[],[]]
+    
+    var appDelegate: AppDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        appDelegate = UIApplication.shared.delegate as! AppDelegate
         setupHeader()
 
         // Do any additional setup after loading the view.
@@ -39,6 +43,15 @@ class AgendaViewController: UIViewController {
         
         //TODO: use appD.allSessions to populate data
         
+        if appDelegate.allSessions != nil {
+            setupInitialAgendaItem()
+
+        } else {
+            //TODO: wait for call to finish then reload
+            //add observer
+        }
+        
+        /*
         //test data
         let item1 = AgendaItem()
         item1.startTime = "1:30 PM"
@@ -101,11 +114,36 @@ class AgendaViewController: UIViewController {
         visableAgendaItems.append(item1)
         visableAgendaItems.append(item2)
         visableAgendaItems.append(item5)
+*/
 
-
-        
+        daysSegmentedControl.selectedSegmentIndex = 0
+        dayChanged(daysSegmentedControl)
     }
     
+    func setupInitialAgendaItem() {
+        
+        allAgendaItems[0] = appDelegate.allSessions.allFridaySessions
+        allAgendaItems[1] = appDelegate.allSessions.allSaturdaySessions
+        allAgendaItems[2] = appDelegate.allSessions.allSundaySessions
+        
+        setupInitialAgendaItemsThatAreVisible()
+    }
+    
+    func setupInitialAgendaItemsThatAreVisible() {
+        //called once to set sessions based on subIDs
+        var return2DArray: [[Session]] = [[],[],[]]
+        
+        for i in 0...allAgendaItems.count-1 {
+            for j in 0...allAgendaItems[i].count-1 {
+                let currentSess = allAgendaItems[i][j]
+                if currentSess.isSubItem == false {
+                    return2DArray[i].append(currentSess)
+                }
+            }
+        }
+        
+        self.visableAgendaItems = return2DArray
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -153,6 +191,7 @@ class AgendaViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
+        self.tableView.reloadData()
     }
     
     @IBAction func openMenu(_ sender: UIButton) {
@@ -178,14 +217,14 @@ class AgendaViewController: UIViewController {
         //if cell is expandable expand/collapse it or if arrow button was tapped
         if currentItem.isExpandable {
             if currentItem.isExpanded {
-                var numberOfItemsToRemove = currentItem.subItems.count
+                var numberOfItemsToRemove = currentItem.subIDs!.count
                 var indexsToDelete:[IndexPath] = []
                 
                 for i in 1...numberOfItemsToRemove {
                     indexsToDelete.append(IndexPath(row: indexPath.row + i, section: 0))
                 }
                 while numberOfItemsToRemove > 0 {
-                    visableAgendaItems.remove(at: indexPath.row + 1)
+                    visableAgendaItems[daysSegmentedControl.selectedSegmentIndex].remove(at: indexPath.row + 1)
                     numberOfItemsToRemove -= 1
                 }
                 tableView.beginUpdates()
@@ -204,16 +243,16 @@ class AgendaViewController: UIViewController {
             } else {
                 
                 //find agenda items to insert
-                var itemsToInsert:[AgendaItem] = []
-                for id: String in currentItem.subItems {
-                    for agendaItem: AgendaItem in allAgendaItems {
+                var itemsToInsert:[Session] = []
+                for id: String in currentItem.subIDs! {
+                    for agendaItem: Session in allAgendaItems[daysSegmentedControl.selectedSegmentIndex] {
                         if id == agendaItem.id {
                             itemsToInsert.append(agendaItem)
                         }
                     }
                 }
                 if itemsToInsert.count > 0 {
-                    visableAgendaItems.insert(contentsOf: itemsToInsert, at: indexPath.row + 1)
+                    visableAgendaItems[daysSegmentedControl.selectedSegmentIndex].insert(contentsOf: itemsToInsert, at: indexPath.row + 1)
                     var indexsToInsert:[IndexPath] = []
                     for index in indexPath.row + 1...indexPath.row + itemsToInsert.count {
                         indexsToInsert.append(IndexPath(row: index, section: 0))
@@ -235,7 +274,7 @@ class AgendaViewController: UIViewController {
                     
                 } else {
                     print("couldn't find any items with IDS:")
-                    print(currentItem.subItems)
+                    print(currentItem.subIDs!)
                     
                 }
             }
@@ -260,15 +299,16 @@ extension AgendaViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.visableAgendaItems.count
+       
+        return visableAgendaItems[daysSegmentedControl.selectedSegmentIndex].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "sessionCell", for: indexPath) as? SessionTableViewCell else {
             return UITableViewCell()
         }
-        
-        let currentItem = visableAgendaItems[indexPath.row]
+        cell.shouldShowTime = false
+        let currentItem = visableAgendaItems[daysSegmentedControl.selectedSegmentIndex][indexPath.row]
         
         cell.agendaItem = currentItem
         cell.delegate = self
@@ -313,7 +353,6 @@ extension AgendaViewController: SessionCellDelegate {
             return
         }
         
-        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let isEnrolled = appDelegate.isEnrolledIn(sessionID: cellsItem.id)
         
         if isEnrolled {
@@ -327,7 +366,7 @@ extension AgendaViewController: SessionCellDelegate {
     }
 }
 
-class AgendaItem: NSObject {
+ class AgendaItem: NSObject {
     
     var startTime: String?
     var endTime: String?
@@ -344,3 +383,4 @@ class AgendaItem: NSObject {
     var isSubItem = false
 
 }
+

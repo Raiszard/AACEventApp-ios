@@ -15,9 +15,9 @@ class MyScheduleViewController: UIViewController {
     @IBOutlet weak var daysSegmentedControl: UISegmentedControl!
     @IBOutlet weak var tableView: UITableView!
     
-    var allAgendaItems: [AgendaItem] = []
+    var enrolledAgendaItems: [[Session]] = [[],[],[]]
     
-    var enrolledAgendaItems: [AgendaItem] = []
+    var appDelegate: AppDelegate!
 
     @IBOutlet weak var selectedBarCenterConstraint: NSLayoutConstraint!
     
@@ -27,6 +27,8 @@ class MyScheduleViewController: UIViewController {
         daysSegmentedControl.backgroundColor = .clear
         daysSegmentedControl.tintColor = .clear
         
+        appDelegate = UIApplication.shared.delegate as? AppDelegate
+        
         let attributes: [NSAttributedStringKey: Any] = [ NSAttributedStringKey(rawValue: NSAttributedStringKey.foregroundColor.rawValue): UIColor.black]
         UISegmentedControl.appearance().setTitleTextAttributes(attributes, for: .normal)
         
@@ -35,6 +37,7 @@ class MyScheduleViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         //test data
+        /*
         let item1 = AgendaItem()
         item1.startTime = "1-3"
         item1.endTime = "pm"
@@ -90,7 +93,8 @@ class MyScheduleViewController: UIViewController {
         item5.isExpandable = false
         item5.isExpanded = false
         allAgendaItems.append(item5)
-        
+ 
+ */
         setupHeader()
 
     }
@@ -109,18 +113,25 @@ class MyScheduleViewController: UIViewController {
     
     func setupEnrolledItems() {
         //go through all items and add ones we are enrolled in
-        enrolledAgendaItems = []
+        enrolledAgendaItems = [[],[],[]]
         var enrolledIDs:[String] = []
         guard let appD = UIApplication.shared.delegate as? AppDelegate else { return }
         enrolledIDs = appD.enrolledSessionIDs
         
-        for currentItem in allAgendaItems {
-            for currentID in enrolledIDs {
-                if currentItem.id == currentID {
-                    enrolledAgendaItems.append(currentItem)
-                }
+        for currentID in enrolledIDs {
+            let (foundItem, day) = appD.allSessions.findSessionForID(searchID: currentID)
+            if foundItem != nil {
+                enrolledAgendaItems[day!].append(foundItem!)
             }
         }
+        
+//        for currentDay in allAgendaItems {
+//            for currentID in enrolledIDs {
+//                if currentItem.id == currentID {
+//                    enrolledAgendaItems.append(currentItem)
+//                }
+//            }
+//        }
         
     
     }
@@ -189,7 +200,7 @@ extension MyScheduleViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return enrolledAgendaItems.count
+        return enrolledAgendaItems[daysSegmentedControl.selectedSegmentIndex].count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -197,7 +208,8 @@ extension MyScheduleViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let currentItem = enrolledAgendaItems[indexPath.row]
+        let currentItem = enrolledAgendaItems[daysSegmentedControl.selectedSegmentIndex][indexPath.row]
+        cell.shouldShowTime = true
         cell.agendaItem = currentItem
         cell.delegate = self
         cell.disclosureButton.isHidden = true
@@ -210,7 +222,7 @@ extension MyScheduleViewController: UITableViewDelegate, UITableViewDataSource {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "SessionDetails") as? SessionDetailsViewController else { return }
         
-        vc.agendaItem = enrolledAgendaItems[indexPath.row]
+        vc.agendaItem = enrolledAgendaItems[daysSegmentedControl.selectedSegmentIndex][indexPath.row]
         present(vc, animated: true, completion: nil)
     }
     

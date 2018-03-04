@@ -14,14 +14,16 @@ protocol SessionCellDelegate {
 
 class SessionTableViewCell: UITableViewCell {
 
-    var agendaItem: AgendaItem! {
+    var agendaItem: Session! {
         didSet {
             setupCell()
         }
     }
 
+    var shouldShowTime = false
+    
     @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var amPMLabel: UILabel!
+    @IBOutlet weak var amPMLabel: UILabel! //is end time
     
     @IBOutlet weak var sessionNameLabel: UILabel!
     @IBOutlet weak var sessionDescriptionLabel: UILabel!
@@ -42,9 +44,22 @@ class SessionTableViewCell: UITableViewCell {
     
     func setupCell() {
 
-        timeLabel.text = agendaItem.startTime
-        amPMLabel.text = agendaItem.endTime
-        sessionNameLabel.text = agendaItem.sessionName
+        if agendaItem.isSubItem && shouldShowTime == false {
+            timeLabel.text = ""
+            amPMLabel.text = ""
+        } else {
+            let dateForm = DateFormatter()
+            dateForm.dateFormat = "h:mm a"
+            
+            if agendaItem.startDate != nil {
+                timeLabel.text = dateForm.string(from: agendaItem.startDate!)
+            } else { timeLabel.text = ""}
+            
+            if agendaItem.endDate != nil {
+                amPMLabel.text = dateForm.string(from: agendaItem.endDate!)
+            } else { amPMLabel.text = ""}
+        }
+        sessionNameLabel.text = agendaItem.title
         sessionDescriptionLabel.text = agendaItem.location
         
         var imageToUse = ""

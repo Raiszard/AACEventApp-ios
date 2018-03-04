@@ -22,7 +22,7 @@ class PersonDetailsViewController: UIViewController {
     var personDescription: String! = ""
     var imageURL: String! = ""
     
-    var testAgendaItem: AgendaItem!
+    var testAgendaItem: Session!
 
 
     override func viewDidLoad() {
@@ -43,16 +43,16 @@ class PersonDetailsViewController: UIViewController {
         setupHeader()
         
         //test agenda item
-        let item1 = AgendaItem()
-        item1.startTime = "1-3"
-        item1.endTime = "pm"
-        item1.sessionName = "Session name will go here"
-        item1.location = "this is the description"
-        item1.id = "1"
-        item1.subItems = []
-        item1.isExpandable = false
-        item1.isExpanded = false
-        testAgendaItem = item1
+//        let item1 = AgendaItem()
+//        item1.startTime = "1-3"
+//        item1.endTime = "pm"
+//        item1.sessionName = "Session name will go here"
+//        item1.location = "this is the description"
+//        item1.id = "1"
+//        item1.subItems = []
+//        item1.isExpandable = false
+//        item1.isExpanded = false
+//        testAgendaItem = item1
         
         
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width - 20, height: 9999999))
@@ -147,9 +147,10 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         
         let currentItem = testAgendaItem
         
+        cell.shouldShowTime = true
 //        cell.disclosureButton.isHidden = true
-        cell.agendaItem = currentItem
-        cell.delegate = self
+//        cell.agendaItem = currentItem
+//        cell.delegate = self
         
         return cell
     }
@@ -158,7 +159,7 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "SessionDetails") as? SessionDetailsViewController else { return }
         
-        vc.agendaItem = testAgendaItem
+//        vc.agendaItem = testAgendaItem
         present(vc, animated: true, completion: nil)
 
     }

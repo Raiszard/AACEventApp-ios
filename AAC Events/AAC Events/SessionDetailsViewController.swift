@@ -14,7 +14,7 @@ class SessionDetailsViewController: UIViewController {
     //section header = people title
     //cells = people
     
-    var agendaItem: AgendaItem!
+    var agendaItem: Session!
     @IBOutlet weak var headerContainer: UIView!
     
     @IBOutlet weak var plusView: UIView!
@@ -57,7 +57,7 @@ class SessionDetailsViewController: UIViewController {
         
         //description
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 9999999))
-        label.text = agendaItem.agengdaDescription//"Description goes hereDescription goes here Description goes here Description goes here Description goes hereDescription goes here Description goes here Description goes here Description goes here Description goes here Description goes here Description goes here\n"
+        label.text = agendaItem.sessionDescription//"Description goes hereDescription goes here Description goes here Description goes here Description goes hereDescription goes here Description goes here Description goes here Description goes here Description goes here Description goes here Description goes here\n"
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
@@ -65,18 +65,24 @@ class SessionDetailsViewController: UIViewController {
         label.frame.size.height = label.frame.height + 20 //more padding for description
         tableView.tableHeaderView = label
         
-        locationLabel.text = "Room 123"
-        dayDateLabel.text = "Friday Feburary 20"
-        if agendaItem.startTime != nil && agendaItem.endTime != nil {
-            timeLabel.text = agendaItem.startTime! + " " + agendaItem.endTime!
-        } else { timeLabel.text = "??????" }
+        let start = agendaItem.startDate
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = .short
+        dateFormatter.locale = Locale(identifier: "en_US")
+        
+        locationLabel.text = agendaItem.location
+        dayDateLabel.text = dateFormatter.string(from: agendaItem.startDate!)
+        
+//        if agendaItem.startTime != nil && agendaItem.endTime != nil {
+//            timeLabel.text = agendaItem.startTime! + " " + agendaItem.endTime!
+//        } else { timeLabel.text = "??????" }
     }
     func setupHeader() {
         
 //        let testImage = UIImage(named: "tempLogo")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: agendaItem.sessionName, subtitle:nil, imageURL: nil, image: nil, isProfile: false)
+        let hView = header.createHeader(title: agendaItem.title, subtitle:nil, imageURL: nil, image: nil, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
