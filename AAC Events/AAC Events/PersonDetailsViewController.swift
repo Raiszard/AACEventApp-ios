@@ -24,7 +24,8 @@ class PersonDetailsViewController: UIViewController {
     
     var testAgendaItem: Session!
 
-
+    var personsSessions: [[Session]] = [[],[],[]]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +42,8 @@ class PersonDetailsViewController: UIViewController {
         }
         
         setupHeader()
+        
+        setupPersonsSessions()
         
         //test agenda item
 //        let item1 = AgendaItem()
@@ -92,6 +95,17 @@ class PersonDetailsViewController: UIViewController {
         
     }
 
+    func setupPersonsSessions() {
+        let appD = UIApplication.shared.delegate as! AppDelegate
+        
+        for id in sessionIDs {
+            let (foundItem, day) = appD.allSessions.findSessionForID(searchID: id)
+            if foundItem != nil {
+                personsSessions[day!].append(foundItem!)
+            }
+        }
+        self.tableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -111,31 +125,55 @@ class PersonDetailsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    var hasFri = false
+    var hasSat = false
+    var hasSun = false
+    var sectionTitles:[String] = []
 }
 
 extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
+
+    
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        var count = 0
+        sectionTitles = []
+        if personsSessions[0].count > 0 {
+            count += 1
+            hasFri = true
+            sectionTitles.append("Friday Sessions")
+        }
+        if personsSessions[1].count > 0 {
+            count += 1
+            hasSat = true
+            sectionTitles.append("Saturday Sessions")
+
+        }
+        if personsSessions[2].count > 0 {
+            count += 1
+            hasSun = true
+            sectionTitles.append("Sunday Sessions")
+
+        }
+        return count
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        if personsSessions != nil {
+            return personsSessions[section].count
+        }
+        return 0
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
-        switch section {
-        case 0:
-            return "Friday Sessions"
-        case 1:
-            return "Saturday Sessions"
-        case 2:
-            return "Sunday Sessions"
-        default:
-            return "???"
-        }
+        return sectionTitles[section]
     }
     
     
@@ -145,12 +183,12 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
             return UITableViewCell()
         }
         
-        let currentItem = testAgendaItem
+        let currentItem = personsSessions[indexPath.section][indexPath.row]
         
         cell.shouldShowTime = true
-//        cell.disclosureButton.isHidden = true
-//        cell.agendaItem = currentItem
-//        cell.delegate = self
+        cell.disclosureButton.isHidden = true
+        cell.agendaItem = currentItem
+        cell.delegate = self
         
         return cell
     }
@@ -159,7 +197,7 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "SessionDetails") as? SessionDetailsViewController else { return }
         
-//        vc.agendaItem = testAgendaItem
+        vc.agendaItem = personsSessions[indexPath.section][indexPath.row]
         present(vc, animated: true, completion: nil)
 
     }
