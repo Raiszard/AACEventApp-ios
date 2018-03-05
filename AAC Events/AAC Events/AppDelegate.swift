@@ -19,6 +19,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var allPeople: [PeopleList]!
 
+    var isAppUnlocked: Bool = false
+    
     func isEnrolledIn(sessionID: String) -> Bool {
         
         for id in enrolledSessionIDs {
@@ -56,13 +58,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
+        let unlocked = UserDefaults.standard.string(forKey: "isUnlocked")
+        if unlocked != nil {
+            self.isAppUnlocked = true
+        }
+        
         guard let sessions = UserDefaults.standard.array(forKey: "enrolledSessions") as? [String] else {
             print("no enrolled sessions to retrieve")
             return true
         }
-        
         enrolledSessionIDs = sessions
-        
         return true
     }
 
