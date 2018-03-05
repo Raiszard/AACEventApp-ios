@@ -16,6 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var enrolledSessionIDs: [String] = []
     var allSessions: AllSessions!
+    
+    var allPeople: [PeopleList]!
 
     func isEnrolledIn(sessionID: String) -> Bool {
         

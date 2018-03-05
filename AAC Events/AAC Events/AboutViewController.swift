@@ -30,6 +30,11 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         api = API()
         api.retrieveAgenda()
         
+        api.retrievePeople { (_) in
+            //gets saved in appD
+        }
+
+        
         self.aboutSegmentedControl.selectedSegmentIndex = 0
         aboutTextView.text = "The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\nA WAY FORWARD \n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.";
         

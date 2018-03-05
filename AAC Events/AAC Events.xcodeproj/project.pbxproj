@@ -51,7 +51,6 @@
 		9BDC06C620072EE300F825E4 /* SponsorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC06C520072EE300F825E4 /* SponsorViewController.swift */; };
 		9BDC06C8200825D500F825E4 /* NormsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC06C7200825D400F825E4 /* NormsViewController.swift */; };
 		9BDC06D3200839F500F825E4 /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC06D0200839F400F825E4 /* PeopleList.swift */; };
-		9BDC06D4200839F500F825E4 /* ConcurrentSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC06D1200839F400F825E4 /* ConcurrentSession.swift */; };
 		9BDC06D5200839F500F825E4 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC06D2200839F500F825E4 /* Session.swift */; };
 		9BF38A572004462B0078FC59 /* CohortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF38A562004462B0078FC59 /* CohortsViewController.swift */; };
 /* End PBXBuildFile section */
@@ -128,7 +127,6 @@
 		9BDC06C520072EE300F825E4 /* SponsorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SponsorViewController.swift; sourceTree = "<group>"; };
 		9BDC06C7200825D400F825E4 /* NormsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NormsViewController.swift; sourceTree = "<group>"; };
 		9BDC06D0200839F400F825E4 /* PeopleList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleList.swift; path = "AAC Events/Models/PeopleList.swift"; sourceTree = SOURCE_ROOT; };
-		9BDC06D1200839F400F825E4 /* ConcurrentSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConcurrentSession.swift; path = "AAC Events/Models/ConcurrentSession.swift"; sourceTree = SOURCE_ROOT; };
 		9BDC06D2200839F500F825E4 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = "AAC Events/Models/Session.swift"; sourceTree = SOURCE_ROOT; };
 		9BF38A562004462B0078FC59 /* CohortsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CohortsViewController.swift; sourceTree = "<group>"; };
 		C4D2BBC311FDAA57CD82B4BA /* Pods-AAC Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events.release.xcconfig"; sourceTree = "<group>"; };
@@ -267,7 +265,6 @@
 		9BDC06CF200839BE00F825E4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				9BDC06D1200839F400F825E4 /* ConcurrentSession.swift */,
 				9BDC06D0200839F400F825E4 /* PeopleList.swift */,
 				9B354D7E204241AA005E2A04 /* Sponsors.swift */,
 				9BDC06D2200839F500F825E4 /* Session.swift */,
@@ -612,7 +609,6 @@
 				9B3C74751FFDA9BD0004A82A /* TabBarViewController.swift in Sources */,
 				9BD4A4491FFC485700C20D4F /* AAC_Events.xcdatamodeld in Sources */,
 				9B346A76202930DF004263CF /* MyScheduleViewController.swift in Sources */,
-				9BDC06D4200839F500F825E4 /* ConcurrentSession.swift in Sources */,
 				9B3D87112006CEF000599D92 /* SessionTableViewCell.swift in Sources */,
 				9BDC06D3200839F500F825E4 /* PeopleList.swift in Sources */,
 				733D885320312ECB008F1255 /* AboutViewController.swift in Sources */,

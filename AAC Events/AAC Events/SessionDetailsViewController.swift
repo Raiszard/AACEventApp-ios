@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 
 class SessionDetailsViewController: UIViewController {
     
@@ -28,6 +29,7 @@ class SessionDetailsViewController: UIViewController {
     @IBOutlet weak var sessionEvalButtonHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var tableView: UITableView!
     
+    var facilitators: [Person]!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,6 +38,35 @@ class SessionDetailsViewController: UIViewController {
         setupRoundButton()
         setupLabels()
         setupHeader()
+        
+        tableView.estimatedSectionFooterHeight = 0
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        //find people for given ID
+        let appD = UIApplication.shared.delegate as! AppDelegate
+        
+        var facilitatorsForSession: [Person] = []
+        if let allPeople = appD.allPeople {
+            
+            for peopleList in allPeople {
+                for person in peopleList.peopleArray {
+                    for ids in person.sessionIDs {
+                        if ids == agendaItem.id {
+                            facilitatorsForSession.append(person)
+                            break
+                        }
+                    }
+                }
+            }
+            self.facilitators = facilitatorsForSession
+            self.tableView.reloadData()
+
+        }
+        
+        
     }
     func setupRoundButton() {
         
@@ -57,7 +88,7 @@ class SessionDetailsViewController: UIViewController {
         
         //description
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 9999999))
-        label.text = agendaItem.sessionDescription//"Description goes hereDescription goes here Description goes here Description goes here Description goes hereDescription goes here Description goes here Description goes here Description goes here Description goes here Description goes here Description goes here\n"
+        label.text = agendaItem.sessionDescription
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
@@ -65,24 +96,47 @@ class SessionDetailsViewController: UIViewController {
         label.frame.size.height = label.frame.height + 20 //more padding for description
         tableView.tableHeaderView = label
         
-        let start = agendaItem.startDate
         let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = .short
+        dateFormatter.dateFormat = "EEEE, MMM d"
         dateFormatter.locale = Locale(identifier: "en_US")
         
         locationLabel.text = agendaItem.location
         dayDateLabel.text = dateFormatter.string(from: agendaItem.startDate!)
         
-//        if agendaItem.startTime != nil && agendaItem.endTime != nil {
-//            timeLabel.text = agendaItem.startTime! + " " + agendaItem.endTime!
-//        } else { timeLabel.text = "??????" }
+        if agendaItem.startDate != nil && agendaItem.endDate != nil {
+            let hourFormmater = DateFormatter()
+            hourFormmater.dateFormat = "h:mm"
+            hourFormmater.locale = Locale(identifier: "en_US")
+            let start = hourFormmater.string(from: agendaItem.startDate!)
+            hourFormmater.dateFormat = "h:mm a"
+            timeLabel.text = start + " - " + hourFormmater.string(from: agendaItem.endDate!)
+        } else { timeLabel.text = "??????" }
     }
     func setupHeader() {
         
 //        let testImage = UIImage(named: "tempLogo")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: agendaItem.title, subtitle:nil, imageURL: nil, image: nil, isProfile: false)
+        let imageNamesToRandomizeForHeader = ["aboutHeader",
+                                              "agendaHeader",
+                                              "attendeesHeader",
+                                              "cohortHeader",
+                                              "committeeHeader",
+                                              "committeeHeader2",
+                                              "conferenceEvalHeader",
+                                              "donateHeader",
+                                              "FAQHeader",
+                                              "initiativesHeader",
+                                              "myscheduleHeader",
+                                              "newsletterHeader",
+                                              "normsHeader",
+                                              "profileHeader",
+                                              "speakerHeader",
+                                              "sponsorHeader"]
+        
+        let rando = Int(arc4random()) % imageNamesToRandomizeForHeader.count
+        let image = UIImage(named: imageNamesToRandomizeForHeader[rando])
+        let hView = header.createHeader(title: agendaItem.title, subtitle:nil, imageURL: nil, image: image, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -101,6 +155,10 @@ class SessionDetailsViewController: UIViewController {
     
     
     @IBAction func sessionEvaluationTapped(_ sender: Any) {
+        if let url = URL(string: agendaItem.evaluationURL!) {
+            let sfVC = SFSafariViewController(url: url)
+            self.present(sfVC, animated: true, completion: nil)
+        }
     }
     
     @IBAction func backPushed(_ sender: Any) {
@@ -156,9 +214,6 @@ class SessionDetailsViewController: UIViewController {
 
 extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
-    
-    
-    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Facilitator"
     }
@@ -167,18 +222,39 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if facilitators != nil {
+            return facilitators.count
+        }
+        return 0
+//        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        //TODO: use global person data source with ID to populate this data
+        let person = facilitators[indexPath.row]
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         
-        cell.textLabel?.text = "Person \(indexPath.row)"
+        cell.textLabel?.text = person.name
+        
+        if let url = URL(string: person.imageURL) {
+            cell.imageView?.sd_setImage(with: url, completed: { (image, error, cahce, url) in
+                if error == nil {
+                    cell.imageView?.image = image
+                    cell.imageView?.clipsToBounds = true
+                    cell.setNeedsLayout()
+                }
+            })
+
+        } else {
+            cell.imageView?.image = nil
+        }
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
     
     
 }

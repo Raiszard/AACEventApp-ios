@@ -209,6 +209,12 @@ class API: NSObject {
     
     func retrievePeople(callback: @escaping (([PeopleList]?) -> ())) {
         
+        let appD = UIApplication.shared.delegate as! AppDelegate
+        
+        if appD.allPeople != nil {
+            callback(appD.allPeople!)
+        }
+        
         retrieveData(url: peopleURL) { (jsonResponse, error) in
             if error == nil {
                 //parse json
@@ -227,7 +233,7 @@ class API: NSObject {
                     }
                     
                 }
-                
+                appD.allPeople = returningPeopleList
                 callback(returningPeopleList)
                 
                 
@@ -270,11 +276,12 @@ class API: NSObject {
                     print("couldn't create dictionary")
                     return
                 }
-                
-                let agenda = AllSessions(dict: dict)
-                let dele = UIApplication.shared.delegate as! AppDelegate
-                dele.allSessions = agenda
-                NotificationCenter.default.post(name: .agendaDownloadComplete, object: nil)
+                DispatchQueue.main.async {
+                    let agenda = AllSessions(dict: dict)
+                    let dele = UIApplication.shared.delegate as! AppDelegate
+                    dele.allSessions = agenda
+                    NotificationCenter.default.post(name: .agendaDownloadComplete, object: nil)
+                }
                 
             } else {
                 print(error!.localizedDescription)

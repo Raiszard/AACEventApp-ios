@@ -96,6 +96,8 @@ class MyScheduleViewController: UIViewController {
  
  */
         setupHeader()
+        daysSegmentedControl.selectedSegmentIndex = 0
+        dayChanged(daysSegmentedControl)
 
     }
 
@@ -170,6 +172,8 @@ class MyScheduleViewController: UIViewController {
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
         }
+        
+        self.tableView.reloadData()
     }
     
     @IBAction func openMenu(_ sender: UIButton) {

@@ -62,7 +62,7 @@ class AllSessions: NSObject {
                 return (session, 1)
             }
         }
-        for session in  allSaturdaySessions {
+        for session in  allSundaySessions {
             if session.id == searchID {
                 return (session, 2)
             }
