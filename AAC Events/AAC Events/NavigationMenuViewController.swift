@@ -55,7 +55,7 @@ class NavigationMenuViewController: MenuViewController {
         imageV.clipsToBounds = true
         view.addSubview(imageV)
         var position = view.center
-        position.x = view.center.x/2 + 25
+        position.x = view.center.x/2 + 20
         imageV.center = position
         tableView.tableHeaderView = view
         
@@ -96,7 +96,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
 		let bgColorView = UIView()
 		bgColorView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
 		cell.selectedBackgroundView = bgColorView
-		cell.textLabel?.font = UIFont(name: "Avenir-Medium", size: 20)
+		cell.textLabel?.font = UIFont(name: "Avenir-Medium", size: 18)
 		cell.textLabel?.textColor = .white
 
         if isAppUnlocked {
@@ -107,7 +107,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
 				let menuText = "     " + menuItems[indexPath.row]
                 cell.textLabel?.text = menuText
 				cell.textLabel?.textColor = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1.0)
-				cell.textLabel?.font = UIFont(name: "Avenir-Medium", size: 18)
+				cell.textLabel?.font = UIFont(name: "Avenir-Medium", size: 16)
 
 				
             }
@@ -143,7 +143,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
 		let label = UILabel(frame: CGRect(x: 20, y: 0, width: 175, height: 30))
 		label.text = "AAC 2018*"
-		label.font = UIFont(name: "Avenir-Medium", size: 20)
+		label.font = UIFont(name: "Avenir-Medium", size: 18)
 		label.textColor = .white
 
 		view.addSubview(label)
