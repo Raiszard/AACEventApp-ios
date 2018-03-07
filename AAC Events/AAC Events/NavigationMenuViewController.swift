@@ -35,15 +35,18 @@ class NavigationMenuViewController: MenuViewController {
         return false
     }
 
-    var isAppUnlocked = true
+	var isAppUnlocked: Bool!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+		let appD = UIApplication.shared.delegate as! AppDelegate
+		isAppUnlocked = appD.isAppUnlocked
+
         
         // Select the initial row
         tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UITableViewScrollPosition.none)
-        
+		
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 200))
         view.backgroundColor = .black
         let imageV = UIImageView(image: UIImage(named: "sideMenuLogo"))
@@ -52,7 +55,7 @@ class NavigationMenuViewController: MenuViewController {
         imageV.clipsToBounds = true
         view.addSubview(imageV)
         var position = view.center
-        position.x = view.center.x/2
+        position.x = view.center.x/2 + 25
         imageV.center = position
         tableView.tableHeaderView = view
         
@@ -68,7 +71,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
 
     func numberOfSections(in tableView: UITableView) -> Int {
         
-        if isAppUnlocked { //TODO: use the unlock bool from appD
+        if isAppUnlocked {
             return 2
         }
         return 1
@@ -89,36 +92,61 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: kCellReuseIdentifier, for: indexPath)
-        
+		
+		let bgColorView = UIView()
+		bgColorView.backgroundColor = UIColor(red: 0.1, green: 0.1, blue: 0.1, alpha: 1.0)
+		cell.selectedBackgroundView = bgColorView
+		cell.textLabel?.font = UIFont(name: "Avenir-Medium", size: 20)
+		cell.textLabel?.textColor = .white
+
         if isAppUnlocked {
             if indexPath.section == 0 {
                 cell.textLabel?.text = aacMenus[indexPath.row]
             }
             if indexPath.section == 1 {
-                cell.textLabel?.text = menuItems[indexPath.row]
+				let menuText = "     " + menuItems[indexPath.row]
+                cell.textLabel?.text = menuText
+				cell.textLabel?.textColor = UIColor(red: 0.7, green: 0.7, blue: 0.7, alpha: 1.0)
+				cell.textLabel?.font = UIFont(name: "Avenir-Medium", size: 18)
+
+				
             }
         } else {
             cell.textLabel?.text = aacMenus[indexPath.row]
         }
-        cell.textLabel?.textColor = .white
 
         return cell
     }
 
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+	func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+		
+		guard let menuContainerViewController = self.menuContainerViewController else {
+			return
+		}
+		var adjustedPath = indexPath
+		//adjust index
+		if isAppUnlocked {
+			if indexPath.section == 1 {
+				adjustedPath.row = indexPath.row + aacMenus.count
+			}
+		}
+		
+		menuContainerViewController.selectContentViewController(menuContainerViewController.contentViewControllers[adjustedPath.row])
+		menuContainerViewController.hideSideMenu()
+	}
+	func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+		if section == 0 { return 0.0 }
+		return 30.0
+	}
+	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+		if section == 0 { return nil }
+		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
+		let label = UILabel(frame: CGRect(x: 20, y: 0, width: 175, height: 30))
+		label.text = "AAC 2018*"
+		label.font = UIFont(name: "Avenir-Medium", size: 20)
+		label.textColor = .white
 
-        guard let menuContainerViewController = self.menuContainerViewController else {
-            return
-        }
-        var adjustedPath = indexPath
-        //adjust index
-        if isAppUnlocked {
-            if indexPath.section == 1 {
-                adjustedPath.row = indexPath.row + aacMenus.count
-            }
-        }
-
-        menuContainerViewController.selectContentViewController(menuContainerViewController.contentViewControllers[adjustedPath.row])
-        menuContainerViewController.hideSideMenu()
-    }
+		view.addSubview(label)
+		return view
+	}
 }

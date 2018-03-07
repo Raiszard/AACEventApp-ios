@@ -58,7 +58,11 @@ class ViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func skipTapped(_ sender: Any) {
-        
+		
+		let appD = UIApplication.shared.delegate as! AppDelegate
+		appD.isAppUnlocked = false
+		UserDefaults.standard.set(nil, forKey: "isUnlocked")
+
         presentMainStoryBoard()
     }
     
