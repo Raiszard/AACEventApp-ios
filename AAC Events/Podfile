@@ -7,8 +7,13 @@ target 'AAC Events' do
 
 pod 'SDWebImage', '~> 4.0'
 pod 'InteractiveSideMenu'
+pod 'OneSignal', '>= 2.5.2', '< 3.0'
 
   # Pods for AAC Events
+
+target 'OneSignalNotificationServiceExtension' do
+  pod 'OneSignal', '>= 2.6.2', '< 3.0'
+end
 
   target 'AAC EventsTests' do
     inherit! :search_paths
@@ -21,3 +26,4 @@ pod 'InteractiveSideMenu'
   end
 
 end
+

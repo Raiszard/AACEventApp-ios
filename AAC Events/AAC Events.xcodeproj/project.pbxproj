@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		27B24E57E4795EB895398D71 /* Pods_AAC_EventsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ED42D10E5350A7ED22D9D288 /* Pods_AAC_EventsTests.framework */; };
+		6A3A3E318EA14BCF6044C54E /* Pods_AAC_Events_OneSignalNotificationServiceExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 275D3F33A337AC98004C5147 /* Pods_AAC_Events_OneSignalNotificationServiceExtension.framework */; };
 		733D885320312ECB008F1255 /* AboutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D885220312ECB008F1255 /* AboutViewController.swift */; };
 		733D885520316D16008F1255 /* DonateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733D885420316D16008F1255 /* DonateViewController.swift */; };
 		7352BFFA2045525500301FB0 /* InitiativesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7352BFF92045525500301FB0 /* InitiativesViewController.swift */; };
@@ -39,6 +40,8 @@
 		9B3D87112006CEF000599D92 /* SessionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D870F2006CEF000599D92 /* SessionTableViewCell.swift */; };
 		9B3D87122006CEF000599D92 /* SessionTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9B3D87102006CEF000599D92 /* SessionTableViewCell.xib */; };
 		9B3D87142006E70B00599D92 /* AgendaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B3D87132006E70B00599D92 /* AgendaViewController.swift */; };
+		9B88BFD5204F99C10067BFF6 /* NotificationService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B88BFD4204F99C10067BFF6 /* NotificationService.swift */; };
+		9B88BFD9204F99C20067BFF6 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 9B88BFD2204F99C10067BFF6 /* OneSignalNotificationServiceExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		9BB0C92B2031304300B4C87E /* Cohort.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB0C92A2031304300B4C87E /* Cohort.swift */; };
 		9BB0C92D203375C600B4C87E /* CohortTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB0C92C203375C600B4C87E /* CohortTableViewCell.swift */; };
 		9BD4A4411FFC485700C20D4F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BD4A4401FFC485700C20D4F /* AppDelegate.swift */; };
@@ -56,6 +59,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		9B88BFD7204F99C20067BFF6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 9BD4A4351FFC485700C20D4F /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 9B88BFD1204F99C10067BFF6;
+			remoteInfo = OneSignalNotificationServiceExtension;
+		};
 		9BD4A4551FFC485700C20D4F /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 9BD4A4351FFC485700C20D4F /* Project object */;
@@ -72,7 +82,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		9B88BFDD204F99C20067BFF6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				9B88BFD9204F99C20067BFF6 /* OneSignalNotificationServiceExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		275D3F33A337AC98004C5147 /* Pods_AAC_Events_OneSignalNotificationServiceExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AAC_Events_OneSignalNotificationServiceExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		406C4D7011B0DC5372B93604 /* Pods-AAC EventsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsTests/Pods-AAC EventsTests.release.xcconfig"; sourceTree = "<group>"; };
 		48A26C403FA682AF4768BF86 /* Pods_AAC_Events.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AAC_Events.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E4DC0CA551E8CAF173BB0F6 /* Pods-AAC Events.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events.debug.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +134,9 @@
 		9B3D870F2006CEF000599D92 /* SessionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionTableViewCell.swift; sourceTree = "<group>"; };
 		9B3D87102006CEF000599D92 /* SessionTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SessionTableViewCell.xib; sourceTree = "<group>"; };
 		9B3D87132006E70B00599D92 /* AgendaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AgendaViewController.swift; sourceTree = "<group>"; };
+		9B88BFD2204F99C10067BFF6 /* OneSignalNotificationServiceExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = OneSignalNotificationServiceExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B88BFD4204F99C10067BFF6 /* NotificationService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationService.swift; sourceTree = "<group>"; };
+		9B88BFD6204F99C20067BFF6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9BB0C92A2031304300B4C87E /* Cohort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Cohort.swift; path = "AAC Events/Models/Cohort.swift"; sourceTree = SOURCE_ROOT; };
 		9BB0C92C203375C600B4C87E /* CohortTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CohortTableViewCell.swift; sourceTree = "<group>"; };
 		9BD4A43D1FFC485700C20D4F /* AAC Events.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "AAC Events.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -129,12 +157,22 @@
 		9BDC06D0200839F400F825E4 /* PeopleList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PeopleList.swift; path = "AAC Events/Models/PeopleList.swift"; sourceTree = SOURCE_ROOT; };
 		9BDC06D2200839F500F825E4 /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Session.swift; path = "AAC Events/Models/Session.swift"; sourceTree = SOURCE_ROOT; };
 		9BF38A562004462B0078FC59 /* CohortsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CohortsViewController.swift; sourceTree = "<group>"; };
+		AB63B53C8A5E7DCAA89EB6FA /* Pods-AAC Events-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events-OneSignalNotificationServiceExtension/Pods-AAC Events-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		B6BBC21432224A87F6203788 /* Pods-AAC Events-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events-OneSignalNotificationServiceExtension/Pods-AAC Events-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
 		C4D2BBC311FDAA57CD82B4BA /* Pods-AAC Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events.release.xcconfig"; sourceTree = "<group>"; };
 		E04F978DC78777E57C91B4E9 /* Pods-AAC EventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED42D10E5350A7ED22D9D288 /* Pods_AAC_EventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AAC_EventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		9B88BFCF204F99C10067BFF6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A3A3E318EA14BCF6044C54E /* Pods_AAC_Events_OneSignalNotificationServiceExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9BD4A43A1FFC485700C20D4F /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -171,8 +209,19 @@
 				406C4D7011B0DC5372B93604 /* Pods-AAC EventsTests.release.xcconfig */,
 				E04F978DC78777E57C91B4E9 /* Pods-AAC EventsUITests.debug.xcconfig */,
 				85731998ADBEDC9ECBB94EE9 /* Pods-AAC EventsUITests.release.xcconfig */,
+				AB63B53C8A5E7DCAA89EB6FA /* Pods-AAC Events-OneSignalNotificationServiceExtension.debug.xcconfig */,
+				B6BBC21432224A87F6203788 /* Pods-AAC Events-OneSignalNotificationServiceExtension.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		9B88BFD3204F99C10067BFF6 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXGroup;
+			children = (
+				9B88BFD4204F99C10067BFF6 /* NotificationService.swift */,
+				9B88BFD6204F99C20067BFF6 /* Info.plist */,
+			);
+			path = OneSignalNotificationServiceExtension;
 			sourceTree = "<group>";
 		};
 		9BD4A4341FFC485700C20D4F = {
@@ -181,6 +230,7 @@
 				9BD4A43F1FFC485700C20D4F /* AAC Events */,
 				9BD4A4571FFC485700C20D4F /* AAC EventsTests */,
 				9BD4A4621FFC485700C20D4F /* AAC EventsUITests */,
+				9B88BFD3204F99C10067BFF6 /* OneSignalNotificationServiceExtension */,
 				9BD4A43E1FFC485700C20D4F /* Products */,
 				99CF9631EF868270ADCA66F5 /* Pods */,
 				D9A7F341160EF7B3F43B3FAD /* Frameworks */,
@@ -193,6 +243,7 @@
 				9BD4A43D1FFC485700C20D4F /* AAC Events.app */,
 				9BD4A4541FFC485700C20D4F /* AAC EventsTests.xctest */,
 				9BD4A45F1FFC485700C20D4F /* AAC EventsUITests.xctest */,
+				9B88BFD2204F99C10067BFF6 /* OneSignalNotificationServiceExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -280,6 +331,7 @@
 				48A26C403FA682AF4768BF86 /* Pods_AAC_Events.framework */,
 				ED42D10E5350A7ED22D9D288 /* Pods_AAC_EventsTests.framework */,
 				73703A89AB3B6CA9F12E142A /* Pods_AAC_EventsUITests.framework */,
+				275D3F33A337AC98004C5147 /* Pods_AAC_Events_OneSignalNotificationServiceExtension.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -287,6 +339,25 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		9B88BFD1204F99C10067BFF6 /* OneSignalNotificationServiceExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9B88BFDC204F99C20067BFF6 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */;
+			buildPhases = (
+				C756E9C5823FD614B90C242E /* [CP] Check Pods Manifest.lock */,
+				9B88BFCE204F99C10067BFF6 /* Sources */,
+				9B88BFCF204F99C10067BFF6 /* Frameworks */,
+				9B88BFD0204F99C10067BFF6 /* Resources */,
+				12DA9A65409519C0A17709A5 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = OneSignalNotificationServiceExtension;
+			productName = OneSignalNotificationServiceExtension;
+			productReference = 9B88BFD2204F99C10067BFF6 /* OneSignalNotificationServiceExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		9BD4A43C1FFC485700C20D4F /* AAC Events */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9BD4A4681FFC485700C20D4F /* Build configuration list for PBXNativeTarget "AAC Events" */;
@@ -297,10 +368,12 @@
 				9BD4A43B1FFC485700C20D4F /* Resources */,
 				7E66DAF808EE5A3DEA6A80E0 /* [CP] Embed Pods Frameworks */,
 				41D4F549EE88108877684CFD /* [CP] Copy Pods Resources */,
+				9B88BFDD204F99C20067BFF6 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				9B88BFD8204F99C20067BFF6 /* PBXTargetDependency */,
 			);
 			name = "AAC Events";
 			productName = "AAC Events";
@@ -359,10 +432,17 @@
 				LastUpgradeCheck = 0920;
 				ORGANIZATIONNAME = "Afghan American Conference";
 				TargetAttributes = {
+					9B88BFD1204F99C10067BFF6 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
 					9BD4A43C1FFC485700C20D4F = {
 						CreatedOnToolsVersion = 9.2;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -396,11 +476,19 @@
 				9BD4A43C1FFC485700C20D4F /* AAC Events */,
 				9BD4A4531FFC485700C20D4F /* AAC EventsTests */,
 				9BD4A45E1FFC485700C20D4F /* AAC EventsUITests */,
+				9B88BFD1204F99C10067BFF6 /* OneSignalNotificationServiceExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		9B88BFD0204F99C10067BFF6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9BD4A43B1FFC485700C20D4F /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -431,6 +519,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		12DA9A65409519C0A17709A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AAC Events-OneSignalNotificationServiceExtension/Pods-AAC Events-OneSignalNotificationServiceExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		186306BEB9E40DA3B3975CF3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -565,6 +668,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C756E9C5823FD614B90C242E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AAC Events-OneSignalNotificationServiceExtension-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 		F58FC061982AB03152DB53AA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -583,6 +704,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		9B88BFCE204F99C10067BFF6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9B88BFD5204F99C10067BFF6 /* NotificationService.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		9BD4A4391FFC485700C20D4F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -644,6 +773,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		9B88BFD8204F99C20067BFF6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 9B88BFD1204F99C10067BFF6 /* OneSignalNotificationServiceExtension */;
+			targetProxy = 9B88BFD7204F99C20067BFF6 /* PBXContainerItemProxy */;
+		};
 		9BD4A4561FFC485700C20D4F /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 9BD4A43C1FFC485700C20D4F /* AAC Events */;
@@ -676,6 +810,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		9B88BFDA204F99C20067BFF6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB63B53C8A5E7DCAA89EB6FA /* Pods-AAC Events-OneSignalNotificationServiceExtension.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X73E955TNB;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aac.events.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		9B88BFDB204F99C20067BFF6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B6BBC21432224A87F6203788 /* Pods-AAC Events-OneSignalNotificationServiceExtension.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X73E955TNB;
+				INFOPLIST_FILE = OneSignalNotificationServiceExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.aac.events.OneSignalNotificationServiceExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		9BD4A4661FFC485700C20D4F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -787,6 +953,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 4E4DC0CA551E8CAF173BB0F6 /* Pods-AAC Events.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AAC Events/AAC Events.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -804,6 +971,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C4D2BBC311FDAA57CD82B4BA /* Pods-AAC Events.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AAC Events/AAC Events.entitlements";
 				CODE_SIGN_STYLE = Automatic;
@@ -890,6 +1058,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		9B88BFDC204F99C20067BFF6 /* Build configuration list for PBXNativeTarget "OneSignalNotificationServiceExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9B88BFDA204F99C20067BFF6 /* Debug */,
+				9B88BFDB204F99C20067BFF6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		9BD4A4381FFC485700C20D4F /* Build configuration list for PBXProject "AAC Events" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
