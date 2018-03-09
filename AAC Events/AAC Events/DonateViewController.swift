@@ -36,12 +36,9 @@ class DonateViewController: UIViewController, SideMenuItemContent {
     }
     
     @IBAction func donatePressed(_ sender: Any) {
-        let svc = SFSafariViewController(url: NSURL(string: "https://secure.squarespace.com/commerce/donate?donatePageId=588deeae37c5818a6a00fd0d")! as URL)
-        self.present(svc, animated: true, completion: nil)
+        UIApplication.shared.open(URL(string:"https://secure.squarespace.com/commerce/donate?donatePageId=588deeae37c5818a6a00fd0d")!, options: [:], completionHandler: nil)
     }
-    
-
-    
+        
     func setupHeader() {
         
         let headerImage = UIImage(named: "donateHeader")
