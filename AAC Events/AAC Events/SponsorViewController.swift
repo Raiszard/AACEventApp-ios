@@ -94,14 +94,45 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return allSponsors.allLevelSponsors[section].level
+        
+        
+
+        
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        //        let screenWidth = tableView.frame.width
+        //        let view = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 50))
+        //        let line = UIView(frame: CGRect(x: 20, y: 49, width: screenWidth - 40, height: 1))
+        //        line.backgroundColor = .gray
+        
+        
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir-Medium", size: 16)
+        let title = allSponsors.allLevelSponsors[section].level
+        label.text = title
+        label.backgroundColor = .white
+        return label
+        
+        //        view.addSubview(line)
+        //        view.addSubview(label)
+        //
+        //        return view
+    }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "sponsorCell", for: indexPath)
         
         let sponsor = allSponsors.allLevelSponsors[indexPath.section].sponsors[indexPath.row]
-        
+        cell.textLabel?.font = UIFont(name: "Avenir-Book", size: 15)
+        cell.textLabel?.backgroundColor = .white
         cell.textLabel?.text = sponsor.name
+        cell.imageView?.layer.cornerRadius = 44/2
+        cell.imageView?.contentMode = .scaleAspectFill
+        
         if let sponsorLogo = URL(string: sponsor.logoImageURL) {
+
+
             cell.imageView?.sd_setImage(with: sponsorLogo, completed: { (image, error, cacheType, url) in
                 if error == nil {
                     cell.imageView?.image = image

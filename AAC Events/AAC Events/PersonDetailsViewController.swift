@@ -176,6 +176,16 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         return sectionTitles[section]
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir-Medium", size: 15)
+        let title = sectionTitles[section]
+        label.text = title
+        label.backgroundColor = .white
+        return label
+
+    }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

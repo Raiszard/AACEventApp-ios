@@ -101,7 +101,7 @@ class CommitteeViewController: UIViewController, SideMenuItemContent {
         let headerImage = UIImage(named: "committeeHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Planning Team - 2018", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "Planning Team 2018", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -171,7 +171,7 @@ extension CommitteeViewController: UITableViewDataSource, UITableViewDelegate {
             label.text = "Organizing Committee"
         }
         else {
-           label.text = "Subcommittee"
+           label.text = "2018 Subcommittee"
         }
         label.backgroundColor = .white
         return label

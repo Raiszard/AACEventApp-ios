@@ -27,7 +27,7 @@ class NavigationMenuViewController: MenuViewController {
     let kCellReuseIdentifier = "MenuCell"
     
     let aacMenus = ["About", "Planning Team", "Donate", "FAQ"]
-    let menuItems =  ["Agenda", "Cohorts", "Sponsor", "Norms", "Speakers", "Attendees", "Initiatives", "Conference Evaluation"]
+    let menuItems =  ["Agenda", "Cohorts", "Sponsors", "Norms", "Speakers", "Attendees", "Initiatives", "Conference Evaluation"]
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -142,7 +142,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
 		if section == 0 { return nil }
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
 		let label = UILabel(frame: CGRect(x: 20, y: 0, width: 175, height: 30))
-		label.text = "AAC 2018*"
+		label.text = "AAC 2018"
 		label.font = UIFont(name: "Avenir-Medium", size: 18)
 		label.textColor = .white
 

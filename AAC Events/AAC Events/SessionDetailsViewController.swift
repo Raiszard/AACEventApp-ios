@@ -88,6 +88,7 @@ class SessionDetailsViewController: UIViewController {
         
         //description
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 9999999))
+        label.font = UIFont(name: "Avenir-Book", size: 15)
         label.text = agendaItem.sessionDescription
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -217,6 +218,18 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return "Facilitator"
     }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+        let label = UILabel()
+        label.font = UIFont(name: "Avenir-Medium", size: 15)
+        let title = "Facilitator"
+        label.text = title
+        label.backgroundColor = .white
+        return label
+    
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -235,6 +248,10 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
         let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
         
         cell.textLabel?.text = person.name
+        cell.textLabel?.font = UIFont(name: "Avenir-Book", size: 15)
+        cell.textLabel?.backgroundColor = .white
+        cell.imageView?.layer.cornerRadius = 44/2
+        cell.imageView?.contentMode = .scaleAspectFill
         
         if let url = URL(string: person.imageURL) {
             cell.imageView?.sd_setImage(with: url, completed: { (image, error, cahce, url) in

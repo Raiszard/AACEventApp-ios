@@ -93,10 +93,10 @@
                                 <color key="sectionIndexBackgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="MenuCell" id="lPg-q5-HG9">
-                                        <rect key="frame" x="0.0" y="28" width="335" height="44"/>
+                                        <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lPg-q5-HG9" id="7Mm-JH-lHF">
-                                            <rect key="frame" x="0.0" y="0.0" width="335" height="43.666666666666664"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="43.666666666666664"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </tableViewCellContentView>
@@ -780,7 +780,7 @@
         <!--Sponsor View Controller-->
         <scene sceneID="TV7-6Q-SLz">
             <objects>
-                <viewController storyboardIdentifier="Sponsor" id="bcB-ya-Ihs" userLabel="Sponsor View Controller" customClass="SponsorViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Sponsors" id="bcB-ya-Ihs" userLabel="Sponsor View Controller" customClass="SponsorViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tzd-bw-oWg"/>
                         <viewControllerLayoutGuide type="bottom" id="Gjh-Bl-Egj"/>
@@ -2329,7 +2329,7 @@ AAAAAAIBAAAAAAAAAEEAAAAAAAAAAAAAAAAAAAr4A
         <image name="circlePlus" width="80" height="80"/>
         <image name="kitty" width="1620" height="1080"/>
         <image name="leftArrow" width="80" height="80"/>
-        <image name="logo2" width="320" height="163"/>
+        <image name="logo2" width="140" height="72"/>
         <image name="rightArrow" width="80" height="80"/>
     </resources>
 </document>
