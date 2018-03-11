@@ -15,6 +15,10 @@ class AboutViewController: UIViewController, SideMenuItemContent {
     
     @IBOutlet weak var aboutSegmentedControl: UISegmentedControl!
     @IBOutlet weak var aboutTextView: UITextView!
+	
+	let boldFont = UIFont(name: "Avenir-Heavy", size: 18)
+	let descriptionFont = UIFont(name: "Avenir", size: 16)
+	
 
     
     @IBAction func openMenu(_ sender: Any) {
@@ -36,7 +40,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
 
         
         self.aboutSegmentedControl.selectedSegmentIndex = 0
-        aboutTextView.text = "The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\nA WAY FORWARD \n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.";
+        aboutTextView.attributedText = getWhyACCText() //"The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\nA WAY FORWARD \n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.";
         
 
         // Do any additional setup after loading the view.
@@ -46,6 +50,31 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	func getWhyACCText() -> NSAttributedString {
+		let boldAttributes = [NSAttributedStringKey.font: boldFont]
+		let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
+		
+		var runningDescAttrString = NSMutableAttributedString()
+		
+		runningDescAttrString.append(NSAttributedString(string: "The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\n", attributes: descriptionAttributes))
+		
+		runningDescAttrString.append(NSAttributedString(string: "A WAY FORWARD", attributes: boldAttributes))
+		
+		runningDescAttrString.append(NSAttributedString(string: "\n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.", attributes: descriptionAttributes))
+
+			
+		return runningDescAttrString
+		
+
+	}
+	
+	func getTheConferenceText() -> NSAttributedString {
+		let boldAttributes = [NSAttributedStringKey.font: boldFont]
+		let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
+
+		return NSAttributedString(string: "TODO", attributes: boldAttributes)
+	}
 
     func setupHeader() {
         
@@ -68,11 +97,11 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         switch aboutSegmentedControl.selectedSegmentIndex
         {
         case 0:
-            aboutTextView.text = "The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\nA WAY FORWARD \n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.";
+            aboutTextView.attributedText = getWhyACCText() //"The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\nA WAY FORWARD \n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.";
             self.aboutTextView.setContentOffset(.zero, animated: false)
 
         case 1:
-            aboutTextView.text = "The Afghan-American Conference is an annual nationwide conference for young community leaders to engage in meaningful dialogue, grow professionally and build relationships. The conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers, entertainment, and even S.E.E.D. Talks. \n\nOUR MISSION \n\nTo provide a forum to address issues affecting the Afghan-American community, and a platform to facilitate dialogue, collaborate, and build relationships to strengthen our diaspora. \n\nOUR VISION \n\nAn empowered, supportive, and engaged Afghan-American community.";
+            aboutTextView.attributedText = getTheConferenceText()//"The Afghan-American Conference is an annual nationwide conference for young community leaders to engage in meaningful dialogue, grow professionally and build relationships. The conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers, entertainment, and even S.E.E.D. Talks. \n\nOUR MISSION \n\nTo provide a forum to address issues affecting the Afghan-American community, and a platform to facilitate dialogue, collaborate, and build relationships to strengthen our diaspora. \n\nOUR VISION \n\nAn empowered, supportive, and engaged Afghan-American community.";
             self.aboutTextView.setContentOffset(.zero, animated: false)
 
         default:
