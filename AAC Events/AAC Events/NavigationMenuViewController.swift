@@ -141,7 +141,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
 	func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 		if section == 0 { return nil }
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
-		let label = UILabel(frame: CGRect(x: 20, y: 0, width: 175, height: 30))
+		let label = UILabel(frame: CGRect(x: 15, y: 0, width: 175, height: 30))
 		label.text = "AAC 2018"
 		label.font = UIFont(name: "Avenir-Medium", size: 18)
 		label.textColor = .white

@@ -216,14 +216,19 @@ class SessionDetailsViewController: UIViewController {
 extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Facilitator"
+        return facilitators[section].title
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let label = UILabel()
         label.font = UIFont(name: "Avenir-Medium", size: 15)
-        let title = "Facilitator"
+		var title = ""
+		if facilitators != nil && facilitators.count > 0 && facilitators[section] != nil {
+			let person = facilitators[section]
+			title = person.title
+
+		}
         label.text = title
         label.backgroundColor = .white
         return label

@@ -25,9 +25,8 @@
                     <rect key="frame" x="0.0" y="0.0" width="375" height="172"/>
                     <color key="backgroundColor" red="0.071317194570000006" green="0.84534222150000005" blue="0.084043815509999995" alpha="1" colorSpace="calibratedRGB"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Just a title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ebn-2P-1fG">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Just a title" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="ebn-2P-1fG">
                     <rect key="frame" x="16" y="20" width="343" height="132"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="34"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -54,14 +53,18 @@
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="pUn-sv-hx8" secondAttribute="bottom" id="3LR-Ly-WBV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ebn-2P-1fG" secondAttribute="trailing" constant="16" id="93u-zh-LeI"/>
                 <constraint firstItem="XvZ-xm-wy3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="9df-QG-yAo"/>
                 <constraint firstItem="XvZ-xm-wy3" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="50" id="BKe-cy-Jjx"/>
                 <constraint firstItem="7ZT-OJ-gp3" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="Ik6-uN-dDY"/>
                 <constraint firstItem="pUn-sv-hx8" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="JNE-qG-p6X"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="pUn-sv-hx8" secondAttribute="trailing" id="Uwg-8W-Nfv"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="XvZ-xm-wy3" secondAttribute="trailing" constant="16" id="Wl3-Ng-UsL"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="ebn-2P-1fG" secondAttribute="bottom" constant="20" id="bXV-HS-hZ4"/>
                 <constraint firstItem="pUn-sv-hx8" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="c0b-em-hZT"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="7ZT-OJ-gp3" secondAttribute="bottom" constant="58" id="iao-9V-VgD"/>
+                <constraint firstItem="ebn-2P-1fG" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="oKh-Xs-EaA"/>
+                <constraint firstItem="ebn-2P-1fG" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="sgC-iG-99X"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="7ZT-OJ-gp3" secondAttribute="trailing" constant="16" id="yrw-M2-Y6r"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
