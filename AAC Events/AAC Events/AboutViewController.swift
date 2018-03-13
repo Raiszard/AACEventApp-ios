@@ -16,8 +16,8 @@ class AboutViewController: UIViewController, SideMenuItemContent {
     @IBOutlet weak var aboutSegmentedControl: UISegmentedControl!
     @IBOutlet weak var aboutTextView: UITextView!
 	
-	let boldFont = UIFont(name: "Avenir-Heavy", size: 18)
-	let descriptionFont = UIFont(name: "Avenir", size: 16)
+	let boldFont = UIFont(name: "Avenir-Medium", size: 15)
+	let descriptionFont = UIFont(name: "Avenir-Book", size: 15)
 	
 
     
@@ -55,7 +55,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
 		let boldAttributes = [NSAttributedStringKey.font: boldFont]
 		let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
 		
-		var runningDescAttrString = NSMutableAttributedString()
+		let runningDescAttrString = NSMutableAttributedString()
 		
 		runningDescAttrString.append(NSAttributedString(string: "The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\n", attributes: descriptionAttributes))
 		
@@ -72,8 +72,21 @@ class AboutViewController: UIViewController, SideMenuItemContent {
 	func getTheConferenceText() -> NSAttributedString {
 		let boldAttributes = [NSAttributedStringKey.font: boldFont]
 		let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
-
-		return NSAttributedString(string: "TODO", attributes: boldAttributes)
+        
+        let runningConfAttrString = NSMutableAttributedString()
+        
+        runningConfAttrString.append(NSAttributedString(string: "The Afghan-American Conference is an annual nationwide conference for young community leaders to engage in meaningful dialogue, grow professionally and build relationships. The conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers, entertainment, and even S.E.E.D. Talks. \n\n", attributes: descriptionAttributes))
+        
+        runningConfAttrString.append(NSAttributedString(string: "OUR MISSION", attributes: boldAttributes))
+        
+        runningConfAttrString.append(NSAttributedString(string: "\n\nTo provide a forum to address issues affecting the Afghan-American community, and a platform to facilitate dialogue, collaborate, and build relationships to strengthen our diaspora. \n\n", attributes: descriptionAttributes))
+        
+        runningConfAttrString.append(NSAttributedString(string: "OUR VISION", attributes: boldAttributes))
+        
+        runningConfAttrString.append(NSAttributedString(string: "\n\nAn empowered, supportive, and engaged Afghan-American community.ion started, let us share resources, and let us find those solutions together as a community.", attributes: descriptionAttributes))
+        
+        
+		return runningConfAttrString
 	}
 
     func setupHeader() {
