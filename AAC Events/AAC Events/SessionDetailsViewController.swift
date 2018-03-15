@@ -95,7 +95,7 @@ class SessionDetailsViewController: UIViewController {
     func setupLabels() {
         
         //description
-        let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 9999999))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width - 32, height: 9999999))
         label.font = UIFont(name: "Avenir-Book", size: 15)
         label.text = agendaItem.sessionDescription
         label.numberOfLines = 0
@@ -103,7 +103,12 @@ class SessionDetailsViewController: UIViewController {
         label.textAlignment = .left
         label.sizeToFit()
         label.frame.size.height = label.frame.height + 20 //more padding for description
-        tableView.tableHeaderView = label
+        var viewFrame = label.frame
+        viewFrame.size.width = label.frame.width + 32
+        let view = UIView(frame: viewFrame)
+        view.addSubview(label)
+        label.center = view.center
+        tableView.tableHeaderView = view
         
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMM d"
