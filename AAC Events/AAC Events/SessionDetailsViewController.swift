@@ -43,6 +43,11 @@ class SessionDetailsViewController: UIViewController {
         let cellnib = UINib(nibName: "ImageLabelTableViewCell", bundle: nil)
         tableView.register(cellnib, forCellReuseIdentifier: "imageLabelCell")
 
+        if agendaItem.evaluationURL == nil || agendaItem.evaluationURL!.isEmpty {
+            sessionEvalButtonHeightConstraint.constant = 0
+        } else {
+            sessionEvalButtonHeightConstraint.constant = 44
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
