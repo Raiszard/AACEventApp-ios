@@ -15,6 +15,7 @@
 		735CF56020358D6F0032D670 /* CommitteeMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 735CF55F20358D6F0032D670 /* CommitteeMemberViewController.swift */; };
 		737CEAFF203421C400A8F7A9 /* FAQViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CEAFE203421C400A8F7A9 /* FAQViewController.swift */; };
 		737CEB0120342B2000A8F7A9 /* CommitteeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 737CEB0020342B2000A8F7A9 /* CommitteeViewController.swift */; };
+		738069F02059DE9800F4BB6E /* CreditsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738069EF2059DE9800F4BB6E /* CreditsViewController.swift */; };
 		73C77D1A2047F0E500800F7F /* InitiativeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C77D192047F0E500800F7F /* InitiativeDetailsViewController.swift */; };
 		73C77D1C204802BE00800F7F /* ConferenceEvaluationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */; };
 		7D591DB4F387EDA40D8E396E /* Pods_AAC_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A26C403FA682AF4768BF86 /* Pods_AAC_Events.framework */; };
@@ -108,6 +109,7 @@
 		73703A89AB3B6CA9F12E142A /* Pods_AAC_EventsUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AAC_EventsUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		737CEAFE203421C400A8F7A9 /* FAQViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FAQViewController.swift; sourceTree = "<group>"; };
 		737CEB0020342B2000A8F7A9 /* CommitteeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommitteeViewController.swift; sourceTree = "<group>"; };
+		738069EF2059DE9800F4BB6E /* CreditsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditsViewController.swift; sourceTree = "<group>"; };
 		73C77D192047F0E500800F7F /* InitiativeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiativeDetailsViewController.swift; sourceTree = "<group>"; };
 		73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceEvaluationViewController.swift; sourceTree = "<group>"; };
 		85731998ADBEDC9ECBB94EE9 /* Pods-AAC EventsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -256,6 +258,7 @@
 				9BD4A4421FFC485700C20D4F /* ViewController.swift */,
 				9BD4A4441FFC485700C20D4F /* Login.storyboard */,
 				9B3C746A1FFDA5180004A82A /* Main.storyboard */,
+				738069EF2059DE9800F4BB6E /* CreditsViewController.swift */,
 				9B3C746D1FFDA5370004A82A /* HostViewController.swift */,
 				9B3C746C1FFDA5370004A82A /* NavigationMenuViewController.swift */,
 				9B3C74741FFDA9BD0004A82A /* KittyViewController.swift */,
@@ -747,6 +750,7 @@
 				9B3C747C20004C0C0004A82A /* ViewHeader.swift in Sources */,
 				73C77D1A2047F0E500800F7F /* InitiativeDetailsViewController.swift in Sources */,
 				9B3D870E2005F53D00599D92 /* SponsorDetailsViewController.swift in Sources */,
+				738069F02059DE9800F4BB6E /* CreditsViewController.swift in Sources */,
 				735CF56020358D6F0032D670 /* CommitteeMemberViewController.swift in Sources */,
 				9BF38A572004462B0078FC59 /* CohortsViewController.swift in Sources */,
 				9BB0C92D203375C600B4C87E /* CohortTableViewCell.swift in Sources */,

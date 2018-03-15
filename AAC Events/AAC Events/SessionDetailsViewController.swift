@@ -118,22 +118,16 @@ class SessionDetailsViewController: UIViewController {
 //        let testImage = UIImage(named: "tempLogo")
         let header: ViewHeader = .fromNib()
         
-        let imageNamesToRandomizeForHeader = ["aboutHeader",
-                                              "agendaHeader",
-                                              "attendeesHeader",
-                                              "cohortHeader",
-                                              "committeeHeader",
-                                              "committeeHeader2",
-                                              "conferenceEvalHeader",
-                                              "donateHeader",
-                                              "FAQHeader",
-                                              "initiativesHeader",
-                                              "myscheduleHeader",
-                                              "newsletterHeader",
-                                              "normsHeader",
-                                              "profileHeader",
-                                              "speakerHeader",
-                                              "sponsorHeader"]
+        let imageNamesToRandomizeForHeader = ["Session1",
+                                              "Session2",
+                                              "Session3",
+                                              "Session4",
+                                              "Session5",
+                                              "Session6",
+                                              "Session7",
+                                              "Session8",
+                                              "Session9",
+                                              "Session10"]
         
         let rando = Int(arc4random()) % imageNamesToRandomizeForHeader.count
         let image = UIImage(named: imageNamesToRandomizeForHeader[rando])
@@ -229,7 +223,7 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
 			title = person.title
 
 		}
-        label.text = title
+        label.text = " "//title
         label.backgroundColor = .white
         return label
     
