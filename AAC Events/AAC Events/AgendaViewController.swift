@@ -38,10 +38,7 @@ class AgendaViewController: UIViewController {
         
         let cellnib = UINib(nibName: "SessionTableViewCell", bundle: nil)
         tableView.register(cellnib, forCellReuseIdentifier: "sessionCell")
-        //go through the session arrays and create an array of items with a visable tag
         
-        
-        //TODO: use appD.allSessions to populate data
         
         if appDelegate.allSessions != nil {
             setupInitialAgendaItem()
@@ -50,72 +47,6 @@ class AgendaViewController: UIViewController {
             //TODO: wait for call to finish then reload
             //add observer
         }
-        
-        /*
-        //test data
-        let item1 = AgendaItem()
-        item1.startTime = "1:30 PM"
-        item1.endTime = "3:30 PM"
-        item1.sessionName = "Registration & Icewarmers"
-        item1.location = "Ackerman Grand Ballroom"
-        item1.id = "1"
-        item1.subItems = []
-        item1.isExpandable = false
-        item1.isExpanded = false
-        
-        allAgendaItems.append(item1)
-        
-        let item2 = AgendaItem()
-        item2.startTime = "1:00 PM"
-        item2.endTime = "2:00 PM"
-        item2.sessionName = "Professional Panels"
-        item2.location = "Various"
-        item2.id = "2"
-        item2.subItems = ["3", "4"]
-        item2.isExpandable = true
-        item2.isExpanded = false
-        allAgendaItems.append(item2)
-
-        let item3 = AgendaItem()
-        item3.startTime = ""
-        item3.endTime = ""
-        item3.sessionName = "Arts & Media"
-        item3.location = "Room 123"
-        item3.id = "3"
-        item3.subItems = []
-        item3.isExpandable = false
-        item3.isExpanded = false
-        item3.isSubItem = true
-        allAgendaItems.append(item3)
-
-        let item4 = AgendaItem()
-        item4.startTime = ""
-        item4.endTime = ""
-        item4.sessionName = "Community Organizing in the Afghan-American Diaspora: Cultural Events, Sports, and Activism"
-        item4.location = "Room 201"
-        item4.id = "4"
-        item4.subItems = []
-        item4.isExpandable = false
-        item4.isExpanded = false
-        item4.isSubItem = true
-        allAgendaItems.append(item4)
-        
-        let item5 = AgendaItem()
-        item5.startTime = "4:30 PM"
-        item5.endTime = "5:40 PM"
-        item5.sessionName = "Gender Dynamics: Misogny and Double Standards"
-        item5.location = "Room 301"
-        item5.id = "5"
-        item5.subItems = []
-        item5.isExpandable = false
-        item5.isExpanded = false
-        allAgendaItems.append(item5)
-        
-        visableAgendaItems.append(item1)
-        visableAgendaItems.append(item2)
-        visableAgendaItems.append(item5)
-*/
-
         daysSegmentedControl.selectedSegmentIndex = 0
         dayChanged(daysSegmentedControl)
     }

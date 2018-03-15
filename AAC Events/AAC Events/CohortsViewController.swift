@@ -131,15 +131,8 @@ extension CohortsViewController: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-//        let cohortItem = cohorts[indexPath.section][indexPath.row]
-//        cell.imageView?.sd_setImage(with: cohortItem.imageURL, completed: nil)
-//        cell.textLabel?.text = cohortItem.name
-        
         let cohort = cohorts[indexPath.section]
         let person = cohort.peopleArray[indexPath.row]
-        
-
-//        cell.textLabel?.text = "Person " + String(indexPath.row) + " name in cohort #: " + String(indexPath.section + 1)
         
         cell.label?.text = person.name
         
@@ -152,7 +145,6 @@ extension CohortsViewController: UITableViewDelegate, UITableViewDataSource {
                 if error == nil {
                     cell.profileImage?.image = image
                     cell.profileImage?.clipsToBounds = true
-//                    cell.profileImage?.layer.cornerRadius = (cell.imageView?.frame.size.width)!/4
                     cell.setNeedsLayout()
                     
                 }

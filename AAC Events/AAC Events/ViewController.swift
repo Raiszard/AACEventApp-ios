@@ -40,7 +40,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewWillAppear(true)
         let appD = UIApplication.shared.delegate as! AppDelegate
         if appD.isAppUnlocked {
-            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .seconds(1), execute: {
+            DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(250), execute: {
                 self.presentMainStoryBoard()
             })
         }

@@ -57,6 +57,8 @@
 		9BDC06D3200839F500F825E4 /* PeopleList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC06D0200839F400F825E4 /* PeopleList.swift */; };
 		9BDC06D5200839F500F825E4 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BDC06D2200839F500F825E4 /* Session.swift */; };
 		9BF38A572004462B0078FC59 /* CohortsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF38A562004462B0078FC59 /* CohortsViewController.swift */; };
+		BDE586E4205A17FE005702C9 /* ImageLabelTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BDE586E2205A17FE005702C9 /* ImageLabelTableViewCell.swift */; };
+		BDE586E5205A17FE005702C9 /* ImageLabelTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BDE586E3205A17FE005702C9 /* ImageLabelTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -161,6 +163,8 @@
 		9BF38A562004462B0078FC59 /* CohortsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CohortsViewController.swift; sourceTree = "<group>"; };
 		AB63B53C8A5E7DCAA89EB6FA /* Pods-AAC Events-OneSignalNotificationServiceExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events-OneSignalNotificationServiceExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events-OneSignalNotificationServiceExtension/Pods-AAC Events-OneSignalNotificationServiceExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		B6BBC21432224A87F6203788 /* Pods-AAC Events-OneSignalNotificationServiceExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events-OneSignalNotificationServiceExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events-OneSignalNotificationServiceExtension/Pods-AAC Events-OneSignalNotificationServiceExtension.release.xcconfig"; sourceTree = "<group>"; };
+		BDE586E2205A17FE005702C9 /* ImageLabelTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLabelTableViewCell.swift; sourceTree = "<group>"; };
+		BDE586E3205A17FE005702C9 /* ImageLabelTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ImageLabelTableViewCell.xib; sourceTree = "<group>"; };
 		C4D2BBC311FDAA57CD82B4BA /* Pods-AAC Events.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC Events.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events.release.xcconfig"; sourceTree = "<group>"; };
 		E04F978DC78777E57C91B4E9 /* Pods-AAC EventsUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED42D10E5350A7ED22D9D288 /* Pods_AAC_EventsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AAC_EventsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -282,6 +286,8 @@
 				9B3D870F2006CEF000599D92 /* SessionTableViewCell.swift */,
 				9B3D87102006CEF000599D92 /* SessionTableViewCell.xib */,
 				9B3D87132006E70B00599D92 /* AgendaViewController.swift */,
+				BDE586E2205A17FE005702C9 /* ImageLabelTableViewCell.swift */,
+				BDE586E3205A17FE005702C9 /* ImageLabelTableViewCell.xib */,
 				9B346A75202930DF004263CF /* MyScheduleViewController.swift */,
 				9B03293F201ACF9800B94A74 /* SessionDetailsViewController.swift */,
 				9BDC06C7200825D400F825E4 /* NormsViewController.swift */,
@@ -499,6 +505,7 @@
 				9BD4A44E1FFC485700C20D4F /* LaunchScreen.storyboard in Resources */,
 				9B3C747E20004C2B0004A82A /* ViewHeader.xib in Resources */,
 				9B3D87122006CEF000599D92 /* SessionTableViewCell.xib in Resources */,
+				BDE586E5205A17FE005702C9 /* ImageLabelTableViewCell.xib in Resources */,
 				9BD4A4461FFC485700C20D4F /* Login.storyboard in Resources */,
 				9B3C74721FFDA9380004A82A /* Assets.xcassets in Resources */,
 				9B3C746B1FFDA5180004A82A /* Main.storyboard in Resources */,
@@ -734,6 +741,7 @@
 				737CEAFF203421C400A8F7A9 /* FAQViewController.swift in Sources */,
 				9B3C746E1FFDA5370004A82A /* NavigationMenuViewController.swift in Sources */,
 				9B3C74761FFDA9BD0004A82A /* KittyViewController.swift in Sources */,
+				BDE586E4205A17FE005702C9 /* ImageLabelTableViewCell.swift in Sources */,
 				9BD4A4411FFC485700C20D4F /* AppDelegate.swift in Sources */,
 				7352BFFA2045525500301FB0 /* InitiativesViewController.swift in Sources */,
 				9BB0C92B2031304300B4C87E /* Cohort.swift in Sources */,

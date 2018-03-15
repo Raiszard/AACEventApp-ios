@@ -58,7 +58,7 @@ class PersonDetailsViewController: UIViewController {
 //        testAgendaItem = item1
         
         
-        let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width - 20, height: 9999999))
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 9999999))
         label.text = self.personDescription
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping

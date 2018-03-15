@@ -40,6 +40,9 @@ class SessionDetailsViewController: UIViewController {
         setupHeader()
         
         tableView.estimatedSectionFooterHeight = 0
+        let cellnib = UINib(nibName: "ImageLabelTableViewCell", bundle: nil)
+        tableView.register(cellnib, forCellReuseIdentifier: "imageLabelCell")
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -244,30 +247,36 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let person = facilitators[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "personCell", for: indexPath)
-        
-        cell.textLabel?.text = person.name
-        cell.textLabel?.font = UIFont(name: "Avenir-Book", size: 15)
-        cell.textLabel?.backgroundColor = .white
-        cell.imageView?.layer.cornerRadius = 44/2
-        cell.imageView?.contentMode = .scaleAspectFill
-        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "imageLabelCell", for: indexPath) as? ImageLabelTableViewCell else {
+            return UITableViewCell()
+        }
+
+        cell.label?.text = person.name
+        cell.label?.font = UIFont(name: "Avenir-Book", size: 15)
+        cell.label?.backgroundColor = .white
+        cell.logoImageView?.layer.cornerRadius = 44/2
+        cell.logoImageView?.contentMode = .scaleAspectFill
+        cell.logoImageView?.clipsToBounds = true
+
         if let url = URL(string: person.imageURL) {
-            cell.imageView?.sd_setImage(with: url, completed: { (image, error, cahce, url) in
+            cell.logoImageView?.sd_setImage(with: url, completed: { (image, error, cahce, url) in
                 if error == nil {
-                    cell.imageView?.image = image
-                    cell.imageView?.clipsToBounds = true
+                    cell.logoImageView?.image = image
+                    cell.logoImageView?.clipsToBounds = true
                     cell.setNeedsLayout()
                 }
             })
 
         } else {
-            cell.imageView?.image = nil
+            cell.logoImageView?.image = nil
         }
         
         return cell
     }
     
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60
+    }
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
         return UIView()
     }
