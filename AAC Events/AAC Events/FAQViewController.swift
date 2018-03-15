@@ -60,7 +60,7 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "I HAVE GREAT IDEAS. MAY I PRESENT AT THE CONFERENCE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nYes! Attendees have two options to present: Session Topics and and S.E.E.D Talks (Supportive Engaged Empowered Diaspora). \n\nS.E.E.D Talks (Supportive Engaged Empowered Diaspora) \n\nThroughout the weekend, conference participants can give short (5-10 minutes) talks on any topic. Participants interested in giving S.E.E.D Talks will be required to submit a script, audition tape, and if applicable, a PowerPoint presentation.We are always looking for dynamic, accomplished and passionate speakers.Take a look at some of our past speakers here. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nYes! Attendees have two options to present: Session Topics and and S.E.E.D Talks (Supportive Engaged Empowered Diaspora). \n\nS.E.E.D Talks (Supportive Engaged Empowered Diaspora) \n\nThroughout the weekend, conference participants can give short (5-10 minutes) talks on any topic. Participants interested in giving S.E.E.D Talks will be required to submit a script, audition tape, and if applicable, a PowerPoint presentation.We are always looking for dynamic, accomplished and passionate speakers. \n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "WHAT IS THE CONFERENCE DRESS CODE?", attributes: boldAttributes))
         
