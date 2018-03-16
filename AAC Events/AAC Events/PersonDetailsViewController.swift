@@ -44,21 +44,15 @@ class PersonDetailsViewController: UIViewController {
         setupHeader()
         
         setupPersonsSessions()
-        
-        //test agenda item
-//        let item1 = AgendaItem()
-//        item1.startTime = "1-3"
-//        item1.endTime = "pm"
-//        item1.sessionName = "Session name will go here"
-//        item1.location = "this is the description"
-//        item1.id = "1"
-//        item1.subItems = []
-//        item1.isExpandable = false
-//        item1.isExpanded = false
-//        testAgendaItem = item1
-        
-        
-        let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableView.frame.width, height: 9999999))
+
+        var margins = 40
+        if UIDevice().userInterfaceIdiom == .phone && UIScreen.main.nativeBounds.height == 2436 {
+            //iPhone X
+            margins = 32
+        }
+
+        let tableWidth = UIScreen.main.bounds.size.width - CGFloat(margins)
+        let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableWidth, height: 9999999))
         label.text = self.personDescription
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
