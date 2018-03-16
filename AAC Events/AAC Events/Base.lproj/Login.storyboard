@@ -38,7 +38,7 @@
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Unlock Code" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cjx-I9-UK6">
-                                <rect key="frame" x="132.5" y="523" width="110" height="30"/>
+                                <rect key="frame" x="132.5" y="328.5" width="110" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="V4S-On-ng8"/>
                                     <constraint firstAttribute="width" constant="110" id="bBt-Mx-Usa"/>
@@ -48,7 +48,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5pP-9S-1EV">
-                                <rect key="frame" x="154.5" y="573" width="65" height="30"/>
+                                <rect key="frame" x="154.5" y="378.5" width="65" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="CTF-U5-O7j"/>
@@ -74,7 +74,7 @@
                         <constraints>
                             <constraint firstItem="j49-yp-rsM" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="20" id="15B-Op-afh"/>
                             <constraint firstItem="ROz-oi-ddm" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="2CI-n5-ygD"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Cjx-I9-UK6" secondAttribute="bottom" constant="114" id="Bfg-3h-B2f"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="centerY" secondItem="Cjx-I9-UK6" secondAttribute="centerY" id="Bfg-3h-B2f"/>
                             <constraint firstItem="5pP-9S-1EV" firstAttribute="top" secondItem="Cjx-I9-UK6" secondAttribute="bottom" constant="20" id="Ktm-C9-mad"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="fDq-On-TrI" secondAttribute="bottom" constant="20" id="McV-ZE-TXn"/>
                             <constraint firstItem="ROz-oi-ddm" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="URj-kI-8zh"/>

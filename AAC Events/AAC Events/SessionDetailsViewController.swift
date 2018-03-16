@@ -79,7 +79,9 @@ class SessionDetailsViewController: UIViewController {
     func setupRoundButton() {
         
         plusView.layer.cornerRadius = plusView.frame.width/2
-        plusView.backgroundColor = .green
+        plusView.backgroundColor = .gray
+        plusView.layer.borderColor = UIColor.black.cgColor
+        plusView.layer.borderWidth = 1
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         let isEnrolled = appDelegate.isEnrolledIn(sessionID: agendaItem.id)
