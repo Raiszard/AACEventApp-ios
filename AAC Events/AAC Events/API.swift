@@ -155,8 +155,8 @@ class API: NSObject {
 //                callback(arrayOfNames)
                 let runningAttrString = NSMutableAttributedString()
                 
-                let titleFont = UIFont(name: "Avenir-Heavy", size: 18)
-                let descriptionFont = UIFont(name: "Avenir", size: 16)
+                let titleFont = UIFont(name: "Avenir-Medium", size: 15)
+                let descriptionFont = UIFont(name: "Avenir-Book", size: 15)
                 
                 let titleAttributes = [NSAttributedStringKey.font: titleFont]
                 let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
