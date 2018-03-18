@@ -11,8 +11,8 @@ import UIKit
 
 typealias JsonDict = Dictionary<String, AnyObject>
 
-let attendeesURL = "https://dl.dropboxusercontent.com/s/5sblpkzw1jztj7e/Attendees.json?dl=0"
-let normsURL = "https://dl.dropboxusercontent.com/s/uq60dx5orq43gm3/Norms.json?dl=0"
+let attendeesURL = "https://dl.dropboxusercontent.com/s/ti105fzidyc8vc4/Attendees.json?dl=0"
+let normsURL = "https://dl.dropboxusercontent.com/s/mikmzq6g9o8ss78/Norms.json?dl=0"
 let cohortsURL = "https://dl.dropboxusercontent.com/s/yoxo4gjgo4vpm26/CohortsData.json?dl=0"
 let peopleURL = "https://dl.dropboxusercontent.com/s/wu5ivui6ws6chtw/PeopleList.json?dl=0"
 let sponsorsURL = "https://dl.dropboxusercontent.com/s/uby6iprsz9no1sa/SponsorsData.json?dl=0"
