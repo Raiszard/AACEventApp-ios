@@ -96,15 +96,18 @@ class SessionDetailsViewController: UIViewController {
     
     func setupLabels() {
         
+        let margins = 20
+        
+        let tableWidth = UIScreen.main.bounds.size.width - CGFloat(margins)
         //description
-        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableView.frame.width - 32, height: 9999999))
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableWidth - 32, height: 9999999))
         label.font = UIFont(name: "Avenir-Book", size: 15)
         label.text = agendaItem.sessionDescription
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
         label.sizeToFit()
-        label.frame.size.height = label.frame.height + 20 //more padding for description
+        label.frame.size.height = label.frame.height //more padding for description
         var viewFrame = label.frame
         viewFrame.size.width = label.frame.width + 32
         let view = UIView(frame: viewFrame)
@@ -270,7 +273,9 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
         cell.logoImageView?.contentMode = .scaleAspectFill
         cell.logoImageView?.clipsToBounds = true
 
-        if let url = URL(string: person.imageURL) {
+        if !person.imageName.isEmpty {
+            cell.logoImageView.image = UIImage(named: person.imageName)
+        } else if let url = URL(string: person.imageURL) {
             cell.logoImageView?.sd_setImage(with: url, completed: { (image, error, cahce, url) in
                 if error == nil {
                     cell.logoImageView?.image = image
@@ -280,7 +285,7 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
             })
 
         } else {
-            cell.logoImageView?.image = nil
+            cell.logoImageView?.image = UIImage(named: "noImage")
         }
         
         return cell
