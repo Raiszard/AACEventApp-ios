@@ -138,20 +138,28 @@ extension CohortsViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.profileImage?.contentMode = .scaleAspectFill
         
-        cell.profileImage?.layer.cornerRadius = 44/2
+        cell.profileImage?.layer.cornerRadius = 42/2
         
-        if let url = URL(string: person.imageURL){
-            cell.profileImage?.sd_setImage(with: url, completed: { (image, error, _, returnURL) in
+        if person.imageName != nil {
+            if let image = UIImage(named: person.imageName) {
+                cell.profileImage.image = image
+            }
+        } else if let personImgURL = URL(string: person.imageURL) {
+            cell.profileImage?.sd_setImage(with: personImgURL, completed: { (image, error, cacheType, url) in
                 if error == nil {
                     cell.profileImage?.image = image
-                    cell.profileImage?.clipsToBounds = true
+                    cell.clipsToBounds = true
                     cell.setNeedsLayout()
-                    
                 }
             })
-
+        } else {
+            let image = UIImage(named: "noImage")
+            cell.profileImage.image = image
         }
-        
+        cell.clipsToBounds = true
+        cell.setNeedsLayout()
+        cell.profileImage.clipsToBounds = true
+
         
         return cell
     }

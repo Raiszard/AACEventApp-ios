@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import OneSignal
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -44,6 +45,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.presentMainStoryBoard()
             })
         }
+        
+        // Recommend moving the below line to prompt for push after informing the user about
+        //   how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

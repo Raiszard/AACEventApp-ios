@@ -128,7 +128,11 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
         cell.logoImageView?.contentMode = .scaleAspectFill
         cell.logoImageView.clipsToBounds = true
         
-        if let sponsorLogo = URL(string: sponsor.logoImageURL) {
+        if !sponsor.imageName.isEmpty {
+            if let image = UIImage(named: sponsor.imageName) {
+                cell.logoImageView.image = image
+            }
+        } else if let sponsorLogo = URL(string: sponsor.logoImageURL) {
             cell.logoImageView?.sd_setImage(with: sponsorLogo, completed: { (image, error, cacheType, url) in
                 if error == nil {
                     cell.logoImageView?.image = image
@@ -136,7 +140,12 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
                     cell.setNeedsLayout()
                 }
             })
+        } else {
+            let image = UIImage(named: "noImage")
+            cell.logoImageView.image = image
         }
+        
+
         return cell
     }
 }

@@ -51,7 +51,15 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
+    
+    var scrolledOnce = false
+    override func viewDidAppear(_ animated: Bool) {
+        if !scrolledOnce {
+            aboutTextView.setContentOffset(CGPoint.zero, animated: false)
+
+            scrolledOnce = true
+        }
+    }
 	func getWhyACCText() -> NSAttributedString {
 		let boldAttributes = [NSAttributedStringKey.font: boldFont]
 		let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]

@@ -35,6 +35,15 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         // Do any additional setup after loading the view.
     }
     
+    var scrolledOnce = false
+    override func viewDidAppear(_ animated: Bool) {
+        if !scrolledOnce {
+            FAQtextView.setContentOffset(CGPoint.zero, animated: false)
+            
+            scrolledOnce = true
+        }
+    }
+    
     func FAQText() -> NSAttributedString {
         let boldAttributes = [NSAttributedStringKey.font: boldFont]
         let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]

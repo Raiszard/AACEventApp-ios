@@ -122,8 +122,11 @@ extension SpeakersViewController: UITableViewDataSource, UITableViewDelegate {
         cell.nameLabel.text = person.name
         
         cell.personImageView.layer.cornerRadius = 44/2
+        
+        if let image = UIImage(named: person.imageName) {
+            cell.personImageView?.image = image
 
-        if let url = URL(string: person.imageURL){
+        }else if let url = URL(string: person.imageURL){
             cell.personImageView?.sd_setImage(with: url, completed: { (image, error, _, returnURL) in
                 if error == nil {
                     cell.personImageView?.image = image
@@ -133,7 +136,10 @@ extension SpeakersViewController: UITableViewDataSource, UITableViewDelegate {
                     
                 }
             })
+        } else {
+            cell.personImageView?.image = UIImage(named: "noImage")
         }
+        cell.personImageView?.clipsToBounds = true
 
         
         return cell
@@ -151,6 +157,7 @@ extension SpeakersViewController: UITableViewDataSource, UITableViewDelegate {
         vc.personTitle = person.title
         vc.sessionIDs = person.sessionIDs
         vc.imageURL = person.imageURL
+        vc.imageName = person.imageName
         
         present(vc, animated: true, completion: nil)
 

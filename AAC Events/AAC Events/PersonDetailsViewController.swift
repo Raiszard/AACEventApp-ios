@@ -21,6 +21,7 @@ class PersonDetailsViewController: UIViewController {
     var name: String! = "Name goes here"
     var personDescription: String! = ""
     var imageURL: String! = ""
+    var imageName: String! = ""
     
     var testAgendaItem: Session!
 
@@ -32,13 +33,17 @@ class PersonDetailsViewController: UIViewController {
         let cellnib = UINib(nibName: "SessionTableViewCell", bundle: nil)
         tableView.register(cellnib, forCellReuseIdentifier: "sessionCell")
         
-        if self.imageURL != nil {
+        if !self.imageName.isEmpty {
+            self.personImageView.image = UIImage(named: imageName)
+        } else if self.imageURL != nil {
             let url = URL(string: imageURL)
             self.personImageView.sd_setImage(with: url, completed: { (image, error, _, _) in
                 if error == nil {
                     self.personImageView.image = image
                 }
             })
+        } else {
+            self.personImageView.image = UIImage(named: "noImage")
         }
         
         setupHeader()

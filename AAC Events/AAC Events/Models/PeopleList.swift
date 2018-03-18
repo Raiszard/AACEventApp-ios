@@ -40,6 +40,7 @@ class Person: NSObject {
     var imageURL: String!
     var personDescription: String!
     var sessionIDs: [String]!
+    var imageName: String!
     
     init?(person: JsonDict) {
         if let personName = person["name"] as? String {
@@ -62,7 +63,11 @@ class Person: NSObject {
         } else {
             return nil
         }
-        
+        if let imageName = person["imageName"] as? String {
+            self.imageName = imageName
+        } else {
+            return nil
+        }
         
     }
 }

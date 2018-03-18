@@ -58,6 +58,7 @@ class Sponsor: NSObject {
     var name: String
     var headerImageURL: String
     var logoImageURL: String
+    var imageName: String
 
     var sponsorDescription: String
     
@@ -77,6 +78,11 @@ class Sponsor: NSObject {
         if let desc = dict["description"] as? String {
             self.sponsorDescription = desc
         } else { return nil }
+        
+        if let imgName = dict["imageName"] as? String {
+            self.imageName = imgName
+        } else { return nil }
+
     }
 }
 

@@ -36,6 +36,7 @@ class CohortPerson: NSObject {
     
     var name: String
     var imageURL: String
+    var imageName: String
     
     init?(person: JsonDict) {
         if let personName = person["name"] as? String {
@@ -45,6 +46,11 @@ class CohortPerson: NSObject {
         }
         if let imgURL = person["imageURL"] as? String {
             self.imageURL = imgURL
+        } else {
+            return nil
+        }
+        if let imageName = person["imageName"] as? String {
+            self.imageName = imageName
         } else {
             return nil
         }

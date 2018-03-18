@@ -49,6 +49,15 @@ class DonateViewController: UIViewController, SideMenuItemContent {
         
         
     }
+    
+    var scrolledOnce = false
+    override func viewDidAppear(_ animated: Bool) {
+        if !scrolledOnce {
+            donateTextView.setContentOffset(CGPoint.zero, animated: false)
+            
+            scrolledOnce = true
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
