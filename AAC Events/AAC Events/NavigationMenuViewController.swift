@@ -18,6 +18,7 @@
 
 import UIKit
 import InteractiveSideMenu
+import MessageUI
 
 /*
  Menu controller is responsible for creating its content and showing/hiding menu using 'menuContainerViewController' property.
@@ -26,8 +27,8 @@ class NavigationMenuViewController: MenuViewController {
 
     let kCellReuseIdentifier = "MenuCell"
     
-    let aacMenus = ["About", "Planning Team", "Donate", "FAQ", "Credits"]
-    let menuItems =  ["Norms", "Agenda", "Speakers", "Cohorts", "Attendees", "AACare Team", "Sponsors", "Initiatives", "Conference Evaluation"]
+    let aacMenus = ["About", "Planning Team", "Donate", "FAQ"]
+    let menuItems =  ["Agenda", "Cohorts", "Sponsors", "Norms", "Speakers", "Attendees", "Initiatives", "Conference Evaluation"]
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -59,10 +60,77 @@ class NavigationMenuViewController: MenuViewController {
         imageV.center = position
         tableView.tableHeaderView = view
         
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
+        
+        let contactUsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        contactUsButton.setTitle("Contact Us", for: .normal)
+        contactUsButton.backgroundColor = .black
+        contactUsButton.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
+        contactUsButton.addTarget(self, action:#selector(contactUsButtonTapped), for: .touchUpInside)
+        
+        let creditButton = UIButton(frame: CGRect(x: 0, y: 30 , width: 100, height: 44))
+        creditButton.backgroundColor = .black
+        creditButton.setTitle("Credits", for: .normal)
+        creditButton.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
+        creditButton.addTarget(self, action:#selector(creditButtonTapped), for: .touchUpInside)
+
+        contactUsButton.center.x = position.x
+        creditButton.center.x = position.x
+        
+        footerView.addSubview(contactUsButton)
+        footerView.addSubview(creditButton)
+        
+        tableView.tableFooterView = footerView
+        
         
     }
     
+    @objc func creditButtonTapped() {
+        print("credit tapped")
+//        return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)![0] as! T
+
+        let creditVC =  self.storyboard?.instantiateViewController(withIdentifier: "Credits") as! CreditsViewController
+        menuContainerViewController!.selectContentViewController(creditVC)
+        menuContainerViewController!.hideSideMenu()
+        
+    }
+    
+    @objc func contactUsButtonTapped() {
+        print("contactUsButtonTapped")
+        let mailComposeViewController = configuredMailComposeViewController()
+        if MFMailComposeViewController.canSendMail() {
+            self.present(mailComposeViewController, animated: true, completion: nil)
+        } else {
+            self.showSendMailErrorAlert()
+        }
+
+    }
+    func configuredMailComposeViewController() -> MFMailComposeViewController {
+        let mailComposerVC = MFMailComposeViewController()
+        mailComposerVC.mailComposeDelegate = self
+        
+        mailComposerVC.setToRecipients(["afghanamericanconference@gmail.com"])
+//        mailComposerVC.setSubject("")
+//        mailComposerVC.setMessageBody("", isHTML: false)
+        
+        return mailComposerVC
+    }
+    
+    func showSendMailErrorAlert() {
+        let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email", message: "Your device could not send e-mail.  Please check e-mail configuration and try again.", delegate: self, cancelButtonTitle: "OK")
+        sendMailErrorAlert.show()
+    }
+    
+    // MARK: MFMailComposeViewControllerDelegate Method
 }
+
+extension NavigationMenuViewController: MFMailComposeViewControllerDelegate {
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+
+}
+
 
 /*
  Extention of `NavigationMenuViewController` class, implements table view delegates methods.
