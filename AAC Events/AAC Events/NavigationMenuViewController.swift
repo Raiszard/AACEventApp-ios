@@ -56,19 +56,19 @@ class NavigationMenuViewController: MenuViewController {
         imageV.clipsToBounds = true
         view.addSubview(imageV)
         var position = view.center
-        position.x = view.center.x/2 + 20
+        position.x = view.center.x/2 + 10
         imageV.center = position
         tableView.tableHeaderView = view
         
         let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
         
-        let contactUsButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 44))
+        let contactUsButton = UIButton(frame: CGRect(x: 0, y: 10, width: 100, height: 44))
         contactUsButton.setTitle("Contact Us", for: .normal)
         contactUsButton.backgroundColor = .black
         contactUsButton.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
         contactUsButton.addTarget(self, action:#selector(contactUsButtonTapped), for: .touchUpInside)
         
-        let creditButton = UIButton(frame: CGRect(x: 0, y: 30 , width: 100, height: 44))
+        let creditButton = UIButton(frame: CGRect(x: 0, y: 40 , width: 100, height: 44))
         creditButton.backgroundColor = .black
         creditButton.setTitle("Credits", for: .normal)
         creditButton.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
