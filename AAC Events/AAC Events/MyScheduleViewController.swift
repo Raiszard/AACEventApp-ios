@@ -67,6 +67,13 @@ class MyScheduleViewController: UIViewController {
                 enrolledAgendaItems[day!].append(foundItem!)
             }
         }
+        
+        //sort sessions by start time
+        for i in 0...2 {
+            enrolledAgendaItems[i].sort(by: { (sesh1, sesh2) -> Bool in
+                return sesh1.startDate?.compare(sesh2.startDate!) == .orderedAscending
+            })
+        }
     }
     func setupHeader() {
         
