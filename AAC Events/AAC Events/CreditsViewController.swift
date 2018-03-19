@@ -32,7 +32,7 @@ class CreditsViewController: UIViewController, SideMenuItemContent {
     }
     func setupHeader() {
         
-        let headerImage = UIImage(named: "FAQHeader")
+        let headerImage = UIImage(named: "creditsHeader")
         let header: ViewHeader = .fromNib()
         
         let hView = header.createHeader(title: "Credits", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)

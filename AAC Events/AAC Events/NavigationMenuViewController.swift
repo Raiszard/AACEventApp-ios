@@ -28,7 +28,7 @@ class NavigationMenuViewController: MenuViewController {
     let kCellReuseIdentifier = "MenuCell"
     
     let aacMenus = ["About", "Planning Team", "Donate", "FAQ"]
-    let menuItems =  ["Agenda", "Cohorts", "Sponsors", "Norms", "Speakers", "Attendees", "Initiatives", "Conference Evaluation"]
+    let menuItems =  ["Norms", "Agenda", "Speakers", "Cohorts", "Attendees", "AACare Team",  "Sponsors", "Initiatives", "Conference Evaluation"]
 
     @IBOutlet weak var tableView: UITableView!
 
