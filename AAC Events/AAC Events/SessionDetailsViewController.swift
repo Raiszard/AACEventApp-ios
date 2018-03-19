@@ -79,7 +79,7 @@ class SessionDetailsViewController: UIViewController {
     func setupRoundButton() {
         
         plusView.layer.cornerRadius = plusView.frame.width/2
-        plusView.backgroundColor = .gray
+        plusView.backgroundColor = .black
         plusView.layer.borderColor = UIColor.black.cgColor
         plusView.layer.borderWidth = 1
         
