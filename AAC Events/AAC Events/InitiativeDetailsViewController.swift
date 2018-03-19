@@ -43,6 +43,15 @@ class InitiativeDetailsViewController: UIViewController {
         lineViewHeightConstraint.constant = 0.5
         view.backgroundColor = .white
     }
+    
+    var scrolledOnce = false
+    override func viewDidAppear(_ animated: Bool) {
+        if !scrolledOnce {
+            initiativeTextDetails.setContentOffset(CGPoint.zero, animated: false)
+            
+            scrolledOnce = true
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
