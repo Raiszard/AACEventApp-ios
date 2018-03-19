@@ -9,6 +9,7 @@
 import UIKit
 import InteractiveSideMenu
 import SDWebImage
+import SafariServices
 
 class CohortsViewController: UIViewController, SideMenuItemContent {
 
@@ -24,7 +25,7 @@ class CohortsViewController: UIViewController, SideMenuItemContent {
     
 //    var cohortTitles: [String] = ["Cohort 0", "Cohort 2", "Cohort 3", "Cohort 4", "Cohort 5", "Cohort 6", "Cohort 7", "Cohort 8", "Cohort 9", "Cohort 10", "Cohort 11", "Cohort 12", "Cohort 13", "Cohort 14", "Cohort 15", "Cohort 16","Cohort 17", "Cohort 18", "Cohort 19", "Cohort 20"]
     
-    var evaulationLink = "www.goggle.com"
+    var evaulationLink = "https://www.afghanamericanconference.org"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -71,7 +72,8 @@ class CohortsViewController: UIViewController, SideMenuItemContent {
     */
     @IBAction func evauluationPressed(_ sender: Any) {
         if let url = URL(string: evaulationLink) {
-            UIApplication.shared.open(url, options: [:])
+            let svc = SFSafariViewController(url: url)
+            self.present(svc, animated: true, completion: nil)
         }
     }
     
