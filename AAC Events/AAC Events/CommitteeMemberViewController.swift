@@ -36,6 +36,15 @@ class CommitteeMemberViewController: UIViewController {
         dismiss(animated: true, completion: nil )
     }
     
+    var scrolledOnce = false
+    override func viewDidAppear(_ animated: Bool) {
+        if !scrolledOnce {
+            commiteePersonTextView.setContentOffset(CGPoint.zero, animated: false)
+            
+            scrolledOnce = true
+        }
+    }
+    
     func setupHeader() {
         
         let headerImage = UIImage(named: "committeeHeader2")
