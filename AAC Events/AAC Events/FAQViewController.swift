@@ -53,7 +53,7 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "WHAT IS THE AFGHAN-AMERICAN CONFERENCE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nThe Afghan-American Conference is an annual conference for members of the Afghan-American community to engage in meaningful dialogue, grow professionally, and build relationships. \n\nThe conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, and S.E.E.D Talks (Supportive Engaged Empowered Diaspora). professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers and arts and entertainment. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThe Afghan-American Conference is an annual conference for members of the Afghan-American community to engage in meaningful dialogue, grow professionally, and build relationships. \n\nThe conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, S.E.E.D Talks (Supportive Engaged Empowered Diaspora), professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers and arts and entertainment. \n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "WHO HOSTS THE AFGHAN-AMERICAN CONFERENCE?", attributes: boldAttributes))
         

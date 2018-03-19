@@ -68,7 +68,7 @@ class HostViewController: MenuContainerViewController {
     }
 
     private func contentControllers() -> [UIViewController] {
-        let controllersIdentifiers = ["About", "Planning Team", "Donate", "FAQ", "Credits", "TabBar", "Cohorts", "Sponsors", "Norms", "Speakers", "Attendees", "Initiatives", "Conference Evaluation"]
+        let controllersIdentifiers = ["About", "Planning Team", "Donate", "FAQ", "Credits", "Norms", "TabBar", "Speakers", "Cohorts", "Attendees", "AACare Team", "Sponsors", "Initiatives", "Conference Evaluation"]
         var contentList = [UIViewController]()
 
         /*
