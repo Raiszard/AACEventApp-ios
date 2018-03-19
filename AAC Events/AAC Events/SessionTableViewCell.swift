@@ -74,7 +74,7 @@ class SessionTableViewCell: UITableViewCell {
             }
         } else {
             if isEnrolled {
-                imageToUse = "checkMark"
+                imageToUse = "greenCheckAgenda"
             } else {
                 imageToUse = "circlePlus"
             }

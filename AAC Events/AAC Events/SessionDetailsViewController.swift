@@ -87,9 +87,9 @@ class SessionDetailsViewController: UIViewController {
         let isEnrolled = appDelegate.isEnrolledIn(sessionID: agendaItem.id)
         
         if isEnrolled {
-            plusButton.setImage(#imageLiteral(resourceName: "checkMark"), for: .normal)
+            plusButton.setImage(#imageLiteral(resourceName: "checkSessionDetails"), for: .normal)
         } else {
-            plusButton.setImage(#imageLiteral(resourceName: "circlePlus"), for: .normal)
+            plusButton.setImage(#imageLiteral(resourceName: "plusSessionDetails"), for: .normal)
         }
 
     }
@@ -191,11 +191,11 @@ class SessionDetailsViewController: UIViewController {
         
         if isEnrolled {
             appDelegate.removeSession(sessionID: id)
-            image = #imageLiteral(resourceName: "circlePlus")
+            image = #imageLiteral(resourceName: "plusSessionDetails")
             
         } else {
             appDelegate.enrollInSession(sessionID: id)
-            image = #imageLiteral(resourceName: "checkMark")
+            image = #imageLiteral(resourceName: "checkSessionDetails")
         }
 
         UIView.animate(withDuration: 0.25, animations: {
