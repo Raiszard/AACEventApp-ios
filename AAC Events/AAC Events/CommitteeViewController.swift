@@ -241,6 +241,8 @@ extension CommitteeViewController: UITableViewDataSource, UITableViewDelegate {
         destination.personDescription = descp
         
         present(destination, animated: true, completion: nil)
+        
+        tableView.cellForRow(at: indexPath)?.isSelected = false
  
     }
 }
