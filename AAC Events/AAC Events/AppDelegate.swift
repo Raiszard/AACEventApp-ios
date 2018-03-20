@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var enrolledSessionIDs: [String] = []
     var allSessions: AllSessions!
-    
+    var conferenceEvaluationLink: String! = ""
     var allPeople: [PeopleList]!
 
     var isAppUnlocked: Bool = false

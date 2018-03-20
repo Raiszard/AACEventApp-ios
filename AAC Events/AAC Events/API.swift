@@ -281,6 +281,9 @@ class API: NSObject {
                     let dele = UIApplication.shared.delegate as! AppDelegate
                     dele.allSessions = agenda
                     NotificationCenter.default.post(name: .agendaDownloadComplete, object: nil)
+                    if let eval = dict["conferenceEvalLink"] as? String {
+                        dele.conferenceEvaluationLink = eval
+                    }
                 }
                 
             } else {

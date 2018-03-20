@@ -15,7 +15,13 @@ class ConferenceEvaluationViewController: UIViewController, SideMenuItemContent 
     @IBOutlet weak var textView: UITextView!
     
     @IBAction func conferenceEvalPressed(_ sender: Any) {
-        let svc = SFSafariViewController(url: NSURL(string: "http://www.afghanamericanconference.org")! as URL)
+        var urlString = "https://www.afghanamericanconference.org"
+        let appD = UIApplication.shared.delegate as? AppDelegate
+        if appD?.conferenceEvaluationLink != nil {
+            urlString = (appD?.conferenceEvaluationLink)!
+        }
+        let url = URL(string: urlString)
+        let svc = SFSafariViewController(url: url!)
         self.present(svc, animated: true, completion: nil)
     }
     @IBAction func openMenu(_ sender: Any) {

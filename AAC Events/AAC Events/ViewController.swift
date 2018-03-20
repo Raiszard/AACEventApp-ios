@@ -39,6 +39,12 @@ class ViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        // Recommend moving the below line to prompt for push after informing the user about
+        //   how your app will use them.
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+            print("User accepted notifications: \(accepted)")
+        })
+        
         let appD = UIApplication.shared.delegate as! AppDelegate
         if appD.isAppUnlocked {
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + .milliseconds(250), execute: {
@@ -46,11 +52,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             })
         }
         
-        // Recommend moving the below line to prompt for push after informing the user about
-        //   how your app will use them.
-        OneSignal.promptForPushNotifications(userResponse: { accepted in
-            print("User accepted notifications: \(accepted)")
-        })
+
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
