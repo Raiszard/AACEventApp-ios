@@ -26,10 +26,13 @@ class PersonDetailsViewController: UIViewController {
     var testAgendaItem: Session!
 
     var personsSessions: [[Session]] = [[],[],[]]
-    
+    var sectionTitles:[String]!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        sectionTitles = ["Friday Sessions", "Saturday Sessions", "Sunday Sessions"]
+
         let cellnib = UINib(nibName: "SessionTableViewCell", bundle: nil)
         tableView.register(cellnib, forCellReuseIdentifier: "sessionCell")
         
@@ -66,6 +69,7 @@ class PersonDetailsViewController: UIViewController {
         label.sizeToFit()
         label.frame.size.height = label.frame.height + 20 //more padding for description
         tableView.tableHeaderView = label
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -128,7 +132,6 @@ class PersonDetailsViewController: UIViewController {
     var hasFri = false
     var hasSat = false
     var hasSun = false
-    var sectionTitles:[String] = []
 }
 
 extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSource {
@@ -137,25 +140,24 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
     
     func numberOfSections(in tableView: UITableView) -> Int {
         var count = 0
-        sectionTitles = []
         if personsSessions[0].count > 0 {
             count += 1
             hasFri = true
-            sectionTitles.append("Friday Sessions")
+//            sectionTitles.append("Friday Sessions")
         }
         if personsSessions[1].count > 0 {
             count += 1
             hasSat = true
-            sectionTitles.append("Saturday Sessions")
+//            sectionTitles.append("Saturday Sessions")
 
         }
         if personsSessions[2].count > 0 {
             count += 1
             hasSun = true
-            sectionTitles.append("Sunday Sessions")
+//            sectionTitles.append("Sunday Sessions")
 
         }
-        return count
+        return 3//count
         
     }
     
@@ -170,20 +172,18 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         return 60.0
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        
-        return sectionTitles[section]
-    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
-        let label = UILabel()
-        label.font = UIFont(name: "Avenir-Medium", size: 15)
-        let title = sectionTitles[section]
-        label.text = title
-        label.backgroundColor = .white
-        return label
-
+        if personsSessions[section].count > 0 {
+            let label = UILabel()
+            label.font = UIFont(name: "Avenir-Medium", size: 15)
+            let title = sectionTitles[section]
+            label.text = title
+            label.backgroundColor = .white
+            return label
+        }
+        return UIView(frame: CGRect.zero)
     }
     
     
