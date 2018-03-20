@@ -127,6 +127,7 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
         cell.logoImageView?.layer.cornerRadius = 44/2
         cell.logoImageView?.contentMode = .scaleAspectFill
         cell.logoImageView.clipsToBounds = true
+        cell.logoImageView.image = nil
         
         if !sponsor.imageName.isEmpty {
             if let image = UIImage(named: sponsor.imageName) {
@@ -141,7 +142,7 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
                 }
             })
         } else {
-            let image = UIImage(named: "noImage")
+            let image = UIImage(named: "sponsorNoImage")
             cell.logoImageView.image = image
         }
         
