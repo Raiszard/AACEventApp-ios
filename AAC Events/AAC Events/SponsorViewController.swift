@@ -52,7 +52,7 @@ class SponsorViewController: UIViewController, SideMenuItemContent {
         let headerImage = UIImage(named: "sponsorHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Sponsors", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "Sponsors & Scholarships", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
