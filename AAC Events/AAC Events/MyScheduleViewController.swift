@@ -80,7 +80,7 @@ class MyScheduleViewController: UIViewController {
         let headerImage = UIImage(named: "myscheduleHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "My Schedule", subtitle:"March 23-25", imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "My Schedule", subtitle:"June 21-23", imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)

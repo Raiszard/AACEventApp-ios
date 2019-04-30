@@ -9,20 +9,21 @@
 import UIKit
 
 class PersonDetailsViewController: UIViewController {
-    
+    //ALL REVERRTED
     @IBOutlet weak var headerContainer: UIView!
     @IBOutlet weak var personImageView: UIImageView!
     
     @IBOutlet weak var tableView: UITableView!
-    
-    
-    var sessionIDs: [String] = []
-    var personTitle: String! = "Title of the person"
-    var name: String! = "Name goes here"
-    var personDescription: String! = ""
-    var imageURL: String! = ""
-    var imageName: String! = ""
-    
+    //added
+    var person: Person!
+    //var sessionIDs: [String] = []
+    //var personTitle: String! = "Title of the person"
+    //var name: String! = "Name goes here"
+    //var personDescription: String! = ""
+    //var imageURL: String! = ""
+    //var imageName: String! = ""
+    //added
+    //var personID: String! = " "
     var testAgendaItem: Session!
 
     var personsSessions: [[Session]] = [[],[],[]]
@@ -30,16 +31,16 @@ class PersonDetailsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         sectionTitles = ["Friday Sessions", "Saturday Sessions", "Sunday Sessions"]
 
         let cellnib = UINib(nibName: "SessionTableViewCell", bundle: nil)
         tableView.register(cellnib, forCellReuseIdentifier: "sessionCell")
         
-        if !self.imageName.isEmpty {
-            self.personImageView.image = UIImage(named: imageName)
-        } else if self.imageURL != nil {
-            let url = URL(string: imageURL)
+        if !person.imageName.isEmpty {
+            self.personImageView.image = UIImage(named: person.imageName)
+        } else if person.imageURL != nil {
+            let url = URL(string: person.imageURL)
             self.personImageView.sd_setImage(with: url, completed: { (image, error, _, _) in
                 if error == nil {
                     self.personImageView.image = image
@@ -61,7 +62,7 @@ class PersonDetailsViewController: UIViewController {
 
         let tableWidth = UIScreen.main.bounds.size.width - CGFloat(margins)
         let label = UILabel(frame: CGRect(x: 10, y: 0, width: tableWidth, height: 9999999))
-        label.text = self.personDescription
+        label.text = person.personDescription
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
@@ -86,7 +87,7 @@ class PersonDetailsViewController: UIViewController {
         let headerImage = UIImage(named: "profileHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: name, subtitle:personTitle, imageURL: nil, image: headerImage, isProfile: true)
+        let hView = header.createHeader(title: person.name, subtitle: person.title, imageURL: nil, image: headerImage, isProfile: true)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -101,7 +102,8 @@ class PersonDetailsViewController: UIViewController {
     func setupPersonsSessions() {
         let appD = UIApplication.shared.delegate as! AppDelegate
         
-        for id in sessionIDs {
+        for id in person.sessionIDs {
+            
             let (foundItem, day) = appD.allSessions.findSessionForID(searchID: id)
             if foundItem != nil {
                 personsSessions[day!].append(foundItem!)
@@ -194,10 +196,12 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         
         let currentItem = personsSessions[indexPath.section][indexPath.row]
         
+        
         cell.shouldShowTime = true
         cell.disclosureButton.isHidden = true
         cell.agendaItem = currentItem
         cell.delegate = self
+        
         
         return cell
     }
@@ -205,8 +209,9 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "SessionDetails") as? SessionDetailsViewController else { return }
-        
+
         vc.agendaItem = personsSessions[indexPath.section][indexPath.row]
+        
         present(vc, animated: true, completion: nil)
 
     }

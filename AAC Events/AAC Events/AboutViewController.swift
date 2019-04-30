@@ -18,6 +18,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
 	
 	let boldFont = UIFont(name: "Avenir-Medium", size: 15)
 	let descriptionFont = UIFont(name: "Avenir-Book", size: 15)
+    let descboldFont = UIFont(name: "Avenir-MediumOblique", size: 15)
 	
 
     
@@ -40,7 +41,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
 
         
         self.aboutSegmentedControl.selectedSegmentIndex = 0
-        aboutTextView.attributedText = getWhyACCText() //"The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\nA WAY FORWARD \n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.";
+        aboutTextView.attributedText = getOurMission() //"The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\nA WAY FORWARD \n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.";
         
 
         // Do any additional setup after loading the view.
@@ -60,43 +61,128 @@ class AboutViewController: UIViewController, SideMenuItemContent {
             scrolledOnce = true
         }
     }
-	func getWhyACCText() -> NSAttributedString {
+    
+    
+	func getOurMission() -> NSAttributedString {
 		let boldAttributes = [NSAttributedStringKey.font: boldFont]
 		let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
+        let descboldAttributes = [NSAttributedStringKey.font: descboldFont]
+
 		
 		let runningDescAttrString = NSMutableAttributedString()
 		
-		runningDescAttrString.append(NSAttributedString(string: "The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "To provide a forum to address issues affecting the Afghan-American community, and a platform to facilitate dialogue, collaborate, and build relationships to strengthen our diaspora. \n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
 		
-		runningDescAttrString.append(NSAttributedString(string: "A WAY FORWARD", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "OUR VISION", attributes: boldAttributes as [NSAttributedStringKey : Any]))
 		
-		runningDescAttrString.append(NSAttributedString(string: "\n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nAn ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
 
+        runningDescAttrString.append(NSAttributedString(string: "empowered, supportive,", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: " and", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: " engaged", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: " Afghan-American community.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nOUR REASON", attributes: boldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThe Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached.\n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. Almost every Afghan family landed in the U.S. as refugees with few resources, but many are still trapped in the same socioeconomic class. According to the “Bay Area Muslim Study” by Drs. Farid Senzai and Hatem Bazian, Afghans have the fewest households making over $100,000 among any Muslim group in the San Francisco Bay Area. We are also the least educated group, with less than half of our community having pursued higher education. The fact that we only have statistics on Bay Area Afghans, and only in relation to other Muslim ethnicities, speaks to our underrepresented status nationwide—and just how much work we have to do as a community to move forward.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nOUR CORE VALUES", attributes: boldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\n• Build a sense of community around a diverse Afghan-American identity, while learning and embracing Afghan culture and history. \n• Provide a space for networks built on professional and academic connections for guidance, career growth, and development of leadership skills.\n• Engage in critical dialogue around challenging issues and activate the change to find solutions in our community.\n• Internalize norms and values that demonstrate respect, accountability, and flexibility towards different perspectives.  ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nA WAY FORWARD", attributes: boldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
 			
 		return runningDescAttrString
 		
 
 	}
 	
-	func getTheConferenceText() -> NSAttributedString {
+	func getOurCommittment() -> NSAttributedString {
 		let boldAttributes = [NSAttributedStringKey.font: boldFont]
 		let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
         
-        let runningConfAttrString = NSMutableAttributedString()
+        let diveristyAttributes = [
+            NSAttributedStringKey.link: URL(string: "https://www.afghanamericanconference.org/diversity-1")!,
+            NSAttributedStringKey.font: UIFont(name: "Avenir-Book", size: 15)!,
+            NSAttributedStringKey.foregroundColor: UIColor.blue
+            ] as [NSAttributedStringKey : Any]
         
-        runningConfAttrString.append(NSAttributedString(string: "The Afghan-American Conference is an annual nationwide conference for young community leaders to engage in meaningful dialogue, grow professionally and build relationships. The conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers, entertainment, and even S.E.E.D. Talks. \n\n", attributes: descriptionAttributes))
+        let mentalwellnessAttributes = [
+            NSAttributedStringKey.link: URL(string: "https://www.afghanamericanconference.org/mental-health")!,
+            NSAttributedStringKey.font: UIFont(name: "Avenir-Book", size: 15)!,
+            NSAttributedStringKey.foregroundColor: UIColor.blue
+            ] as [NSAttributedStringKey : Any]
         
-        runningConfAttrString.append(NSAttributedString(string: "OUR MISSION", attributes: boldAttributes))
+        let harrassmentAttributes = [
+            NSAttributedStringKey.link: URL(string: "https://www.afghanamericanconference.org/s/Anti-Discrimination-Policy_-AACO-2018-wnct.pdf")!,
+            NSAttributedStringKey.font: UIFont(name: "Avenir-Book", size: 15)!,
+            NSAttributedStringKey.foregroundColor: UIColor.blue
+            ] as [NSAttributedStringKey : Any]
+
         
-        runningConfAttrString.append(NSAttributedString(string: "\n\nTo provide a forum to address issues affecting the Afghan-American community, and a platform to facilitate dialogue, collaborate, and build relationships to strengthen our diaspora. \n\n", attributes: descriptionAttributes))
+        let runningCommittmentAttrString = NSMutableAttributedString()
+
         
-        runningConfAttrString.append(NSAttributedString(string: "OUR VISION", attributes: boldAttributes))
+        runningCommittmentAttrString.append(NSAttributedString(string: "The Afghan-American Conference commits to keeping our conference an inclusive and safe environment for all of our participants.\n\nIf you have any questions, please do not hesitate to contact us.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
-        runningConfAttrString.append(NSAttributedString(string: "\n\nAn empowered, supportive, and engaged Afghan-American community.ion started, let us share resources, and let us find those solutions together as a community.", attributes: descriptionAttributes))
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nDIVERSITY", attributes: boldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nDiversity is essential to our work at AAC. We know our Motherland, and our diaspora, are both incredibly diverse, and that diversity itself enriches the experience of attendees and allows for the full rich tapestry of our community to be present and contributing to the conference and organization. We know that to truly succeed, our space should be representative of our diversity as a community. We know we may fall short, but our goal is to strive and aim higher.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+        runningCommittmentAttrString.append(NSAttributedString(string: "Learn More", attributes: diveristyAttributes))
         
         
-		return runningConfAttrString
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nMENTAL WELLNESS", attributes: boldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nOne of the recurring themes that arise during the weekend of our conference is mental health. The importance of mental health is often threaded through our keynotes, S.E.E.D. Talks, sessions, and panels. \n\nAs our community bands together to move forward, one stigmatized yet present challenge is maintaining mental wellness both for our loved ones and us.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+        runningCommittmentAttrString.append(NSAttributedString(string: "Learn More", attributes: mentalwellnessAttributes))
+        
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nANTI-DISCRIMINATION & HARASSMENT", attributes: boldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nOur policy was established to address issues, including harassment, abuse, and discrimination,  that have taken place within AAC.  It provides a way for AAC to address these situations and uphold a safe, supportive, empowered, and engaged community. It applies to all members of the conference and individuals that attend an AAC event or engage in conversations on AAC’s virtual platforms.  We are currently finalizing a revised and more comprehensive Code of Conduct policy that will be released shortly.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+        runningCommittmentAttrString.append(NSAttributedString(string: "Learn More", attributes: harrassmentAttributes))
+        
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+		return runningCommittmentAttrString
 	}
+    
+    func getTheConference() -> NSAttributedString {
+        let boldAttributes = [NSAttributedStringKey.font: boldFont]
+        let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
+        
+        let testimonialAttributes = [
+            NSAttributedStringKey.link: URL(string: "https://www.afghanamericanconference.org/testimonials")!,
+            NSAttributedStringKey.font: UIFont(name: "Avenir-Book", size: 15)!,
+            NSAttributedStringKey.foregroundColor: UIColor.blue
+            ] as [NSAttributedStringKey : Any]
+        
+        
+        let runningConferenceAttrString = NSMutableAttributedString()
+        
+        
+        runningConferenceAttrString.append(NSAttributedString(string: "The Afghan-American Conference is an annual nationwide conference for young community leaders to engage in meaningful dialogue, grow professionally and build relationships.\n\nThe conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers, entertainment, and even TED-style Talks.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+    
+        runningConferenceAttrString.append(NSAttributedString(string: "Click here", attributes: testimonialAttributes))
+        
+        runningConferenceAttrString.append(NSAttributedString(string: " to read testimonials from past participants.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+
+        
+        runningConferenceAttrString.append(NSAttributedString(string: "\n\nTHE EVOLUTION OF AAC", attributes: boldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningConferenceAttrString.append(NSAttributedString(string: "\n\nIn April 2015, the first Afghan-American Conference was hosted at U.C. Berkeley by eight young Afghan-Americans from across the United States. The space was an opportunity for our diaspora to have difficult conversations in an engaging and respectful way. Since then, the conference has grown and spread across the nation.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+
+        
+        return runningConferenceAttrString
+    }
 
     func setupHeader() {
         
@@ -119,11 +205,15 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         switch aboutSegmentedControl.selectedSegmentIndex
         {
         case 0:
-            aboutTextView.attributedText = getWhyACCText() //"The Afghan-American diaspora has historically lacked a safe space for candid discussions about the issues most pertinent to us. Traditionally, our community has come together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never to be broached or approached. \n\nGiven the impoverished state of Afghanistan, it is understandable that so much of our diaspora’s civic attention has focused on humanitarian relief for the Motherland. But in doing so, we have lost sight of our own community's struggles here in the United States. \n\nA WAY FORWARD \n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.";
+            aboutTextView.attributedText = getOurMission()
             self.aboutTextView.setContentOffset(.zero, animated: false)
 
         case 1:
-            aboutTextView.attributedText = getTheConferenceText()//"The Afghan-American Conference is an annual nationwide conference for young community leaders to engage in meaningful dialogue, grow professionally and build relationships. The conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers, entertainment, and even S.E.E.D. Talks. \n\nOUR MISSION \n\nTo provide a forum to address issues affecting the Afghan-American community, and a platform to facilitate dialogue, collaborate, and build relationships to strengthen our diaspora. \n\nOUR VISION \n\nAn empowered, supportive, and engaged Afghan-American community.";
+            aboutTextView.attributedText = getOurCommittment()
+            self.aboutTextView.setContentOffset(.zero, animated: false)
+            
+        case 2:
+            aboutTextView.attributedText = getTheConference()
             self.aboutTextView.setContentOffset(.zero, animated: false)
 
         default:

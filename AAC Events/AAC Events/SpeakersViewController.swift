@@ -150,14 +150,16 @@ extension SpeakersViewController: UITableViewDataSource, UITableViewDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetails") as? PersonDetailsViewController else { return }
         
-        let person = self.peopleLists[currentSegment].peopleArray[indexPath.row]
+        vc.person = self.peopleLists[currentSegment].peopleArray[indexPath.row]
         
-        vc.name = person.name
-        vc.personDescription = person.personDescription
-        vc.personTitle = person.title
-        vc.sessionIDs = person.sessionIDs
-        vc.imageURL = person.imageURL
-        vc.imageName = person.imageName
+       // vc.name = person.name
+       // vc.personDescription = person.personDescription
+        //vc.personTitle = person.title
+       // vc.sessionIDs = person.sessionIDs
+       // vc.imageURL = person.imageURL
+       // vc.imageName = person.imageName
+       // //added
+      //  vc.personID = person.personID
         
         present(vc, animated: true, completion: nil)
 

@@ -8,8 +8,8 @@
 
 import UIKit
 
-class PersonTableViewCell: UITableViewCell {
 
+class PersonTableViewCell: UITableViewCell {
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var personImageView: UIImageView!

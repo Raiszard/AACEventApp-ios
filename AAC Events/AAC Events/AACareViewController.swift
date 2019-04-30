@@ -8,9 +8,17 @@
 
 import UIKit
 import InteractiveSideMenu
+import MessageUI
 
 
-class AACareViewController: UIViewController, SideMenuItemContent {
+class AACareViewController: UIViewController, SideMenuItemContent, MFMessageComposeViewControllerDelegate{
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
+
+    
 
     @IBOutlet weak var textView: UITextView!
     @IBOutlet weak var headerContainer: UIView!
@@ -56,6 +64,27 @@ class AACareViewController: UIViewController, SideMenuItemContent {
         headerContainer.addConstraint(NSLayoutConstraint(item: headerContainer, attribute: .trailing, relatedBy: .equal, toItem: hView, attribute: .trailing, multiplier: 1.0, constant: 0))
         
     }
+    
+    @IBAction func contactAACaare(_ sender: Any) {
+        
+        if (MFMessageComposeViewController.canSendText()){
+            
+            let controller = MFMessageComposeViewController ()
+            
+            controller.body = "Text Message from AAC App!"
+            controller.recipients = ["8182944328"]
+            controller.messageComposeDelegate = self
+            
+            self.present(controller, animated: true, completion: nil)
+            
+        }
+
+
+        print ("Button pressed")
+
+    }
+    
+
 
     /*
     // MARK: - Navigation
