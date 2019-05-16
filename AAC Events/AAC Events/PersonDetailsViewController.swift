@@ -9,21 +9,13 @@
 import UIKit
 
 class PersonDetailsViewController: UIViewController {
-    //ALL REVERRTED
+
     @IBOutlet weak var headerContainer: UIView!
     @IBOutlet weak var personImageView: UIImageView!
     
     @IBOutlet weak var tableView: UITableView!
-    //added
+
     var person: Person!
-    //var sessionIDs: [String] = []
-    //var personTitle: String! = "Title of the person"
-    //var name: String! = "Name goes here"
-    //var personDescription: String! = ""
-    //var imageURL: String! = ""
-    //var imageName: String! = ""
-    //added
-    //var personID: String! = " "
     var testAgendaItem: Session!
 
     var personsSessions: [[Session]] = [[],[],[]]

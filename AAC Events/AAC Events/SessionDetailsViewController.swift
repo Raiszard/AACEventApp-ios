@@ -309,7 +309,6 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
         return UIView()
     }
     
-    //added
     
     
     

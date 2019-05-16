@@ -306,8 +306,7 @@ extension AgendaViewController: SessionCellDelegate {
     var id: String!
     var subItems:[String]!
     var agengdaDescription: String!
-    //added
-   // var personID: [String]!
+
     var isExpandable = false
     
     var isExpanded = false
