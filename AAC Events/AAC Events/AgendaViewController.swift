@@ -91,7 +91,7 @@ class AgendaViewController: UIViewController {
         let headerImage = UIImage(named: "agendaHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Agenda", subtitle:"March 23 - 25", imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "Agenda", subtitle:"June 21 - 23", imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -306,7 +306,7 @@ extension AgendaViewController: SessionCellDelegate {
     var id: String!
     var subItems:[String]!
     var agengdaDescription: String!
-    
+
     var isExpandable = false
     
     var isExpanded = false

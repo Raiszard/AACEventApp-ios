@@ -26,7 +26,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var unlockField: UITextField!
     @IBAction func unlockButtonTapped(_ sender: Any) {
         
-        if unlockField.text?.uppercased() == "AFGAM18" {
+        if unlockField.text?.uppercased() == "AFGAM19" {
             let appD = UIApplication.shared.delegate as! AppDelegate
             appD.isAppUnlocked = true
             UserDefaults.standard.set("SIARISJAIT", forKey: "isUnlocked")

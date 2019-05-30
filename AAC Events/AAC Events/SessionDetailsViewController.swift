@@ -71,6 +71,7 @@ class SessionDetailsViewController: UIViewController {
             }
             self.facilitators = facilitatorsForSession
             self.tableView.reloadData()
+        
 
         }
         
@@ -240,8 +241,16 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
 			let person = facilitators[section]
 			title = person.title
 
+            
+
 		}
-        label.text = " "//title
+        
+        if title == "" {
+            label.text = ""
+        } else {
+            label.text = "Speakers / Facilitators"
+        }
+
         label.backgroundColor = .white
         return label
     
@@ -261,6 +270,8 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let person = facilitators[indexPath.row]
+
+        
         
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "imageLabelCell", for: indexPath) as? ImageLabelTableViewCell else {
             return UITableViewCell()
@@ -299,4 +310,22 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
     }
     
     
+    
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetails") as? PersonDetailsViewController else { return }
+        
+        vc.person = facilitators[indexPath.row]
+        
+        
+        present(vc, animated: true, completion: nil)
+        
+   }
+    
+    
 }
+
+

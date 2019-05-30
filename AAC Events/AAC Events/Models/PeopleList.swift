@@ -41,6 +41,7 @@ class Person: NSObject {
     var personDescription: String!
     var sessionIDs: [String]!
     var imageName: String!
+
     
     init?(person: JsonDict) {
         if let personName = person["name"] as? String {
@@ -68,6 +69,7 @@ class Person: NSObject {
         } else {
             return nil
         }
+        
         
     }
 }

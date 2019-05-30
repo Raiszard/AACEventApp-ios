@@ -112,6 +112,7 @@ class Session: NSObject {
     var endDate: Date?
     var id: String!
     var evaluationURL: String?
+
     
     //data not from json
     var isExpandable: Bool {
@@ -157,7 +158,7 @@ class Session: NSObject {
         if let evalString = dict["evaluationURL"] as? String {
             self.evaluationURL = evalString
         } else { self.evaluationURL = "" }
-    }
+            }
 }
 
 
