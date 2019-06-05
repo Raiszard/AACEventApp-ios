@@ -2033,74 +2033,6 @@
             </objects>
             <point key="canvasLocation" x="4535" y="-2656"/>
         </scene>
-        <!--FAQ View Controller-->
-        <scene sceneID="vMh-aS-9I4">
-            <objects>
-                <viewController storyboardIdentifier="FAQ" id="zwK-Qt-cSd" userLabel="FAQ View Controller" customClass="FAQViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="VKB-Ex-8KF">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KYW-ip-dej">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVn-N8-OQg">
-                                        <rect key="frame" x="8" y="30" width="44" height="44"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="44" id="G9R-Zr-vcA"/>
-                                            <constraint firstAttribute="height" constant="44" id="nHf-gd-svs"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
-                                        <state key="normal" image="Menu"/>
-                                        <connections>
-                                            <action selector="openMenu:" destination="zwK-Qt-cSd" eventType="touchUpInside" id="9Ux-7P-PYr"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="76" id="7HO-Ou-RFy"/>
-                                    <constraint firstItem="vVn-N8-OQg" firstAttribute="top" secondItem="KYW-ip-dej" secondAttribute="top" constant="30" id="HYc-gt-fNr"/>
-                                    <constraint firstItem="vVn-N8-OQg" firstAttribute="leading" secondItem="KYW-ip-dej" secondAttribute="leading" constant="8" id="lAZ-2y-mVC"/>
-                                </constraints>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pC6-Pj-F7f">
-                                <rect key="frame" x="0.0" y="76" width="414" height="172"/>
-                                <color key="backgroundColor" red="0.21076198060000001" green="1" blue="0.75646647590000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="172" id="TFr-f7-teg"/>
-                                </constraints>
-                            </view>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data is loading. Please wait..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uce-Nb-VRP">
-                                <rect key="frame" x="20" y="256" width="374" height="480"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
-                        <constraints>
-                            <constraint firstItem="uce-Nb-VRP" firstAttribute="top" secondItem="pC6-Pj-F7f" secondAttribute="bottom" constant="8" id="64n-tV-ej0"/>
-                            <constraint firstItem="KYW-ip-dej" firstAttribute="leading" secondItem="f7t-w2-XqE" secondAttribute="leading" id="F5D-Mr-veW"/>
-                            <constraint firstItem="uce-Nb-VRP" firstAttribute="trailing" secondItem="VKB-Ex-8KF" secondAttribute="trailingMargin" id="NKh-Ze-GbF"/>
-                            <constraint firstItem="f7t-w2-XqE" firstAttribute="trailing" secondItem="pC6-Pj-F7f" secondAttribute="trailing" id="eVb-4I-AvY"/>
-                            <constraint firstAttribute="bottom" secondItem="uce-Nb-VRP" secondAttribute="bottom" id="maz-Ev-SJd"/>
-                            <constraint firstItem="KYW-ip-dej" firstAttribute="top" secondItem="VKB-Ex-8KF" secondAttribute="top" id="n9i-cQ-nTC"/>
-                            <constraint firstItem="pC6-Pj-F7f" firstAttribute="leading" secondItem="f7t-w2-XqE" secondAttribute="leading" id="oSV-PJ-Av5"/>
-                            <constraint firstItem="uce-Nb-VRP" firstAttribute="leading" secondItem="VKB-Ex-8KF" secondAttribute="leadingMargin" id="q9Y-pu-zHs"/>
-                            <constraint firstItem="pC6-Pj-F7f" firstAttribute="top" secondItem="KYW-ip-dej" secondAttribute="bottom" id="rH5-CH-jtl"/>
-                            <constraint firstItem="f7t-w2-XqE" firstAttribute="trailing" secondItem="KYW-ip-dej" secondAttribute="trailing" id="xUC-kP-0f4"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="f7t-w2-XqE"/>
-                    </view>
-                    <connections>
-                        <outlet property="FAQtextView" destination="uce-Nb-VRP" id="4Xl-Gb-Ec2"/>
-                        <outlet property="headerContainer" destination="pC6-Pj-F7f" id="X2G-Qc-eYq"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6Sk-3j-qc0" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3863.7681159420295" y="-2655.163043478261"/>
-        </scene>
         <!--Credit View Controller-->
         <scene sceneID="88R-rC-OOb">
             <objects>
@@ -2339,6 +2271,143 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fSJ-Fl-KtC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1702.8985507246377" y="-3360.326086956522"/>
+        </scene>
+        <!--FAQ View Controller-->
+        <scene sceneID="gmm-nZ-W8u">
+            <objects>
+                <viewController storyboardIdentifier="FAQ" id="6lt-sS-mgq" userLabel="FAQ View Controller" customClass="FAQViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="hfG-H7-oMC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n2E-Ut-oR5">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nrk-nu-leX">
+                                        <rect key="frame" x="8" y="30" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="bEC-uP-jl0"/>
+                                            <constraint firstAttribute="height" constant="44" id="ofa-19-oBS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                        <state key="normal" image="Menu"/>
+                                        <connections>
+                                            <action selector="openMenu:" destination="6lt-sS-mgq" eventType="touchUpInside" id="6Dw-Sk-ToH"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="BYq-OB-YAj"/>
+                                    <constraint firstItem="nrk-nu-leX" firstAttribute="top" secondItem="n2E-Ut-oR5" secondAttribute="top" constant="30" id="Phf-uA-MYc"/>
+                                    <constraint firstItem="nrk-nu-leX" firstAttribute="leading" secondItem="n2E-Ut-oR5" secondAttribute="leading" constant="8" id="nvS-DX-n14"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aD0-fV-QmF">
+                                <rect key="frame" x="0.0" y="76" width="414" height="172"/>
+                                <color key="backgroundColor" red="0.21076198060000001" green="1" blue="0.75646647590000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="OWJ-xQ-8z8"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data is loading. Please wait..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Xf2-jx-UbF">
+                                <rect key="frame" x="20" y="256" width="374" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="Xf2-jx-UbF" firstAttribute="top" secondItem="aD0-fV-QmF" secondAttribute="bottom" constant="8" id="64z-JO-1Lt"/>
+                            <constraint firstAttribute="bottom" secondItem="Xf2-jx-UbF" secondAttribute="bottom" id="Aqa-4V-dqc"/>
+                            <constraint firstItem="aD0-fV-QmF" firstAttribute="leading" secondItem="g4O-9W-W4u" secondAttribute="leading" id="Kch-xf-wcY"/>
+                            <constraint firstItem="n2E-Ut-oR5" firstAttribute="leading" secondItem="g4O-9W-W4u" secondAttribute="leading" id="Pfo-Rs-rz0"/>
+                            <constraint firstItem="Xf2-jx-UbF" firstAttribute="trailing" secondItem="hfG-H7-oMC" secondAttribute="trailingMargin" id="PuY-tR-Meu"/>
+                            <constraint firstItem="n2E-Ut-oR5" firstAttribute="top" secondItem="hfG-H7-oMC" secondAttribute="top" id="WNn-cz-sBH"/>
+                            <constraint firstItem="g4O-9W-W4u" firstAttribute="trailing" secondItem="aD0-fV-QmF" secondAttribute="trailing" id="d9k-BY-1td"/>
+                            <constraint firstItem="g4O-9W-W4u" firstAttribute="trailing" secondItem="n2E-Ut-oR5" secondAttribute="trailing" id="oxk-Np-Ur4"/>
+                            <constraint firstItem="Xf2-jx-UbF" firstAttribute="leading" secondItem="hfG-H7-oMC" secondAttribute="leadingMargin" id="vWe-Nd-PFd"/>
+                            <constraint firstItem="aD0-fV-QmF" firstAttribute="top" secondItem="n2E-Ut-oR5" secondAttribute="bottom" id="zmw-yL-UZf"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="g4O-9W-W4u"/>
+                    </view>
+                    <connections>
+                        <outlet property="FAQtextView" destination="Xf2-jx-UbF" id="Zrx-98-zGg"/>
+                        <outlet property="headerContainer" destination="aD0-fV-QmF" id="Sb3-SK-wfK"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gO5-vS-8V7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3863.7681159420295" y="-2655.163043478261"/>
+        </scene>
+        <!--Information View Controller-->
+        <scene sceneID="X4T-ps-tIg">
+            <objects>
+                <viewController storyboardIdentifier="Information" id="eV0-Ky-T8H" userLabel="Information View Controller" customClass="InformationViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7jd-vx-Jxq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kru-8G-I2Z">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3a6-qv-pay">
+                                        <rect key="frame" x="8" y="30" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="Gvn-Pf-eqY"/>
+                                            <constraint firstAttribute="height" constant="44" id="cxv-nV-qMs"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                        <state key="normal" image="Menu"/>
+                                        <connections>
+                                            <action selector="openMenu:" destination="eV0-Ky-T8H" eventType="touchUpInside" id="v4V-2h-Ti4"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="3a6-qv-pay" firstAttribute="top" secondItem="Kru-8G-I2Z" secondAttribute="top" constant="30" id="9bC-6Z-JlF"/>
+                                    <constraint firstItem="3a6-qv-pay" firstAttribute="leading" secondItem="Kru-8G-I2Z" secondAttribute="leading" constant="8" id="CCj-XD-PLM"/>
+                                    <constraint firstAttribute="height" constant="76" id="MSr-Aa-tfD"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wv8-1y-BrD">
+                                <rect key="frame" x="0.0" y="76" width="414" height="172"/>
+                                <color key="backgroundColor" red="0.21076198060000001" green="1" blue="0.75646647590000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="I29-Qd-gjz"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data is loading. Please wait..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sde-Yw-xqr">
+                                <rect key="frame" x="20" y="256" width="374" height="480"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="Sde-Yw-xqr" secondAttribute="bottom" id="8qr-hv-F55"/>
+                            <constraint firstItem="Sde-Yw-xqr" firstAttribute="top" secondItem="wv8-1y-BrD" secondAttribute="bottom" constant="8" id="8tm-CC-PlY"/>
+                            <constraint firstItem="wv8-1y-BrD" firstAttribute="top" secondItem="Kru-8G-I2Z" secondAttribute="bottom" id="BH7-aX-uZ2"/>
+                            <constraint firstItem="Sde-Yw-xqr" firstAttribute="trailing" secondItem="7jd-vx-Jxq" secondAttribute="trailingMargin" id="DXZ-Q7-RBw"/>
+                            <constraint firstItem="Kru-8G-I2Z" firstAttribute="top" secondItem="7jd-vx-Jxq" secondAttribute="top" id="b1p-9F-BSi"/>
+                            <constraint firstItem="Sde-Yw-xqr" firstAttribute="leading" secondItem="7jd-vx-Jxq" secondAttribute="leadingMargin" id="fUR-iF-xYv"/>
+                            <constraint firstItem="wv8-1y-BrD" firstAttribute="leading" secondItem="GDc-Ny-IpH" secondAttribute="leading" id="hPN-hq-QTX"/>
+                            <constraint firstItem="GDc-Ny-IpH" firstAttribute="trailing" secondItem="wv8-1y-BrD" secondAttribute="trailing" id="q93-sF-wML"/>
+                            <constraint firstItem="GDc-Ny-IpH" firstAttribute="trailing" secondItem="Kru-8G-I2Z" secondAttribute="trailing" id="ubV-BM-Qyj"/>
+                            <constraint firstItem="Kru-8G-I2Z" firstAttribute="leading" secondItem="GDc-Ny-IpH" secondAttribute="leading" id="yHA-Fl-hqw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="GDc-Ny-IpH"/>
+                    </view>
+                    <connections>
+                        <outlet property="headerContainer" destination="wv8-1y-BrD" id="fpL-AO-gqE"/>
+                        <outlet property="infoText" destination="Sde-Yw-xqr" id="uOA-u4-uOX"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hTK-d1-hF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3864" y="-1974"/>
         </scene>
     </scenes>
     <resources>
