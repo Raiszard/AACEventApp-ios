@@ -51,41 +51,81 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         let runningDescAttrString = NSMutableAttributedString()
         
         
-        runningDescAttrString.append(NSAttributedString(string: "WHAT IS THE AFGHAN-AMERICAN CONFERENCE?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "I REGISTERED FOR A ONE DAY PASS AND/OR JUST FOR MY SESSION, BUT WOULD LIKE TO STAY FOR THE ENTIRE CONFERENCE. HOW CAN I UPGRADE MY REGISTRATION?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nThe Afghan-American Conference is an annual conference for members of the Afghan-American community to engage in meaningful dialogue, grow professionally, and build relationships. \n\nThe conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, S.E.E.D Talks (Supportive Engaged Empowered Diaspora), professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers and arts and entertainment. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nPlease visit the Registration Desk located outside of the Crystal Cove Auditorium in the Student Center building.\n\n", attributes: descriptionAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "WHO HOSTS THE AFGHAN-AMERICAN CONFERENCE?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "WHERE DO I REGISTER AND PICK UP MY BADGE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nThe conference is an annual event hosted by the Afghan-American Community Organization and produced by a conference Organizing Committee. This committee and the many subcommittees that support it  consist of Afghan-American professionals and students hailing from across the U.S. Please refer to the Committee section of our website to learn more about the Organizing Committee. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThe registration & badge desk is located outside of the Crystal Cove Auditorium in the Student Center building. The registration desk will open at 9am on Friday, June 21st.\n\n", attributes: descriptionAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "WHO IS THIS EVENT FOR?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "DO I NEED TO BRING A PICTURE ID TO REGISTER?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nThis conference is open to all individuals who identify as members of the Afghan diaspora. It is targeted to young Afghans who grew up in America, but Afghans of all ages and any diaspora worldwide are welcome to apply. All participants must be over the age of 18 or high school graduates. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nYes, a picture ID will be required to register and pick-up your badge.\n\n", attributes: descriptionAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "WHY DO YOU ENCOURAGE YOUNG AFGHANS SPECIFICALLY TO APPLY?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "DO I NEED TO WEAR MY BADGE THROUGHOUT THE CONFERENCE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nOur goal is to provide a safe space for up and coming members of our community to come together. We acknowledge that more established members in the community are integral and their wisdom and experiences are invaluable. That is why anyone of any age can apply to attend. However, for now at least, AAC lacks the organizational capacity and resources to organize an event catered to all age ranges. We look forward to supporting and partnering with future initiatives that will help us one day engage ALL members of our community. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nParticipants are required to wear their badge throughout the conference with no exceptions. \n\n", attributes: descriptionAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "I HAVE GREAT IDEAS. MAY I PRESENT AT THE CONFERENCE?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "I FORGOT/LOST MY BADGE, CAN I GET IT REPLACED?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nYes! Attendees have two options to present: Session Topics and and S.E.E.D Talks (Supportive Engaged Empowered Diaspora). \n\nS.E.E.D Talks (Supportive Engaged Empowered Diaspora) \n\nThroughout the weekend, conference participants can give short (5-10 minutes) talks on any topic. Participants interested in giving S.E.E.D Talks will be required to submit a script, audition tape, and if applicable, a PowerPoint presentation.We are always looking for dynamic, accomplished and passionate speakers. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThere will be a $25 charge to replace any lost badges with no exceptions. To replace a lost badge, please visit the Registration Desk outside the Crystal Cove Auditorium.\n\nIf you forgot your badge at your hotel, you have the option of going to your hotel to get it or paying the replacement fee, but you are required to return one of your badges to the Registration Resk the following day.\n\n", attributes: descriptionAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "WHAT IS THE CONFERENCE DRESS CODE?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "CAN I BRING GUESTS WITH ME TO THE CONFERENCE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nThe attire is business casual all weekend. Attendees may choose to wear traditional Afghan garb at the Saturday evening banquet. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nNo, we cannot accommodate any unregistered guests at the Conference. Only participants that have registered to attend will be allowed on Conference premises with their participant name badge. \n\n", attributes: descriptionAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "WHAT MATERIALS SHOULD I BRING?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "WHERE IS THE PRAYER AREA LOCATED?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nTo get the most out of this experience, we recommend bringing notebooks and pens to take notes. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nGiven space constraints, the prayer area may shift daily.  Please visit the Registration Desk for exact prayer location or ask a Planning Team Member or Conference Ambassador. \n\n", attributes: descriptionAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "I HAVE SPECIAL DIETARY NEEDS. CAN THOSE BE ACCOMMODATED AT THE CONFERENCE?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "WHAT IS THE CLOSEST PARKING STRUCTURE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nWe will make every effort to offer Halal/Zabiha and vegetarian options. Beyond that, please email us separately with your dietary needs if you are admitted to the conference, and we will try to accommodate as best we can. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nWe recommend parking in the Student Center Parking Structure, which is directly across Pereira Drive from the Student Center. Do not park at the University Towne Center, as they tow cars there. If for some reason the Student Center Parking Structure is full, you may also park in the Social Science Parking Structure. You may purchase a daily permit using credit card or cash. \n\n", attributes: descriptionAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "I HAVE ANOTHER QUESTION NOT LISTED HERE. CAN YOU HELP ME?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "HOW MUCH IS PARKING?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nYes! Please send us an email at afghanamericanconference@gmail.com with your question.", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nParking at the above listed structure is $10/day.\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "WHERE SHOULD UBER/LYFT DROP ME OFF?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nPlease type “UCI Student Center & Event Services.” If using Uber, typing that will be sufficient. If using Lyft, you can then select “Student Center.”\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "I AM FEELING REALLY OVERWHELMED, WHO CAN I REACH OUT TO?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThe AAC Care Team is comprised of mental health professionals available throughout the weekend of the conference. To connect to a member of the Care Team:\n\n1. Send a message to (240) 513-8190‬. Make sure to include your name and a brief message so we connect you with the best person.\n\n2. An available CARE Team member will contact you as soon as possible to coordinate a designated place to meet or set up a phone call.\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "CAN I BRING FOOD/DRINKS INTO THE CLASSROOMS?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nUnfortunately, food and drinks are not permitted in classrooms.\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "WILL LUGGAGE CHECK BE PROVIDED ON SUNDAY, JUNE 23RD?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nUnfortunately, we do not have a designated space to store your luggage. We recommend you check-in your luggage at your hotel bell desk.\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "WHAT HAPPENS IF I SHOW UP LATE?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nWe encourage all participants to arrive on time every day. To respect our speakers, doors will close to all plenary sessions and registered participants that arrive late will be asked to wait outside until the speaker on stage concludes their remarks.\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "WHERE IS LOST AND FOUND LOCATED?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nIf you find a lost item, please return it at the Registration Desk located outside the Crystal Cove Auditorium. If you’ve lost an item, please visit the registration desk.\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "WHAT IS THE DRESS CODE?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nWe kindly ask participants to dress in business casual attire. However, some participants have changed into Afghan attire for the banquet, and we recommend wearing your AAC shirt on Sunday.\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "DO I NEED TO CHANGE FOR THE BANQUET?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nYou are not required to change for the banquet. In the past, participants have changed into Afghan attire.\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "CAN I PURCHASE AN AAC T-SHIRT AT THE CONFERENCE?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nA limited supply of t-shirts will be available at the conference outside the Crystal Cove Auditorium. Prices as follows: $25 for Short Sleeve T-shirts / $30 for Long Sleeve Shirts\n\n", attributes: descriptionAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "IS THERE A HASHTAG WE SHOULD USE FOR CONFERENCE PICTURES AND POSTS?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nOf course there is! Please tag all pictures and posts with #AfgAm19\n\n", attributes: descriptionAttributes))
         
         
         return runningDescAttrString

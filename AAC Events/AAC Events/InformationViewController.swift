@@ -21,7 +21,7 @@ class InformationViewController: UIViewController, SideMenuItemContent {
         super.viewDidLoad()
         setupHeader()
         
-        infoText.text = "This is where information text will go. This is where information text will go. This is where information text will go. https://www.aac.com "
+        infoText.text = "UCI WI-FI\n\nNetwork Name: Student Center Visitors\nPassword: anteaters\n\nSOCIAL MEDIA - Please Tag All Pictures #AfgAm19\n\nIG: @afghanamericanconference - https://tinyurl.com/y3zwahbe\nFB: @afghanamericanconference - https://tinyurl.com/y3f6lda5\nTwitter:@afghanamericanc - https://tinyurl.com/yxcc9owg\nSnapchat: @afghanamericanc\nWebsite: afghanamericanconference.org\n\nTHINGS TO DO IN ORANGE COUNTY:\n\nhttps://tinyurl.com/y2uarvt8\n\nREUNIONS\n\nOfficial AAC Reunions (July 13th-21st). Details to be posted on 2019 AACP Facebook Page\n\n"
 
 
     }
