@@ -122,6 +122,7 @@ typedef NS_ENUM(NSUInteger, OSNotificationDisplayType) {
 
 /* The badge assigned to the application icon */
 @property(readonly)NSUInteger badge;
+@property(readonly)NSInteger badgeIncrement;
 
 /* The sound parameter passed to the notification
  By default set to UILocalNotificationDefaultSoundName */
@@ -147,6 +148,9 @@ typedef NS_ENUM(NSUInteger, OSNotificationDisplayType) {
 /* Holds the original payload received
  Keep the raw value for users that would like to root the push */
 @property(readonly)NSDictionary *rawPayload;
+
+/* iOS 10+ : Groups notifications into threads */
+@property(readonly)NSString *threadId;
 
 @end
 
@@ -203,15 +207,28 @@ typedef NS_ENUM(NSInteger, OSNotificationPermission) {
     OSNotificationPermissionDenied,
     
     // The application is authorized to post user notifications.
-    OSNotificationPermissionAuthorized
+    OSNotificationPermissionAuthorized,
+    
+    // the application is only authorized to post Provisional notifications (direct to history)
+    OSNotificationPermissionProvisional
 };
 
+typedef void (^OSNotificationDisplayTypeResponse)(OSNotificationDisplayType displayType);
+
+// Notification Display Type Delegate
+// Allows apps to customize per-notification display-type
+@protocol OSNotificationDisplayTypeDelegate <NSObject>
+- (void)willPresentInFocusNotificationWithPayload:(OSNotificationPayload *)payload
+                                   withCompletion:(OSNotificationDisplayTypeResponse)completion;
+@end
 
 
 // Permission Classes
 @interface OSPermissionState : NSObject
 
+@property (readonly, nonatomic) BOOL reachable;
 @property (readonly, nonatomic) BOOL hasPrompted;
+@property (readonly, nonatomic) BOOL providesAppNotificationSettings;
 @property (readonly, nonatomic) OSNotificationPermission status;
 - (NSDictionary*)toDictionary;
 
@@ -282,6 +299,7 @@ typedef NS_ENUM(NSInteger, OSNotificationPermission) {
 @end
 
 
+typedef void (^OSWebOpenURLResultBlock)(BOOL shouldOpen);
 
 typedef void (^OSResultSuccessBlock)(NSDictionary* result);
 typedef void (^OSFailureBlock)(NSError* error);
@@ -306,11 +324,21 @@ extern NSString * const kOSSettingsKeyInAppAlerts;
 /*Enable In-App display of Launch URLs*/
 extern NSString * const kOSSettingsKeyInAppLaunchURL;
 
-/* iOS10 +
+/*Prompt user yes/no to open URL's from push notifications*/
+extern NSString * const kOSSSettingsKeyPromptBeforeOpeningPushURL;
+
+/* iOS 10 +
  Set notification's in-focus display option.
  Value must be an OSNotificationDisplayType enum
 */
 extern NSString * const kOSSettingsKeyInFocusDisplayOption;
+
+
+/* iOS 12 +
+ Used to determine if the app is able to present it's
+ own customized Notification Settings view
+*/
+extern NSString * const kOSSettingsKeyProvidesAppNotificationSettings;
 
 
 
@@ -335,6 +363,11 @@ typedef NS_ENUM(NSUInteger, ONE_S_LOG_LEVEL) {
 + (id)initWithLaunchOptions:(NSDictionary*)launchOptions appId:(NSString*)appId handleNotificationAction:(OSHandleNotificationActionBlock)actionCallback settings:(NSDictionary*)settings;
 + (id)initWithLaunchOptions:(NSDictionary*)launchOptions appId:(NSString*)appId handleNotificationReceived:(OSHandleNotificationReceivedBlock)receivedCallback handleNotificationAction:(OSHandleNotificationActionBlock)actionCallback settings:(NSDictionary*)settings;
 
+// - Privacy
++ (void)consentGranted:(BOOL)granted;
++ (BOOL)requiresUserPrivacyConsent; // tells your application if privacy consent is still needed from the current user
++ (void)setRequiresUserPrivacyConsent:(BOOL)required; //used by wrapper SDK's to require user privacy consent
+
 @property (class) OSNotificationDisplayType inFocusDisplayType;
 
 + (NSString*)app_id;
@@ -344,6 +377,12 @@ typedef NS_ENUM(NSUInteger, ONE_S_LOG_LEVEL) {
 // Only use if you set kOSSettingsKeyAutoPrompt to false
 + (void)registerForPushNotifications __deprecated_msg("Please use promptForPushNotificationsWithUserResponse instead.");
 + (void)promptForPushNotificationsWithUserResponse:(void(^)(BOOL accepted))completionHandler;
++ (void)promptForPushNotificationsWithUserResponse:(void (^)(BOOL accepted))completionHandler fallbackToSettings:(BOOL)fallback;
+
+// This method opens the iOS Settings app and navigates to the Push Notification Settings
+// page for your app specifically
++ (void)presentAppSettings;
++ (void)registerForProvisionalAuthorization:(void(^)(BOOL accepted))completionHandler;
 
 // - Logging
 + (void)setLogLevel:(ONE_S_LOG_LEVEL)logLevel visualLevel:(ONE_S_LOG_LEVEL)visualLogLevel;
@@ -364,12 +403,16 @@ typedef NS_ENUM(NSUInteger, ONE_S_LOG_LEVEL) {
 + (void)deleteTagsWithJsonString:(NSString*)jsonString;
 // Optional method that sends us the user's email as an anonymized hash so that we can better target and personalize notifications sent to that user across their devices.
 // Sends as MD5 and SHA1 of the provided email
-+ (void)syncHashedEmail:(NSString*)email;
++ (void)syncHashedEmail:(NSString*)email __deprecated_msg("Please refer to our new Email methods/functionality such as setEmail(). This method will be removed in a future version of the OneSignal SDK");
 
 // - Subscription and Permissions
 + (void)IdsAvailable:(OSIdsAvailableBlock)idsAvailableBlock __deprecated_msg("Please use getPermissionSubscriptionState or addSubscriptionObserver and addPermissionObserver instead.");
 
 + (OSPermissionSubscriptionState*)getPermissionSubscriptionState;
+
+// When the app is in-focus, this allows you to add a delegate that can customize the
+// display type for specific notifications
++ (void)setNotificationDisplayTypeDelegate:(NSObject<OSNotificationDisplayTypeDelegate>*)delegate;
 
 + (void)addPermissionObserver:(NSObject<OSPermissionObserver>*)observer;
 + (void)removePermissionObserver:(NSObject<OSPermissionObserver>*)observer;
@@ -425,6 +468,9 @@ typedef void (^OSEmailSuccessBlock)();
 + (void)logoutEmail;
 + (void)setEmail:(NSString * _Nonnull)email;
 + (void)setEmail:(NSString * _Nonnull)email withEmailAuthHashToken:(NSString * _Nullable)hashToken;
+
++ (void)setExternalUserId:(NSString * _Nonnull)externalId;
++ (void)removeExternalUserId;
 
 @end
 
