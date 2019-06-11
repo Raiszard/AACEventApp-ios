@@ -45,7 +45,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             alertView.addAction(UIAlertAction(title: "Accept", style: .default, handler: { (action) in
                 appD.privacyPolicyAccepted = true
                 UserDefaults.standard.set(true, forKey: "privacyAccepted")
-
+                OneSignal.consentGranted(true);
+                
                 if self.unlockField.text?.uppercased() == "AFGAM19" {
                     appD.isAppUnlocked = true
                     UserDefaults.standard.set("SIARISJAIT", forKey: "isUnlocked")
@@ -107,6 +108,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
             alertView.addAction(UIAlertAction(title: "Accept", style: .default, handler: { (action) in
                 appD.privacyPolicyAccepted = true
                 UserDefaults.standard.set(true, forKey: "privacyAccepted")
+                OneSignal.consentGranted(true);
                 self.presentMainStoryBoard()
             }))
             alertView.addAction(UIAlertAction(title: "Read Privacy Policy", style: .cancel, handler: { (action) in

@@ -77,11 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
 
-        //check acceptPrivacy
-
-        //OneSignal.set
-
-        // Replace 'YOUR_APP_ID' with your OneSignal App ID.
+        OneSignal.setRequiresUserPrivacyConsent(true)
         OneSignal.initWithLaunchOptions(launchOptions,
                                         appId: "70531d2d-609a-4093-9b66-b45b03731a4c",
                                         handleNotificationAction: nil,
