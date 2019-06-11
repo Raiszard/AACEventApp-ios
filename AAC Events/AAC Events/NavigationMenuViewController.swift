@@ -117,10 +117,8 @@ class NavigationMenuViewController: MenuViewController {
 
     @objc func privacyPolicyTapped() {
         print("privacy Policy Tapped")
-
-        //TODO: get right url
-        var urlString = "https://www.afghanamericanconference.org/mobile-app-privacy-policy"
-        let appD = UIApplication.shared.delegate as? AppDelegate
+        
+        let urlString = "https://www.afghanamericanconference.org/mobile-app-privacy-policy"
         let url = URL(string: urlString)
         let svc = SFSafariViewController(url: url!)
         self.present(svc, animated: true, completion: nil)

@@ -8,6 +8,7 @@
 
 import UIKit
 import OneSignal
+import SafariServices
 
 class ViewController: UIViewController, UITextFieldDelegate {
 
@@ -21,26 +22,51 @@ class ViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         unlockButton.layer.cornerRadius = 10
-
     }
-    @IBOutlet weak var unlockField: UITextField!
-    @IBAction func unlockButtonTapped(_ sender: Any) {
-        
-        if unlockField.text?.uppercased() == "AFGAM19" {
-            let appD = UIApplication.shared.delegate as! AppDelegate
-            appD.isAppUnlocked = true
-            UserDefaults.standard.set("SIARISJAIT", forKey: "isUnlocked")
-            presentMainStoryBoard()
 
+    @IBOutlet weak var unlockField: UITextField!
+    private var alertView: UIAlertController!
+
+    @IBAction func unlockButtonTapped(_ sender: Any) {
+        let appD = UIApplication.shared.delegate as! AppDelegate
+
+        if appD.privacyPolicyAccepted {
+            if unlockField.text?.uppercased() == "AFGAM19" {
+                appD.isAppUnlocked = true
+                UserDefaults.standard.set("SIARISJAIT", forKey: "isUnlocked")
+                presentMainStoryBoard()
+
+            }
         } else {
             //present alert view controller
+            let title = "Privacy Policy"
+            let message = "In order to use the app, please review and accept the privacy policy"
+            alertView = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            alertView.addAction(UIAlertAction(title: "Accept", style: .default, handler: { (action) in
+                appD.privacyPolicyAccepted = true
+                UserDefaults.standard.set(true, forKey: "privacyAccepted")
+
+                if self.unlockField.text?.uppercased() == "AFGAM19" {
+                    appD.isAppUnlocked = true
+                    UserDefaults.standard.set("SIARISJAIT", forKey: "isUnlocked")
+                    self.presentMainStoryBoard()
+                }
+            }))
+            alertView.addAction(UIAlertAction(title: "Read Privacy Policy", style: .cancel, handler: { (action) in
+                let urlString = "https://www.afghanamericanconference.org/mobile-app-privacy-policy"
+                let url = URL(string: urlString)
+                let svc = SFSafariViewController(url: url!)
+                self.present(svc, animated: true, completion: nil)
+            }))
+            alertView.addAction(UIAlertAction(title: "Decline", style: .destructive, handler: { ( action) in
+                self.alertView.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alertView, animated: true, completion: nil)
         }
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        // Recommend moving the below line to prompt for push after informing the user about
-        //   how your app will use them.
         OneSignal.promptForPushNotifications(userResponse: { accepted in
             print("User accepted notifications: \(accepted)")
         })
@@ -72,7 +98,30 @@ class ViewController: UIViewController, UITextFieldDelegate {
 		appD.isAppUnlocked = false
 		UserDefaults.standard.set(nil, forKey: "isUnlocked")
 
-        presentMainStoryBoard()
+
+        if !appD.privacyPolicyAccepted {
+            //present alert view controller
+            let title = "Privacy Policy"
+            let message = "In order to use the app, please review and accept the privacy policy"
+            alertView = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            alertView.addAction(UIAlertAction(title: "Accept", style: .default, handler: { (action) in
+                appD.privacyPolicyAccepted = true
+                UserDefaults.standard.set(true, forKey: "privacyAccepted")
+                self.presentMainStoryBoard()
+            }))
+            alertView.addAction(UIAlertAction(title: "Read Privacy Policy", style: .cancel, handler: { (action) in
+                let urlString = "https://www.afghanamericanconference.org/mobile-app-privacy-policy"
+                let url = URL(string: urlString)
+                let svc = SFSafariViewController(url: url!)
+                self.present(svc, animated: true, completion: nil)
+            }))
+            alertView.addAction(UIAlertAction(title: "Decline", style: .destructive, handler: { ( action) in
+                self.alertView.dismiss(animated: true, completion: nil)
+            }))
+            self.present(alertView, animated: true, completion: nil)
+        } else {
+            self.presentMainStoryBoard()
+        }
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
