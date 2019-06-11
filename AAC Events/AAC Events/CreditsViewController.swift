@@ -21,7 +21,7 @@ class CreditsViewController: UIViewController, SideMenuItemContent {
         super.viewDidLoad()
         setupHeader()
         
-        creditTextView.text = "Photography provided by Wayve Media, Khaled Nurhssein, Arash Azzizada, Shab + Coop, Daud Kabiri, Obaid Hofiani. \n\nAAC mobile application devloped and designed by Siar Noorzay and Omar Noorzay."
+        creditTextView.text = "Photography provided by Wayve Media, Khaled Nurhssein, Arash Azzizada, Shab + Coop, Daud Kabiri, Obaid Hofiani. \n\nAAC mobile application developed and designed by Siar Noorzay and Omar Noorzay."
 
         // Do any additional setup after loading the view.
     }
