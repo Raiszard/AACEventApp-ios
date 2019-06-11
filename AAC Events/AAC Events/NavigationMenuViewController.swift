@@ -19,6 +19,7 @@
 import UIKit
 import InteractiveSideMenu
 import MessageUI
+import SafariServices
 
 /*
  Menu controller is responsible for creating its content and showing/hiding menu using 'menuContainerViewController' property.
@@ -60,7 +61,7 @@ class NavigationMenuViewController: MenuViewController {
         imageV.center = position
         tableView.tableHeaderView = view
         
-        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 100))
+        let footerView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 150))
         
         let contactUsButton = UIButton(frame: CGRect(x: 0, y: 10, width: 100, height: 44))
         contactUsButton.setTitle("Contact Us", for: .normal)
@@ -74,11 +75,19 @@ class NavigationMenuViewController: MenuViewController {
         creditButton.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
         creditButton.addTarget(self, action:#selector(creditButtonTapped), for: .touchUpInside)
 
+        let privacyButton = UIButton(frame: CGRect(x: 0, y: 70 , width: 100, height: 44))
+        privacyButton.backgroundColor = .black
+        privacyButton.setTitle("Privacy Policy", for: .normal)
+        privacyButton.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
+        privacyButton.addTarget(self, action:#selector(privacyPolicyTapped), for: .touchUpInside)
+
         contactUsButton.center.x = position.x
         creditButton.center.x = position.x
+        privacyButton.center.x = position.x
         
         footerView.addSubview(contactUsButton)
         footerView.addSubview(creditButton)
+        footerView.addSubview(privacyButton)
         
         tableView.tableFooterView = footerView
         
@@ -103,6 +112,18 @@ class NavigationMenuViewController: MenuViewController {
         } else {
             self.showSendMailErrorAlert()
         }
+
+    }
+
+    @objc func privacyPolicyTapped() {
+        print("privacy Policy Tapped")
+
+        //TODO: get right url
+        var urlString = "https://www.afghanamericanconference.org/mobile-app-privacy-policy"
+        let appD = UIApplication.shared.delegate as? AppDelegate
+        let url = URL(string: urlString)
+        let svc = SFSafariViewController(url: url!)
+        self.present(svc, animated: true, completion: nil)
 
     }
     func configuredMailComposeViewController() -> MFMailComposeViewController {

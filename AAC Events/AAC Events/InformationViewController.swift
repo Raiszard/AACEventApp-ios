@@ -15,6 +15,7 @@ class InformationViewController: UIViewController, SideMenuItemContent {
     @IBOutlet weak var headerContainer: UIView!
     @IBOutlet weak var infoText: UITextView!
     @IBAction func openMenu(_ sender: Any) {
+        showSideMenu()
     }
 
     override func viewDidLoad() {
