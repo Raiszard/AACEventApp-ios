@@ -25,6 +25,12 @@ final class MenuTransitioningDelegate: NSObject {
 
     let interactiveTransition: MenuInteractiveTransition
 
+    public var currentItemOptions = SideMenuItemOptions() {
+        didSet {
+            interactiveTransition.currentItemOptions = currentItemOptions
+        }
+    }
+
     init(interactiveTransition: MenuInteractiveTransition) {
         self.interactiveTransition = interactiveTransition
     }

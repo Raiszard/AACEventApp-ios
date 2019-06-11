@@ -120,7 +120,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
             ] as [NSAttributedStringKey : Any]
         
         let harrassmentAttributes = [
-            NSAttributedStringKey.link: URL(string: "https://www.afghanamericanconference.org/s/Anti-Discrimination-Policy_-AACO-2018-wnct.pdf")!,
+            NSAttributedStringKey.link: URL(string: "https://static1.squarespace.com/static/56a2ec72cbced637fea96241/t/5cbb5ac1ee6eb039cef2a133/1555782338165/AACO+Code+of+Conduct.pdf")!,
             NSAttributedStringKey.font: UIFont(name: "Avenir-Book", size: 15)!,
             NSAttributedStringKey.foregroundColor: UIColor.blue
             ] as [NSAttributedStringKey : Any]
@@ -144,9 +144,9 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         
         runningCommittmentAttrString.append(NSAttributedString(string: "Learn More", attributes: mentalwellnessAttributes))
         
-        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nANTI-DISCRIMINATION & HARASSMENT", attributes: boldAttributes as [NSAttributedStringKey : Any]))
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nCODE OF CONDUCT", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nOur policy was established to address issues, including harassment, abuse, and discrimination,  that have taken place within AAC.  It provides a way for AAC to address these situations and uphold a safe, supportive, empowered, and engaged community. It applies to all members of the conference and individuals that attend an AAC event or engage in conversations on AAC’s virtual platforms.  We are currently finalizing a revised and more comprehensive Code of Conduct policy that will be released shortly.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nThe Afghan-American Community Organization (AACO) is committed to providing a safe and welcoming environment for all its participants. All complaints of discrimination, including harassment, will be taken seriously and handled privately, only informing individuals that need-to-know, through our code of conduct.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningCommittmentAttrString.append(NSAttributedString(string: "Learn More", attributes: harrassmentAttributes))
         

@@ -29,7 +29,7 @@ class AACareViewController: UIViewController, SideMenuItemContent, MFMessageComp
         super.viewDidLoad()
         setupHeader()
         
-        textView.text = "AAC can be an uplifting, inspiring, and empowering experience for many. However, we have also found that three days of interactions and conversations can also be overwhelming and difficult for some. This year, we hope to be proactive and better prepared for participants that may need some additional support by incorporating an AACare Team, a team of 'on-call' individuals readily available to provide support for participants that weekend. \n\nThe AACare Team will be responsible for helping participants who may have difficulty during the weekend - ranging from anxiety being around so many people, being triggered from particular conversations/topics, or just needing a person to check-in with. The team will consist of trusted alumni, professional therapists, and/or individuals that have experience working in mental health or related fields."
+        textView.text = "What is the CARE Team?\n\nThe AAC CARE Team contributes to the creation of a safe(r) space at the conference by providing additional support for participants during the weekend. The team is comprised of professional therapists along with those who have experience working in mental health or related fields. \n\nUpon request, the CARE Team is available to check in with particpants who may be experiencing difficulty throughout the weekend. This could range from anxiety being around so many people, being triggered by certain topics, or just needing a person to check-in and talk with. They are available to support you in bringing your fullest self at AAC!\n\nHow to Connect with a CARE Team Member:\n\n1. Send a message to (240) 513-8190‬. Make sure to include your name and a brief message so we connect you with the best person. \n\n2. An available CARE Team member will contact you as soon as possible to coordinate a designated place to meet or set up a phone call.\n\n "
 
         // Do any additional setup after loading the view.
     }
@@ -71,8 +71,8 @@ class AACareViewController: UIViewController, SideMenuItemContent, MFMessageComp
             
             let controller = MFMessageComposeViewController ()
             
-            controller.body = "Text Message from AAC App!"
-            controller.recipients = ["8182944328"]
+            controller.body = ""
+            controller.recipients = ["2405138190‬"]
             controller.messageComposeDelegate = self
             
             self.present(controller, animated: true, completion: nil)

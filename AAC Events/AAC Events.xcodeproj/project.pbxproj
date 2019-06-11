@@ -19,6 +19,7 @@
 		738B8A7D205F3C9500BFD6BB /* AACareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B8A7C205F3C9500BFD6BB /* AACareViewController.swift */; };
 		73C77D1A2047F0E500800F7F /* InitiativeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C77D192047F0E500800F7F /* InitiativeDetailsViewController.swift */; };
 		73C77D1C204802BE00800F7F /* ConferenceEvaluationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */; };
+		73F3993A2296C4E900A9EBDB /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F399392296C4E900A9EBDB /* InformationViewController.swift */; };
 		7D591DB4F387EDA40D8E396E /* Pods_AAC_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A26C403FA682AF4768BF86 /* Pods_AAC_Events.framework */; };
 		8AB6EB29DCA451E8FB717EBC /* Pods_AAC_EventsUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73703A89AB3B6CA9F12E142A /* Pods_AAC_EventsUITests.framework */; };
 		9B032940201ACF9900B94A74 /* SessionDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B03293F201ACF9800B94A74 /* SessionDetailsViewController.swift */; };
@@ -116,6 +117,7 @@
 		738B8A7C205F3C9500BFD6BB /* AACareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACareViewController.swift; sourceTree = "<group>"; };
 		73C77D192047F0E500800F7F /* InitiativeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiativeDetailsViewController.swift; sourceTree = "<group>"; };
 		73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceEvaluationViewController.swift; sourceTree = "<group>"; };
+		73F399392296C4E900A9EBDB /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		85731998ADBEDC9ECBB94EE9 /* Pods-AAC EventsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests.release.xcconfig"; sourceTree = "<group>"; };
 		98C5C5F96D2D6F7313CD9A7A /* Pods-AAC EventsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsTests/Pods-AAC EventsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9B03293F201ACF9800B94A74 /* SessionDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDetailsViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +269,7 @@
 				738B8A7C205F3C9500BFD6BB /* AACareViewController.swift */,
 				9B3C746D1FFDA5370004A82A /* HostViewController.swift */,
 				9B3C746C1FFDA5370004A82A /* NavigationMenuViewController.swift */,
+				73F399392296C4E900A9EBDB /* InformationViewController.swift */,
 				9B3C74741FFDA9BD0004A82A /* KittyViewController.swift */,
 				9B3C74731FFDA9BD0004A82A /* TabBarViewController.swift */,
 				9B3C74711FFDA9370004A82A /* Assets.xcassets */,
@@ -359,7 +362,6 @@
 				9B88BFCE204F99C10067BFF6 /* Sources */,
 				9B88BFCF204F99C10067BFF6 /* Frameworks */,
 				9B88BFD0204F99C10067BFF6 /* Resources */,
-				12DA9A65409519C0A17709A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -379,7 +381,6 @@
 				9BD4A43A1FFC485700C20D4F /* Frameworks */,
 				9BD4A43B1FFC485700C20D4F /* Resources */,
 				7E66DAF808EE5A3DEA6A80E0 /* [CP] Embed Pods Frameworks */,
-				41D4F549EE88108877684CFD /* [CP] Copy Pods Resources */,
 				9B88BFDD204F99C20067BFF6 /* Embed App Extensions */,
 			);
 			buildRules = (
@@ -400,8 +401,6 @@
 				9BD4A4501FFC485700C20D4F /* Sources */,
 				9BD4A4511FFC485700C20D4F /* Frameworks */,
 				9BD4A4521FFC485700C20D4F /* Resources */,
-				186306BEB9E40DA3B3975CF3 /* [CP] Embed Pods Frameworks */,
-				8B0613020E65E7C05DBF5281 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -421,8 +420,6 @@
 				9BD4A45B1FFC485700C20D4F /* Sources */,
 				9BD4A45C1FFC485700C20D4F /* Frameworks */,
 				9BD4A45D1FFC485700C20D4F /* Resources */,
-				F58FC061982AB03152DB53AA /* [CP] Embed Pods Frameworks */,
-				3445CBC5ABD0C2E515072F20 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -532,36 +529,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		12DA9A65409519C0A17709A5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AAC Events-OneSignalNotificationServiceExtension/Pods-AAC Events-OneSignalNotificationServiceExtension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		186306BEB9E40DA3B3975CF3 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AAC EventsTests/Pods-AAC EventsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		1C80E37EB4E20EE8831AD84F /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -580,43 +547,13 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		3445CBC5ABD0C2E515072F20 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		41D4F549EE88108877684CFD /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7E66DAF808EE5A3DEA6A80E0 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-AAC Events/Pods-AAC Events-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 			);
@@ -627,7 +564,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AAC Events/Pods-AAC Events-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AAC Events/Pods-AAC Events-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		83364E62BEDF799B63632A2A /* [CP] Check Pods Manifest.lock */ = {
@@ -646,21 +583,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8B0613020E65E7C05DBF5281 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AAC EventsTests/Pods-AAC EventsTests-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		C29614155DE6733B869380DE /* [CP] Check Pods Manifest.lock */ = {
@@ -697,21 +619,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F58FC061982AB03152DB53AA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -755,6 +662,7 @@
 				9B3D87112006CEF000599D92 /* SessionTableViewCell.swift in Sources */,
 				9BDC06D3200839F500F825E4 /* PeopleList.swift in Sources */,
 				738B8A7D205F3C9500BFD6BB /* AACareViewController.swift in Sources */,
+				73F3993A2296C4E900A9EBDB /* InformationViewController.swift in Sources */,
 				733D885320312ECB008F1255 /* AboutViewController.swift in Sources */,
 				73C77D1C204802BE00800F7F /* ConferenceEvaluationViewController.swift in Sources */,
 				9BDC06C620072EE300F825E4 /* SponsorViewController.swift in Sources */,

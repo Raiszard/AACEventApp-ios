@@ -21,6 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var allPeople: [PeopleList]!
 
     var isAppUnlocked: Bool = false
+    var privacyPolicyAccepted: Bool = false
     
     func isEnrolledIn(sessionID: String) -> Bool {
         
@@ -63,6 +64,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if unlocked != nil {
             self.isAppUnlocked = true
         }
+
+        let accepted = UserDefaults.standard.bool(forKey: "privacyAccepted")
+        self.privacyPolicyAccepted = accepted
+
         
         guard let sessions = UserDefaults.standard.array(forKey: "enrolledSessions") as? [String] else {
             print("no enrolled sessions to retrieve")
@@ -71,8 +76,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         enrolledSessionIDs = sessions
         
         let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-        
-        // Replace 'YOUR_APP_ID' with your OneSignal App ID.
+
+        OneSignal.setRequiresUserPrivacyConsent(true)
         OneSignal.initWithLaunchOptions(launchOptions,
                                         appId: "70531d2d-609a-4093-9b66-b45b03731a4c",
                                         handleNotificationAction: nil,
