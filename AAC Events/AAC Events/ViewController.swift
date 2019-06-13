@@ -41,7 +41,15 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //present alert view controller
             let title = "Privacy Policy"
             let message = "In order to use the app, please review and accept the privacy policy"
-            alertView = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alertView.popoverPresentationController?.sourceRect = skipButton.frame
+                alertView.popoverPresentationController?.sourceView = skipButton
+            } else {
+                alertView = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            }
+            
             alertView.addAction(UIAlertAction(title: "Accept", style: .default, handler: { (action) in
                 appD.privacyPolicyAccepted = true
                 UserDefaults.standard.set(true, forKey: "privacyAccepted")
@@ -105,7 +113,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
             //present alert view controller
             let title = "Privacy Policy"
             let message = "In order to use the app, please review and accept the privacy policy"
-            alertView = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            if UIDevice.current.userInterfaceIdiom == .pad {
+                alertView = UIAlertController(title: title, message: message, preferredStyle: .alert)
+                alertView.popoverPresentationController?.sourceRect = skipButton.frame
+                alertView.popoverPresentationController?.sourceView = skipButton
+            } else {
+                alertView = UIAlertController(title: title, message: message, preferredStyle: .actionSheet)
+            }
+
             alertView.addAction(UIAlertAction(title: "Accept", style: .default, handler: { (action) in
                 appD.privacyPolicyAccepted = true
                 UserDefaults.standard.set(true, forKey: "privacyAccepted")
@@ -113,7 +128,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 appD.initOneSignalSDK()
                 self.presentMainStoryBoard()
             }))
-            alertView.addAction(UIAlertAction(title: "Read Privacy Policy", style: .cancel, handler: { (action) in
+            alertView.addAction(UIAlertAction(title: "Read Privacy Policy", style: .default, handler: { (action) in
                 let urlString = "https://www.afghanamericanconference.org/mobile-app-privacy-policy"
                 let url = URL(string: urlString)
                 let svc = SFSafariViewController(url: url!)
