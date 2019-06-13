@@ -74,18 +74,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             return true
         }
         enrolledSessionIDs = sessions
-        
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
 
         OneSignal.setRequiresUserPrivacyConsent(true)
+        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
+        initOneSignalSDK()
+        
+        return true
+    }
+
+    private var launchOptions: [UIApplicationLaunchOptionsKey: Any]?
+
+    func initOneSignalSDK() {
+        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
         OneSignal.initWithLaunchOptions(launchOptions,
                                         appId: "70531d2d-609a-4093-9b66-b45b03731a4c",
                                         handleNotificationAction: nil,
                                         settings: onesignalInitSettings)
-        
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
-        
-        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
