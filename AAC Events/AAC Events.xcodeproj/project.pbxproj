@@ -261,51 +261,16 @@
 		9BD4A43F1FFC485700C20D4F /* AAC Events */ = {
 			isa = PBXGroup;
 			children = (
-				9B354D8020491089005E2A04 /* AAC Events.entitlements */,
 				9BD4A4401FFC485700C20D4F /* AppDelegate.swift */,
-				9BD4A4421FFC485700C20D4F /* ViewController.swift */,
-				9BD4A4441FFC485700C20D4F /* Login.storyboard */,
-				9B3C746A1FFDA5180004A82A /* Main.storyboard */,
-				738B8A7C205F3C9500BFD6BB /* AACareViewController.swift */,
-				9B3C746D1FFDA5370004A82A /* HostViewController.swift */,
-				9B3C746C1FFDA5370004A82A /* NavigationMenuViewController.swift */,
-				73F399392296C4E900A9EBDB /* InformationViewController.swift */,
-				9B3C74741FFDA9BD0004A82A /* KittyViewController.swift */,
-				9B3C74731FFDA9BD0004A82A /* TabBarViewController.swift */,
-				9B3C74711FFDA9370004A82A /* Assets.xcassets */,
 				9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */,
-				9B3C747B20004C0C0004A82A /* ViewHeader.swift */,
-				9B3C747D20004C2B0004A82A /* ViewHeader.xib */,
-				738069EF2059DE9800F4BB6E /* CreditsViewController.swift */,
-				73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */,
-				73C77D192047F0E500800F7F /* InitiativeDetailsViewController.swift */,
-				7352BFF92045525500301FB0 /* InitiativesViewController.swift */,
-				735CF55F20358D6F0032D670 /* CommitteeMemberViewController.swift */,
-				737CEB0020342B2000A8F7A9 /* CommitteeViewController.swift */,
-				737CEAFE203421C400A8F7A9 /* FAQViewController.swift */,
-				733D885420316D16008F1255 /* DonateViewController.swift */,
-				733D885220312ECB008F1255 /* AboutViewController.swift */,
-				9BF38A562004462B0078FC59 /* CohortsViewController.swift */,
-				9BB0C92C203375C600B4C87E /* CohortTableViewCell.swift */,
-				9BDC06C520072EE300F825E4 /* SponsorViewController.swift */,
-				9B3D870D2005F53D00599D92 /* SponsorDetailsViewController.swift */,
-				9B3D870F2006CEF000599D92 /* SessionTableViewCell.swift */,
-				9B3D87102006CEF000599D92 /* SessionTableViewCell.xib */,
-				9B3D87132006E70B00599D92 /* AgendaViewController.swift */,
-				BDE586E2205A17FE005702C9 /* ImageLabelTableViewCell.swift */,
-				BDE586E3205A17FE005702C9 /* ImageLabelTableViewCell.xib */,
-				9B346A75202930DF004263CF /* MyScheduleViewController.swift */,
-				9B03293F201ACF9800B94A74 /* SessionDetailsViewController.swift */,
-				9BDC06C7200825D400F825E4 /* NormsViewController.swift */,
-				9B346A77202A8BBE004263CF /* SpeakersViewController.swift */,
-				9B354D7C2034F10C005E2A04 /* PersonTableViewCell.swift */,
-				9B346A79202A979E004263CF /* PersonDetailsViewController.swift */,
-				9B346A7D202BE869004263CF /* AttendeesViewController.swift */,
-				9B346A7F202BEE3C004263CF /* AttendeeTableViewCell.swift */,
-				9BDC06CF200839BE00F825E4 /* Models */,
-				9B346A7B202BE660004263CF /* API.swift */,
 				9BD4A44F1FFC485700C20D4F /* Info.plist */,
-				9BD4A4471FFC485700C20D4F /* AAC_Events.xcdatamodeld */,
+				9B354D8020491089005E2A04 /* AAC Events.entitlements */,
+				BD565CA1245C9DBE00FB028D /* Resources */,
+				BD565CA2245C9DE700FB028D /* Login */,
+				BD565CA3245C9E5500FB028D /* Main View Controllers */,
+				BD565CA4245C9EC100FB028D /* Suplemental VCs */,
+				BD565CA6245C9F0900FB028D /* Reusable Views */,
+				9BDC06CF200839BE00F825E4 /* Models */,
 			);
 			path = "AAC Events";
 			sourceTree = "<group>";
@@ -338,6 +303,121 @@
 			);
 			name = Models;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		BD565CA1245C9DBE00FB028D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				9B3C746A1FFDA5180004A82A /* Main.storyboard */,
+				9B3C74711FFDA9370004A82A /* Assets.xcassets */,
+				9B346A7B202BE660004263CF /* API.swift */,
+				9BD4A4471FFC485700C20D4F /* AAC_Events.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BD565CA2245C9DE700FB028D /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				9BD4A4421FFC485700C20D4F /* ViewController.swift */,
+				9BD4A4441FFC485700C20D4F /* Login.storyboard */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		BD565CA3245C9E5500FB028D /* Main View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				738B8A7C205F3C9500BFD6BB /* AACareViewController.swift */,
+				73F399392296C4E900A9EBDB /* InformationViewController.swift */,
+				738069EF2059DE9800F4BB6E /* CreditsViewController.swift */,
+				73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */,
+				73C77D192047F0E500800F7F /* InitiativeDetailsViewController.swift */,
+				7352BFF92045525500301FB0 /* InitiativesViewController.swift */,
+				735CF55F20358D6F0032D670 /* CommitteeMemberViewController.swift */,
+				737CEB0020342B2000A8F7A9 /* CommitteeViewController.swift */,
+				737CEAFE203421C400A8F7A9 /* FAQViewController.swift */,
+				733D885420316D16008F1255 /* DonateViewController.swift */,
+				733D885220312ECB008F1255 /* AboutViewController.swift */,
+				9B3D87132006E70B00599D92 /* AgendaViewController.swift */,
+				9B346A75202930DF004263CF /* MyScheduleViewController.swift */,
+				9BDC06C7200825D400F825E4 /* NormsViewController.swift */,
+				9B346A77202A8BBE004263CF /* SpeakersViewController.swift */,
+				BD565CAA245C9FBA00FB028D /* Attendees */,
+				BD565CA9245C9FA700FB028D /* Person */,
+				BD565CA8245C9F7600FB028D /* Session */,
+				BD565CA7245C9F1E00FB028D /* Sponsors */,
+				BD565CA5245C9EFB00FB028D /* Cohorts */,
+			);
+			path = "Main View Controllers";
+			sourceTree = "<group>";
+		};
+		BD565CA4245C9EC100FB028D /* Suplemental VCs */ = {
+			isa = PBXGroup;
+			children = (
+				9B3C746D1FFDA5370004A82A /* HostViewController.swift */,
+				9B3C746C1FFDA5370004A82A /* NavigationMenuViewController.swift */,
+				9B3C74741FFDA9BD0004A82A /* KittyViewController.swift */,
+				9B3C74731FFDA9BD0004A82A /* TabBarViewController.swift */,
+			);
+			path = "Suplemental VCs";
+			sourceTree = "<group>";
+		};
+		BD565CA5245C9EFB00FB028D /* Cohorts */ = {
+			isa = PBXGroup;
+			children = (
+				9BF38A562004462B0078FC59 /* CohortsViewController.swift */,
+				9BB0C92C203375C600B4C87E /* CohortTableViewCell.swift */,
+			);
+			path = Cohorts;
+			sourceTree = "<group>";
+		};
+		BD565CA6245C9F0900FB028D /* Reusable Views */ = {
+			isa = PBXGroup;
+			children = (
+				BDE586E2205A17FE005702C9 /* ImageLabelTableViewCell.swift */,
+				BDE586E3205A17FE005702C9 /* ImageLabelTableViewCell.xib */,
+				9B3C747B20004C0C0004A82A /* ViewHeader.swift */,
+				9B3C747D20004C2B0004A82A /* ViewHeader.xib */,
+			);
+			path = "Reusable Views";
+			sourceTree = "<group>";
+		};
+		BD565CA7245C9F1E00FB028D /* Sponsors */ = {
+			isa = PBXGroup;
+			children = (
+				9BDC06C520072EE300F825E4 /* SponsorViewController.swift */,
+				9B3D870D2005F53D00599D92 /* SponsorDetailsViewController.swift */,
+			);
+			path = Sponsors;
+			sourceTree = "<group>";
+		};
+		BD565CA8245C9F7600FB028D /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				9B03293F201ACF9800B94A74 /* SessionDetailsViewController.swift */,
+				9B3D870F2006CEF000599D92 /* SessionTableViewCell.swift */,
+				9B3D87102006CEF000599D92 /* SessionTableViewCell.xib */,
+			);
+			path = Session;
+			sourceTree = "<group>";
+		};
+		BD565CA9245C9FA700FB028D /* Person */ = {
+			isa = PBXGroup;
+			children = (
+				9B354D7C2034F10C005E2A04 /* PersonTableViewCell.swift */,
+				9B346A79202A979E004263CF /* PersonDetailsViewController.swift */,
+			);
+			path = Person;
+			sourceTree = "<group>";
+		};
+		BD565CAA245C9FBA00FB028D /* Attendees */ = {
+			isa = PBXGroup;
+			children = (
+				9B346A7D202BE869004263CF /* AttendeesViewController.swift */,
+				9B346A7F202BEE3C004263CF /* AttendeeTableViewCell.swift */,
+			);
+			path = Attendees;
 			sourceTree = "<group>";
 		};
 		D9A7F341160EF7B3F43B3FAD /* Frameworks */ = {
@@ -881,7 +961,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AAC Events/AAC Events.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X73E955TNB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "AAC Events/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aac.events;
@@ -899,7 +979,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "AAC Events/AAC Events.entitlements";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = X73E955TNB;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "AAC Events/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.aac.events;
