@@ -98,6 +98,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
     func presentMainStoryBoard() {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateInitialViewController() else { return }
+        vc.modalPresentationStyle = .fullScreen
         present(vc, animated: true, completion: nil)
 
     }
