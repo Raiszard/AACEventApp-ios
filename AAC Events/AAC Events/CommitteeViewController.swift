@@ -262,7 +262,8 @@ extension CommitteeViewController: UITableViewDataSource, UITableViewDelegate {
         destination.name = name
         destination.personTitle = title
         destination.personDescription = descp
-        
+        destination.modalPresentationStyle = .fullScreen
+
         present(destination, animated: true, completion: nil)
         
         tableView.cellForRow(at: indexPath)?.isSelected = false

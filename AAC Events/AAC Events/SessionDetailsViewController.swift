@@ -320,7 +320,8 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
         
         vc.person = facilitators[indexPath.row]
         
-        
+        vc.modalPresentationStyle = .fullScreen
+
         present(vc, animated: true, completion: nil)
         
    }

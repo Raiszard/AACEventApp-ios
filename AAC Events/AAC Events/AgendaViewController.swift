@@ -216,6 +216,8 @@ class AgendaViewController: UIViewController {
             guard let vc = storyboard.instantiateViewController(withIdentifier: "SessionDetails") as? SessionDetailsViewController else { return }
             
             vc.agendaItem = currentCell.agendaItem
+            vc.modalPresentationStyle = .fullScreen
+
             present(vc, animated: true, completion: nil)
 
         }

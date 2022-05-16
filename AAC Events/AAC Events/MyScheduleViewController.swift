@@ -149,8 +149,10 @@ extension MyScheduleViewController: UITableViewDelegate, UITableViewDataSource {
 
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "SessionDetails") as? SessionDetailsViewController else { return }
-        
+        vc.modalPresentationStyle = .fullScreen
+
         vc.agendaItem = enrolledAgendaItems[daysSegmentedControl.selectedSegmentIndex][indexPath.row]
+
         present(vc, animated: true, completion: nil)
     }
     

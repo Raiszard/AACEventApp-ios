@@ -149,9 +149,10 @@ extension SpeakersViewController: UITableViewDataSource, UITableViewDelegate {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         guard let vc = storyboard.instantiateViewController(withIdentifier: "PersonDetails") as? PersonDetailsViewController else { return }
-        
+        vc.modalPresentationStyle = .fullScreen
         vc.person = self.peopleLists[currentSegment].peopleArray[indexPath.row]
-        
+        vc.modalPresentationStyle = .fullScreen
+
         
         present(vc, animated: true, completion: nil)
 

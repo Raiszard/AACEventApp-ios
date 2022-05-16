@@ -11,14 +11,14 @@ import InteractiveSideMenu
 
 
 class InitiativesViewController: UIViewController, SideMenuItemContent {
-
+    
     @IBOutlet weak var tableView: UITableView!
     @IBAction func openMenu(_ sender: Any) {
         showSideMenu()
-
+        
     }
     @IBOutlet weak var headerContainer: UIView!
-      let initiativesArray: [String] = ["AAConnect", "AAC Newsletter"]
+    let initiativesArray: [String] = ["AAConnect", "AAC Newsletter"]
     var imageArray: [UIImage] = [
         UIImage(named: "aaconnect")!,
         UIImage(named: "newsletter")!
@@ -27,19 +27,19 @@ class InitiativesViewController: UIViewController, SideMenuItemContent {
         UIImage(named: "aaconnectHeader")!,
         UIImage(named: "newsletterHeader")!
     ]
-
+    
     let initiativeDescriptionArray: [String] = ["WHAT IS AACONNECT?\n\nAAConnect is an Afghan-American network that aims to create a platform for members to share academic and professional resources, opportunities, and skills-based trainings/webinars.\n\nWHAT DOES AACONNECT PROVIDE?\n\n • A global membership base of Afghan professionals and students from various backgrounds, industries, and interests\n\n • Access to a network of jobs, fellowships, and professional/academic resources through our email distribution list\n\n • Social-networking and mentorship opportunities through use of our member directory\n\n • Skills-based training events which include podcasts and forums with industry leaders\n\nHOW DO I JOIN AACONNECT?\n\nAll AAC participants and alumni are automatically enrolled in AAConnect, unless they choose to opt out. If you did not attend AAC, please complete the application below and register for a profile on our directory and we will reach out with next steps.\n\nADDITIONAL QUESTIONS?\n\nPlease feel free to email afghanamericanconnect@gmail.com with any additional questions.", "Already looking to stay connected post-AAC? Sign up for the official Afghan-American Conference newsletter here: http://eepurl.com/cw24IT"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.tableFooterView = UIView()
         setupHeader()
-
-
-
+        
+        
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -61,17 +61,17 @@ class InitiativesViewController: UIViewController, SideMenuItemContent {
         
     }
     
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 
@@ -91,7 +91,7 @@ extension InitiativesViewController: UITableViewDataSource, UITableViewDelegate 
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "initiativesCell") as? InitiativesTableViewCell else {
             return UITableViewCell()
         }
@@ -99,15 +99,15 @@ extension InitiativesViewController: UITableViewDataSource, UITableViewDelegate 
         var initiative: String = ""
         //let image : UIImage
         
-
-
+        
+        
         var iconImage : UIImage = UIImage(named: "aaconnect")!
         //var image: UI = ""
         
         if indexPath.section == 0 {
             initiative = initiativesArray[indexPath.row]
             iconImage =
-                imageArray[indexPath.row]
+            imageArray[indexPath.row]
         }
         
         cell.profileImage.image = iconImage
@@ -127,7 +127,7 @@ extension InitiativesViewController: UITableViewDataSource, UITableViewDelegate 
         var initiative: String = ""
         var description: String = ""
         var initiativeHeader : UIImage = UIImage(named: "aaconnectHeader")!
-
+        
         
         
         //var descp: String = ""
@@ -136,20 +136,20 @@ extension InitiativesViewController: UITableViewDataSource, UITableViewDelegate 
             initiative = initiativesArray[indexPath.row]
             description = initiativeDescriptionArray[indexPath.row]
             initiativeHeader = headerImageArray[indexPath.row]
-    
+            
         }
         
         destination.initiativeName = initiative
         destination.initiativeDescription = description
         destination.mainHeaderImage = initiativeHeader
         
-
+        destination.modalPresentationStyle = .fullScreen
         
         present(destination, animated: true, completion: nil)
         
     }
-
-    }
+    
+}
 
 
 class InitiativesTableViewCell: UITableViewCell {

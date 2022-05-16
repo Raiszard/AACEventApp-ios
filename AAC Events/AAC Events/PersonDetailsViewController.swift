@@ -203,7 +203,8 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         guard let vc = storyboard.instantiateViewController(withIdentifier: "SessionDetails") as? SessionDetailsViewController else { return }
 
         vc.agendaItem = personsSessions[indexPath.section][indexPath.row]
-        
+        vc.modalPresentationStyle = .fullScreen
+
         present(vc, animated: true, completion: nil)
 
     }
