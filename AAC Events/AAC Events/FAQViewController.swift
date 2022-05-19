@@ -12,8 +12,8 @@ import SDWebImage
 import SafariServices
 
 class FAQViewController: UIViewController, SideMenuItemContent {
-    let boldFont = UIFont(name: "Avenir-Medium", size: 15)
-    let descriptionFont = UIFont(name: "Avenir-Book", size: 15)
+    let boldFont = UIFont(name: "Montserrat-SemiBold", size: 15)
+    let descriptionFont = UIFont(name: "Montserrat-Light", size: 15)
     
     @IBAction func openMenu(_ sender: Any) {
         showSideMenu()

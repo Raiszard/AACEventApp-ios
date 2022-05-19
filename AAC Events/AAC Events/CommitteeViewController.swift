@@ -183,7 +183,7 @@ extension CommitteeViewController: UITableViewDataSource, UITableViewDelegate {
 
         
         let label = UILabel()
-        label.font = UIFont(name: "Avenir-Medium", size: 16)
+        label.font = UIFont(name: "Montserrat-SemiBold", size: 15)
         
         label.text = "Test"
         

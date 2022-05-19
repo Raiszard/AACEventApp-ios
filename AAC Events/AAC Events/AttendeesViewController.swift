@@ -41,7 +41,7 @@ class AttendeesViewController: UIViewController,SideMenuItemContent {
         let headerImage = UIImage(named: "attendeesHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Attendees", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "Conference Ambassadors", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)

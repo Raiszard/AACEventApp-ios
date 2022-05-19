@@ -102,7 +102,7 @@ class SessionDetailsViewController: UIViewController {
         let tableWidth = UIScreen.main.bounds.size.width - CGFloat(margins)
         //description
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: tableWidth - 32, height: 9999999))
-        label.font = UIFont(name: "Avenir-Book", size: 15)
+        label.font = UIFont(name: "Montserrat-Light", size: 15)
         label.text = agendaItem.sessionDescription
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
@@ -235,7 +235,7 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
 
         let label = UILabel()
-        label.font = UIFont(name: "Avenir-Medium", size: 15)
+        label.font = UIFont(name: "Montserrat-SemiBold", size: 15)
 		var title = ""
 		if facilitators != nil && facilitators.count > 0 && facilitators[section] != nil {
 			let person = facilitators[section]
@@ -278,7 +278,7 @@ extension SessionDetailsViewController: UITableViewDelegate, UITableViewDataSour
         }
 
         cell.label?.text = person.name
-        cell.label?.font = UIFont(name: "Avenir-Book", size: 15)
+        cell.label?.font = UIFont(name: "Montserrat-Regular", size: 15)
         cell.label?.backgroundColor = .white
         cell.logoImageView?.layer.cornerRadius = 44/2
         cell.logoImageView?.contentMode = .scaleAspectFill

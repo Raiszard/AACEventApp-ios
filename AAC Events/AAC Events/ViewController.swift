@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let appD = UIApplication.shared.delegate as! AppDelegate
 
         if appD.privacyPolicyAccepted {
-            if unlockField.text?.uppercased() == "AFGAM19" {
+            if unlockField.text?.uppercased() == "AFGAM22" {
                 appD.isAppUnlocked = true
                 UserDefaults.standard.set("SIARISJAIT", forKey: "isUnlocked")
                 presentMainStoryBoard()
@@ -56,7 +56,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 OneSignal.consentGranted(true);
                 appD.initOneSignalSDK()
                 
-                if self.unlockField.text?.uppercased() == "AFGAM19" {
+                if self.unlockField.text?.uppercased() == "AFGAM22" {
                     appD.isAppUnlocked = true
                     UserDefaults.standard.set("SIARISJAIT", forKey: "isUnlocked")
                     self.presentMainStoryBoard()

@@ -18,17 +18,21 @@ class InitiativesViewController: UIViewController, SideMenuItemContent {
         
     }
     @IBOutlet weak var headerContainer: UIView!
-    let initiativesArray: [String] = ["AAConnect", "AAC Newsletter"]
+    let initiativesArray: [String] = ["AAConnect", "Community Spotlight", "Newsletter", "Scholarships"]
     var imageArray: [UIImage] = [
         UIImage(named: "aaconnect")!,
+        UIImage(named: "newsletter")!,
+        UIImage(named: "newsletter")!,
         UIImage(named: "newsletter")!
     ]
     var headerImageArray: [UIImage] = [
         UIImage(named: "aaconnectHeader")!,
+        UIImage(named: "newsletterHeader")!,
+        UIImage(named: "newsletterHeader")!,
         UIImage(named: "newsletterHeader")!
     ]
     
-    let initiativeDescriptionArray: [String] = ["WHAT IS AACONNECT?\n\nAAConnect is an Afghan-American network that aims to create a platform for members to share academic and professional resources, opportunities, and skills-based trainings/webinars.\n\nWHAT DOES AACONNECT PROVIDE?\n\n • A global membership base of Afghan professionals and students from various backgrounds, industries, and interests\n\n • Access to a network of jobs, fellowships, and professional/academic resources through our email distribution list\n\n • Social-networking and mentorship opportunities through use of our member directory\n\n • Skills-based training events which include podcasts and forums with industry leaders\n\nHOW DO I JOIN AACONNECT?\n\nAll AAC participants and alumni are automatically enrolled in AAConnect, unless they choose to opt out. If you did not attend AAC, please complete the application below and register for a profile on our directory and we will reach out with next steps.\n\nADDITIONAL QUESTIONS?\n\nPlease feel free to email afghanamericanconnect@gmail.com with any additional questions.", "Already looking to stay connected post-AAC? Sign up for the official Afghan-American Conference newsletter here: http://eepurl.com/cw24IT"]
+    let initiativeDescriptionArray: [String] = ["WHAT IS AACONNECT?\n\nAAConnect is a national network and resource base of 1000+ Afghan-American students and professionals who seek to build professional relationships and provide resources for their community.\n\nWHO CAN JOIN AACONNECT?\n\nAny individual who identifies as Afghan-American and that has an email address. Please note that all attendees of AAC will automatically be added to listserv.\n\nHOW DO I USE THE AACONNECT LISTSERV?\n\nUsing AAConnect is as simple as three steps (once a member of the listserv):\n\n1. Send your resources/inquiries via email to aaconnect@googlegroups.com\n\n2. Admin approval of email in 24-48 hours\n\n3. Watch the responses roll through!\n\nWHAT ABOUT THE AACONNECT PLATFORM? WHAT’S NEXT FOR AACONNECT?\n\nIn 2020, AACO launched the AAConnect Platform. At this time (2022), AACO is moving away from this platform and exploring other solutions better fit for our community’s needs. Follow us on social media and join the AAConnect Listserv to find out more information once available!\n\nADDITIONAL QUESTIONS?\n\nPlease feel free to email apdevelopment@aa-co.org with any additional questions.", "Do you know a member of the Afghan-American community that deserves some special recognition? Click the button below to nominate them for next month's feature!\n\n https://docs.google.com/forms/d/e/1FAIpQLSd42mueCymiQrIbC1cUhU0P8oK5oWw_mOef4KhGAxrprREw0A/viewform", "Already looking to stay connected post-AAC? Sign up for the official Afghan-American Conference newsletter here: http://eepurl.com/cw24IT", "Established in 2018 in close collaboration with generous members of the community, the Afghan-American Community Organization Scholarship supports undergraduate, graduate, and vocational Afghan-American students committed to the betterment of the Afghan-American community and who demonstrate financial need. Four years since its inception, AACO has awarded nearly $230,000 to 39 recipients across the U.S. AACO strives to continue empowering the next generation of Afghan-American leaders.\n\nApplications for the fifth annual Afghan-American Community Organization Scholarship are live! The application deadline is Friday, June 24, 2022, at 11:59 PM PDT.\n\nApply now: aaco.formstack.com/forms/2022scholarship"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -85,9 +89,9 @@ extension InitiativesViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if (section == 0){
-            return 2
+            return 4
         }
-        return 2
+        return 4
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

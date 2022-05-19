@@ -24,12 +24,16 @@ import SafariServices
 /*
  Menu controller is responsible for creating its content and showing/hiding menu using 'menuContainerViewController' property.
  */
-class NavigationMenuViewController: MenuViewController {
+class NavigationMenuViewController: MenuViewController, MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+    }
+    
 
     let kCellReuseIdentifier = "MenuCell"
     
-    let aacMenus = ["About", "Planning Team", "Donate", "FAQ"]
-    let menuItems =  ["Norms", "Agenda", "Speakers", "Cohorts", "Attendees", "AACare Team",  "Sponsors", "Initiatives", "Conference Evaluation", "Information"]
+    let aacMenus = ["About", "Team", "Programs", "Support AACO", "Contact Us"]
+    let menuItems =  ["Norms", "Agenda", "Facilitators", "CARE Team", "Conference Ambassadors", "Cohorts",  "Sponsors", "Conference Evaluation", "FAQ"]
 
     @IBOutlet weak var tableView: UITableView!
 
@@ -48,9 +52,9 @@ class NavigationMenuViewController: MenuViewController {
         
         // Select the initial row
         tableView.selectRow(at: IndexPath(row: 0, section: 0), animated: false, scrollPosition: UITableViewScrollPosition.none)
-		
+        let aacBlackColor       = UIColor(named: "#231F20")
         let view = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 200))
-        view.backgroundColor = .black
+        view.backgroundColor = aacBlackColor
         let imageV = UIImageView(image: UIImage(named: "sideMenuLogo"))
         imageV.layer.cornerRadius = imageV.frame.size.width/2
         imageV.contentMode = .scaleAspectFit
@@ -65,18 +69,18 @@ class NavigationMenuViewController: MenuViewController {
         
         let contactUsButton = UIButton(frame: CGRect(x: 0, y: 10, width: 100, height: 44))
         contactUsButton.setTitle("Contact Us", for: .normal)
-        contactUsButton.backgroundColor = .black
+        contactUsButton.backgroundColor = aacBlackColor
         contactUsButton.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
         contactUsButton.addTarget(self, action:#selector(contactUsButtonTapped), for: .touchUpInside)
         
         let creditButton = UIButton(frame: CGRect(x: 0, y: 40 , width: 100, height: 44))
-        creditButton.backgroundColor = .black
+        creditButton.backgroundColor = aacBlackColor
         creditButton.setTitle("Credits", for: .normal)
         creditButton.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
         creditButton.addTarget(self, action:#selector(creditButtonTapped), for: .touchUpInside)
 
         let privacyButton = UIButton(frame: CGRect(x: 0, y: 70 , width: 100, height: 44))
-        privacyButton.backgroundColor = .black
+        privacyButton.backgroundColor = aacBlackColor
         privacyButton.setTitle("Privacy Policy", for: .normal)
         privacyButton.titleLabel?.font = UIFont(name: "Avenir-Medium", size: 14)
         privacyButton.addTarget(self, action:#selector(privacyPolicyTapped), for: .touchUpInside)
@@ -106,11 +110,16 @@ class NavigationMenuViewController: MenuViewController {
     
     @objc func contactUsButtonTapped() {
         print("contactUsButtonTapped")
-        let mailComposeViewController = configuredMailComposeViewController()
-        if MFMailComposeViewController.canSendMail() {
-            self.present(mailComposeViewController, animated: true, completion: nil)
-        } else {
-            self.showSendMailErrorAlert()
+        let composeVC = MFMessageComposeViewController()
+        composeVC.messageComposeDelegate = self
+
+        // Configure the fields of the interface.
+        composeVC.recipients = ["2133206482"]
+        composeVC.body = ""
+
+        // Present the view controller modally.
+        if MFMessageComposeViewController.canSendText() {
+            self.present(composeVC, animated: true, completion: nil)
         }
 
     }
@@ -229,7 +238,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
 		if section == 0 { return nil }
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
 		let label = UILabel(frame: CGRect(x: 15, y: 0, width: 175, height: 30))
-		label.text = "AAC 2019"
+		label.text = "AAC 2022"
 		label.font = UIFont(name: "Avenir-Medium", size: 18)
 		label.textColor = .white
 

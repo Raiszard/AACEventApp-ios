@@ -16,9 +16,9 @@ class AboutViewController: UIViewController, SideMenuItemContent {
     @IBOutlet weak var aboutSegmentedControl: UISegmentedControl!
     @IBOutlet weak var aboutTextView: UITextView!
 	
-	let boldFont = UIFont(name: "Avenir-Medium", size: 15)
-	let descriptionFont = UIFont(name: "Avenir-Book", size: 15)
-    let descboldFont = UIFont(name: "Avenir-MediumOblique", size: 15)
+	let boldFont = UIFont(name: "Montserrat-SemiBold", size: 16)
+	let descriptionFont = UIFont(name: "Montserrat-Light", size: 15)
+    let descboldFont = UIFont(name: "Montserrat-Medium", size: 15)
 	
 
     
@@ -38,6 +38,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         api.retrievePeople { (_) in
             //gets saved in appD
         }
+        
 
         
         self.aboutSegmentedControl.selectedSegmentIndex = 0
@@ -107,21 +108,22 @@ class AboutViewController: UIViewController, SideMenuItemContent {
 		let boldAttributes = [NSAttributedStringKey.font: boldFont]
 		let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
         
+        
         let diveristyAttributes = [
             NSAttributedStringKey.link: URL(string: "https://www.afghanamericanconference.org/diversity-1")!,
-            NSAttributedStringKey.font: UIFont(name: "Avenir-Book", size: 15)!,
+            NSAttributedStringKey.font: UIFont(name: "Montserrat-Medium", size: 15)!,
             NSAttributedStringKey.foregroundColor: UIColor.blue
             ] as [NSAttributedStringKey : Any]
         
         let mentalwellnessAttributes = [
             NSAttributedStringKey.link: URL(string: "https://www.afghanamericanconference.org/mental-health")!,
-            NSAttributedStringKey.font: UIFont(name: "Avenir-Book", size: 15)!,
+            NSAttributedStringKey.font: UIFont(name: "Montserrat-Medium", size: 14)!,
             NSAttributedStringKey.foregroundColor: UIColor.blue
             ] as [NSAttributedStringKey : Any]
         
         let harrassmentAttributes = [
             NSAttributedStringKey.link: URL(string: "https://static1.squarespace.com/static/56a2ec72cbced637fea96241/t/5cbb5ac1ee6eb039cef2a133/1555782338165/AACO+Code+of+Conduct.pdf")!,
-            NSAttributedStringKey.font: UIFont(name: "Avenir-Book", size: 15)!,
+            NSAttributedStringKey.font: UIFont(name: "Montserrat-Medium", size: 14)!,
             NSAttributedStringKey.foregroundColor: UIColor.blue
             ] as [NSAttributedStringKey : Any]
 
@@ -159,9 +161,11 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         let boldAttributes = [NSAttributedStringKey.font: boldFont]
         let descriptionAttributes = [NSAttributedStringKey.font: descriptionFont]
         
-        let testimonialAttributes = [
-            NSAttributedStringKey.link: URL(string: "https://www.afghanamericanconference.org/testimonials")!,
-            NSAttributedStringKey.font: UIFont(name: "Avenir-Book", size: 15)!,
+
+        
+        let impactAttributes = [
+            NSAttributedStringKey.link: URL(string: "https://aa-co.org/2021-impact-report")!,
+            NSAttributedStringKey.font: UIFont(name: "Montserrat-SemiBold", size: 15)!,
             NSAttributedStringKey.foregroundColor: UIColor.blue
             ] as [NSAttributedStringKey : Any]
         
@@ -169,16 +173,12 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         let runningConferenceAttrString = NSMutableAttributedString()
         
         
-        runningConferenceAttrString.append(NSAttributedString(string: "The Afghan-American Conference is an annual nationwide conference for young community leaders to engage in meaningful dialogue, grow professionally and build relationships.\n\nThe conference is equal parts professional, cultural, spiritual, social, and personal. It is a holistic event consisting of keynote speeches, professional panels, skill-building workshops, roundtable discussions, safe space caucuses, town halls, networking mixers, entertainment, and even TED-style Talks.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningConferenceAttrString.append(NSAttributedString(string: "We are excited to announce that our ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
     
-        runningConferenceAttrString.append(NSAttributedString(string: "Click here", attributes: testimonialAttributes))
+        runningConferenceAttrString.append(NSAttributedString(string: "2021 Annual Impact Report", attributes: impactAttributes))
         
-        runningConferenceAttrString.append(NSAttributedString(string: " to read testimonials from past participants.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
-
+        runningConferenceAttrString.append(NSAttributedString(string: " is now available!\n\nThis report highlights how AACO has helped the Afghan community both here and back home. We have accomplished so much this past year and encourage you to help us maintain this momentum through 2022 by participating in our fundraiser.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
-        runningConferenceAttrString.append(NSAttributedString(string: "\n\nTHE EVOLUTION OF AAC", attributes: boldAttributes as [NSAttributedStringKey : Any]))
-        
-        runningConferenceAttrString.append(NSAttributedString(string: "\n\nIn April 2015, the first Afghan-American Conference was hosted at U.C. Berkeley by eight young Afghan-Americans from across the United States. The space was an opportunity for our diaspora to have difficult conversations in an engaging and respectful way. Since then, the conference has grown and spread across the nation.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
 
         
         return runningConferenceAttrString

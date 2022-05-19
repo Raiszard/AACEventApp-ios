@@ -58,7 +58,7 @@ class PersonDetailsViewController: UIViewController {
         label.numberOfLines = 0
         label.lineBreakMode = .byWordWrapping
         label.textAlignment = .left
-        label.font = UIFont(name: "Avenir-Book", size: 15)
+        label.font = UIFont(name: "Montserrat-Light", size: 15)
         label.sizeToFit()
         label.frame.size.height = label.frame.height + 20 //more padding for description
         tableView.tableHeaderView = label
@@ -171,7 +171,7 @@ extension PersonDetailsViewController: UITableViewDelegate, UITableViewDataSourc
 
         if personsSessions[section].count > 0 {
             let label = UILabel()
-            label.font = UIFont(name: "Avenir-Medium", size: 15)
+            label.font = UIFont(name: "Montserrat-SemiBold", size: 15)
             let title = sectionTitles[section]
             label.text = title
             label.backgroundColor = .white
