@@ -9,13 +9,13 @@
       "scale" : "2x"
     },
     {
+      "filename" : "np_networking_2909312_19ABE2.png",
       "idiom" : "universal",
-      "filename" : "connections-2099068_1280.png",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

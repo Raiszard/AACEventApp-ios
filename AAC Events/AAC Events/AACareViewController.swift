@@ -81,10 +81,6 @@ class AACareViewController: UIViewController, SideMenuItemContent, MFMessageComp
         
         runningDescAttrString.append(NSAttributedString(string: " - Mental Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: " - Morcel Khwajazadah", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: " - Mental Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
-        
         runningDescAttrString.append(NSAttributedString(string: " - Nilo Sidiqi", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: " - Mental Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
@@ -140,36 +136,21 @@ class AACareViewController: UIViewController, SideMenuItemContent, MFMessageComp
         
     }
     
-    @IBAction func contactAACaarePressed(_ sender: Any) {
-        
-        UIApplication.shared.open(URL(string:"https://www.launchgood.com/AAC19")!, options: [:], completionHandler: nil)
-        /*let composeVC = MFMessageComposeViewController()
-        composeVC.messageComposeDelegate = self
-
-        // Configure the fields of the interface.
-        composeVC.recipients = ["12133192540"]
-        composeVC.body = "I love Swift!"
-
-        // Present the view controller modally.
-        if MFMessageComposeViewController.canSendText() {
-            self.present(composeVC, animated: true, completion: nil)*/
-        //}
-      /*  if (MFMessageComposeViewController.canSendText()){
-            
-            let controller = MFMessageComposeViewController ()
-            
-            controller.body = ""
-            controller.recipients = ["2133192540"]
-            controller.messageComposeDelegate = self
-            
-            self.present(controller, animated: true, completion: nil)
-            
-        }*/
-
-
-        print ("Button pressed")
+    @IBAction func careButton(_ sender: Any) {
+        if (MFMessageComposeViewController.canSendText()){
+              
+              let controller = MFMessageComposeViewController ()
+              
+              controller.body = ""
+              controller.recipients = ["2133192540"]
+              controller.messageComposeDelegate = self
+              
+              self.present(controller, animated: true, completion: nil)
+              
+          }
 
     }
+  
     
 
 

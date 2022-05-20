@@ -1484,22 +1484,13 @@
                                             <action selector="openMenu:" destination="1eq-ld-plp" eventType="touchUpInside" id="M0f-mL-PR7"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="esL-d8-PrR">
-                                        <rect key="frame" x="107" y="35" width="200" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="I0w-Qd-Qnn"/>
-                                            <constraint firstAttribute="width" constant="200" id="KiA-F2-rDI"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="m2q-9t-DTx" firstAttribute="top" secondItem="Beo-CH-aue" secondAttribute="top" constant="30" id="98J-Xt-k8H"/>
-                                    <constraint firstItem="esL-d8-PrR" firstAttribute="centerY" secondItem="Beo-CH-aue" secondAttribute="centerY" constant="13" id="Tz4-xH-KDI"/>
                                     <constraint firstItem="m2q-9t-DTx" firstAttribute="leading" secondItem="Beo-CH-aue" secondAttribute="leading" constant="8" id="cS5-Ka-YEG"/>
                                     <constraint firstAttribute="height" constant="76" id="qyG-Vl-11P"/>
-                                    <constraint firstItem="esL-d8-PrR" firstAttribute="centerX" secondItem="Beo-CH-aue" secondAttribute="centerX" id="rc7-2r-kgF"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e4e-Kz-SIX">
@@ -1730,22 +1721,13 @@
                                             <action selector="backPushed:" destination="r4p-x3-skY" eventType="touchUpInside" id="eHw-OX-JXD"/>
                                         </connections>
                                     </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="U8u-PD-nfO">
-                                        <rect key="frame" x="107" y="35" width="200" height="32"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="7Cq-50-mYD"/>
-                                            <constraint firstAttribute="width" constant="200" id="ZEt-fr-iFH"/>
-                                        </constraints>
-                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="1mF-gW-wk4"/>
-                                    <constraint firstItem="U8u-PD-nfO" firstAttribute="centerX" secondItem="R0Q-ap-VWI" secondAttribute="centerX" id="OpM-xH-IEJ"/>
                                     <constraint firstItem="MPZ-RL-DF0" firstAttribute="top" secondItem="R0Q-ap-VWI" secondAttribute="top" constant="19" id="SV9-Fw-EJN"/>
                                     <constraint firstItem="MPZ-RL-DF0" firstAttribute="leading" secondItem="R0Q-ap-VWI" secondAttribute="leading" constant="8" id="VsV-jm-7r5"/>
-                                    <constraint firstItem="U8u-PD-nfO" firstAttribute="centerY" secondItem="R0Q-ap-VWI" secondAttribute="centerY" constant="13" id="mSq-k8-Lnf"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OE5-rA-BZJ">
@@ -2257,11 +2239,11 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
                                 <color key="tintColor" red="0.098039215686274508" green="0.6705882352941176" blue="0.88627450980392153" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Contact AACare">
+                                <state key="normal" title="Contact CARE Team">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="contactAACaare:" destination="uDm-KT-SJh" eventType="touchDragInside" id="zaw-6f-W74"/>
+                                    <action selector="careButton:" destination="uDm-KT-SJh" eventType="touchUpInside" id="mjP-Lf-fpD"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -2314,12 +2296,21 @@
                                             <action selector="openMenu:" destination="6lt-sS-mgq" eventType="touchUpInside" id="6Dw-Sk-ToH"/>
                                         </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo2" translatesAutoresizingMaskIntoConstraints="NO" id="1IZ-gv-omu">
+                                        <rect key="frame" x="107" y="35" width="200" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="200" id="4l5-wp-klS"/>
+                                            <constraint firstAttribute="height" constant="32" id="j6E-kC-l0j"/>
+                                        </constraints>
+                                    </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="tintColor" red="0.13725490196078433" green="0.12156862745098039" blue="0.12549019607843137" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="76" id="BYq-OB-YAj"/>
                                     <constraint firstItem="nrk-nu-leX" firstAttribute="top" secondItem="n2E-Ut-oR5" secondAttribute="top" constant="30" id="Phf-uA-MYc"/>
+                                    <constraint firstItem="1IZ-gv-omu" firstAttribute="centerY" secondItem="n2E-Ut-oR5" secondAttribute="centerY" constant="13" id="Xj5-Dx-Sko"/>
+                                    <constraint firstItem="1IZ-gv-omu" firstAttribute="centerX" secondItem="n2E-Ut-oR5" secondAttribute="centerX" id="b6z-2y-iFy"/>
                                     <constraint firstItem="nrk-nu-leX" firstAttribute="leading" secondItem="n2E-Ut-oR5" secondAttribute="leading" constant="8" id="nvS-DX-n14"/>
                                 </constraints>
                             </view>
@@ -2400,22 +2391,40 @@
                                 </constraints>
                             </view>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data is loading. Please wait..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Sde-Yw-xqr">
-                                <rect key="frame" x="20" y="256" width="374" height="480"/>
+                                <rect key="frame" x="20" y="256" width="374" height="420"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                 <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O4t-i5-mso">
+                                <rect key="frame" x="20" y="684" width="374" height="44"/>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Bfr-Sx-grS"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
+                                <color key="tintColor" red="0.098039215690000001" green="0.6705882353" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Text Us">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="textus:" destination="eV0-Ky-T8H" eventType="touchUpInside" id="LUi-zc-hzq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="GDc-Ny-IpH"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Sde-Yw-xqr" secondAttribute="bottom" id="8qr-hv-F55"/>
                             <constraint firstItem="Sde-Yw-xqr" firstAttribute="top" secondItem="wv8-1y-BrD" secondAttribute="bottom" constant="8" id="8tm-CC-PlY"/>
                             <constraint firstItem="wv8-1y-BrD" firstAttribute="top" secondItem="Kru-8G-I2Z" secondAttribute="bottom" id="BH7-aX-uZ2"/>
                             <constraint firstItem="Sde-Yw-xqr" firstAttribute="trailing" secondItem="7jd-vx-Jxq" secondAttribute="trailingMargin" id="DXZ-Q7-RBw"/>
+                            <constraint firstItem="GDc-Ny-IpH" firstAttribute="bottom" secondItem="O4t-i5-mso" secondAttribute="bottom" constant="8" id="DfY-k1-bPP"/>
+                            <constraint firstItem="O4t-i5-mso" firstAttribute="leading" secondItem="GDc-Ny-IpH" secondAttribute="leading" constant="20" id="MFt-yb-Vwj"/>
+                            <constraint firstItem="O4t-i5-mso" firstAttribute="top" secondItem="Sde-Yw-xqr" secondAttribute="bottom" constant="8" id="aQD-um-jZa"/>
                             <constraint firstItem="Kru-8G-I2Z" firstAttribute="top" secondItem="7jd-vx-Jxq" secondAttribute="top" id="b1p-9F-BSi"/>
                             <constraint firstItem="Sde-Yw-xqr" firstAttribute="leading" secondItem="7jd-vx-Jxq" secondAttribute="leadingMargin" id="fUR-iF-xYv"/>
                             <constraint firstItem="wv8-1y-BrD" firstAttribute="leading" secondItem="GDc-Ny-IpH" secondAttribute="leading" id="hPN-hq-QTX"/>
+                            <constraint firstItem="GDc-Ny-IpH" firstAttribute="trailing" secondItem="O4t-i5-mso" secondAttribute="trailing" constant="20" id="m2Y-BN-n8D"/>
                             <constraint firstItem="GDc-Ny-IpH" firstAttribute="trailing" secondItem="wv8-1y-BrD" secondAttribute="trailing" id="q93-sF-wML"/>
                             <constraint firstItem="GDc-Ny-IpH" firstAttribute="trailing" secondItem="Kru-8G-I2Z" secondAttribute="trailing" id="ubV-BM-Qyj"/>
                             <constraint firstItem="Kru-8G-I2Z" firstAttribute="leading" secondItem="GDc-Ny-IpH" secondAttribute="leading" id="yHA-Fl-hqw"/>
@@ -2423,7 +2432,7 @@
                     </view>
                     <connections>
                         <outlet property="headerContainer" destination="wv8-1y-BrD" id="fpL-AO-gqE"/>
-                        <outlet property="infoText" destination="Sde-Yw-xqr" id="uOA-u4-uOX"/>
+                        <outlet property="infoText" destination="Sde-Yw-xqr" id="UX2-oZ-TMr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hTK-d1-hF8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2433,7 +2442,7 @@
     </scenes>
     <resources>
         <image name="Menu" width="24" height="17"/>
-        <image name="aaconnect" width="426.66665649414062" height="421.66665649414062"/>
+        <image name="aaconnect" width="100" height="100"/>
         <image name="button:ERA-XQ-g0N:image" width="24" height="17">
             <mutableData key="keyedArchiveRepresentation">
 YnBsaXN0MDDUAQIDBAUGBwpYJHZlcnNpb25ZJGFyY2hpdmVyVCR0b3BYJG9iamVjdHMSAAGGoF8QD05T
