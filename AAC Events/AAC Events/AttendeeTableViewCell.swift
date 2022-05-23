@@ -10,7 +10,8 @@ import UIKit
 
 class AttendeeTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var initialsLabel: UILabel!
+    @IBOutlet weak var confambImage: UIImageView!
+    //@IBOutlet weak var initialsLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()

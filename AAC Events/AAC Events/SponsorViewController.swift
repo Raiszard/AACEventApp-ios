@@ -105,7 +105,7 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let label = UILabel(frame: CGRect(x: 8, y: 0, width: 200, height: 30))
-        label.font = UIFont(name: "Montserrat-SemiBold", size: 15)
+        label.font = UIFont(name: "Montserrat-SemiBold", size: 16)
         let title = allSponsors.allLevelSponsors[section].level
         label.text = title
         label.backgroundColor = .white
@@ -121,7 +121,7 @@ extension SponsorViewController: UITableViewDelegate, UITableViewDataSource {
         }
         
         let sponsor = allSponsors.allLevelSponsors[indexPath.section].sponsors[indexPath.row]
-        cell.label?.font = UIFont(name: "Avenir-Book", size: 15)
+        cell.label?.font = UIFont(name: "Montserrat-Regular", size: 15)
         cell.label?.backgroundColor = .white
         cell.label?.text = sponsor.name
         cell.logoImageView?.layer.cornerRadius = 44/2
