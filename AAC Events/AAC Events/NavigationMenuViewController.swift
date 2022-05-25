@@ -127,7 +127,7 @@ class NavigationMenuViewController: MenuViewController, MFMessageComposeViewCont
     @objc func privacyPolicyTapped() {
         print("privacy Policy Tapped")
         
-        let urlString = "https://www.afghanamericanconference.org/mobile-app-privacy-policy"
+        let urlString = "http://aa-co.org/s/2022-Privacy-Policy.pdf"
         let url = URL(string: urlString)
         let svc = SFSafariViewController(url: url!)
         self.present(svc, animated: true, completion: nil)

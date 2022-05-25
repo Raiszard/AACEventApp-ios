@@ -110,7 +110,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         
         
         let codeofconductAttributes = [
-            NSAttributedStringKey.link: URL(string: "https://static1.squarespace.com/static/5fcdaec24efb8a7dc707fb6a/t/5fd1b7127cf94534dc5a2197/1607579411135/2020+AACO+Code+of+Conduct.pdf")!,
+            NSAttributedStringKey.link: URL(string: "http://aa-co.org/s/Code-of-Conduct.pdf")!,
             NSAttributedStringKey.font: UIFont(name: "Montserrat-Medium", size: 15)!,
             NSAttributedStringKey.foregroundColor: UIColor.blue
             ] as [NSAttributedStringKey : Any]

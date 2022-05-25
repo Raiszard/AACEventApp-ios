@@ -53,11 +53,11 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "WHAT IS THE WIFI PASSWORD?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nNETWORK NAME:\nPASSWORD:\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nNetwork Name: UCD-Guest\n\nInstructions:\n\n1. After selecting UCD-Guest on your wireless network list in settings, the UCD-Guest Registration/Login page should open automatically. If it does not, open a web browser and navigate to a website - this should make it appear.\n\n2. Enter your name, a valid mobile phone number, and a valid email address.\n\n3. Note: If you do not have a mobile phone number that can accept text messages, you can leave the phone number field blank and the password will be emailed instead.\n\n4. Read and accept the terms of use; Click Register.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "WHAT IS THERE TO DO IN DAVIS CA?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nTo be updated\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nCheck out this curated list of things to do in Davis and nearby on the days leading up to and after the conference (as well as after each conference day ends)!\n\nhttp://aa-co.org/s/AAC-2022-Davis-Recommendations.pdf\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "WHERE DO I REGISTER AND PICK UP MY BADGE?", attributes: boldAttributes))
         
@@ -111,7 +111,7 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nUnfortunately, food and drinks are not permitted in classrooms.\n\n", attributes: descriptionAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "WILL LUGGAGE CHECK BE PROVIDED ON SUNDAY, JUNE 19TH?", attributes: boldAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "WILL LUGGAGE CHECK BE PROVIDED ON FRIDAY JUNE, 17th or SUNDAY, JUNE 19TH?", attributes: boldAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nUnfortunately, we do not have a designated space to store your luggage. We recommend you check-in your luggage at your hotel bell desk.\n\n", attributes: descriptionAttributes))
         
@@ -133,7 +133,7 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "CAN I PURCHASE AN AAC T-SHIRT AT THE CONFERENCE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nA limited supply of t-shirts will be available at the conference inside the lobby of California Hall. Prices as follows: $25 for Short Sleeve T-shirts / $30 for Long Sleeve Shirts\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nA limited supply of t-shirts will be available at the conference inside the lobby of California Hall. Prices are as follows: $30 for Short Sleeve T-shirts / $35 for Long Sleeve Shirts. Please note that there is an additional $2 surcharge for XXL+ shirts due to supply-chain reasons.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "IS THERE A HASHTAG WE SHOULD USE FOR CONFERENCE PICTURES AND POSTS?", attributes: boldAttributes))
         

@@ -122,8 +122,7 @@ extension AttendeesViewController: UITableViewDataSource, UITableViewDelegate {
             UIImage(named: "pardis_rahimi")!,
             UIImage(named: "parsa_mujadedy")!,
             UIImage(named: "shabnum_hamidi")!,
-            UIImage(named: "tamana_noory")!,
-            UIImage(named: "yoseph_raja")!
+            UIImage(named: "tamana_noory")!
         
         ]
         
