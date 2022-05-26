@@ -59,6 +59,10 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nCheck out this curated list of things to do in Davis and nearby on the days leading up to and after the conference (as well as after each conference day ends)!\n\nhttp://aa-co.org/s/AAC-2022-Davis-Recommendations.pdf\n\n", attributes: descriptionAttributes))
         
+        runningDescAttrString.append(NSAttributedString(string: "IS THERE A CAMPUS MAP AVAILABLE?", attributes: boldAttributes))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\nYes - check out this official interactive UC Davis campus map. All building names are also searchable from the iOS Map App and Google Maps.\n\nhttps://campusmap.ucdavis.edu/ \n\n", attributes: descriptionAttributes))
+        
         runningDescAttrString.append(NSAttributedString(string: "WHERE DO I REGISTER AND PICK UP MY BADGE?", attributes: boldAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nThe registration & badge desk is located inside the lobby of California Hall. The registration desk will open at 9am on Friday, June 17th.\n\n", attributes: descriptionAttributes))
@@ -85,15 +89,15 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "WHERE IS THE PRAYER AREA LOCATED?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nGiven space constraints, the prayer area may shift daily.  Please visit the Registration Desk for exact prayer location or ask a Planning Team Member or Conference Ambassador. \n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nJummah Prayer will take place at the Islamic Center of Davis. For all other meditation and prayers, Oslon 167 has been reserved.  Should this room assignment change, the planning team will notify participants.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "WHAT IS THE CLOSEST PARKING STRUCTURE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nWe recommend parking in the Student Center Parking Structure, which is directly across Pereira Drive from the Student Center. Do not park at the University Towne Center, as they tow cars there. If for some reason the Student Center Parking Structure is full, you may also park in the Social Science Parking Structure. You may purchase a daily permit using credit card or cash.\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nWe recommend parking in Visitor Parking Lot 25 which is a 7 min walk away from Registration and other buildings where programming will take place. You may also park at Visitor Parking 5 (just as far away).\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "HOW MUCH IS PARKING?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nParking at the above listed structure is $12/day, and only needed to be paid on Friday, June 17th.\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nParking at the above listed structure is $10/day, and only needed to be paid on Friday, June 17th. Parking is free on both Saturday and Sunday. You will need to download the ParkMobile app and purchase your daily parking ticket on Friday, June 17th.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "WHERE SHOULD UBER/LYFT DROP ME OFF?", attributes: boldAttributes))
         
