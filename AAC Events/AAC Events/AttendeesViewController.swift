@@ -41,7 +41,7 @@ class AttendeesViewController: UIViewController,SideMenuItemContent {
         let headerImage = UIImage(named: "attendeesHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Attendees", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "Conference Ambassadors", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
@@ -107,15 +107,46 @@ extension AttendeesViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         let currentName = attendees[indexPath.row]
-        let breakupSentence = currentName.components(separatedBy: " ")
-        var initials = ""
-        for wordInSentence  in breakupSentence {
-            initials = "\(initials)\(wordInSentence.first!)"
-        }
         
-        cell.initialsLabel.text = initials
+        
+        var confambArray: [UIImage] = [
+            UIImage(named: "ali_saadat")!,
+            UIImage(named: "ciere_said")!,
+            UIImage(named: "hanna_kherzai")!,
+            UIImage(named: "jahed_aziz")!,
+            UIImage(named: "mariam_alamyar")!,
+            UIImage(named: "mariam_azimi")!,
+            UIImage(named: "mariam_mahbob")!,
+            UIImage(named: "maryam_aziz")!,
+            UIImage(named: "munija_ramin")!,
+            UIImage(named: "pardis_rahimi")!,
+            UIImage(named: "parsa_mujadedy")!,
+            UIImage(named: "shabnum_hamidi")!,
+            UIImage(named: "tamana_noory")!
+        
+        ]
+        
+    
+        
+        cell.confambImage?.contentMode = .scaleAspectFill
+        
+        cell.confambImage?.layer.cornerRadius = 44/2
+        cell.clipsToBounds = true
+        cell.setNeedsLayout()
+        cell.confambImage.clipsToBounds = true
+      
+        
+        
+       // cell.initialsLabel.text = initials
         cell.nameLabel.text = currentName
-        cell.initialsLabel.layer.cornerRadius = cell.initialsLabel.frame.width/2
+        
+        cell.confambImage?.image = confambArray[indexPath.row]
+        
+        
+        cell.confambImage.layer.cornerRadius = cell.confambImage.frame.width/2
+
+        
+        //cell.initialsLabel.layer.cornerRadius = cell.initialsLabel.frame.width/2
         return cell
     }
 }

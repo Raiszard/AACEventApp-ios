@@ -31,7 +31,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
         let appD = UIApplication.shared.delegate as! AppDelegate
 
         if appD.privacyPolicyAccepted {
-            if unlockField.text?.uppercased() == "AFGAM19" {
+            if unlockField.text?.uppercased() == "AFGAM22" {
                 appD.isAppUnlocked = true
                 UserDefaults.standard.set("SIARISJAIT", forKey: "isUnlocked")
                 presentMainStoryBoard()
@@ -56,14 +56,14 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 OneSignal.consentGranted(true);
                 appD.initOneSignalSDK()
                 
-                if self.unlockField.text?.uppercased() == "AFGAM19" {
+                if self.unlockField.text?.uppercased() == "AFGAM22" {
                     appD.isAppUnlocked = true
                     UserDefaults.standard.set("SIARISJAIT", forKey: "isUnlocked")
                     self.presentMainStoryBoard()
                 }
             }))
             alertView.addAction(UIAlertAction(title: "Read Privacy Policy", style: .cancel, handler: { (action) in
-                let urlString = "https://www.afghanamericanconference.org/mobile-app-privacy-policy"
+                let urlString = "http://aa-co.org/s/2022-Privacy-Policy.pdf"
                 let url = URL(string: urlString)
                 let svc = SFSafariViewController(url: url!)
                 self.present(svc, animated: true, completion: nil)
@@ -130,7 +130,7 @@ class ViewController: UIViewController, UITextFieldDelegate {
                 self.presentMainStoryBoard()
             }))
             alertView.addAction(UIAlertAction(title: "Read Privacy Policy", style: .default, handler: { (action) in
-                let urlString = "https://www.afghanamericanconference.org/mobile-app-privacy-policy"
+                let urlString = "http://aa-co.org/s/2022-Privacy-Policy.pdf"
                 let url = URL(string: urlString)
                 let svc = SFSafariViewController(url: url!)
                 self.present(svc, animated: true, completion: nil)

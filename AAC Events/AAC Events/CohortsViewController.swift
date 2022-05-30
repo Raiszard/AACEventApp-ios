@@ -116,7 +116,7 @@ extension CohortsViewController: UITableViewDelegate, UITableViewDataSource {
 
         
         let label = UILabel()
-        label.font = UIFont(name: "Avenir-Medium", size: 16)
+        label.font = UIFont(name: "Montserrat-SemiBold", size: 16)
         let title = cohorts[section].title
         label.text = title
         label.backgroundColor = .white

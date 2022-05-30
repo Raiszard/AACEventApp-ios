@@ -9,13 +9,13 @@
       "scale" : "2x"
     },
     {
+      "filename" : "Session9.jpg",
       "idiom" : "universal",
-      "filename" : "Session_Option9.jpg",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }
