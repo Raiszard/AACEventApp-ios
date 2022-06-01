@@ -93,7 +93,17 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nCore Values", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\n - Inclusivity: build a sense of community by respecting and valuing the diversity of the Afghan-American community, creating a safe space to learn and grow, and vow to amplify marginalized voices.\n\n - Excellence: lift up our community to excel in personal, academic, and professional development, and promote access to opportunity and prosperity.\n\n - Engagement: be active participants in the American political and social landscape, and advocate for causes that are important to our community.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "\n\n• Inclusivity: ", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "build a sense of community by respecting and valuing the diversity of the Afghan-American community, creating a safe space to learn and grow, and vow to amplify marginalized voices.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\n• Excellence: ", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "lift up our community to excel in personal, academic, and professional development, and promote access to opportunity and prosperity.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "\n\n• Engagement: ", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
+        
+        runningDescAttrString.append(NSAttributedString(string: "be active participants in the American political and social landscape, and advocate for causes that are important to our community.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nA Way Forward", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         

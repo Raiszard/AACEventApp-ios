@@ -62,7 +62,7 @@ class AACareViewController: UIViewController, SideMenuItemContent, MFMessageComp
     
     runningDescAttrString.append(NSAttributedString(string: "E", attributes: boldAttributes as [NSAttributedStringKey : Any]))
     
-    runningDescAttrString.append(NSAttributedString(string: "nvironment ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+    runningDescAttrString.append(NSAttributedString(string: "nvironment", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
     
     
     runningDescAttrString.append(NSAttributedString(string: " at AAC as members of our diaspora who possess medical, emotional, and/or mental health training.\n\nUpon request, the CARE Team is available to meet one-on-one with any conference attendee to address medical and/or mental health concerns throughout the weekend. CARE Team members may respond to instances of injury, illness, anxiety, emotional distress/triggers, and wellness checks. They are available to support you in bringing your fullest self at AAC!\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))

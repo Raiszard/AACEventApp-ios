@@ -33,7 +33,7 @@ class NavigationMenuViewController: MenuViewController, MFMessageComposeViewCont
     let kCellReuseIdentifier = "MenuCell"
     
     let aacMenus = ["About AACO", "AACO Team", "Programs", "Support AACO", "Contact Us"]
-    let menuItems =  ["Norms", "Agenda", "Facilitators", "CARE Team", "Conference Ambassadors", "Cohorts",  "Sponsors", "Conference Evaluation", "FAQ"]
+    let menuItems =  ["Norms", "Agenda", "Speakers/Performers", "CARE Team", "Conference Ambassadors", "Cohorts",  "Sponsors", "Conference Evaluation", "FAQ"]
 
     @IBOutlet weak var tableView: UITableView!
 

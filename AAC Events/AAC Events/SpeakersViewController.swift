@@ -41,7 +41,7 @@ class SpeakersViewController: UIViewController, SideMenuItemContent {
         let headerImage = UIImage(named: "speakerHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Facilitators & Performers", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "Speakers & Performers", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
