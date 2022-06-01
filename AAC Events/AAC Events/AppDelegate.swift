@@ -68,6 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let accepted = UserDefaults.standard.bool(forKey: "privacyAccepted")
         self.privacyPolicyAccepted = accepted
 
+        OneSignal.setRequiresUserPrivacyConsent(true)
+        initOneSignalSDK()
         
         guard let sessions = UserDefaults.standard.array(forKey: "enrolledSessions") as? [String] else {
             print("no enrolled sessions to retrieve")
@@ -75,15 +77,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         enrolledSessionIDs = sessions
 
-        OneSignal.setRequiresUserPrivacyConsent(true)
-        initOneSignalSDK()
-        
         return true
     }
 
     private var launchOptions: [UIApplicationLaunchOptionsKey: Any]?
 
     func initOneSignalSDK() {
+        OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
         OneSignal.initWithLaunchOptions(launchOptions)
         OneSignal.setAppId("70531d2d-609a-4093-9b66-b45b03731a4c")
         
