@@ -1,9 +1,11 @@
-FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/InteractiveSideMenu" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_ROOT}/OneSignal/iOS_SDK/OneSignalSDK/Framework"
+CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = NO
+FRAMEWORK_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/InteractiveSideMenu" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage" "${PODS_ROOT}/OneSignal/iOS_SDK/OneSignalSDK/OneSignal_Core" "${PODS_ROOT}/OneSignal/iOS_SDK/OneSignalSDK/OneSignal_Extension" "${PODS_ROOT}/OneSignal/iOS_SDK/OneSignalSDK/OneSignal_Outcomes" "${PODS_ROOT}/OneSignal/iOS_SDK/OneSignalSDK/OneSignal_XCFramework" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignal" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalCore" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalExtension" "${PODS_XCFRAMEWORKS_BUILD_DIR}/OneSignalOutcomes"
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
 HEADER_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/InteractiveSideMenu/InteractiveSideMenu.framework/Headers" "${PODS_CONFIGURATION_BUILD_DIR}/SDWebImage/SDWebImage.framework/Headers"
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_LDFLAGS = $(inherited) -framework "ImageIO" -framework "InteractiveSideMenu" -framework "SDWebImage" -framework "SystemConfiguration" -framework "UIKit" -framework "UserNotifications"
+OTHER_LDFLAGS = $(inherited) -framework "ImageIO" -framework "InteractiveSideMenu" -framework "OneSignal" -framework "OneSignalCore" -framework "OneSignalExtension" -framework "OneSignalOutcomes" -framework "SDWebImage"
 PODS_BUILD_DIR = ${BUILD_DIR}
 PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
 PODS_PODFILE_DIR_PATH = ${SRCROOT}/.
 PODS_ROOT = ${SRCROOT}/Pods
+PODS_XCFRAMEWORKS_BUILD_DIR = $(PODS_CONFIGURATION_BUILD_DIR)/XCFrameworkIntermediates
+USE_RECURSIVE_SCRIPT_INPUTS_IN_SCRIPT_PHASES = YES

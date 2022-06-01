@@ -76,7 +76,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         enrolledSessionIDs = sessions
 
         OneSignal.setRequiresUserPrivacyConsent(true)
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
         initOneSignalSDK()
         
         return true
@@ -85,11 +84,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private var launchOptions: [UIApplicationLaunchOptionsKey: Any]?
 
     func initOneSignalSDK() {
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "70531d2d-609a-4093-9b66-b45b03731a4c",
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
+        OneSignal.initWithLaunchOptions(launchOptions)
+        OneSignal.setAppId("70531d2d-609a-4093-9b66-b45b03731a4c")
+        
+        // promptForPushNotifications will show the native iOS notification permission prompt.
+        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 8)
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+          print("User accepted notifications: \(accepted)")
+        })
         print("one signal sdk init")
     }
     
