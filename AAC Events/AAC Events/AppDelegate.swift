@@ -90,6 +90,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                                         appId: "70531d2d-609a-4093-9b66-b45b03731a4c",
                                         handleNotificationAction: nil,
                                         settings: onesignalInitSettings)
+        print("one signal sdk init")
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("*****")
+        print("registered successfully for remote token")
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print("device token: \(deviceTokenString)")
+
+
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("*****")
+        print("NOT WORK")
+        print("ERROR: \(error)")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
