@@ -1,27 +1,35 @@
 PODS:
   - InteractiveSideMenu (2.3)
-  - OneSignal (2.10.0)
-  - SDWebImage (4.4.7):
-    - SDWebImage/Core (= 4.4.7)
-  - SDWebImage/Core (4.4.7)
+  - OneSignalXCFramework (3.11.1):
+    - OneSignalXCFramework/OneSignalCore (= 3.11.1)
+    - OneSignalXCFramework/OneSignalExtension (= 3.11.1)
+    - OneSignalXCFramework/OneSignalOutcomes (= 3.11.1)
+  - OneSignalXCFramework/OneSignalCore (3.11.1)
+  - OneSignalXCFramework/OneSignalExtension (3.11.1):
+    - OneSignalXCFramework/OneSignalCore
+    - OneSignalXCFramework/OneSignalOutcomes
+  - OneSignalXCFramework/OneSignalOutcomes (3.11.1):
+    - OneSignalXCFramework/OneSignalCore
+  - SDWebImage (4.4.8):
+    - SDWebImage/Core (= 4.4.8)
+  - SDWebImage/Core (4.4.8)
 
 DEPENDENCIES:
   - InteractiveSideMenu
-  - OneSignal (< 3.0, >= 2.5.2)
-  - OneSignal (< 3.0, >= 2.6.2)
+  - OneSignalXCFramework (< 4.0, >= 3.0)
   - SDWebImage (~> 4.0)
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  trunk:
     - InteractiveSideMenu
-    - OneSignal
+    - OneSignalXCFramework
     - SDWebImage
 
 SPEC CHECKSUMS:
   InteractiveSideMenu: d503a508c6d62a4d5d4372d9fb9e1795637a8e45
-  OneSignal: 0f5ff711d9f25da54885e4ab06ef0abc221a46ef
-  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
+  OneSignalXCFramework: 8bdcaa3b7f6082565bf29c5481435376a33e94f2
+  SDWebImage: 783af2c3fa36291a250030c4752ee370a9a51d13
 
-PODFILE CHECKSUM: 808225b17631377a48ee35cd9bfe13e9bee06ba8
+PODFILE CHECKSUM: 6ab0b23dd0be3ca97c70f129072936a093be0e66
 
-COCOAPODS: 1.6.1
+COCOAPODS: 1.10.1

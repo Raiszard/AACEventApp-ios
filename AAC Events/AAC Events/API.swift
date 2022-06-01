@@ -41,7 +41,7 @@ class API: NSObject {
             return
         }
         
-        print("*** Request:\(String(describing: request.url?.absoluteString))")
+//        print("*** Request:\(String(describing: request.url?.absoluteString))")
         
         let session = URLSession.shared
         let dataTask = session.dataTask(with: request, completionHandler: { (data, response, error) -> Void in
@@ -63,7 +63,7 @@ class API: NSObject {
                         return
                     }
                     callback(jsonReponse as AnyObject, nil)
-                    print(jsonReponse)
+//                    print(jsonReponse)
                 } catch {
                     print("couldn't serialize json")
                     callback(nil, error)
@@ -80,7 +80,7 @@ class API: NSObject {
         retrieveData(url: attendeesURL) { (jsonResponse, error) in
             if error == nil {
                 //parse json
-                print(jsonResponse!)
+//                print(jsonResponse!)
                 guard let dict = jsonResponse as? JsonDict else {
                     print("couldn't create dictionary")
                     callback(nil)

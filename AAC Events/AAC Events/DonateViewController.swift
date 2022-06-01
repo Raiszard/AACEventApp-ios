@@ -43,7 +43,7 @@ class DonateViewController: UIViewController, SideMenuItemContent {
         
         
         let donateAttributes = [
-            NSAttributedStringKey.link: URL(string: "https://www.afghanamericanconference.org/diversity-1")!,
+            NSAttributedStringKey.link: URL(string: "https://tinyurl.com/2p9yxj9d")!,
             NSAttributedStringKey.font: UIFont(name: "Montserrat-Medium", size: 15)!,
             NSAttributedStringKey.foregroundColor: UIColor(red: 0.10, green: 0.67, blue: 0.89, alpha: 1.00),
            // NSAttributedStringKey.paragraphStyle: paragraph

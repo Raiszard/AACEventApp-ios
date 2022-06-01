@@ -68,6 +68,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let accepted = UserDefaults.standard.bool(forKey: "privacyAccepted")
         self.privacyPolicyAccepted = accepted
 
+        OneSignal.setRequiresUserPrivacyConsent(true)
+        initOneSignalSDK()
         
         guard let sessions = UserDefaults.standard.array(forKey: "enrolledSessions") as? [String] else {
             print("no enrolled sessions to retrieve")
@@ -75,21 +77,37 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         enrolledSessionIDs = sessions
 
-        OneSignal.setRequiresUserPrivacyConsent(true)
-        OneSignal.inFocusDisplayType = OSNotificationDisplayType.notification;
-        initOneSignalSDK()
-        
         return true
     }
 
     private var launchOptions: [UIApplicationLaunchOptionsKey: Any]?
 
     func initOneSignalSDK() {
-        let onesignalInitSettings = [kOSSettingsKeyAutoPrompt: false]
-        OneSignal.initWithLaunchOptions(launchOptions,
-                                        appId: "70531d2d-609a-4093-9b66-b45b03731a4c",
-                                        handleNotificationAction: nil,
-                                        settings: onesignalInitSettings)
+        OneSignal.setLogLevel(.LL_VERBOSE, visualLevel: .LL_NONE)
+        OneSignal.initWithLaunchOptions(launchOptions)
+        OneSignal.setAppId("70531d2d-609a-4093-9b66-b45b03731a4c")
+        
+        // promptForPushNotifications will show the native iOS notification permission prompt.
+        // We recommend removing the following code and instead using an In-App Message to prompt for notification permission (See step 8)
+        OneSignal.promptForPushNotifications(userResponse: { accepted in
+          print("User accepted notifications: \(accepted)")
+        })
+        print("one signal sdk init")
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        print("*****")
+        print("registered successfully for remote token")
+        let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print("device token: \(deviceTokenString)")
+
+
+    }
+    
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print("*****")
+        print("NOT WORK")
+        print("ERROR: \(error)")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
