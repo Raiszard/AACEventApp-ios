@@ -79,12 +79,7 @@ class InformationViewController: UIViewController, SideMenuItemContent, MFMessag
          //   NSAttributedStringKey.paragraphStyle: paragraph
             ] as [NSAttributedStringKey : Any]
         
-        let snapchatAttributes = [
-            NSAttributedStringKey.link: URL(string: "https://t.snapchat.com/NKLphUMl")!,
-            NSAttributedStringKey.font: UIFont(name: "Montserrat-Light", size: 15)!,
-            NSAttributedStringKey.foregroundColor: UIColor(red: 0.10, green: 0.67, blue: 0.89, alpha: 1.00),
-         //   NSAttributedStringKey.paragraphStyle: paragraph
-            ] as [NSAttributedStringKey : Any]
+
         
         let websiteAttributes = [
             NSAttributedStringKey.link: URL(string: "https://aa-co.org")!,
@@ -121,9 +116,6 @@ class InformationViewController: UIViewController, SideMenuItemContent, MFMessag
         
         runningDescAttrString.append(NSAttributedString(string: "@AfgAmCo", attributes: tiktokAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nSnapchat: ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: "@afghanamericanc", attributes: snapchatAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nWebsite: ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
