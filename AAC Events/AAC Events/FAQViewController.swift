@@ -65,7 +65,7 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "WHERE DO I REGISTER AND PICK UP MY BADGE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nThe registration & badge desk is located inside the lobby of California Hall. The registration desk will open at 9am on Friday, June 17th.\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThe registration & badge desk location can be found on the Agenda tab. Should the registration location change, we will notify all participants. The registration desk will open at 9am on Friday, June 17th.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "DO I NEED TO BRING A PICTURE ID TO REGISTER?", attributes: boldAttributes))
         
@@ -81,7 +81,7 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "I FORGOT/LOST MY BADGE, CAN I GET IT REPLACED?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nThere will be a $25 charge to replace any lost badges with no exceptions. To replace a lost badge, please visit the Registration Desk inside the lobby of California Hall.\n\nIf you forgot your badge at your hotel, you have the option of going to your hotel to get it or paying the replacement fee, but you are required to return one of your badges to the Registration Desk the following day.\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThere will be a $25 charge to replace any lost badges with no exceptions. To replace a lost badge, please visit the Registration Desk.\n\nIf you forgot your badge at your hotel, you have the option of going to your hotel to get it or paying the replacement fee, but you are required to return one of your badges to the Registration Desk the following day.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "CAN I BRING GUESTS WITH ME TO THE CONFERENCE?", attributes: boldAttributes))
         
@@ -101,7 +101,7 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "WHERE SHOULD UBER/LYFT DROP ME OFF?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nPlease type “UCD California Hall” on Uber/Lyft as shown to arrive to registration.\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nPlease refer to the location presented on the agenda tab for Uber/Lyft to arrive at registration.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "I AM FEELING REALLY OVERWHELMED, WHO CAN I REACH OUT TO?", attributes: boldAttributes))
         
@@ -137,7 +137,7 @@ class FAQViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "CAN I PURCHASE AN AAC T-SHIRT AT THE CONFERENCE?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nA limited supply of t-shirts will be available at the conference inside the lobby of California Hall. Prices are as follows: $30 for Short Sleeve T-shirts / $35 for Long Sleeve Shirts. Please note that there is an additional $2 surcharge for XXL+ shirts due to supply-chain reasons.\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nA limited supply of t-shirts will be available at the conference at the registration location. Prices are as follows: $30 for Short Sleeve T-shirts / $35 for Long Sleeve Shirts. Please note that there is an additional $2 surcharge for XXL+ shirts due to supply-chain reasons.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "IS THERE A HASHTAG WE SHOULD USE FOR CONFERENCE PICTURES AND POSTS?", attributes: boldAttributes))
         
