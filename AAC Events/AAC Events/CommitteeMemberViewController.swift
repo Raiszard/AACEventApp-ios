@@ -11,12 +11,14 @@ import UIKit
 
 class CommitteeMemberViewController: UIViewController {
 
+    @IBOutlet weak var committeeImage: UIImageView!
     @IBOutlet weak var headerContainer: UIView!
     
     @IBOutlet weak var commiteePersonTextView: UITextView!
     var name: String! = ""
     var personTitle: String! = ""
     var personDescription: String! = ""
+    //var passedImage : [UIImage] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,7 +27,17 @@ class CommitteeMemberViewController: UIViewController {
         
         commiteePersonTextView.text = personDescription
         
+        self.committeeImage.image =  UIImage(named: name)
+        
         setupHeader()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        committeeImage.layer.cornerRadius = 120/2
+        committeeImage.clipsToBounds = true
+        
     }
 
     override func didReceiveMemoryWarning() {

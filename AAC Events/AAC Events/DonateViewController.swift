@@ -56,40 +56,22 @@ class DonateViewController: UIViewController, SideMenuItemContent {
          //   NSAttributedStringKey.paragraphStyle: paragraph
             ] as [NSAttributedStringKey : Any]
         
-        let amznsmileAttributes = [
-            NSAttributedStringKey.link: URL(string: "https://smile.amazon.com")!,
-            NSAttributedStringKey.font: UIFont(name: "Montserrat-Medium", size: 15)!,
-            NSAttributedStringKey.foregroundColor: UIColor(red: 0.10, green: 0.67, blue: 0.89, alpha: 1.00),
-         //   NSAttributedStringKey.paragraphStyle: paragraph
-            ] as [NSAttributedStringKey : Any]
         
         let runningDescAttrString = NSMutableAttributedString()
         
         runningDescAttrString.append(NSAttributedString(string: "Donate", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nAACO is a 501(c)3 tax-exempt non-profit organization that is funded through the generosity of its donors and sponsors.  Your support has been critical to our past success and we want you to be a part of the great things that lie ahead.\n\nWith your help, initiatives like the Afghan-American Conference are made possible, alongside our other initiatives for the community both in the U.S. and in Afghanistan. Together, we will build a more supportive, empowered, and engaged community.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nAACO is a 501(c)3 tax-exempt non-profit organization funded through the generosity of its donors and sponsors.  Your support has been critical to our past success and we want you to be a part of the great efforts ahead.\n\nWith your help, initiatives like the Afghan-American Conference are made possible, alongside our other initiatives for the community both in the U.S. and in Afghanistan. Together, we will build a more supportive, empowered, and engaged community.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: "Donate today", attributes: donateAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nSponsor", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nAACO offers a number of sponsorship opportunities/packages. It is our sincere hope that you consider becoming a part of the great work we’re doing by contributing what you can. Thank you in advance for your generosity.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nAACO offers a number of sponsorship opportunities and packages. It is our sincere hope that you consider becoming a part of the great work we’re doing by contributing what you can. Thank you in advance for your generosity.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: "Become a Sponsor\n\n", attributes: sponsorAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "AmazonSmile", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nDo you use Amazon? What if you could support AACO simply by shopping? With AmazonSmile, now you can! We are proud to announce that the Afghan-American Community Organization is now listed on AmazonSmile! Once activated, 0.5% of your eligible Amazon purchases will be donated to our organization, at no extra cost to you. This is the perfect way to give all year round— we highly encourage you all to activate AmazonSmile today!\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: "\nHow to use AmazonSmile on a web browser:", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: "\n\n1. Visit smile.amazon.com\n\n2. Sign in with the same account you use for Amazon.com\n\n3. Search for Afghan American Community Organization and make it your selection\n\n4. Start shopping! Remember to checkout at smile.amazon.com to generate donations for AACO.\n\nTip: Add a bookmark to make it easier to shop at smile.amazon.com.\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: "\nHow to use AmazonSmile using the Amazon app on your mobile phone:", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: "\n\n1. Open the Amazon Shopping app\n\n2. Navigate to the main menu (=)\n\n3. Tap on Settings and then select “AmazonSmile”\n\n4. Search for and select Afghan American Community Organization\n\n 5. Follow the on-screen instructions to turn ON AmazonSmile in the mobile app\n\nOnce AmazonSmile has been activated in your app, future eligible app purchases will generate a donation for the charity you have selected.\n\nNote: The tablet app is not yet supported. Please visit smile.amazon.com/onthego to learn more.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: "Get started with AmazonSmile", attributes: amznsmileAttributes))
     
         
         
@@ -113,7 +95,7 @@ class DonateViewController: UIViewController, SideMenuItemContent {
     }
     
     @IBAction func donatePressed(_ sender: Any) {
-        UIApplication.shared.open(URL(string:"https://www.launchgood.com/AAC19")!, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string:"https://aa-co.org/checkout/donate?donatePageId=5fcdaf494efb8a7dc70806bb")!, options: [:], completionHandler: nil)
     }
         
     func setupHeader() {

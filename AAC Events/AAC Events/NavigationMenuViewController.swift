@@ -32,7 +32,7 @@ class NavigationMenuViewController: MenuViewController, MFMessageComposeViewCont
 
     let kCellReuseIdentifier = "MenuCell"
     
-    let aacMenus = ["About AACO", "AACO Team", "Programs", "Support AACO", "Contact Us"]
+    let aacMenus = ["About AACO", "AACO Team", "Programs", "Support AACO", "Stay Connected", "Contact Us"]
     let menuItems =  ["Norms", "Agenda", "Speakers/Performers", "CARE Team", "Conference Ambassadors", "Cohorts",  "Sponsors", "Conference Evaluation", "FAQ"]
 
     @IBOutlet weak var tableView: UITableView!
@@ -238,7 +238,7 @@ extension NavigationMenuViewController: UITableViewDelegate, UITableViewDataSour
 		if section == 0 { return nil }
 		let view = UIView(frame: CGRect(x: 0, y: 0, width: 200, height: 30))
 		let label = UILabel(frame: CGRect(x: 15, y: 0, width: 175, height: 30))
-		label.text = "AAC 2022"
+		label.text = "AAC 2023"
 		label.font = UIFont(name: "Montserrat-SemiBold", size: 16)
 		label.textColor = .white
 

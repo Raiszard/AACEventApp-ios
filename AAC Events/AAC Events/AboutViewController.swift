@@ -73,13 +73,13 @@ class AboutViewController: UIViewController, SideMenuItemContent {
 		let runningDescAttrString = NSMutableAttributedString()
 		
         
-        runningDescAttrString.append(NSAttributedString(string: "AACO’s mission is to advance the Afghan-American community through education and outreach, and to promote civic and social engagement. The Afghan-American Conference (AAC) provides a forum to address issues affecting the Afghan-American community, and a platform to facilitate dialogue, collaborate, and build relationships to strengthen our diaspora.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "The Afghan-American Community Organization’s mission is to advance the Afghan-American community through education and outreach, and promote civic and social engagement. The Afghan-American Conference (AAC) provides a forum to address issues affecting the Afghan-American community, and a platform to facilitate dialogue, collaborate, and build relationships to strengthen our diaspora.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
 		
         runningDescAttrString.append(NSAttributedString(string: "Vision", attributes: boldAttributes as [NSAttributedStringKey : Any]))
 		
-        runningDescAttrString.append(NSAttributedString(string: "\n\nAn ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nA ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
 
-        runningDescAttrString.append(NSAttributedString(string: "empowered, supportive,", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "supported, empowered,", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: " and", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
@@ -89,13 +89,13 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nHistory", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nIn 2014, eight Afghan-Americans pioneered what the diaspora lacked for years -  a safe space for candid discussions about the issues most pertinent to us. Historically, our community came together almost exclusively in social settings, including weddings, concerts, picnics, and sports tournaments. However, none of these gatherings have been conducive to serious discussions about the state of our community. Too often, taboo topics have been swept under the proverbial Afghan rug, never approached.\n\nIn early 2015, the inaugural Afghan-American Conference (AAC) was held at the University of California, Berkeley.  AAC provided a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, sharing resources, and activating change from within the community. What was intended to be a one-time conference, turned into an annual event, with annual conferences being held from 2015 to 2019, a virtual conference held in 2021, and plans for future conferences post-pandemic.\n\nThe discussions, connections, and solutions surfacing from AAC further amplified the need for something bigger. In 2019, the organization once known as AAC transitioned to the Afghan-American Community Organization (AACO), a 501(c)(3) nonprofit, dedicated to advancing the Afghan-American community through education and outreach, and to promoting civic and social engagement.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nIn 2014, eight Afghan-Americans pioneered what the diaspora lacked for years -  a safe space for candid discussions about the issues most pertinent to us. Historically, our community came together almost exclusively in social settings, including weddings, concerts, picnics, and sporting events. However, these gatherings were not conducive to serious discussions about the state of our community. Too often, taboo topics get swept under the proverbial Afghan rug, never approached.\n\nIn early 2015, the inaugural Afghan-American Conference (AAC) was held at the University of California, Berkeley.  AAC provided a forum for our community to address these difficult topics in a respectful, forward-thinking manner. The conference was a grassroots effort at shedding light on these pressing issues, inspiring action, sharing resources, and activating change from within the community. What was intended to be a one-time conference, turned into an annual event. AAC held annual conferences from 2015 to 2019, a virtual conference  in 2021, and switched gears back to in-person conferences in 2022.\n\nThe discussions, connections, and solutions surfacing from AAC further amplified the need for something bigger. In 2019, the organization once known as AAC transitioned to the Afghan-American Community Organization (AACO), a 501(c)(3) nonprofit, dedicated to advancing the Afghan-American community through education and outreach, and to promoting civic and social engagement through the annual conference and beyond.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nCore Values", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: "\n\n• Inclusivity: ", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: "build a sense of community by respecting and valuing the diversity of the Afghan-American community, creating a safe space to learn and grow, and vow to amplify marginalized voices.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "build a sense of community by respecting and valuing the diversity of the Afghan-American community, create a safe space to learn and grow, and vow to amplify marginalized voices.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: "\n\n• Excellence: ", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
@@ -103,11 +103,11 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "\n\n• Engagement: ", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: "be active participants in the American political and social landscape, and advocate for causes that are important to our community.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "be active participants in the American political and social landscape, and advocate for causes important to our community.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: "\n\nA Way Forward", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort at shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThis is where the Afghan-American Conference comes into the picture. AAC provides a forum for our community to address these difficult topics in a respectful, forward-thinking manner. It is a grassroots effort shedding light on these pressing issues, inspiring action, and activating change from within the community. We won’t be able to address everything, nor do we have the answers to almost anything. Let us get the conversation started, let us share resources, and let us find those solutions together as a community.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
 			
 		return runningDescAttrString
 		
@@ -120,7 +120,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         
         
         let codeofconductAttributes = [
-            NSAttributedStringKey.link: URL(string: "http://aa-co.org/s/Code-of-Conduct.pdf")!,
+            NSAttributedStringKey.link: URL(string: "https://aa-co.org/s/AACO-Code-of-Conduct-Adopted-April-2023.pdf")!,
             NSAttributedStringKey.font: UIFont(name: "Montserrat-Medium", size: 15)!,
             NSAttributedStringKey.foregroundColor: UIColor.blue
             ] as [NSAttributedStringKey : Any]
@@ -129,7 +129,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         let runningCommittmentAttrString = NSMutableAttributedString()
 
         
-        runningCommittmentAttrString.append(NSAttributedString(string: "The Afghan-American Community Organization (AACO) is committed to upholding an inclusive and safe environment for all of our participants across all of our programs and platforms and AAC is no exception to this commitment.\n\nIf you have any questions, please do not hesitate to contact us.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningCommittmentAttrString.append(NSAttributedString(string: "The Afghan-American Community Organization (AACO) is committed to upholding an inclusive and safe environment for all participants across all programs and platforms and AAC is no exception to this commitment.\n\nIf you have any questions, please do not hesitate to contact us.", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningCommittmentAttrString.append(NSAttributedString(string: "\n\nDiversity", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
@@ -138,7 +138,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         
         runningCommittmentAttrString.append(NSAttributedString(string: "\n\nCode of Conduct", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nThe Afghan-American Community Organization (AACO) is committed to providing a safe and welcoming environment for all its participants. All complaints of discrimination, including harassment, will be taken seriously and handled privately, only informing individuals who need-to-know, through our code of conduct.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningCommittmentAttrString.append(NSAttributedString(string: "\n\nThe Afghan-American Community Organization (AACO) is committed to providing a safe and welcoming environment for all participants. All complaints of discrimination, including harassment, will be taken seriously and handled privately, only informing select individuals who need-to-know, through our code of conduct.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningCommittmentAttrString.append(NSAttributedString(string: "Learn More", attributes: codeofconductAttributes))
         
@@ -155,7 +155,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
 
         
         let impactAttributes = [
-            NSAttributedStringKey.link: URL(string: "https://aa-co.org/2021-impact-report")!,
+            NSAttributedStringKey.link: URL(string: "https://aa-co.org/2022-impact-report")!,
             NSAttributedStringKey.font: UIFont(name: "Montserrat-SemiBold", size: 15)!,
             NSAttributedStringKey.foregroundColor: UIColor.blue
             ] as [NSAttributedStringKey : Any]
@@ -166,9 +166,9 @@ class AboutViewController: UIViewController, SideMenuItemContent {
         
         runningConferenceAttrString.append(NSAttributedString(string: "We are excited to announce that our ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
     
-        runningConferenceAttrString.append(NSAttributedString(string: "2021 Annual Impact Report", attributes: impactAttributes))
+        runningConferenceAttrString.append(NSAttributedString(string: "2022 Annual Impact Report", attributes: impactAttributes))
         
-        runningConferenceAttrString.append(NSAttributedString(string: " is now available!\n\nThis report highlights how AACO has helped the Afghan community both here and back home. We have accomplished so much this past year and encourage you to help us maintain this momentum through 2022 by participating in our fundraiser.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningConferenceAttrString.append(NSAttributedString(string: " is now available!\n\nTThis report highlights how AACO has helped the Afghan community both here and back home. We have accomplished so much this past year and are so excited for 2023.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
 
         
