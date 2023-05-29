@@ -19,6 +19,8 @@
 		738B8A7D205F3C9500BFD6BB /* AACareViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 738B8A7C205F3C9500BFD6BB /* AACareViewController.swift */; };
 		73C77D1A2047F0E500800F7F /* InitiativeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C77D192047F0E500800F7F /* InitiativeDetailsViewController.swift */; };
 		73C77D1C204802BE00800F7F /* ConferenceEvaluationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */; };
+		73DCE7E12A23FB1400C87B0D /* RegionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCE7E02A23FB1400C87B0D /* RegionsViewController.swift */; };
+		73DCE7E32A2455A800C87B0D /* RegionsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCE7E22A2455A800C87B0D /* RegionsDetailsViewController.swift */; };
 		73E38AEB2A0A3FA2003D847B /* StayConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E38AEA2A0A3FA2003D847B /* StayConnectedViewController.swift */; };
 		73F3993A2296C4E900A9EBDB /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F399392296C4E900A9EBDB /* InformationViewController.swift */; };
 		7D591DB4F387EDA40D8E396E /* Pods_AAC_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A26C403FA682AF4768BF86 /* Pods_AAC_Events.framework */; };
@@ -172,6 +174,8 @@
 		738B8A7C205F3C9500BFD6BB /* AACareViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AACareViewController.swift; sourceTree = "<group>"; };
 		73C77D192047F0E500800F7F /* InitiativeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InitiativeDetailsViewController.swift; sourceTree = "<group>"; };
 		73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceEvaluationViewController.swift; sourceTree = "<group>"; };
+		73DCE7E02A23FB1400C87B0D /* RegionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsViewController.swift; sourceTree = "<group>"; };
+		73DCE7E22A2455A800C87B0D /* RegionsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsDetailsViewController.swift; sourceTree = "<group>"; };
 		73E38AEA2A0A3FA2003D847B /* StayConnectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayConnectedViewController.swift; sourceTree = "<group>"; };
 		73F399392296C4E900A9EBDB /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		85731998ADBEDC9ECBB94EE9 /* Pods-AAC EventsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -340,6 +344,8 @@
 				9BD4A4421FFC485700C20D4F /* ViewController.swift */,
 				9BD4A4441FFC485700C20D4F /* Login.storyboard */,
 				9B3C746A1FFDA5180004A82A /* Main.storyboard */,
+				73DCE7E22A2455A800C87B0D /* RegionsDetailsViewController.swift */,
+				73DCE7E02A23FB1400C87B0D /* RegionsViewController.swift */,
 				738B8A7C205F3C9500BFD6BB /* AACareViewController.swift */,
 				9B3C746D1FFDA5370004A82A /* HostViewController.swift */,
 				9B3C746C1FFDA5370004A82A /* NavigationMenuViewController.swift */,
@@ -804,6 +810,7 @@
 				9B346A7E202BE869004263CF /* AttendeesViewController.swift in Sources */,
 				9BDC06C8200825D500F825E4 /* NormsViewController.swift in Sources */,
 				9B032940201ACF9900B94A74 /* SessionDetailsViewController.swift in Sources */,
+				73DCE7E32A2455A800C87B0D /* RegionsDetailsViewController.swift in Sources */,
 				737CEAFF203421C400A8F7A9 /* FAQViewController.swift in Sources */,
 				9B3C746E1FFDA5370004A82A /* NavigationMenuViewController.swift in Sources */,
 				9B3C74761FFDA9BD0004A82A /* KittyViewController.swift in Sources */,
@@ -812,6 +819,7 @@
 				7352BFFA2045525500301FB0 /* InitiativesViewController.swift in Sources */,
 				9BB0C92B2031304300B4C87E /* Cohort.swift in Sources */,
 				9B346A78202A8BBF004263CF /* SpeakersViewController.swift in Sources */,
+				73DCE7E12A23FB1400C87B0D /* RegionsViewController.swift in Sources */,
 				9B3C74751FFDA9BD0004A82A /* TabBarViewController.swift in Sources */,
 				9BD4A4491FFC485700C20D4F /* AAC_Events.xcdatamodeld in Sources */,
 				9B346A76202930DF004263CF /* MyScheduleViewController.swift in Sources */,

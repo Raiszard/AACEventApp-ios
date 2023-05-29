@@ -45,10 +45,9 @@ class AACareViewController: UIViewController, SideMenuItemContent, MFMessageComp
     let descboldAttributes = [NSAttributedStringKey.font: descboldFont]
     
     let runningDescAttrString = NSMutableAttributedString()
+
     
-    runningDescAttrString.append(NSAttributedString(string: "What is the CARE Team?", attributes: boldAttributes as [NSAttributedStringKey : Any]))
-    
-    runningDescAttrString.append(NSAttributedString(string: "\n\nThe CARE Team contributes to ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+    runningDescAttrString.append(NSAttributedString(string: "The CARE Team contributes to ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
     
     runningDescAttrString.append(NSAttributedString(string: "C", attributes: boldAttributes as [NSAttributedStringKey : Any]))
     
@@ -58,48 +57,33 @@ class AACareViewController: UIViewController, SideMenuItemContent, MFMessageComp
     
     runningDescAttrString.append(NSAttributedString(string: "R", attributes: boldAttributes as [NSAttributedStringKey : Any]))
     
-    runningDescAttrString.append(NSAttributedString(string: "esilent ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+    runningDescAttrString.append(NSAttributedString(string: "esilient ", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
     
     runningDescAttrString.append(NSAttributedString(string: "E", attributes: boldAttributes as [NSAttributedStringKey : Any]))
     
     runningDescAttrString.append(NSAttributedString(string: "nvironment", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
     
     
-    runningDescAttrString.append(NSAttributedString(string: " at AAC as members of our diaspora who possess medical, emotional, and/or mental health training.\n\nUpon request, the CARE Team is available to meet one-on-one with any conference attendee to address medical and/or mental health concerns throughout the weekend. CARE Team members may respond to instances of injury, illness, anxiety, emotional distress/triggers, and wellness checks. They are available to support you in bringing your fullest self at AAC!\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+    runningDescAttrString.append(NSAttributedString(string: " at AAC as members of our diaspora who possess mental health training.\n\nUpon request, the CARE Team is available to meet one-on-one with any conference attendee to address mental health concerns throughout the weekend. CARE Team members may respond to instances of anxiety, emotional distress/triggers, and wellness checks. They are available to support you in being your fullest self at AAC!\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: "How to Connect with the CARE Team:\n\n", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: "1. Text a message to (213) 319-2540. Please include your name and a brief message explaining your need (medical attention or mental health).\n\n2. An available CARE Team member will contact you as soon as possible to coordinate a designated place to meet or set up a phone call.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "1. Send a text to (213) 319-2540. Please include your name and a brief message explaining your need (wellness check, emotionally vulnerable, just need to talk/decompress, etc.).\n\n2. An available CARE Team member will contact you as soon as possible to coordinate a designated place to meet or set up a phone call.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         runningDescAttrString.append(NSAttributedString(string: "CARE Team Members\n\n", attributes: boldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: " - Faria Alamkhel", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: " - Mental Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: " - Shekiba Azad", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: " - Mental Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
-        
         runningDescAttrString.append(NSAttributedString(string: " - Nilo Sidiqi", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: " - Mental Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: " - AACO Mental Health Advisor\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: " - Omar Asefi", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: " - Aryan Afshar\n\n", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: " - Medical Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: " - Faria Alamkhel\n\n", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: " - Sophia Mohabbat", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: " - Mina Jahan\n\n", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: " - Medical Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: " - Sarah Khorami\n\n", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
         
-        runningDescAttrString.append(NSAttributedString(string: " - Haron Mujtaba", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: " - Medical Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: " - Zahoor Sadiq", attributes: descboldAttributes as [NSAttributedStringKey : Any]))
-        
-        runningDescAttrString.append(NSAttributedString(string: " - Medical Health\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
         return runningDescAttrString
         
