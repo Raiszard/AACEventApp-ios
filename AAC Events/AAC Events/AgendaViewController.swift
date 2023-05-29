@@ -91,7 +91,7 @@ class AgendaViewController: UIViewController {
         let headerImage = UIImage(named: "agendaHeader")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Agenda", subtitle:"June 17 - 19", imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "Agenda", subtitle:"June 23 - 25", imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)
