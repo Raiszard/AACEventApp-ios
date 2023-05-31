@@ -21,6 +21,7 @@
 		73C77D1C204802BE00800F7F /* ConferenceEvaluationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */; };
 		73DCE7E12A23FB1400C87B0D /* RegionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCE7E02A23FB1400C87B0D /* RegionsViewController.swift */; };
 		73DCE7E32A2455A800C87B0D /* RegionsDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCE7E22A2455A800C87B0D /* RegionsDetailsViewController.swift */; };
+		73DCE7E52A27005600C87B0D /* SponsorshipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73DCE7E42A27005600C87B0D /* SponsorshipsViewController.swift */; };
 		73E38AEB2A0A3FA2003D847B /* StayConnectedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73E38AEA2A0A3FA2003D847B /* StayConnectedViewController.swift */; };
 		73F3993A2296C4E900A9EBDB /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F399392296C4E900A9EBDB /* InformationViewController.swift */; };
 		7D591DB4F387EDA40D8E396E /* Pods_AAC_Events.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 48A26C403FA682AF4768BF86 /* Pods_AAC_Events.framework */; };
@@ -176,6 +177,7 @@
 		73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConferenceEvaluationViewController.swift; sourceTree = "<group>"; };
 		73DCE7E02A23FB1400C87B0D /* RegionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsViewController.swift; sourceTree = "<group>"; };
 		73DCE7E22A2455A800C87B0D /* RegionsDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionsDetailsViewController.swift; sourceTree = "<group>"; };
+		73DCE7E42A27005600C87B0D /* SponsorshipsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SponsorshipsViewController.swift; sourceTree = "<group>"; };
 		73E38AEA2A0A3FA2003D847B /* StayConnectedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayConnectedViewController.swift; sourceTree = "<group>"; };
 		73F399392296C4E900A9EBDB /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		85731998ADBEDC9ECBB94EE9 /* Pods-AAC EventsUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AAC EventsUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-AAC EventsUITests/Pods-AAC EventsUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				9BD4A44C1FFC485700C20D4F /* LaunchScreen.storyboard */,
 				9B3C747B20004C0C0004A82A /* ViewHeader.swift */,
 				9B3C747D20004C2B0004A82A /* ViewHeader.xib */,
+				73DCE7E42A27005600C87B0D /* SponsorshipsViewController.swift */,
 				738069EF2059DE9800F4BB6E /* CreditsViewController.swift */,
 				73C77D1B204802BE00800F7F /* ConferenceEvaluationViewController.swift */,
 				73C77D192047F0E500800F7F /* InitiativeDetailsViewController.swift */,
@@ -809,6 +812,7 @@
 				733D885520316D16008F1255 /* DonateViewController.swift in Sources */,
 				9B346A7E202BE869004263CF /* AttendeesViewController.swift in Sources */,
 				9BDC06C8200825D500F825E4 /* NormsViewController.swift in Sources */,
+				73DCE7E52A27005600C87B0D /* SponsorshipsViewController.swift in Sources */,
 				9B032940201ACF9900B94A74 /* SessionDetailsViewController.swift in Sources */,
 				73DCE7E32A2455A800C87B0D /* RegionsDetailsViewController.swift in Sources */,
 				737CEAFF203421C400A8F7A9 /* FAQViewController.swift in Sources */,

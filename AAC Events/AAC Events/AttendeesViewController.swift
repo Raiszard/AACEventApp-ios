@@ -110,19 +110,17 @@ extension AttendeesViewController: UITableViewDataSource, UITableViewDelegate {
         
         
         var confambArray: [UIImage] = [
-            UIImage(named: "ali_saadat")!,
-            UIImage(named: "ciere_said")!,
-            UIImage(named: "hanna_kherzai")!,
-            UIImage(named: "jahed_aziz")!,
-            UIImage(named: "mariam_alamyar")!,
-            UIImage(named: "mariam_azimi")!,
-            UIImage(named: "mariam_mahbob")!,
-            UIImage(named: "maryam_aziz")!,
-            UIImage(named: "munija_ramin")!,
-            UIImage(named: "pardis_rahimi")!,
-            UIImage(named: "parsa_mujadedy")!,
-            UIImage(named: "shabnum_hamidi")!,
-            UIImage(named: "tamana_noory")!
+            UIImage(named: "Heelai Ahmadullah")!,
+            UIImage(named: "Jahed Aziz")!,
+            UIImage(named: "Mursal Noory")!,
+            UIImage(named: "Nasrollah Sekandari")!,
+            UIImage(named: "Parsa Mujadedy")!,
+            UIImage(named: "Rohin Qaderyan")!,
+            UIImage(named: "Salima Sekandari")!,
+            UIImage(named: "Tooba Noorzay")!,
+            UIImage(named: "Toobah Wali")!,
+            UIImage(named: "Yama Amin")!,
+            UIImage(named: "Zohal Shokoor")!,
         
         ]
         

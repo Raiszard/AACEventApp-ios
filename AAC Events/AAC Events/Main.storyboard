@@ -2737,6 +2737,94 @@
             </objects>
             <point key="canvasLocation" x="-1107.2463768115942" y="-1275"/>
         </scene>
+        <!--Sponsorships View Controller-->
+        <scene sceneID="nAs-eK-Zre">
+            <objects>
+                <viewController storyboardIdentifier="Sponsorships" id="BRD-oD-63F" userLabel="Sponsorships View Controller" customClass="SponsorshipsViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ja2-d8-wzq">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SI0-Wn-YGl">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="slZ-5j-qWE">
+                                        <rect key="frame" x="8" y="30" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="q9x-gO-7p0"/>
+                                            <constraint firstAttribute="height" constant="44" id="to3-dc-Cu3"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                        <state key="normal" image="Menu"/>
+                                        <connections>
+                                            <action selector="openMenu:" destination="BRD-oD-63F" eventType="touchUpInside" id="Y1O-3n-IQg"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="76" id="Hi9-cb-N7X"/>
+                                    <constraint firstItem="slZ-5j-qWE" firstAttribute="top" secondItem="SI0-Wn-YGl" secondAttribute="top" constant="30" id="IZg-fy-fME"/>
+                                    <constraint firstItem="slZ-5j-qWE" firstAttribute="leading" secondItem="SI0-Wn-YGl" secondAttribute="leading" constant="8" id="zu2-CZ-qAI"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hKy-9U-L30">
+                                <rect key="frame" x="0.0" y="76" width="414" height="172"/>
+                                <color key="backgroundColor" red="0.21076198060000001" green="1" blue="0.75646647590000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="V9I-Zt-IqE"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data is loading. Please wait..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="mI7-2e-ZDT">
+                                <rect key="frame" x="20" y="256" width="374" height="420"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MRK-yj-vND">
+                                <rect key="frame" x="20" y="684" width="374" height="44"/>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Din-65-rob"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
+                                <color key="tintColor" red="0.098039215690000001" green="0.6705882353" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Sponsors">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="sponsorshipsButton:" destination="BRD-oD-63F" eventType="touchUpInside" id="lLo-6f-eI2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="NNi-qj-UMt"/>
+                        <constraints>
+                            <constraint firstItem="NNi-qj-UMt" firstAttribute="trailing" secondItem="SI0-Wn-YGl" secondAttribute="trailing" id="2e9-tK-yrg"/>
+                            <constraint firstItem="mI7-2e-ZDT" firstAttribute="top" secondItem="hKy-9U-L30" secondAttribute="bottom" constant="8" id="9dm-2H-EAF"/>
+                            <constraint firstItem="MRK-yj-vND" firstAttribute="top" secondItem="mI7-2e-ZDT" secondAttribute="bottom" constant="8" id="AAr-sj-5Eb"/>
+                            <constraint firstItem="NNi-qj-UMt" firstAttribute="trailing" secondItem="hKy-9U-L30" secondAttribute="trailing" id="AZl-ua-Kcm"/>
+                            <constraint firstItem="MRK-yj-vND" firstAttribute="leading" secondItem="NNi-qj-UMt" secondAttribute="leading" constant="20" id="COW-vY-NWb"/>
+                            <constraint firstItem="hKy-9U-L30" firstAttribute="leading" secondItem="NNi-qj-UMt" secondAttribute="leading" id="EP5-sw-C3Q"/>
+                            <constraint firstItem="mI7-2e-ZDT" firstAttribute="leading" secondItem="ja2-d8-wzq" secondAttribute="leadingMargin" id="FYM-mj-s2t"/>
+                            <constraint firstItem="hKy-9U-L30" firstAttribute="top" secondItem="SI0-Wn-YGl" secondAttribute="bottom" id="JGO-aV-ZnY"/>
+                            <constraint firstItem="NNi-qj-UMt" firstAttribute="trailing" secondItem="MRK-yj-vND" secondAttribute="trailing" constant="20" id="V25-Ar-SGu"/>
+                            <constraint firstItem="SI0-Wn-YGl" firstAttribute="leading" secondItem="NNi-qj-UMt" secondAttribute="leading" id="hWu-nH-c4C"/>
+                            <constraint firstItem="mI7-2e-ZDT" firstAttribute="trailing" secondItem="ja2-d8-wzq" secondAttribute="trailingMargin" id="hyG-VY-mDq"/>
+                            <constraint firstItem="NNi-qj-UMt" firstAttribute="bottom" secondItem="MRK-yj-vND" secondAttribute="bottom" constant="8" id="wqh-Vt-vhc"/>
+                            <constraint firstItem="SI0-Wn-YGl" firstAttribute="top" secondItem="ja2-d8-wzq" secondAttribute="top" id="zvt-kd-jge"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="headerContainer" destination="hKy-9U-L30" id="rq8-Vh-ITm"/>
+                        <outlet property="sponsorshipsText" destination="mI7-2e-ZDT" id="LKX-Oy-8YE"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fm7-En-JmW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3864" y="-1974"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Menu" width="24" height="17"/>

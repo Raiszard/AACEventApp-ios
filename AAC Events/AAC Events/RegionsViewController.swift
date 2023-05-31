@@ -27,10 +27,10 @@ class RegionsViewController: UIViewController, SideMenuItemContent {
         UIImage(named: "tristate")!
     ]
     var headerImageArray: [UIImage] = [
-        UIImage(named: "aaconnectHeader")!,
-        UIImage(named: "spotlightHeader")!,
-        UIImage(named: "newsletterHeader")!,
-        UIImage(named: "sponsorHeader")!
+        UIImage(named: "dmvHeader")!,
+        UIImage(named: "norcalHeader")!,
+        UIImage(named: "socalHeader")!,
+        UIImage(named: "tristateHeader")!
     ]
     
     let regionDescriptionArray: [String] = ["AACO’s DMV Region encompasses anyone that identifies with, is from or is currently living in the District of Columbia, the states of Maryland and Virginia.\n\n2023 Past Events:\n\n - March: Kick-Off Event\n - April: Community Iftar\n\n2023 Future Events:\n\n - July/August: Regional Reunion\n\nYou don’t want to miss out on the official post-conference regional reunion, this annual event is for all of our alumni to come together with food, games, and fun!\n\nWe are in the process of potentially planning another yearly regional event, make sure to check back here for updates regarding all regional events in the DMV!",

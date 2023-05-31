@@ -59,7 +59,7 @@ class CommitteeMemberViewController: UIViewController {
     
     func setupHeader() {
         
-        let headerImage = UIImage(named: "committeeHeader")
+        let headerImage = UIImage(named: "committeeHeader2")
         let header: ViewHeader = .fromNib()
         
         let hView = header.createHeader(title: name, subtitle:personTitle, imageURL: nil, image: headerImage, isProfile: true)

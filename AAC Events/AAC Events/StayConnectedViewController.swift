@@ -146,7 +146,7 @@ class StayConnectedViewController: UIViewController, SideMenuItemContent{
     
     func setupHeader() {
         
-        let headerImage = UIImage(named: "Session8")
+        let headerImage = UIImage(named: "stayconnectedHeader")
         let header: ViewHeader = .fromNib()
         
         let hView = header.createHeader(title: "Stay Connected", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
