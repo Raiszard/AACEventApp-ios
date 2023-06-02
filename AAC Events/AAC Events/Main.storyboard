@@ -2825,6 +2825,94 @@
             </objects>
             <point key="canvasLocation" x="3864" y="-1974"/>
         </scene>
+        <!--FAQ Bot View Controller-->
+        <scene sceneID="mbB-FR-DXI">
+            <objects>
+                <viewController storyboardIdentifier="FAQBot" id="A6W-Sf-1E2" userLabel="FAQ Bot View Controller" customClass="FAQBotViewController" customModule="AAC_Events" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="mxQ-U7-mBf">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Uzl-VP-W46">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="76"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vbe-hl-AyJ">
+                                        <rect key="frame" x="8" y="30" width="44" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="44" id="npY-ag-PZv"/>
+                                            <constraint firstAttribute="height" constant="44" id="xo1-iH-ZnQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Georgia" family="Georgia" pointSize="17"/>
+                                        <state key="normal" image="Menu"/>
+                                        <connections>
+                                            <action selector="openMenu:" destination="A6W-Sf-1E2" eventType="touchUpInside" id="kf8-8Z-iYW"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.13725490200000001" green="0.1215686275" blue="0.12549019610000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="Vbe-hl-AyJ" firstAttribute="leading" secondItem="Uzl-VP-W46" secondAttribute="leading" constant="8" id="8s3-xM-fnu"/>
+                                    <constraint firstAttribute="height" constant="76" id="BTl-nC-mjc"/>
+                                    <constraint firstItem="Vbe-hl-AyJ" firstAttribute="top" secondItem="Uzl-VP-W46" secondAttribute="top" constant="30" id="M1N-mr-9Tl"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TV7-bA-gDE">
+                                <rect key="frame" x="0.0" y="76" width="414" height="172"/>
+                                <color key="backgroundColor" red="0.21076198060000001" green="1" blue="0.75646647590000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="172" id="f26-ET-r1D"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Data is loading. Please wait..." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aa5-AU-yUt">
+                                <rect key="frame" x="20" y="256" width="374" height="420"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Light" family="Montserrat" pointSize="15"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qJQ-E1-NiL">
+                                <rect key="frame" x="20" y="684" width="374" height="44"/>
+                                <color key="backgroundColor" red="0.098039215690000001" green="0.6705882353" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="OR7-yh-rwo"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="15"/>
+                                <color key="tintColor" red="0.098039215690000001" green="0.6705882353" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <state key="normal" title="Ask AACO Chatbot">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="botButton:" destination="A6W-Sf-1E2" eventType="touchUpInside" id="sc3-WZ-a5Y"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="iI7-Dp-fIC"/>
+                        <constraints>
+                            <constraint firstItem="TV7-bA-gDE" firstAttribute="top" secondItem="Uzl-VP-W46" secondAttribute="bottom" id="CE6-VM-pY1"/>
+                            <constraint firstItem="qJQ-E1-NiL" firstAttribute="top" secondItem="aa5-AU-yUt" secondAttribute="bottom" constant="8" id="DVG-OZ-9cY"/>
+                            <constraint firstItem="aa5-AU-yUt" firstAttribute="top" secondItem="TV7-bA-gDE" secondAttribute="bottom" constant="8" id="E0g-QU-Ls2"/>
+                            <constraint firstItem="iI7-Dp-fIC" firstAttribute="trailing" secondItem="TV7-bA-gDE" secondAttribute="trailing" id="GL0-wS-oyx"/>
+                            <constraint firstItem="qJQ-E1-NiL" firstAttribute="leading" secondItem="iI7-Dp-fIC" secondAttribute="leading" constant="20" id="GvN-Iw-VcK"/>
+                            <constraint firstItem="TV7-bA-gDE" firstAttribute="leading" secondItem="iI7-Dp-fIC" secondAttribute="leading" id="Mfg-r6-ex0"/>
+                            <constraint firstItem="Uzl-VP-W46" firstAttribute="top" secondItem="mxQ-U7-mBf" secondAttribute="top" id="Nf4-Sf-Msp"/>
+                            <constraint firstItem="iI7-Dp-fIC" firstAttribute="trailing" secondItem="qJQ-E1-NiL" secondAttribute="trailing" constant="20" id="REk-H5-Nbx"/>
+                            <constraint firstItem="iI7-Dp-fIC" firstAttribute="trailing" secondItem="Uzl-VP-W46" secondAttribute="trailing" id="aky-MA-ZOb"/>
+                            <constraint firstItem="aa5-AU-yUt" firstAttribute="trailing" secondItem="mxQ-U7-mBf" secondAttribute="trailingMargin" id="hPR-0j-QqB"/>
+                            <constraint firstItem="iI7-Dp-fIC" firstAttribute="bottom" secondItem="qJQ-E1-NiL" secondAttribute="bottom" constant="8" id="m6e-aJ-VKe"/>
+                            <constraint firstItem="aa5-AU-yUt" firstAttribute="leading" secondItem="mxQ-U7-mBf" secondAttribute="leadingMargin" id="tc8-lz-bd0"/>
+                            <constraint firstItem="Uzl-VP-W46" firstAttribute="leading" secondItem="iI7-Dp-fIC" secondAttribute="leading" id="xcs-Ls-jZo"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="FAQBot_text" destination="aa5-AU-yUt" id="BK0-5a-BhV"/>
+                        <outlet property="headerContainer" destination="TV7-bA-gDE" id="rSc-vz-K9v"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54t-dt-ICK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3864" y="-1974"/>
+        </scene>
     </scenes>
     <resources>
         <image name="Menu" width="24" height="17"/>
