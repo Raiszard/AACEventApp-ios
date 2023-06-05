@@ -168,7 +168,7 @@ class AboutViewController: UIViewController, SideMenuItemContent {
     
         runningConferenceAttrString.append(NSAttributedString(string: "2022 Annual Impact Report", attributes: impactAttributes))
         
-        runningConferenceAttrString.append(NSAttributedString(string: " is now available!\n\nTThis report highlights how AACO has helped the Afghan community both here and back home. We have accomplished so much this past year and are so excited for 2023.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningConferenceAttrString.append(NSAttributedString(string: " is now available!\n\nThis report highlights how AACO has helped the Afghan community both here and back home. We have accomplished so much this past year and are so excited for 2023.\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
 
         

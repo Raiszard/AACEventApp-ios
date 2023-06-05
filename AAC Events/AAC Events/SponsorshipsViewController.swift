@@ -48,7 +48,7 @@ class SponsorshipsViewController: UIViewController, SideMenuItemContent {
         let runningDescAttrString = NSMutableAttributedString()
     
         
-        runningDescAttrString.append(NSAttributedString(string: "To view a complete list of our sponsors and scholarship donors, click the button below!\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
+        runningDescAttrString.append(NSAttributedString(string: "To view a complete list of our sponsors, click the button below!\n\n", attributes: descriptionAttributes as [NSAttributedStringKey : Any]))
         
        
         
@@ -76,10 +76,10 @@ class SponsorshipsViewController: UIViewController, SideMenuItemContent {
     
     func setupHeader() {
         
-        let headerImage = UIImage(named: "sponsorHeader")
+        let headerImage = UIImage(named: "Session7")
         let header: ViewHeader = .fromNib()
         
-        let hView = header.createHeader(title: "Sponsors & Scholarships", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
+        let hView = header.createHeader(title: "Sponsors", subtitle:nil, imageURL: nil, image: headerImage, isProfile: false)
         
         hView.translatesAutoresizingMaskIntoConstraints = false
         headerContainer.addSubview(hView)

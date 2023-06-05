@@ -33,7 +33,7 @@ class ConferenceEvaluationViewController: UIViewController, SideMenuItemContent 
         super.viewDidLoad()
         setupHeader()
         
-        textView.text = "Thank you for attending the 2023 Afghan American Conference!\n\nPlease take a few moments to share your thoughts on AAC 2023 at the end of the conference. Your feedback is very valuable to us!"
+        textView.text = "Thank you for attending the 2023 Afghan-American Conference!\n\nPlease take a few moments to share your thoughts on AAC 2023 at the end of the conference. Your feedback is very valuable to us!"
 
 
         // Do any additional setup after loading the view.

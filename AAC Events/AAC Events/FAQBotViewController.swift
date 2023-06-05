@@ -83,7 +83,7 @@ class FAQBotViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "I FORGOT/LOST MY BADGE, CAN I GET IT REPLACED?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nTThere will be a $25 charge to replace any lost badges with no exceptions. To replace a lost badge, please visit the Registration Desk.\n\nIf you forgot your badge at your hotel, you have the option of going to your hotel to get it or paying the replacement fee, but you are required to return one of your badges to the Registration Desk the following day.\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nThere will be a $25 charge to replace any lost badges with no exceptions. To replace a lost badge, please visit the Registration Desk.\n\nIf you forgot your badge at your hotel, you have the option of going to your hotel to get it or paying the replacement fee, but you are required to return one of your badges to the Registration Desk the following day.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "CAN I BRING GUESTS WITH ME TO THE CONFERENCE?", attributes: boldAttributes))
         
@@ -91,7 +91,7 @@ class FAQBotViewController: UIViewController, SideMenuItemContent {
         
         runningDescAttrString.append(NSAttributedString(string: "WHERE IS THE PRAYER AREA LOCATED?", attributes: boldAttributes))
         
-        runningDescAttrString.append(NSAttributedString(string: "\n\nFor meditation and prayers, a designated room will be reserved. Please refer to the location presented on the agenda tab of the mobile app. Should this room assignment change, the planning team will notify participants.\n\n", attributes: descriptionAttributes))
+        runningDescAttrString.append(NSAttributedString(string: "\n\nFor prayers and/or meditation, a designated room will be reserved. Please refer to the location presented on the agenda tab of the mobile app. Should this room assignment change, the planning team will notify participants.\n\n", attributes: descriptionAttributes))
         
         runningDescAttrString.append(NSAttributedString(string: "WHAT IS THE CLOSEST PARKING STRUCTURE?", attributes: boldAttributes))
         
